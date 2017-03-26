@@ -28,10 +28,18 @@
     "url": "https://github.com/Planeshifter/isle-server/issues"
   },
   "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.1",
     "debug": "^2.6.1",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.3.0",
+    "lodash": "^4.17.4",
     "mongodb": "^2.2.7",
     "mongojs": "^2.4.0",
-    "nodemailer": "^2.5.0"
+    "mongoose": "^4.9.1",
+    "nodemailer": "^2.5.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1"
   },
   "devDependencies": {
     "chai": "3.x.x",
