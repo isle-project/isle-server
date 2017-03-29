@@ -28,8 +28,11 @@
     "url": "https://github.com/Planeshifter/isle-server/issues"
   },
   "dependencies": {
+    "@stdlib/stdlib": "github:stdlib-js/stdlib#develop",
+    "async": "^2.2.0",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",
+    "cors": "^2.8.1",
     "debug": "^2.6.1",
     "express": "^4.15.2",
     "jsonwebtoken": "^7.3.0",
@@ -39,7 +42,8 @@
     "mongoose": "^4.9.1",
     "nodemailer": "^2.5.0",
     "passport": "^0.3.2",
-    "passport-jwt": "^2.2.1"
+    "passport-jwt": "^2.2.1",
+    "swot-js": "^1.0.3"
   },
   "devDependencies": {
     "chai": "3.x.x",
