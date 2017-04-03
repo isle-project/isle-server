@@ -1,3 +1,4 @@
 {
-	"namespacesDirectory": "./../public"
+	"namespacesDirectory": "./../public",
+	"server": "http://isle.heinz.cmu.edu"
 }
