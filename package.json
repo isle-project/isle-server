@@ -13,7 +13,7 @@
     }
   ],
   "scripts": {
-    "start": "node lib/index.js",
+    "start": "NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ node lib/index.js",
     "test": "tape \"./test/*.js\"",
     "test-cov": "istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\"",
     "coverage": "istanbul cover --dir ./reports/codecov/coverage --report lcovonly tape -- \"./test/*.js\" && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
