@@ -28,7 +28,7 @@
     "url": "https://github.com/Planeshifter/isle-server/issues"
   },
   "dependencies": {
-    "@stdlib/stdlib": "github:stdlib-js/stdlib#develop",
+    "@stdlib/stdlib": "0.0.3",
     "adm-zip": "^0.4.7",
     "async": "^2.2.0",
     "bcrypt": "^1.0.2",
