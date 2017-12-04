@@ -28,7 +28,7 @@
     "url": "https://github.com/Planeshifter/isle-server/issues"
   },
   "dependencies": {
-    "@stdlib/stdlib": "0.0.28",
+    "@stdlib/stdlib": "0.0.30",
     "adm-zip": "^0.4.7",
     "async": "^2.2.0",
     "bcrypt": "^1.0.2",
@@ -44,7 +44,7 @@
     "mongoose": "^4.9.1",
     "multer": "^1.3.0",
     "ncp": "^2.0.0",
-    "nodemailer": "4.3.1",
+    "nodemailer": "4.4.0",
     "passport": "^0.4.0",
     "passport-jwt": "2.2.1",
     "socket.io": "^2.0.3",
