@@ -3,6 +3,7 @@
 #### Dependencies
 
 [![Dependencies][dependencies-image]][dependencies-url] [![DevDependencies][dev-dependencies-image]][dev-dependencies-url]
+[![DOI](https://zenodo.org/badge/63765629.svg)][doi]
 
 ## Introduction
 
@@ -17,5 +18,7 @@ Files in the `credentials` folder have been [transcrypted][transcrypt].
 
 [dev-dependencies-image]: https://img.shields.io/david/dev/planeshifter/isle-server/master.svg
 [dev-dependencies-url]: https://david-dm.org/planeshifter/isle-server/master#info=devDependencies
+
+[doi]: https://zenodo.org/badge/latestdoi/63765629
 
 [transcrypt]: https://github.com/elasticdog/transcrypt
