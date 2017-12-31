@@ -21,6 +21,7 @@ setReadOnly( ns, 'before', function before( t ) {
 		var i;
 		for ( i in mongoose.connection.collections ) {
 			mongoose.connection.collections[ i ].remove( noop );
+			t.pass( 'removed collection' );
 		}
 		return t.end();
 	}
@@ -30,6 +31,7 @@ setReadOnly( ns, 'before', function before( t ) {
 			if ( err ) {
 				throw err;
 			}
+			t.pass( 'connected to database' );
 			return clearDB();
 		});
 	} else {
@@ -39,6 +41,7 @@ setReadOnly( ns, 'before', function before( t ) {
 
 setReadOnly( ns, 'after', function after( t ) {
 	mongoose.disconnect();
+	t.pass( 'disconnected from database' );
 	return t.end();
 });
 
