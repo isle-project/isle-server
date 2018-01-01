@@ -133,7 +133,7 @@ tape( 'fails creating a session when no user or lesson is given', function test(
 	Session.create({
 		'startTime': new Date().getTime()
 	}, function onCreate( err ) {
-		var expected = 'Session validation failed: lesson: Path `lesson` is required., user: Path `user` is required.';
+		var expected = 'Session validation failed: lesson: Path `lesson` is required.';
 		if ( err ) {
 			t.pass( 'encountered an error' );
 			t.strictEqual( err.message, expected, 'returns expected error message' );

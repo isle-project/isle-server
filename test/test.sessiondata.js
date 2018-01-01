@@ -92,6 +92,60 @@ tape( 'successfully creates a session data object for a given lesson and user', 
 	}), createLesson, createSessionData ], done );
 });
 
+tape( 'successfully creates a session data object for a given lesson and an anonymous user', function test( t ) {
+	function createLesson( obj, next ) {
+		var o = {
+			'title': 'My first lesson',
+			'namespace': obj.namespace
+		};
+		Lesson.create( o, function onCreate( err, lesson ) {
+			if ( err ) {
+				return next( err );
+			}
+			next( null, lesson );
+		});
+	}
+	function createSessionData( lesson, next ) {
+		var data = {
+			'name' : 'anonymous',
+			'email' : 'anonymous',
+			'time' : 25509,
+			'absoluteTime' : 1499033385712,
+			'value' : '2',
+			'type' : 'RSHELL_EVALUATION',
+			'id' : 'Question 1'
+		};
+		SessionData.create({
+			'type': 'action',
+			'data': data,
+			'lesson': lesson
+		}, function onCreate( err, sessionData ) {
+			if ( err ) {
+				return next( err );
+			}
+			t.strictEqual( sessionData.type, 'action', 'has expected type' );
+			t.deepEqual( sessionData.data, data, 'has expected data' );
+			t.strictEqual( sessionData.lesson, lesson, 'has expected lesson' );
+			next( null );
+		});
+	}
+	function done( error ) {
+		if ( error ) {
+			t.fail( 'should not return an error' );
+		} else {
+			t.pass( 'executed without errors' );
+		}
+		t.end();
+	}
+	waterfall( [ papply( utils.createUser, {
+		'email': 'zorro.super@gmail.com',
+		'password': 'hans'
+	}), papply( createNamespace, {
+		'title': 'Lesson_Namespace_Anonymous',
+		'description': 'A namespace with a lesson for an anonymous user'
+	}), createLesson, createSessionData ], done );
+});
+
 tape( 'fails creating a session for a given lesson and user when no data or type is given', function test( t ) {
 	function createLesson( obj, next ) {
 		var o = {
