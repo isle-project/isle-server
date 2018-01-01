@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "start": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ node lib/index.js",
+    "lint": "eslint lib test *.js",
     "test": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ tape \"./test/*.js\"",
     "test-cov": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\"",
     "coverage": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ istanbul cover --dir ./reports/codecov/coverage --report lcovonly tape -- \"./test/*.js\" && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
@@ -51,9 +52,10 @@
   "devDependencies": {
     "chai": "4.x.x",
     "codecov.io": "^0.1.5",
+    "eslint": "^4.14.0",
     "istanbul": "^0.4.1",
-    "jshint": "2.x.x",
-    "jshint-stylish": "2.x.x",
+    "proxyquire": "^1.8.0",
+    "supertest": "^3.0.0",
     "tap-spec": "4.x.x",
     "tape": "4.x.x"
   },
