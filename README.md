@@ -5,6 +5,11 @@
 [![Dependencies][dependencies-image]][dependencies-url] [![DevDependencies][dev-dependencies-image]][dev-dependencies-url]
 [![DOI](https://zenodo.org/badge/63765629.svg)][doi]
 
+#### Build
+
+[![Build Status](https://travis-ci.org/Planeshifter/isle-server.svg?branch=master)](https://travis-ci.org/Planeshifter/isle-server)
+[![Coverage](https://img.shields.io/codecov/c/github/Planeshifter/isle-server/master.svg)](https://img.shields.io/codecov/c/github/Planeshifter/isle-server/master.svg)
+
 ## Introduction
 
 Server program for *interactive statistics learning environment* (ISLE) lessons.
