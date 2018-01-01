@@ -15,7 +15,10 @@ var app = proxyquire( './../lib/index.js', {
 		},
 		'@noCallThru': true
 	},
-	'./connect_mongoose.js': noop
+	'./connect_mongoose.js': noop,
+	'./mailer.js': {
+		'send': noop
+	}
 });
 
 
