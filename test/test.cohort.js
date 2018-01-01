@@ -8,8 +8,8 @@ var isDateObject = require( '@stdlib/assert/is-date-object' );
 var isEmptyArray = require( '@stdlib/assert/is-empty-array' );
 var abs = require( '@stdlib/math/base/special/abs' );
 var waterfall = require( '@stdlib/utils/series-waterfall' );
+var papply = require( '@stdlib/utils/papply' );
 var utils = require( './utils.js' );
-var User = require( './../lib/user.js' );
 var Cohort = require( './../lib/cohort.js' );
 
 
@@ -74,26 +74,6 @@ tape( 'one can create a cohort with a given start and end date', function test( 
 });
 
 tape( 'one can create a cohort with an array of members', function test( t ) {
-	function createUsers( next ) {
-		var u = [
-			{
-				'email': 'lotti.anton.super@gmail.com',
-				'password': 'hans'
-			},
-			{
-				'email': 'hans.anton.super@gmail.com',
-				'password': 'lotti'
-			}
-		];
-		User.create( u, function onCreate( err, users ) {
-			if ( err ) {
-				next( err );
-			} else {
-				next( null, users );
-			}
-		});
-	}
-
 	function createCohort( members, next ) {
 		var o = {
 			'title': 'members_only',
@@ -117,7 +97,16 @@ tape( 'one can create a cohort with an array of members', function test( t ) {
 		}
 		t.end();
 	}
-	waterfall( [ createUsers, createCohort ], done );
+	waterfall( [ papply( utils.createUser, [
+		{
+			'email': 'lotti.anton.super@gmail.com',
+			'password': 'hans'
+		},
+		{
+			'email': 'hans.anton.super@gmail.com',
+			'password': 'lotti'
+		}
+	] ), createCohort ], done );
 });
 
 tape( 'inserting a cohort fails if members is not an array of User objects', function test( t ) {

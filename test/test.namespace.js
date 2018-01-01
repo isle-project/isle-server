@@ -5,6 +5,7 @@
 var tape = require( 'tape' );
 var isArray = require( '@stdlib/assert/is-array' );
 var waterfall = require( '@stdlib/utils/series-waterfall' );
+var papply = require( '@stdlib/utils/papply' );
 var utils = require( './utils.js' );
 var User = require( './../lib/user.js' );
 var Namespace = require( './../lib/namespace.js' );
@@ -15,22 +16,6 @@ var Namespace = require( './../lib/namespace.js' );
 tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'successfully creates a namespace with an owner and a title', function test( t ) {
-	function createUser( next ) {
-		var u = [
-			{
-				'email': 'lotti.anton.super@gmail.com',
-				'password': 'hans'
-			}
-		];
-		User.create( u, function onCreate( err, users ) {
-			if ( err ) {
-				next( err );
-			} else {
-				next( null, users );
-			}
-		});
-	}
-
 	function createNamespace( owners, next ) {
 		var o = {
 			'title': 'First_Namespace',
@@ -56,7 +41,12 @@ tape( 'successfully creates a namespace with an owner and a title', function tes
 		}
 		t.end();
 	}
-	waterfall( [ createUser, createNamespace ], done );
+	waterfall( [ papply( utils.createUser, [
+		{
+			'email': 'lotti.anton.super@gmail.com',
+			'password': 'hans'
+		}
+	]), createNamespace ], done );
 });
 
 tape( 'fails creating a namespace with an already used title', function test( t ) {

@@ -5,6 +5,7 @@
 var mongoose = require( 'mongoose' );
 var setReadOnly = require( '@stdlib/utils/define-read-only-property' );
 var noop = require( '@stdlib/utils/noop' );
+var User = require( './../lib/user.js' );
 
 
 // VARIABLES //
@@ -42,7 +43,17 @@ setReadOnly( ns, 'before', function before( t ) {
 setReadOnly( ns, 'after', function after( t ) {
 	mongoose.disconnect();
 	t.pass( 'disconnected from database' );
-	return t.end();
+	setTimeout( () => { t.end(); }, 1000 );
+});
+
+setReadOnly( ns, 'createUser', function createUser( obj, next ) {
+	User.create( obj, function onCreate( err, users ) {
+		if ( err ) {
+			next( err );
+		} else {
+			next( null, users );
+		}
+	});
 });
 
 
