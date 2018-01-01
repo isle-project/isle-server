@@ -16,6 +16,9 @@ var dbURI = 'mongodb://localhost/isle-test-clearing-db';
 
 // MAIN //
 
+// Set Promise library for mongoose:
+mongoose.Promise = global.Promise;
+
 var ns = {};
 
 setReadOnly( ns, 'before', function before( t ) {

@@ -2,5 +2,6 @@
 	"namespacesDirectory": "./../public",
 	"server": "https://isle.heinz.cmu.edu",
 	"certificate": "/srv/ssl/isle_heinz_cmu_edu_cert.cer",
-	"key": "/srv/ssl/isle.heinz.cmu.edu.key"
+	"key": "/srv/ssl/isle.heinz.cmu.edu.key",
+	"mongodb": "mongodb://localhost/isle-db"
 }

@@ -5,6 +5,8 @@
 var tape = require( 'tape' );
 var request = require( 'supertest' );
 var proxyquire = require( 'proxyquire' );
+var noop = require( '@stdlib/utils/noop' );
+var utils = require( './utils.js' );
 var app = proxyquire( './../lib/index.js', {
 	'./config.json': {
 		method: {
@@ -12,11 +14,14 @@ var app = proxyquire( './../lib/index.js', {
 			'server': 'http://localhost'
 		},
 		'@noCallThru': true
-	}
+	},
+	'./connect_mongoose.js': noop
 });
 
 
 // TESTS //
+
+tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'GET /', function test( t ) {
 	request( app )
@@ -38,3 +43,5 @@ tape( 'GET /ping', function test( t ) {
 			t.end();
 		});
 });
+
+tape( 'perform clean-up', utils.after );
