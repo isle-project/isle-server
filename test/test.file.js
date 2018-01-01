@@ -3,7 +3,6 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var isArray = require( '@stdlib/assert/is-array' );
 var waterfall = require( '@stdlib/utils/series-waterfall' );
 var papply = require( '@stdlib/utils/papply' );
 var utils = require( './utils.js' );
@@ -167,7 +166,7 @@ tape( 'fails creating a file for a given lesson and user when no title is given'
 tape( 'fails creating a file when no user or lesson is given', function test( t ) {
 	File.create({
 		'title': 'Name of the file',
-		'path': 'File path',
+		'path': 'File path'
 	}, function onCreate( err, file ) {
 		var expected = 'File validation failed: user: Path `user` is required., lesson: Path `lesson` is required.';
 		if ( err ) {

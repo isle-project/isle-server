@@ -25,7 +25,7 @@ tape( 'the model can create a new user', function test( t ) {
 		t.strictEqual( createdUser.name, 'Oliver Cromwell', 'has correct name' );
 		t.strictEqual( createdUser.organization, 'England', 'has correct organization' );
 		t.notEqual( createdUser.password, 'charles', 'does not save password in clear-text' );
-		createdUser.comparePassword( 'charles', function( err, isMatch ) {
+		createdUser.comparePassword( 'charles', function cmp( err, isMatch ) {
 			t.strictEqual( err instanceof Error, false, 'does not return an error' );
 			t.ok( isMatch, 'saved password represents the unhashed one' );
 			t.end();
@@ -56,7 +56,7 @@ tape( 'updating a user does not change the hashed password', function test( t ) 
 	User.findOneAndUpdate( o, { '$set': { 'organization': 'United Kingdom' } }, { 'new': true }, function onCreate( err, createdUser ) {
 		t.strictEqual( createdUser.organization, 'United Kingdom', 'has updated the organization' );
 		t.notEqual( createdUser.password, 'charles', 'does not save password in clear-text' );
-		createdUser.comparePassword( 'charles', function( err, isMatch ) {
+		createdUser.comparePassword( 'charles', function cmp( err, isMatch ) {
 			t.strictEqual( err instanceof Error, false, 'does not return an error' );
 			t.ok( isMatch, 'saved password represents the unhashed one' );
 			t.end();
