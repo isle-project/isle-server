@@ -133,7 +133,22 @@ tape( 'fails creating a namespace without a title', function test( t ) {
 tape( 'fails creating a namespace without owners', function test( t ) {
 	var o = {
 		'title': 'ownerless namespace',
-		'description': 'Namespace without an owner'
+		'description': 'Namespace without an owner',
+		'owners': null
+	};
+	Namespace.create( o, function onCreate( err ) {
+		var expected = 'Namespace validation failed: owners: Namespaces need at least one owner';
+		t.strictEqual( err instanceof Error, true, 'returns an error' );
+		t.strictEqual( err.message, expected, 'has expected message' );
+		t.end();
+	});
+});
+
+tape( 'fails creating a namespace with an empty owners array', function test( t ) {
+	var o = {
+		'title': 'ownerless namespace',
+		'description': 'Namespace without an owner',
+		'owners': []
 	};
 	Namespace.create( o, function onCreate( err ) {
 		var expected = 'Namespace validation failed: owners: Namespaces need at least one owner';
