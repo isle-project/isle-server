@@ -54,10 +54,9 @@ setReadOnly( ns, 'after', function after( t ) {
 setReadOnly( ns, 'createUser', function createUser( obj, next ) {
 	User.create( obj, function onCreate( err, users ) {
 		if ( err ) {
-			next( err );
-		} else {
-			next( null, users );
+			return next( err );
 		}
+		next( null, users );
 	});
 });
 

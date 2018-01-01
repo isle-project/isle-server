@@ -59,10 +59,9 @@ tape( 'fails creating a namespace with an already used title', function test( t 
 		];
 		User.create( u, function onCreate( err, users ) {
 			if ( err ) {
-				next( err );
-			} else {
-				next( null, users );
+				return next( err );
 			}
+			next( null, users );
 		});
 	}
 
@@ -99,10 +98,9 @@ tape( 'fails creating a namespace without a title', function test( t ) {
 		];
 		User.create( u, function onCreate( err, users ) {
 			if ( err ) {
-				next( err );
-			} else {
-				next( null, users );
+				return next( err );
 			}
+			next( null, users );
 		});
 	}
 

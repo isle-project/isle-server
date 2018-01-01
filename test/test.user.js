@@ -53,7 +53,7 @@ tape( 'updating a user does not change the hashed password', function test( t ) 
 	var o = {
 		'email': 'cromwell.oliver@isledocs.com'
 	};
-	User.findOneAndUpdate( o, { '$set': { 'organization': 'United Kingdom' } }, { 'new': true }, function onCreate( err, createdUser ) {
+	User.findOneAndUpdate( o, { '$set': { 'organization': 'United Kingdom' }}, { 'new': true }, function onCreate( err, createdUser ) {
 		t.strictEqual( createdUser.organization, 'United Kingdom', 'has updated the organization' );
 		t.notEqual( createdUser.password, 'charles', 'does not save password in clear-text' );
 		createdUser.comparePassword( 'charles', function cmp( err, isMatch ) {
