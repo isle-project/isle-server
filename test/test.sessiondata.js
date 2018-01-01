@@ -49,13 +49,13 @@ tape( 'successfully creates a session data object for a given lesson and user', 
 	}
 	function createSessionData( obj, next ) {
 		var data = {
-			'name' : '',
-			'email' : 'lotti.anton.super@gmail.com',
-			'time' : 25509,
-			'absoluteTime' : 1499033385712,
-			'value' : '2',
-			'type' : 'RSHELL_EVALUATION',
-			'id' : 'Question 1'
+			'name': '',
+			'email': 'lotti.anton.super@gmail.com',
+			'time': 25509,
+			'absoluteTime': 1499033385712,
+			'value': '2',
+			'type': 'RSHELL_EVALUATION',
+			'id': 'Question 1'
 		};
 		SessionData.create({
 			'type': 'action',
@@ -105,13 +105,13 @@ tape( 'successfully creates a session data object for a given lesson and an anon
 	}
 	function createSessionData( lesson, next ) {
 		var data = {
-			'name' : 'anonymous',
-			'email' : 'anonymous',
-			'time' : 25509,
-			'absoluteTime' : 1499033385712,
-			'value' : '2',
-			'type' : 'RSHELL_EVALUATION',
-			'id' : 'Question 1'
+			'name': 'anonymous',
+			'email': 'anonymous',
+			'time': 25509,
+			'absoluteTime': 1499033385712,
+			'value': '2',
+			'type': 'RSHELL_EVALUATION',
+			'id': 'Question 1'
 		};
 		SessionData.create({
 			'type': 'action',
@@ -186,13 +186,13 @@ tape( 'fails creating a session for a given lesson and user when no data or type
 
 tape( 'fails creating a session data object when no lesson is given', function test( t ) {
 	var data = {
-		'name' : 'anonymous',
-		'email' : 'anonymous',
-		'time' : 25509,
-		'absoluteTime' : 1499033385712,
-		'value' : '2',
-		'type' : 'RSHELL_EVALUATION',
-		'id' : 'Question 1'
+		'name': 'anonymous',
+		'email': 'anonymous',
+		'time': 25509,
+		'absoluteTime': 1499033385712,
+		'value': '2',
+		'type': 'RSHELL_EVALUATION',
+		'id': 'Question 1'
 	};
 	SessionData.create({
 		'type': 'action',
