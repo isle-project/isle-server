@@ -19,7 +19,8 @@ var app = proxyquire( './../lib/index.js', {
 		'@noCallThru': true
 	},
 	'./../credentials/tokens.json': {
-		'writeAccess': 'no_restrictions'
+		'writeAccess': 'no_restrictions',
+		'@noCallThru': true
 	}
 });
 
