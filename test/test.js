@@ -9,15 +9,14 @@ var noop = require( '@stdlib/utils/noop' );
 var utils = require( './utils.js' );
 var app = proxyquire( './../lib/index.js', {
 	'./config.json': {
-		method: {
-			'namespacesDirectory': './fixtures',
-			'server': 'http://localhost'
-		},
+		'namespacesDirectory': './fixtures',
+		'server': 'http://localhost',
 		'@noCallThru': true
 	},
 	'./connect_mongoose.js': noop,
 	'./mailer.js': {
-		'send': noop
+		'send': noop,
+		'@noCallThru': true
 	}
 });
 
