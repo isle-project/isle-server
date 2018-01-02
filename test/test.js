@@ -17,6 +17,9 @@ var app = proxyquire( './../lib/index.js', {
 	'./mailer.js': {
 		'send': noop,
 		'@noCallThru': true
+	},
+	'./../credentials/tokens.json': {
+		'writeAccess': 'no_restrictions'
 	}
 });
 
