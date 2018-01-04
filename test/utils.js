@@ -39,7 +39,9 @@ setReadOnly( ns, 'before', function before( t ) {
 			counter += 1;
 			t.pass( 'removed collection' );
 			if ( counter === len-1 ) {
-				t.end();
+				setTimeout( function onTimeout() {
+					t.end();
+				}, 4000 );
 			}
 		}
 	}
