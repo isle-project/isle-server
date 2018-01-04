@@ -24,37 +24,35 @@ mongoose.Promise = global.Promise;
 
 var ns = {};
 
-setReadOnly( ns, 'before', function before( t ) {
-	function clearDB() {
-		var collection;
-		var counter = 0;
-		var keys = Object.keys( mongoose.connection.collections );
-		var len = keys.length;
-		var i;
-		for ( i = 0; i < len; i++ ) {
-			collection = mongoose.connection.collections[ keys[ i ] ];
-			collection.remove( onDone );
-		}
-		function onDone() {
-			counter += 1;
-			t.pass( 'removed collection' );
-			if ( counter === len-1 ) {
-				setTimeout( function onTimeout() {
-					t.end();
-				}, 2500 );
-			}
+function clearDB( clbk ) {
+	var collection;
+	var counter = 0;
+	var keys = Object.keys( mongoose.connection.collections );
+	var len = keys.length;
+	var i;
+	for ( i = 0; i < len; i++ ) {
+		collection = mongoose.connection.collections[ keys[ i ] ];
+		collection.remove( onDone );
+	}
+	function onDone() {
+		counter += 1;
+		if ( counter === len-1 ) {
+			clbk();
 		}
 	}
+}
+
+setReadOnly( ns, 'before', function before( t ) {
 	if ( mongoose.connection.readyState === 0 ) {
 		mongoose.connect( dbURI, function onConnect( err ) {
 			if ( err ) {
 				throw err;
 			}
 			t.pass( 'connected to database' );
-			return clearDB();
+			return clearDB( t.end );
 		});
 	} else {
-		return clearDB();
+		return clearDB( t.end );
 	}
 });
 
@@ -164,9 +162,11 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 });
 
 setReadOnly( ns, 'after', function after( t ) {
-	mongoose.disconnect( function onDisconnect() {
-		t.pass( 'disconnected from database' );
-		t.end();
+	clearDB( function onClear() {
+		mongoose.disconnect( function onDisconnect() {
+			t.pass( 'disconnected from database' );
+			t.end();
+		});
 	});
 });
 

@@ -9,7 +9,7 @@ var isValidObjectId = require( 'mongoose' ).Types.ObjectId.isValid;
 var isObject = require( '@stdlib/assert/is-object' );
 var isString = require( '@stdlib/assert/is-string' );
 var isArray = require( '@stdlib/assert/is-array' );
-var isNull = require( '@stdlib/assert/is-null' );
+var contains = require( '@stdlib/assert/contains' );
 var noop = require( '@stdlib/utils/noop' );
 var copy = require( '@stdlib/utils/copy' );
 var User = require( './../lib/user.js' );
@@ -89,7 +89,7 @@ tape( 'POST /create_user - duplicate email address', function test( t ) {
 	.expect( 403 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, 'Operation was not successful. The user already exists.', 'returns expected message' );
+		t.ok( contains( res.text, 'User validation failed' ), 'returns expected message' );
 		t.end();
 	});
 });
@@ -343,7 +343,7 @@ tape( 'POST /update_user_password (invalid `newPassword`)', function test( t ) {
 });
 
 tape( 'POST /update_user_password', function test( t ) {
-	User.findOne( function onUser( err, user ) {
+	User.findOne( { email: 'zorro707@gmail.com' }, function onUser( err, user ) {
 		request( app )
 		.post( '/update_user_password' )
 		.send({ id: user._id, newPassword: 'zorro123' })

@@ -40,7 +40,7 @@ tape( 'creating a user fails when email is already taken', function test( t ) {
 	};
 	User.create( o, function onCreate( err ) {
 		if ( err ) {
-			t.ok( contains( err.message, 'duplicate key error' ), 'returns expected error message' );
+			t.ok( contains( err.message, 'User validation failed' ), 'returns expected error message' );
 			t.pass( 'encountered an error' );
 		} else {
 			t.pass( 'expected an error' );
