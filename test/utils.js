@@ -26,16 +26,23 @@ var ns = {};
 
 setReadOnly( ns, 'before', function before( t ) {
 	function clearDB() {
+		var collection;
+		var counter = 0;
+		var keys = Object.keys( mongoose.connection.collections );
+		var len = keys.length;
 		var i;
-		for ( i in mongoose.connection.collections ) {
-			if ( hasOwnProp( mongoose.connection.collections, i ) ) {
-				mongoose.connection.collections[ i ].remove( noop );
-				t.pass( 'removed collection' );
+		for ( i = 0; i < len; i++ ) {
+			collection = mongoose.connection.collections[ keys[ i ] ];
+			collection.remove( onDone );
+		}
+		function onDone() {
+			counter += 1;
+			t.pass( 'removed collection' );
+			if ( counter === len-1 ) {
+				t.end();
 			}
 		}
-		return t.end();
 	}
-
 	if ( mongoose.connection.readyState === 0 ) {
 		mongoose.connect( dbURI, function onConnect( err ) {
 			if ( err ) {
@@ -149,19 +156,16 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 		} else {
 			t.pass( 'executed without errors' );
 		}
-		setTimeout( function onTimeout() {
-			t.end();
-		}, 1000 );
+		t.end();
 	}
 	waterfall([ createUsers, createNamespaces, createLessons ], done );
 });
 
 setReadOnly( ns, 'after', function after( t ) {
-	mongoose.disconnect();
-	t.pass( 'disconnected from database' );
-	setTimeout( function onTimeout() {
+	mongoose.disconnect( function onDisconnect() {
+		t.pass( 'disconnected from database' );
 		t.end();
-	}, 1000 );
+	});
 });
 
 setReadOnly( ns, 'createUser', function createUser( obj, next ) {

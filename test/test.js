@@ -15,6 +15,7 @@ var copy = require( '@stdlib/utils/copy' );
 var User = require( './../lib/user.js' );
 var utils = require( './utils.js' );
 
+var WRITE_ACCESS_TOKEN = 'no_restrictions';
 var requires = {
 	'./config.json': {
 		'namespacesDirectory': './fixtures',
@@ -29,7 +30,7 @@ var requires = {
 		'@noCallThru': true
 	},
 	'./../credentials/tokens.json': {
-		'writeAccess': 'no_restrictions',
+		'writeAccess': WRITE_ACCESS_TOKEN,
 		'@noCallThru': true
 	}
 };
@@ -487,6 +488,36 @@ tape( 'POST /credentials', function test( t ) {
 	});
 });
 
+tape( 'GET /set_write_access (wrong token)', function test( t ) {
+	request( app )
+	.get( '/set_write_access' )
+	.set( 'Authorization', 'JWT '+USER_TOKEN )
+	.query({
+		token: 'wrong_token'
+	})
+	.expect( 401 )
+	.end( function onEnd( err, res ) {
+		t.error( err, 'does not return an error' );
+		t.strictEqual( res.text, 'Incorrect write-access token.', 'returns expected message' );
+		t.end();
+	});
+});
+
+tape( 'GET /set_write_access', function test( t ) {
+	request( app )
+	.get( '/set_write_access' )
+	.set( 'Authorization', 'JWT '+USER_TOKEN )
+	.query({
+		token: WRITE_ACCESS_TOKEN
+	})
+	.expect( 200 )
+	.end( function onEnd( err, res ) {
+		t.error( err, 'does not return an error' );
+		t.strictEqual( res.body.message, 'User successfully updated.', 'returns expected message.' );
+		t.end();
+	});
+});
+
 /*
 
 tape( 'POST /store_session_element', function test( t ) {
@@ -498,10 +529,6 @@ tape( 'POST /retrieve_data', function test( t ) {
 });
 
 tape( 'POST /get_user_rights', function test( t ) {
-
-});
-
-tape( 'GET /set_write_access', function test( t ) {
 
 });
 
