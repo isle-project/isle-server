@@ -50,6 +50,10 @@ tape( 'successfully creates a namespace with an owner and a title', function tes
 });
 
 tape( 'fails creating a namespace with an already used title', function test( t ) {
+	var o = {
+		'title': 'Duplicate_Namespace',
+		'description': 'Namespace with already taken title'
+	};
 	function createUser( next ) {
 		var u = [
 			{
@@ -65,12 +69,14 @@ tape( 'fails creating a namespace with an already used title', function test( t 
 		});
 	}
 
-	function createNamespace( owners, next ) {
-		var o = {
-			'title': 'First_Namespace',
-			'owners': owners,
-			'description': 'Namespace with already taken title'
-		};
+	function createFirstNamespace( owners, next ) {
+		o.owners = owners;
+		Namespace.create( o, function onCreate() {
+			next();
+		});
+	}
+
+	function createSecondNamespace( next ) {
 		Namespace.create( o, function onCreate( err ) {
 			t.strictEqual( err instanceof Error, true, 'returns an error' );
 			next( err );
@@ -85,7 +91,7 @@ tape( 'fails creating a namespace with an already used title', function test( t 
 		}
 		t.end();
 	}
-	waterfall( [ createUser, createNamespace ], done );
+	waterfall( [ createUser, createFirstNamespace, createSecondNamespace ], done );
 });
 
 tape( 'fails creating a namespace without a title', function test( t ) {
