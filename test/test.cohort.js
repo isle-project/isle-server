@@ -10,12 +10,15 @@ var abs = require( '@stdlib/math/base/special/abs' );
 var waterfall = require( '@stdlib/utils/series-waterfall' );
 var papply = require( '@stdlib/utils/papply' );
 var utils = require( './utils.js' );
+var Namespace = require( './../lib/namespace.js' );
 var Cohort = require( './../lib/cohort.js' );
 
 
 // TESTS //
 
 tape( 'connect to a clean mongoDB database', utils.before );
+
+tape( 'populate the database', utils.populateDatabase );
 
 tape( 'the model can create a new cohort', function test( t ) {
 	var o = {
@@ -37,18 +40,6 @@ tape( 'inserting a cohort fails if no title is supplied', function test( t ) {
 	var o = {};
 	Cohort.create( o, function onCreate( err, createdCohort ) {
 		var expected = 'Cohort validation failed: title: Path `title` is required.';
-		t.strictEqual( err instanceof Error, true, 'returns an error' );
-		t.strictEqual( err.message, expected, 'has expected message' );
-		t.end();
-	});
-});
-
-tape( 'inserting a cohort fails if the title is already used', function test( t ) {
-	var o = {
-		'title': 'beep'
-	};
-	Cohort.create( o, function onCreate( err, createdCohort ) {
-		var expected = 'Cohort with the given title already exists: beep';
 		t.strictEqual( err instanceof Error, true, 'returns an error' );
 		t.strictEqual( err.message, expected, 'has expected message' );
 		t.end();
@@ -120,6 +111,38 @@ tape( 'inserting a cohort fails if members is not an array of User objects', fun
 		t.strictEqual( err.message, expected, 'has expected message' );
 		t.end();
 	});
+});
+
+tape( 'one can specify the namespace of the cohort', function test( t ) {
+	var o;
+	Namespace.findOne( function onNamespace( err, ns ) {
+		o = {
+			'title': 'beepboop',
+			'namespace': ns
+		};
+		Cohort.create( o, onCreate );
+	});
+	function onCreate( err, cohort ) {
+		t.strictEqual( err instanceof Error, false, 'does not return an error' );
+		t.strictEqual( cohort.title, 'beepboop', 'has correct title' );
+		t.end();
+	}
+});
+
+tape( 'inserting a cohort fails if the title is already used for a certain namespace', function test( t ) {
+	var o;
+	Namespace.findOne( function onNamespace( err, ns ) {
+		o = {
+			'title': 'beepboop',
+			'namespace': ns
+		};
+		Cohort.create( o, onCreate );
+	});
+	function onCreate( err, cohort ) {
+		t.strictEqual( err instanceof Error, true, 'returns an error' );
+		t.strictEqual( err.message, 'Cohort validation failed: title: Cohort with the given title already exists', 'has expected message' );
+		t.end();
+	}
 });
 
 tape( 'perform clean-up', utils.after );
