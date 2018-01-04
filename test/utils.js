@@ -41,7 +41,7 @@ setReadOnly( ns, 'before', function before( t ) {
 			if ( counter === len-1 ) {
 				setTimeout( function onTimeout() {
 					t.end();
-				}, 4000 );
+				}, 2500 );
 			}
 		}
 	}
