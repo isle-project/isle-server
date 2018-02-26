@@ -4,6 +4,7 @@
 
 var tape = require( 'tape' );
 var contains = require( '@stdlib/assert/contains' );
+var isString = require( '@stdlib/assert/is-string' );
 var utils = require( './utils.js' );
 var User = require( './../lib/user.js' );
 
@@ -30,6 +31,21 @@ tape( 'the model can create a new user', function test( t ) {
 			t.ok( isMatch, 'saved password represents the unhashed one' );
 			t.end();
 		});
+	});
+});
+
+tape( 'the model saves a randomly generated email and name for each user', function test( t ) {
+	var o = {
+		'name': 'Winston Churchill',
+		'organization': 'England',
+		'email': 'winston.churchill@isledocs.com',
+		'password': 'winston'
+	};
+	User.create( o, function onCreate( err, createdUser ) {
+		t.strictEqual( err instanceof Error, false, 'does not return an error' );
+		t.strictEqual( isString( createdUser.email ), true, 'has anonymous email' );
+		t.strictEqual( isString( createdUser.name ), true, 'has anonymous name' );
+		t.end();
 	});
 });
 
