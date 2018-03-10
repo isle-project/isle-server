@@ -47,7 +47,7 @@
     "ncp": "^2.0.0",
     "nodemailer": "4.6.2",
     "passport": "^0.4.0",
-    "passport-jwt": "2.2.1",
+    "passport-jwt": "3.0.1",
     "socket.io": "^2.0.3",
     "swot-js": "^1.0.3"
   },
