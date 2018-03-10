@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang=en>
+	<head>
+		<meta charset=utf-8>
+		<title></title>
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div style="line-height:120%;color:#bacbb1;font-family:'Source Sans Pro', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+		<p style="margin: 0;line-height: 14px;text-align: center;font-size: 24px">ISLE Messenger</p>
+		</div>
+		<p style="columns: #555555;font-family:'Source Sans Pro', Tahoma, Verdana, Segoe, sans-serif; padding-right: 0px; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; margin: 0;font-size: 22px; line-height: 26px;text-align: center;">
+			{{text}}
+		</p>
+	</body>
+</html>
