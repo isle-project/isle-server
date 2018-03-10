@@ -9,6 +9,7 @@ var isValidObjectId = require( 'mongoose' ).Types.ObjectId.isValid;
 var isObject = require( '@stdlib/assert/is-object' );
 var isString = require( '@stdlib/assert/is-string' );
 var isArray = require( '@stdlib/assert/is-array' );
+var isNull= require( '@stdlib/assert/is-null' );
 var contains = require( '@stdlib/assert/contains' );
 var noop = require( '@stdlib/utils/noop' );
 var copy = require( '@stdlib/utils/copy' );
@@ -231,10 +232,12 @@ tape( 'GET /get_lesson (unknown lesson)', function test( t ) {
 	request( app )
 	.get( '/get_lesson' )
 	.query({ lessonName: 'Why have you forsaken me?', namespaceName: 'Frankenstein meets the Wolf Man' })
-	.expect( 404 )
+	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, 'Lesson query failed.', 'returns message' );
+		var obj = JSON.parse( res.text );
+		t.strictEqual( obj.message, 'ok', 'returns message' );
+		t.strictEqual( isNull( obj.lesson ), true, 'lesson does not exist' );
 		t.end();
 	});
 });
