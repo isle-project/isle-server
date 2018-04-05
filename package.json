@@ -55,7 +55,7 @@
     "chai": "4.x.x",
     "codecov.io": "^0.1.5",
     "eslint": "^4.19.1",
-    "istanbul": "^0.4.1",
+    "istanbul": "^1.1.0-alpha.1",
     "proxyquire": "^2.0.1",
     "supertest": "^3.0.0",
     "tap-spec": "4.x.x",
