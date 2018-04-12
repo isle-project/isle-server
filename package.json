@@ -29,10 +29,10 @@
     "url": "https://github.com/Planeshifter/isle-server/issues"
   },
   "dependencies": {
-    "@stdlib/stdlib": "0.0.33",
+    "@stdlib/stdlib": "0.0.34",
     "adm-zip": "^0.4.7",
     "async": "^2.2.0",
-    "bcrypt": "^1.0.2",
+    "bcrypt": "2.x.x",
     "body-parser": "^1.17.1",
     "cors": "^2.8.1",
     "cross-env": "^5.1.4",
