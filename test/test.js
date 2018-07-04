@@ -335,7 +335,7 @@ tape( 'POST /update_user_password (invalid `newPassword`)', function test( t ) {
 	User.findOne( function onUser( err, user ) {
 		request( app )
 		.post( '/update_user_password' )
-		.send({ id: user._id, newPassword: [] })
+		.send({ id: user._id, newPassword: []})
 		.expect( 400 )
 		.end( function onEnd( err, res ) {
 			t.error( err, 'does not return an error' );

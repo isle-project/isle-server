@@ -4,9 +4,7 @@
 
 var mongoose = require( 'mongoose' );
 var setReadOnly = require( '@stdlib/utils/define-read-only-property' );
-var hasOwnProp = require( '@stdlib/assert/has-own-property' );
 var waterfall = require( '@stdlib/utils/series-waterfall' );
-var noop = require( '@stdlib/utils/noop' );
 var Namespace = require( './../lib/namespace.js' );
 var Lesson = require( './../lib/lesson.js' );
 var User = require( './../lib/user.js' );
@@ -37,7 +35,7 @@ function clearDB( clbk ) {
 	function onDone() {
 		counter += 1;
 		if ( counter === len-1 ) {
-			clbk();
+			return clbk();
 		}
 	}
 }
