@@ -13,6 +13,7 @@
     }
   ],
   "scripts": {
+    "clean": "rm -rf ./node_modules",
     "start": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ node lib/index.js",
     "lint": "eslint lib/**/*.js test/**/*.js",
     "test": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ tape \"./test/*.js\"",
@@ -34,6 +35,7 @@
     "async": "^2.6.1",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
+    "codecov": "^3.0.4",
     "cors": "^2.8.1",
     "cross-env": "^5.1.6",
     "debug": "^3.1.0",
@@ -53,7 +55,6 @@
   },
   "devDependencies": {
     "chai": "4.x.x",
-    "codecov.io": "^0.1.5",
     "eslint": "^5.0.1",
     "istanbul": "^1.1.0-alpha.1",
     "proxyquire": "^2.0.1",
