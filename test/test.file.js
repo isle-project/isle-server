@@ -43,7 +43,8 @@ tape( 'successfully creates a file for a given lesson and user', function test( 
 			}
 			next( null, {
 				'user': obj.user,
-				'lesson': lesson
+				'lesson': lesson,
+				'namespace': obj.namespace
 			});
 		});
 	}
@@ -53,7 +54,8 @@ tape( 'successfully creates a file for a given lesson and user', function test( 
 			'path': 'File path',
 			'filename': 'File name',
 			'user': obj.user,
-			'lesson': obj.lesson
+			'lesson': obj.lesson,
+			'namespace': obj.namespace
 		}, function onCreate( err, file ) {
 			if ( err ) {
 				return next( err );
@@ -95,7 +97,8 @@ tape( 'fails creating a file for a given lesson and user when no path is given',
 			}
 			next( null, {
 				'user': obj.user,
-				'lesson': lesson
+				'lesson': lesson,
+				'namespace': obj.namespace
 			});
 		});
 	}
@@ -104,7 +107,8 @@ tape( 'fails creating a file for a given lesson and user when no path is given',
 			'title': 'Title of the file',
 			'user': obj.user,
 			'filename': 'File name',
-			'lesson': obj.lesson
+			'lesson': obj.lesson,
+			'namespace': obj.namespace
 		}, next );
 	}
 	function done( error ) {
@@ -137,7 +141,8 @@ tape( 'fails creating a file for a given lesson and user when no title is given'
 			}
 			next( null, {
 				'user': obj.user,
-				'lesson': lesson
+				'lesson': lesson,
+				'namespace': obj.namespace
 			});
 		});
 	}
@@ -146,7 +151,8 @@ tape( 'fails creating a file for a given lesson and user when no title is given'
 			'path': 'File path',
 			'user': obj.user,
 			'filename': 'File name',
-			'lesson': obj.lesson
+			'lesson': obj.lesson,
+			'namespace': obj.namespace
 		}, next );
 	}
 	function done( error ) {
@@ -167,13 +173,13 @@ tape( 'fails creating a file for a given lesson and user when no title is given'
 	}), createLesson, createFile ], done );
 });
 
-tape( 'fails creating a file when no user or lesson is given', function test( t ) {
+tape( 'fails creating a file when no user or namespace is given', function test( t ) {
 	File.create({
 		'title': 'Title of the file',
 		'path': 'File path',
 		'filename': 'File name'
 	}, function onCreate( err, file ) {
-		var expected = 'File validation failed: user: Path `user` is required., lesson: Path `lesson` is required.';
+		var expected = 'File validation failed: user: Path `user` is required., namespace: Path `namespace` is required.';
 		if ( err ) {
 			t.pass( 'encountered an error' );
 			t.strictEqual( err.message, expected, 'returns expected error message' );
