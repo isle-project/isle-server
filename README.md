@@ -12,11 +12,36 @@
 
 ## Introduction
 
-Server program for *interactive statistics learning environment* (ISLE) lessons.
+Server program for *integrated statistics learning environment* (ISLE) lessons. Other parts of the ISLE environment are: 
+
+-   the [isle-editor][isle-editor] is used to author ISLE lessons
+-   the [isle-dashboard][isle-dashboard] is the online dashboard used to deploy, organize and monitor ISLE lessons
+
+#### [Open Documentation][docs]
 
 ### Encryption of Sensitive Files
 
 Files in the `credentials` folder have been [transcrypted][transcrypt]. 
+
+### Starting the server
+
+To start the server,
+
+```bash
+npm start 
+```
+
+To make sure the server restarts in case of a crash, it is advised to use it via [forever][forever]: 
+
+```bash
+forever start -c "npm start" --append --uid="isle-server" /path/to/app/dir/
+```
+
+To stop the server, we can then simply do
+
+```bash
+forever stop isle-server
+```
 
 [dependencies-image]: https://img.shields.io/david/planeshifter/isle-server/master.svg
 [dependencies-url]: https://david-dm.org/planeshifter/isle-server/master
@@ -27,3 +52,9 @@ Files in the `credentials` folder have been [transcrypted][transcrypt].
 [doi]: https://zenodo.org/badge/latestdoi/63765629
 
 [transcrypt]: https://github.com/elasticdog/transcrypt
+
+[docs]: http://isledocs.com/
+[isle-dashboard]: https://github.com/Planeshifter/isle-dashboard
+[isle-editor]: https://github.com/Planeshifter/isle-editor
+
+[forever]: https://github.com/foreverjs/forever
