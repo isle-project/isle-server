@@ -23,7 +23,7 @@ Server program for *integrated statistics learning environment* (ISLE) lessons. 
 
 Files in the `credentials` folder have been [transcrypted][transcrypt]. 
 
-### Starting the server
+### Starting
 
 To start the server,
 
@@ -37,11 +37,30 @@ To make sure the server restarts in case of a crash, it is advised to use it via
 forever start -c "npm start" --append --uid="isle-server" /path/to/app/dir/
 ```
 
-To stop the server, we can then simply do
+To stop the server, one can then simply do
 
 ```bash
 forever stop isle-server
 ```
+### Tests
+
+#### Unit
+
+The server uses [tape][tape] for unit tests. To run the tests, execute the following command in the top-level application directory:
+
+``` bash
+$ npm test
+```
+
+### Test Coverage
+
+This repository uses [Istanbul][istanbul] as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
+
+``` bash
+$ npm run test-cov
+```
+
+Istanbul creates a `./reports/coverage` directory with an HTML version of the report.
 
 [dependencies-image]: https://img.shields.io/david/planeshifter/isle-server/master.svg
 [dependencies-url]: https://david-dm.org/planeshifter/isle-server/master
@@ -58,3 +77,6 @@ forever stop isle-server
 [isle-editor]: https://github.com/Planeshifter/isle-editor
 
 [forever]: https://github.com/foreverjs/forever
+
+[tape]: https://github.com/substack/tape
+[istanbul]: https://github.com/gotwarlost/istanbul
