@@ -66,7 +66,7 @@ Istanbul creates a `./reports/coverage` directory with an HTML version of the re
 
 See [LICENSE][license].
 
-[license]: https://raw.githubusercontent.com/Planeshifter/isle-server/master/LICENSE.md
+[license]: https://raw.githubusercontent.com/Planeshifter/isle-server/master/LICENSE
 
 [dependencies-image]: https://img.shields.io/david/planeshifter/isle-server/master.svg
 [dependencies-url]: https://david-dm.org/planeshifter/isle-server/master
