@@ -52,7 +52,7 @@ The server uses [tape][tape] for unit tests. To run the tests, execute the follo
 $ npm test
 ```
 
-### Test Coverage
+#### Test Coverage
 
 This repository uses [Istanbul][istanbul] as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
 
