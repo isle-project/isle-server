@@ -52,7 +52,7 @@ The server uses [tape][tape] for unit tests. To run the tests, execute the follo
 $ npm test
 ```
 
-### Test Coverage
+#### Test Coverage
 
 This repository uses [Istanbul][istanbul] as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
 
@@ -61,6 +61,12 @@ $ npm run test-cov
 ```
 
 Istanbul creates a `./reports/coverage` directory with an HTML version of the report.
+
+## License
+
+See [LICENSE][license].
+
+[license]: https://raw.githubusercontent.com/Planeshifter/isle-server/master/LICENSE
 
 [dependencies-image]: https://img.shields.io/david/planeshifter/isle-server/master.svg
 [dependencies-url]: https://david-dm.org/planeshifter/isle-server/master
