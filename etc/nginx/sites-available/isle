@@ -1,0 +1,82 @@
+# Server configuration for the `isle-server`.
+#
+# ## Notes
+#
+# Redirects all HTTP to HTTPS requests.
+#
+# ## Usage
+#
+# To enable this configuration file,
+#
+# ```bash
+# $ sudo ln -s /etc/nginx/sites-available/isle /etc/nginx/sites-enabled/isle
+# ```
+#
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+
+  server_name isle.heinz.cmu.edu;
+
+  # Redirect to the `https` host (declared below) with a `301` Moved Permanently response.
+  return 301 https://$server_name$request_uri;
+}
+
+# Set a configuration for a virtual server.
+#
+# See: http://nginx.org/en/docs/http/ngx_http_core_module.html#server
+server {
+  # Set the port.
+  #
+  # See: http://nginx.org/en/docs/http/ngx_http_core_module.html#listen
+  listen 443;
+  ssl on;
+
+  # Specify the absolute file path of a certificate for the given virtual server.
+  #
+  # See: http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate
+  ssl_certificate /srv/ssl/isle_heinz_cmu_edu_cert.cer;
+
+  # Specify the absolute file path of the secret key for the given virtual server.
+  #
+  # See: http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate_key
+  ssl_certificate_key /srv/ssl/isle.heinz.cmu.edu.key;
+
+  # Specify the absolute path to the root directory for requests. Should be equal to the directory in which the the `isle-server` program resides.
+  #
+  # See: http://nginx.org/en/docs/http/ngx_http_core_module.html#root
+  root /home/pburckhardt/isle-server/;
+
+  # Set the virtual server names.
+  #
+  # See: http://nginx.org/en/docs/http/ngx_http_core_module.html#server_name
+  server_name     isle.heinz.cmu.edu;
+
+  add_header Strict-Transport-Security "max-age=31536000";
+
+  # Set maximum file / lessons sizes that may be uploaded to 20MB:
+  client_max_body_size 20M;
+
+  # Define a root location directive:
+  location / {
+    proxy_set_header   X-Real-IP $remote_addr;
+    proxy_set_header   Host      $http_host;
+    proxy_pass         https://127.0.0.1:17777/;
+
+    # Ensure websockets can be established:
+    proxy_http_version 1.1;
+    proxy_set_header   Upgrade $http_upgrade;
+    proxy_set_header   Connection "upgrade";
+  }
+
+  location /dashboard/ {
+    alias /home/pburckhardt/isle-dashboard/;
+  }
+
+  location /files/ {
+    # Turn on auto-indexing of static file directory contents.
+    #
+    # See: http://nginx.org/en/docs/http/ngx_http_autoindex_module.html#autoindex
+    autoindex on;
+  }
+}
