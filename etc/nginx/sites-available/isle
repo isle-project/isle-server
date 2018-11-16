@@ -35,7 +35,7 @@ server {
   # Specify the absolute file path of a certificate for the given virtual server.
   #
   # See: http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate
-  ssl_certificate /srv/ssl/isle_heinz_cmu_edu_cert.cer;
+  ssl_certificate /srv/ssl/isle_heinz_cmu_edu_concatenated.cer;
 
   # Specify the absolute file path of the secret key for the given virtual server.
   #
