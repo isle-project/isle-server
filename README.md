@@ -8,7 +8,7 @@
 #### Build
 
 [![Build Status](https://travis-ci.org/Planeshifter/isle-server.svg?branch=master)](https://travis-ci.org/Planeshifter/isle-server)
-[![Coverage](https://img.shields.io/codecov/c/github/Planeshifter/isle-server/master.svg)](https://img.shields.io/codecov/c/github/Planeshifter/isle-server/master.svg)
+[![Coverage](https://img.shields.io/codecov/c/github/Planeshifter/isle-server/master.svg)](https://img.shields.io/codecov/c/github/Planeshifter/isle-server/master.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/Planeshifter/isle-server.svg)](https://greenkeeper.io/)
 
 ## Introduction
 
