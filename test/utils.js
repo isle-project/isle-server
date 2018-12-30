@@ -4,7 +4,7 @@
 
 var mongoose = require( 'mongoose' );
 var setReadOnly = require( '@stdlib/utils/define-read-only-property' );
-var waterfall = require( '@stdlib/utils/series-waterfall' );
+var waterfall = require( '@stdlib/utils/async/series-waterfall' );
 var Namespace = require( './../lib/namespace.js' );
 var Lesson = require( './../lib/lesson.js' );
 var User = require( './../lib/user.js' );

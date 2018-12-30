@@ -3,7 +3,7 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var waterfall = require( '@stdlib/utils/series-waterfall' );
+var waterfall = require( '@stdlib/utils/async/series-waterfall' );
 var papply = require( '@stdlib/utils/papply' );
 var utils = require( './utils.js' );
 var Namespace = require( './../lib/namespace.js' );
