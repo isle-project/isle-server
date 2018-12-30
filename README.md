@@ -66,6 +66,18 @@ Istanbul creates a `./reports/coverage` directory with an HTML version of the re
 
 See [LICENSE][license].
 
+#### Icon Credits
+
+- User Icon by Atacan from the Noun Project
+- Badge Icon by Royyan Wijaya from the Noun Project
+- Upload Icon by McGalloway, CC BY-SA 4.0
+- Badge by Kristin Hogan from the Noun Project
+- Question by unlimicon from the Noun Project
+- profile by Hea Poh Lin from the Noun Project
+- weights by José Manuel de Laá from the Noun Project
+- chat by nauraicon from the Noun Project
+- feedback by Delwar Hossain from the Noun Project
+
 [license]: https://raw.githubusercontent.com/Planeshifter/isle-server/master/LICENSE
 
 [dependencies-image]: https://img.shields.io/david/planeshifter/isle-server/master.svg
