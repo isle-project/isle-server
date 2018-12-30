@@ -66,9 +66,7 @@ Istanbul creates a `./reports/coverage` directory with an HTML version of the re
 
 See [LICENSE][license].
 
-#### Credits
-
-##### Icons
+#### Icon Credits
 
 - User Icon by Atacan from the Noun Project
 - Badge Icon by Royyan Wijaya from the Noun Project
