@@ -1,0 +1,68 @@
+[
+    {
+        "name": "profile",
+        "description": "Profile pic uploaded",
+        "picture": "badge_profile.svg",
+        "secret": false
+    },
+    {
+        "name": "stamina",
+        "description": "excellent stamina",
+        "picture": "badge_weight.svg",
+        "secret": false
+    },
+    {
+        "name": "10 lessons",
+        "description": "Ten lessons mastered",
+        "picture": "badge_10_lessons.svg",
+        "secret": false
+    },
+    {
+        "name": "25 lessons",
+        "description": "Twenty-five lessons mastered",
+        "picture": "badge_25_lessons.svg",
+        "secret": false
+    },
+    {
+        "name": "50 lessons",
+        "description": "Fifty lessons mastered",
+        "picture": "badge_50_lessons.svg",
+        "secret": false
+    },
+    {
+        "name": "3 days",
+        "description": "3 days in a row",
+        "picture": "badge_calendar_3_days.svg",
+        "secret": false
+    },
+    {
+        "name": "7 days",
+        "description": "7 days in a row",
+        "picture": "badge_calendar_7_days.svg",
+        "secret": false
+    },
+    {
+        "name": "100 chats",
+        "description": "100 chat entries",
+        "picture": "badge_chat_100.svg",
+        "secret": false
+    },
+    {
+        "name": "500 chats",
+        "description": "500 chat entries",
+        "picture": "badge_chat_500.svg",
+        "secret": false
+    },
+    {
+        "name": "25 feedbacks",
+        "description": "25 feedbacks",
+        "picture": "badge_feedback_25.svg",
+        "secret": false
+	},
+    {
+        "name": "100 feedbacks",
+        "description": "100 feedbacks",
+        "picture": "badge_feedback_100.svg",
+        "secret": false
+	}
+]
