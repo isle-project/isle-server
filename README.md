@@ -77,6 +77,7 @@ See [LICENSE][license].
 - weights by José Manuel de Laá from the Noun Project
 - chat by nauraicon from the Noun Project
 - feedback by Delwar Hossain from the Noun Project
+- profile by icongeek from the Noun Project
 
 [license]: https://raw.githubusercontent.com/Planeshifter/isle-server/master/LICENSE
 
