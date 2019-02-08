@@ -8,7 +8,7 @@
 #### Build
 
 [![Build Status](https://travis-ci.com/isle-project/isle-server.svg?branch=master)](https://travis-ci.com/isle-project/isle-server)
-[![Coverage](https://img.shields.io/codecov/c/github/Planeshifter/isle-server/master.svg)](https://img.shields.io/codecov/c/github/Planeshifter/isle-server/master.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/Planeshifter/isle-server.svg)](https://greenkeeper.io/)
+[![Coverage](https://img.shields.io/codecov/c/github/isle-project/isle-server/master.svg)](https://img.shields.io/codecov/c/github/isle-project/isle-server/master.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/isle-project/isle-server.svg)](https://greenkeeper.io/)
 
 ## Introduction
 
@@ -18,6 +18,29 @@ Server program for *integrated statistics learning environment* (ISLE) lessons. 
 -   the [isle-dashboard][isle-dashboard] is the online dashboard used to deploy, organize and monitor ISLE lessons
 
 #### [Open Documentation][docs]
+
+#### Prerequisites
+
+Developing and running the ISLE server has the following prerequisites:
+
+* [git][git]: version control
+* [Node.js][node-js]: JavaScript runtime (version `>= 9.0`)
+
+#### Download
+
+To acquire the source code, clone the git repository.
+
+``` bash
+$ git clone https://github.com/isle-project/isle-server
+```
+
+#### Installation
+
+To install development dependencies,
+
+``` bash
+$ npm install
+```
 
 ### Encryption of Sensitive Files
 
