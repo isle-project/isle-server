@@ -24,11 +24,11 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Planeshifter/isle-server.git"
+    "url": "git://github.com/isle-project/isle-server.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/Planeshifter/isle-server/issues"
+    "url": "https://github.com/isle-project/isle-server/issues"
   },
   "dependencies": {
     "@stdlib/stdlib": "0.0.58",
