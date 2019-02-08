@@ -102,7 +102,9 @@ See [LICENSE][license].
 - feedback by Delwar Hossain from the Noun Project
 - profile by icongeek from the Noun Project
 
+[git]: http://git-scm.com/
 [license]: https://raw.githubusercontent.com/isle-project/isle-server/master/LICENSE
+[node-js]: https://nodejs.org/en/
 
 [dependencies-image]: https://img.shields.io/david/isle-project/isle-server/master.svg
 [dependencies-url]: https://david-dm.org/isle-project/isle-server/master
