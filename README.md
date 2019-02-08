@@ -7,7 +7,7 @@
 
 #### Build
 
-[![Build Status](https://travis-ci.org/Planeshifter/isle-server.svg?branch=master)](https://travis-ci.org/Planeshifter/isle-server)
+[![Build Status](https://travis-ci.com/isle-project/isle-server.svg?branch=master)](https://travis-ci.com/isle-project/isle-server.svg?branch=master)
 [![Coverage](https://img.shields.io/codecov/c/github/Planeshifter/isle-server/master.svg)](https://img.shields.io/codecov/c/github/Planeshifter/isle-server/master.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/Planeshifter/isle-server.svg)](https://greenkeeper.io/)
 
 ## Introduction
@@ -79,21 +79,21 @@ See [LICENSE][license].
 - feedback by Delwar Hossain from the Noun Project
 - profile by icongeek from the Noun Project
 
-[license]: https://raw.githubusercontent.com/Planeshifter/isle-server/master/LICENSE
+[license]: https://raw.githubusercontent.com/isle-project/isle-server/master/LICENSE
 
-[dependencies-image]: https://img.shields.io/david/planeshifter/isle-server/master.svg
-[dependencies-url]: https://david-dm.org/planeshifter/isle-server/master
+[dependencies-image]: https://img.shields.io/david/isle-project/isle-server/master.svg
+[dependencies-url]: https://david-dm.org/isle-project/isle-server/master
 
-[dev-dependencies-image]: https://img.shields.io/david/dev/planeshifter/isle-server/master.svg
-[dev-dependencies-url]: https://david-dm.org/planeshifter/isle-server/master#info=devDependencies
+[dev-dependencies-image]: https://img.shields.io/david/dev/isle-project/isle-server/master.svg
+[dev-dependencies-url]: https://david-dm.org/isle-project/isle-server/master#info=devDependencies
 
 [doi]: https://zenodo.org/badge/latestdoi/63765629
 
 [transcrypt]: https://github.com/elasticdog/transcrypt
 
 [docs]: http://isledocs.com/
-[isle-dashboard]: https://github.com/Planeshifter/isle-dashboard
-[isle-editor]: https://github.com/Planeshifter/isle-editor
+[isle-dashboard]: https://github.com/isle-project/isle-dashboard
+[isle-editor]: https://github.com/isle-project/isle-editor
 
 [forever]: https://github.com/foreverjs/forever
 
