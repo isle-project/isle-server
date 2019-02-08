@@ -2,6 +2,14 @@
   "name": "isle-server",
   "version": "0.0.2",
   "description": "Server program for ISLE (Interactive Statistics Learning Environment) lessons.",
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/isle-project/isle-server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isle-project/isle-server.git"
+  },
   "license": "Apache-2.0",
   "author": {
     "name": "Philipp Burckhardt",
@@ -13,22 +21,14 @@
       "email": "pburckhardt@outlook.com"
     }
   ],
+  "main": "./lib",
   "scripts": {
     "clean": "rm -rf ./node_modules",
-    "start": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ node lib/index.js",
+    "coverage": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ istanbul cover --dir ./reports/codecov/coverage --report lcovonly tape -- \"./test/*.js\" && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov",
     "lint": "eslint lib/**/*.js test/**/*.js",
+    "start": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ node lib/index.js",
     "test": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ tape \"./test/*.js\"",
-    "test-cov": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\"",
-    "coverage": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ istanbul cover --dir ./reports/codecov/coverage --report lcovonly tape -- \"./test/*.js\" && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
-  },
-  "main": "./lib",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/isle-project/isle-server.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/isle-project/isle-server/issues"
+    "test-cov": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\""
   },
   "dependencies": {
     "@stdlib/stdlib": "0.0.58",
@@ -62,5 +62,10 @@
     "supertest": "^3.4.2",
     "tap-spec": "5.x.x",
     "tape": "^4.9.2"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "nodemailer"
+    ]
   }
 }
