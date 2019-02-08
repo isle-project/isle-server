@@ -1,7 +1,8 @@
 {
   "name": "isle-server",
   "version": "0.0.2",
-  "description": "Online repository for ISLE (Interactive Statistics Learning Environment) lessons.",
+  "description": "Server program for ISLE (Interactive Statistics Learning Environment) lessons.",
+  "license": "Apache-2.0",
   "author": {
     "name": "Philipp Burckhardt",
     "email": "pburckhardt@outlook.com"
@@ -61,6 +62,5 @@
     "supertest": "^3.4.2",
     "tap-spec": "5.x.x",
     "tape": "^4.9.2"
-  },
-  "license": "MIT"
+  }
 }
