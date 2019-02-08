@@ -2,7 +2,8 @@
 
 #### Dependencies
 
-[![Dependencies][dependencies-image]][dependencies-url] [![DevDependencies][dev-dependencies-image]][dev-dependencies-url]
+[![Dependencies][dependencies-image]][dependencies-url]
+[![DevDependencies][dev-dependencies-image]][dev-dependencies-url]
 [![DOI](https://zenodo.org/badge/63765629.svg)][doi]
 
 #### Build
@@ -110,7 +111,7 @@ See [LICENSE][license].
 [dependencies-url]: https://david-dm.org/isle-project/isle-server/master
 
 [dev-dependencies-image]: https://img.shields.io/david/dev/isle-project/isle-server/master.svg
-[dev-dependencies-url]: https://david-dm.org/isle-project/isle-server/master#info=devDependencies
+[dev-dependencies-url]: https://david-dm.org/isle-project/isle-server/master?type=dev
 
 [doi]: https://zenodo.org/badge/latestdoi/63765629
 
