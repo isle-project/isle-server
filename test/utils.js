@@ -30,7 +30,7 @@ function clearDB( clbk ) {
 	var i;
 	for ( i = 0; i < len; i++ ) {
 		collection = mongoose.connection.collections[ keys[ i ] ];
-		collection.remove( onDone );
+		collection.deleteMany( onDone );
 	}
 	function onDone() {
 		counter += 1;
