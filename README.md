@@ -107,10 +107,10 @@ See [LICENSE][license].
 [license]: https://raw.githubusercontent.com/isle-project/isle-server/master/LICENSE
 [node-js]: https://nodejs.org/en/
 
-[dependencies-image]: https://img.shields.io/david/isle-project/isle-server/master.svg
+[dependencies-image]: https://img.shields.io/david/isle-project/isle-server.svg
 [dependencies-url]: https://david-dm.org/isle-project/isle-server/master
 
-[dev-dependencies-image]: https://img.shields.io/david/dev/isle-project/isle-server/master.svg
+[dev-dependencies-image]: https://img.shields.io/david/dev/isle-project/isle-server.svg
 [dev-dependencies-url]: https://david-dm.org/isle-project/isle-server/master?type=dev
 
 [doi]: https://zenodo.org/badge/latestdoi/63765629
