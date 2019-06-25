@@ -140,7 +140,7 @@ tape( 'inserting a cohort fails if the title is already used for a certain names
 	});
 	function onCreate( err, cohort ) {
 		t.strictEqual( err instanceof Error, true, 'returns an error' );
-		t.strictEqual( err.message, 'Cohort validation failed: title: Cohort with the given title already exists', 'has expected message' );
+		t.strictEqual( err.message, 'Cohort validation failed: title: Cohort title is invalid.', 'has expected message' );
 		t.end();
 	}
 });

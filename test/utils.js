@@ -42,7 +42,10 @@ function clearDB( clbk ) {
 
 setReadOnly( ns, 'before', function before( t ) {
 	if ( mongoose.connection.readyState === 0 ) {
-		mongoose.connect( dbURI, function onConnect( err ) {
+		mongoose.connect( dbURI, {
+			'useNewUrlParser': true,
+			'useFindAndModify': false
+		}, function onConnect( err ) {
 			if ( err ) {
 				throw err;
 			}
