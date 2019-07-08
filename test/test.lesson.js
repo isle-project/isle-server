@@ -41,7 +41,7 @@ tape( 'successfully creates a lesson for a given namespace', function test( t ) 
 			t.strictEqual( lesson.title, 'My first lesson', 'has expected title' );
 			t.strictEqual( lesson.description, 'No description supplied.', 'has default description' );
 			t.strictEqual( lesson.active, true, 'has default `active` status' );
-			t.strictEqual( lesson.public, true, 'has default `public` status' );
+			t.strictEqual( lesson.public, false, 'has default `public` status' );
 			next();
 		});
 	}
