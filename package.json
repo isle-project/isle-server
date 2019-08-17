@@ -31,7 +31,7 @@
     "test-cov": "cross-env NODE_PATH=./node_modules/@stdlib/stdlib/lib/node_modules/ istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\""
   },
   "dependencies": {
-    "@stdlib/stdlib": "0.0.64",
+    "@stdlib/stdlib": "0.0.65",
     "adm-zip": "^0.4.13",
     "async": "^3.0.1",
     "bcrypt": "^3.0.6",
