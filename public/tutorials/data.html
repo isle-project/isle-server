@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Ciaran Evans" />
+  <title>Working with Data and the Toolbox</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="pandoc.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Working with Data and the Toolbox</h1>
+<p class="author">Ciaran Evans</p>
+</header>
+<p>As a statistical learning platform, ISLE provides the ability to interact with data tables and do data analysis. This page will give you an overview of some of the things you can do with data in ISLE.</p>
+<h2 id="data-tables">Data Tables</h2>
+<p>A simple way data may be displayed in ISLE is through a <strong>Data Table</strong>. These appear in the typical format for viewing data, similar to what data look like in an Excel spreadsheet. Each column is a <strong>variable</strong> with the variable name at the top.</p>
+<figure>
+<img src="assets/images/data_table_student.png" alt="Data Table" /><figcaption>Data Table</figcaption>
+</figure>
+<p>For a guided tour of the things you can do with data tables, click the <strong>Show Tutorial</strong> button (the question mark in the upper right of the data table).</p>
+<h2 id="data-explorer">Data Explorer</h2>
+<p>While Data Tables allow you to inspect a dataset and its variables, you might want to do more with the data, such as calculate statistics, make figures and tables, and write a report. A <strong>Data Explorer</strong> combines a data table with a statistical toolbox with which you can perform data analysis.</p>
+<figure>
+<img src="assets/images/data_explorer.png" alt="Explorer" /><figcaption>Explorer</figcaption>
+</figure>
+<p>The left side contains the data table, and might optionally include some additional tabs that let you write a report, explore distributions, or answer questions. The right side will show data analysis output (statistics, figures, and tables) which you will produce with the statistical toolbox.</p>
+<h3 id="the-toolbox">The Toolbox</h3>
+<p>To open the toolbox, click <strong>Show Toolbox</strong> in the Data Explorer. The full toolbox lets you calculate statistics, make tables and plots, create statistical models, and transform variables. Note that your instructor may choose to display only a subset of the toolbox options. If you wish to learn more about a feature of the toolbox, you can click the <code>?</code> symbol next to that feature’s name.</p>
+<figure>
+<img src="assets/gifs/toolbox.gif" alt="Toolbox" /><figcaption>Toolbox</figcaption>
+</figure>
+<h3 id="filtered-datasets">Filtered Datasets</h3>
+<p>By selecting a range of values (for quantitative variables) or a subset of levels (for categorical variables) you can filter a dataset based on the values of one or more variables, displaying only those rows which contain the specified values.</p>
+<p>After displaying the filtered data, you might want to perform analysis (calculate statistics, make figures and tables, etc.) on just the filtered data. This can be done by creating a <strong>Filtered Dataset</strong>. After applying the desired filters, click the <strong>Create filtered dataset</strong> button below the data explorer. All subsequent actions with the toolbox will be performed on that subset of the data, unless you restore the original data by clicking <strong>Restore original dataset</strong>.</p>
+<figure>
+<img src="assets/gifs/filtered_dataset.gif" alt="Filtered Dataset" /><figcaption>Filtered Dataset</figcaption>
+</figure>
+<h3 id="editing-and-manipulating-plots">Editing and Manipulating Plots</h3>
+<p>To edit a plot’s title or axis labels, click on the title/label and edit the text:</p>
+<figure>
+<img src="assets/gifs/edit_figure_labels.gif" alt="Edit Labels" /><figcaption>Edit Labels</figcaption>
+</figure>
+<p>You can also use the toolbar at the top of each figure to zoom, pan, select points, etc:</p>
+<figure>
+<img src="assets/images/figure_toolbar.png" alt="Figure Toolbar" /><figcaption>Figure Toolbar</figcaption>
+</figure>
+<p>This is helpful if, for example, you want to inspect a specific area of the figure.</p>
+</body>
+</html>
