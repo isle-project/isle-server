@@ -5,6 +5,7 @@
 var mongoose = require( 'mongoose' );
 var setReadOnly = require( '@stdlib/utils/define-read-only-property' );
 var waterfall = require( '@stdlib/utils/async/series-waterfall' );
+var objectKeys = require( '@stdlib/utils/keys' );
 var Namespace = require( './../lib/namespace.js' );
 var Lesson = require( './../lib/lesson.js' );
 var User = require( './../lib/user.js' );
@@ -25,7 +26,7 @@ var ns = {};
 function clearDB( clbk ) {
 	var collection;
 	var counter = 0;
-	var keys = Object.keys( mongoose.connection.collections );
+	var keys = objectKeys( mongoose.connection.collections );
 	var len = keys.length;
 	var i;
 	for ( i = 0; i < len; i++ ) {
