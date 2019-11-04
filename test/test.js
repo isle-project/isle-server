@@ -521,7 +521,7 @@ tape( 'GET /set_write_access', function test( t ) {
 	});
 });
 
-/*
+/* TODO:
 
 tape( 'POST /store_session_element', function test( t ) {
 
