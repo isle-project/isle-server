@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Start MongoDB As Docker
+      uses: wbari/start-mongoDB@v0.2
     - name: npm install, lint, and test
       run: |
         npm ci
