@@ -26,7 +26,7 @@ Server program for *integrated statistics learning environment* (ISLE) lessons. 
 Developing and running the ISLE server has the following prerequisites:
 
 * [git][git]: version control
-* [Node.js][node-js]: JavaScript runtime (version `>= 9.0`)
+* [Node.js][node-js]: JavaScript runtime (version `>= 10.0`)
 
 #### Download
 
