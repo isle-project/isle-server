@@ -60,6 +60,7 @@
     "swot-simple": "^1.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "chai": "^4.2.0",
     "eslint": "^6.6.0",
     "istanbul": "^1.1.0-alpha.1",
