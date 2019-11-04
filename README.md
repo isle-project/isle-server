@@ -8,6 +8,7 @@
 
 #### Build
 
+[![Actions Status](https://github.com/isle-project/isle-server/workflows/NodeCI/badge.svg)](https://github.com/isle-project/isle-server/actions)
 [![Build Status](https://travis-ci.com/isle-project/isle-server.svg?branch=master)](https://travis-ci.com/isle-project/isle-server)
 [![Coverage](https://img.shields.io/codecov/c/github/isle-project/isle-server/master.svg)](https://codecov.io/gh/isle-project/isle-server) [![Greenkeeper badge](https://badges.greenkeeper.io/isle-project/isle-server.svg)](https://greenkeeper.io/)
 
