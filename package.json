@@ -36,7 +36,7 @@
     "async": "^3.0.1",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
-    "capture-website": "^0.7.0",
+    "capture-website": "^0.8.0",
     "codecov": "^3.6.1",
     "cors": "^2.8.5",
     "cross-env": "^6.0.3",
