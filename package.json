@@ -54,7 +54,7 @@
     "passport-jwt": "4.0.0",
     "prosemirror-schema-basic": "^1.0.1",
     "prosemirror-schema-list": "^1.0.4",
-    "prosemirror-tables": "^0.9.5",
+    "prosemirror-tables": "^1.0.0",
     "prosemirror-transform": "^1.1.6",
     "socket.io": "^2.3.0",
     "swot-simple": "^1.0.0"
