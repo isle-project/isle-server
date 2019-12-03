@@ -10,8 +10,6 @@ build/
 public/*
 !public/tutorials
 media/
-etc/config.json
-credentials/*
 
 # Compiled source #
 ###################
