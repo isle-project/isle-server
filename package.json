@@ -52,7 +52,6 @@
     "nodemailer": "4.7.0",
     "passport": "^0.4.0",
     "passport-jwt": "4.0.0",
-    "prosemirror-schema-basic": "^1.0.1",
     "prosemirror-schema-list": "^1.0.4",
     "prosemirror-tables": "^1.0.0",
     "prosemirror-transform": "^1.1.6",
