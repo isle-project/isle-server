@@ -11,7 +11,7 @@ public/*
 !public/tutorials
 media/
 etc/config.json
-credentials
+credentials/
 
 # Compiled source #
 ###################
