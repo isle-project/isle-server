@@ -18,7 +18,7 @@ var utils = require( './utils.js' );
 
 var WRITE_ACCESS_TOKEN = 'no_restrictions';
 var requires = {
-	'./config.json': {
+	'./../etc/config.json': {
 		'namespacesDirectory': './fixtures',
 		'server': 'http://localhost',
 		'@noCallThru': true
