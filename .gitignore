@@ -10,6 +10,7 @@ build/
 public/*
 !public/tutorials
 media/
+etc/config.json
 
 # Compiled source #
 ###################
