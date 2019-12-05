@@ -2,13 +2,13 @@
 
 // MODULES //
 
-var tape = require( 'tape' );
-var isArray = require( '@stdlib/assert/is-array' );
-var waterfall = require( '@stdlib/utils/async/series-waterfall' );
-var papply = require( '@stdlib/utils/papply' );
-var utils = require( './utils.js' );
-var User = require( './../lib/user.js' );
-var Namespace = require( './../lib/namespace.js' );
+const tape = require( 'tape' );
+const isArray = require( '@stdlib/assert/is-array' );
+const waterfall = require( '@stdlib/utils/async/series-waterfall' );
+const papply = require( '@stdlib/utils/papply' );
+const utils = require( './utils.js' );
+const User = require( './../lib/user.js' );
+const Namespace = require( './../lib/namespace.js' );
 
 
 // TESTS //
