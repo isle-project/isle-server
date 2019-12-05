@@ -2,16 +2,16 @@
 
 // MODULES //
 
-var tape = require( 'tape' );
-var isArray = require( '@stdlib/assert/is-array' );
-var isDateObject = require( '@stdlib/assert/is-date-object' );
-var isEmptyArray = require( '@stdlib/assert/is-empty-array' );
-var abs = require( '@stdlib/math/base/special/abs' );
-var waterfall = require( '@stdlib/utils/async/series-waterfall' );
-var papply = require( '@stdlib/utils/papply' );
-var utils = require( './utils.js' );
-var Namespace = require( './../lib/namespace.js' );
-var Cohort = require( './../lib/cohort.js' );
+const tape = require( 'tape' );
+const isArray = require( '@stdlib/assert/is-array' );
+const isDateObject = require( '@stdlib/assert/is-date-object' );
+const isEmptyArray = require( '@stdlib/assert/is-empty-array' );
+const abs = require( '@stdlib/math/base/special/abs' );
+const waterfall = require( '@stdlib/utils/async/series-waterfall' );
+const papply = require( '@stdlib/utils/papply' );
+const utils = require( './utils.js' );
+const Namespace = require( './../lib/namespace.js' );
+const Cohort = require( './../lib/cohort.js' );
 
 
 // TESTS //

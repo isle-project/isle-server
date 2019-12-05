@@ -2,14 +2,14 @@
 
 // MODULES //
 
-var tape = require( 'tape' );
-var isEmptyArray = require( '@stdlib/assert/is-empty-array' );
-var waterfall = require( '@stdlib/utils/async/series-waterfall' );
-var papply = require( '@stdlib/utils/papply' );
-var utils = require( './utils.js' );
-var Namespace = require( './../lib/namespace.js' );
-var Lesson = require( './../lib/lesson.js' );
-var Session = require( './../lib/session.js' );
+const tape = require( 'tape' );
+const isEmptyArray = require( '@stdlib/assert/is-empty-array' );
+const waterfall = require( '@stdlib/utils/async/series-waterfall' );
+const papply = require( '@stdlib/utils/papply' );
+const utils = require( './utils.js' );
+const Namespace = require( './../lib/namespace.js' );
+const Lesson = require( './../lib/lesson.js' );
+const Session = require( './../lib/session.js' );
 
 
 // FUNCTIONS //

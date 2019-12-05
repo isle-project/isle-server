@@ -2,11 +2,11 @@
 
 // MODULES //
 
-var tape = require( 'tape' );
-var contains = require( '@stdlib/assert/contains' );
-var isString = require( '@stdlib/assert/is-string' );
-var utils = require( './utils.js' );
-var User = require( './../lib/user.js' );
+const tape = require( 'tape' );
+const contains = require( '@stdlib/assert/contains' );
+const isString = require( '@stdlib/assert/is-string' );
+const utils = require( './utils.js' );
+const User = require( './../lib/user.js' );
 
 
 // TESTS //

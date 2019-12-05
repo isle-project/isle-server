@@ -2,18 +2,18 @@
 
 // MODULES //
 
-var mongoose = require( 'mongoose' );
-var setReadOnly = require( '@stdlib/utils/define-read-only-property' );
-var waterfall = require( '@stdlib/utils/async/series-waterfall' );
-var objectKeys = require( '@stdlib/utils/keys' );
-var Namespace = require( './../lib/namespace.js' );
-var Lesson = require( './../lib/lesson.js' );
-var User = require( './../lib/user.js' );
+const mongoose = require( 'mongoose' );
+const setReadOnly = require( '@stdlib/utils/define-read-only-property' );
+const waterfall = require( '@stdlib/utils/async/series-waterfall' );
+const objectKeys = require( '@stdlib/utils/keys' );
+const Namespace = require( './../lib/namespace.js' );
+const Lesson = require( './../lib/lesson.js' );
+const User = require( './../lib/user.js' );
 
 
 // VARIABLES //
 
-var dbURI = 'mongodb://localhost/isle-test-clearing-db';
+const dbURI = 'mongodb://localhost/isle-test-clearing-db';
 
 
 // MAIN //
@@ -21,7 +21,7 @@ var dbURI = 'mongodb://localhost/isle-test-clearing-db';
 // Set Promise library for mongoose:
 mongoose.Promise = global.Promise;
 
-var ns = {};
+const ns = {};
 
 function clearDB( clbk ) {
 	var collection;
@@ -44,14 +44,18 @@ function clearDB( clbk ) {
 setReadOnly( ns, 'before', function before( t ) {
 	if ( mongoose.connection.readyState === 0 ) {
 		mongoose.connect( dbURI, {
+			'keepAlive': false,
+			'useCreateIndex': true,
+			'useUnifiedTopology': true,
 			'useNewUrlParser': true,
 			'useFindAndModify': false
-		}, function onConnect( err ) {
-			if ( err ) {
-				throw err;
-			}
+		})
+		.then( () => {
 			t.pass( 'connected to database' );
 			return clearDB( t.end );
+		})
+		.catch( err => {
+			throw err;
 		});
 	} else {
 		return clearDB( t.end );
@@ -165,10 +169,14 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 
 setReadOnly( ns, 'after', function after( t ) {
 	clearDB( function onClear() {
-		mongoose.disconnect( function onDisconnect() {
-			t.pass( 'disconnected from database' );
-			t.end();
-		});
+		mongoose.disconnect()
+			.then( () => {
+				t.pass( 'disconnected from database' );
+				t.end();
+			})
+			.catch( ( err ) => {
+				t.error( err );
+			});
 	});
 });
 
