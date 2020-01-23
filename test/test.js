@@ -32,6 +32,7 @@ var requires = {
 	},
 	'./../credentials/tokens.json': {
 		'writeAccess': WRITE_ACCESS_TOKEN,
+		'jwtKey': 'json_web_token_key',
 		'@noCallThru': true
 	}
 };
