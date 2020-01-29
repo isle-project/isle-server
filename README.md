@@ -26,7 +26,7 @@ Developing and running the ISLE server has the following prerequisites:
 
 * [git][git]: version control
 * [Node.js][node-js]: JavaScript runtime (version `>= 10.0`)
-* [MongoDB][mongodb]: Document store database
+* [MongoDB][mongodb]: NoSQL document database
 
 #### Download
 
