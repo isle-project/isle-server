@@ -26,6 +26,7 @@ Developing and running the ISLE server has the following prerequisites:
 
 * [git][git]: version control
 * [Node.js][node-js]: JavaScript runtime (version `>= 10.0`)
+* [MongoDB][mongodb]: Document store database
 
 #### Download
 
@@ -106,6 +107,7 @@ See [LICENSE][license].
 [git]: http://git-scm.com/
 [license]: https://raw.githubusercontent.com/isle-project/isle-server/master/LICENSE
 [node-js]: https://nodejs.org/en/
+[mongodb]: https://mongodb.com
 
 [dependencies-image]: https://img.shields.io/david/isle-project/isle-server.svg
 [dependencies-url]: https://david-dm.org/isle-project/isle-server/master
