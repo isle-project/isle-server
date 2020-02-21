@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git://github.com/isle-project/isle-server.git"
   },
-  "license": "APGL",
+  "license": "AGPL-3.0-only",
   "author": {
     "name": "Philipp Burckhardt",
     "email": "pburckhardt@outlook.com"
