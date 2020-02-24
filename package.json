@@ -33,7 +33,7 @@
   "dependencies": {
     "@stdlib/stdlib": "0.0.90",
     "adm-zip": "^0.4.14",
-    "async": "^3.1.1",
+    "async": "^3.2.0",
     "bcrypt": "^4.0.0",
     "body-parser": "^1.19.0",
     "capture-website": "^0.8.1",
