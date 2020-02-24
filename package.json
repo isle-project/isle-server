@@ -45,7 +45,7 @@
     "faker": "^4.1.0",
     "fs-extra": "^8.0.1",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.9.1",
+    "mongoose": "^5.9.2",
     "mongoose-unique-validator": "^2.0.2",
     "multer": "^1.4.2",
     "ncp": "^2.0.0",
