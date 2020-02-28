@@ -27,6 +27,9 @@ jobs:
       env:
         CI: true
     - name: Calculate Test Coverage
+      run: |
+        npm run test-cov
+    - name: Upload Coverage Report
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
