@@ -24,7 +24,6 @@
   "main": "./lib",
   "scripts": {
     "clean": "rm -rf ./node_modules",
-    "coverage": "cross-env istanbul cover --dir ./reports/codecov/coverage --report lcovonly tape -- \"./test/*.js\" && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov",
     "lint": "eslint lib/**/*.js test/**/*.js",
     "start": "cross-env node lib/index.js",
     "test": "cross-env tape \"./test/*.js\"",
