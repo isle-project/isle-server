@@ -23,7 +23,7 @@ const tape = require( 'tape' );
 const contains = require( '@stdlib/assert/contains' );
 const isString = require( '@stdlib/assert/is-string' );
 const utils = require( './utils.js' );
-const User = require( './../lib/user.js' );
+const User = require( './../lib/models/user.js' );
 
 
 // TESTS //

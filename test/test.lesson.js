@@ -23,8 +23,8 @@ const tape = require( 'tape' );
 const waterfall = require( '@stdlib/utils/async/series-waterfall' );
 const papply = require( '@stdlib/utils/papply' );
 const utils = require( './utils.js' );
-const Namespace = require( './../lib/namespace.js' );
-const Lesson = require( './../lib/lesson.js' );
+const Namespace = require( './../lib/models/namespace.js' );
+const Lesson = require( './../lib/models/lesson.js' );
 
 
 // FUNCTIONS //

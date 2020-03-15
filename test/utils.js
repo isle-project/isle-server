@@ -23,9 +23,9 @@ const mongoose = require( 'mongoose' );
 const setReadOnly = require( '@stdlib/utils/define-read-only-property' );
 const waterfall = require( '@stdlib/utils/async/series-waterfall' );
 const objectKeys = require( '@stdlib/utils/keys' );
-const Namespace = require( './../lib/namespace.js' );
-const Lesson = require( './../lib/lesson.js' );
-const User = require( './../lib/user.js' );
+const Namespace = require( './../lib/models/namespace.js' );
+const Lesson = require( './../lib/models/lesson.js' );
+const User = require( './../lib/models/user.js' );
 
 
 // VARIABLES //

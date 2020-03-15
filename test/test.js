@@ -19,22 +19,22 @@
 
 // MODULES //
 
-var tape = require( 'tape' );
-var request = require( 'supertest' );
-var proxyquire = require( 'proxyquire' );
-var isValidObjectId = require( 'mongoose' ).Types.ObjectId.isValid;
-var isObject = require( '@stdlib/assert/is-object' );
-var isString = require( '@stdlib/assert/is-string' );
-var isArray = require( '@stdlib/assert/is-array' );
-var isNull= require( '@stdlib/assert/is-null' );
-var contains = require( '@stdlib/assert/contains' );
-var noop = require( '@stdlib/utils/noop' );
-var copy = require( '@stdlib/utils/copy' );
-var User = require( './../lib/user.js' );
-var utils = require( './utils.js' );
+const tape = require( 'tape' );
+const request = require( 'supertest' );
+const proxyquire = require( 'proxyquire' );
+const isValidObjectId = require( 'mongoose' ).Types.ObjectId.isValid;
+const isObject = require( '@stdlib/assert/is-object' );
+const isString = require( '@stdlib/assert/is-string' );
+const isArray = require( '@stdlib/assert/is-array' );
+const isNull= require( '@stdlib/assert/is-null' );
+const contains = require( '@stdlib/assert/contains' );
+const noop = require( '@stdlib/utils/noop' );
+const copy = require( '@stdlib/utils/copy' );
+const User = require( './../lib/models/user.js' );
+const utils = require( './utils.js' );
 
-var WRITE_ACCESS_TOKEN = 'no_restrictions';
-var requires = {
+const WRITE_ACCESS_TOKEN = 'no_restrictions';
+const requires = {
 	'./../etc/config.json': {
 		'namespacesDirectory': './fixtures',
 		'server': 'http://localhost',
@@ -53,13 +53,13 @@ var requires = {
 		'@noCallThru': true
 	}
 };
-var app = proxyquire( './../lib/index.js', requires );
+const app = proxyquire( './../lib/index.js', requires );
 
 
 // VARIABLES //
 
-var USER_TOKEN;
-var USER_ID;
+let USER_TOKEN;
+let USER_ID;
 
 
 // TESTS //

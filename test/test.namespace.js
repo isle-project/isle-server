@@ -24,8 +24,8 @@ const isArray = require( '@stdlib/assert/is-array' );
 const waterfall = require( '@stdlib/utils/async/series-waterfall' );
 const papply = require( '@stdlib/utils/papply' );
 const utils = require( './utils.js' );
-const User = require( './../lib/user.js' );
-const Namespace = require( './../lib/namespace.js' );
+const User = require( './../lib/models/user.js' );
+const Namespace = require( './../lib/models/namespace.js' );
 
 
 // TESTS //
