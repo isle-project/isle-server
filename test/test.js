@@ -41,7 +41,7 @@ const requires = {
 		'@noCallThru': true
 	},
 	'./connect_mongoose.js': noop,
-	'./mailer.js': {
+	'./mailer': {
 		'send': function send( mail, clbk ) {
 			clbk( null, 'Mail sent' );
 		},
