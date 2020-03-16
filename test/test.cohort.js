@@ -130,9 +130,8 @@ tape( 'inserting a cohort fails if members is not an array of User objects', fun
 });
 
 tape( 'one can specify the namespace of the cohort', function test( t ) {
-	const o;
 	Namespace.findOne( function onNamespace( err, ns ) {
-		o = {
+		const o = {
 			'title': 'beepboop',
 			'namespace': ns
 		};
