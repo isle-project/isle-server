@@ -53,7 +53,7 @@ const requires = {
 		'@noCallThru': true
 	},
 	'./../credentials/tokens.json': tokens,
-	'./helpers/is_admin.js' : {
+	'./helpers/is_admin.js': {
 		'./../../credentials/tokens.json': tokens,
 		'@noCallThru': true
 	}
