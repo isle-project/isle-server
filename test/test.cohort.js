@@ -145,9 +145,8 @@ tape( 'one can specify the namespace of the cohort', function test( t ) {
 });
 
 tape( 'inserting a cohort fails if the title is already used for a certain namespace', function test( t ) {
-	const o;
 	Namespace.findOne( function onNamespace( err, ns ) {
-		o = {
+		const o = {
 			'title': 'beepboop',
 			'namespace': ns
 		};
