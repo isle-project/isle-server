@@ -34,6 +34,11 @@ const User = require( './../lib/models/user.js' );
 const utils = require( './utils.js' );
 
 const WRITE_ACCESS_TOKEN = 'no_restrictions';
+const tokens = {
+	'writeAccess': WRITE_ACCESS_TOKEN,
+	'jwtKey': 'json_web_token_key',
+	'@noCallThru': true
+};
 const requires = {
 	'./../etc/config.json': {
 		'namespacesDirectory': './fixtures',
@@ -47,11 +52,8 @@ const requires = {
 		},
 		'@noCallThru': true
 	},
-	'./../credentials/tokens.json': {
-		'writeAccess': WRITE_ACCESS_TOKEN,
-		'jwtKey': 'json_web_token_key',
-		'@noCallThru': true
-	}
+	'./../credentials/tokens.json': tokens,
+	'./../../credentials/tokens.json': tokens
 };
 const app = proxyquire( './../lib/index.js', requires );
 
@@ -151,7 +153,7 @@ tape( 'GET /forgot_password - success', function test( t ) {
 
 tape( 'GET /forgot_password - failure sending email', function test( t ) {
 	var newRequires = copy( requires );
-	newRequires[ './mailer.js' ] = {
+	newRequires[ './mailer' ] = {
 		'send': function send( mail, clbk ) {
 			clbk( new Error( 'Service unavailable' ) );
 		},
@@ -267,7 +269,7 @@ tape( 'GET /get_lesson (unknown namespace)', function test( t ) {
 	.expect( 404 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, 'Namespace query failed.', 'returns message' );
+		t.strictEqual( res.text, 'Namespace does not exist.', 'returns message' );
 		t.end();
 	});
 });
