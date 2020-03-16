@@ -53,10 +53,7 @@ const requires = {
 		'@noCallThru': true
 	},
 	'./../credentials/tokens.json': tokens,
-	'./helpers/is_admin.js': {
-		'./../../credentials/tokens.json': tokens,
-		'@noCallThru': true
-	}
+	'./helpers/is_admin.js': () => ( req, res, next ) => next()
 };
 const app = proxyquire( './../lib/index.js', requires );
 
