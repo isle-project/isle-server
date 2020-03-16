@@ -46,7 +46,7 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'successfully creates a lesson for a given namespace', function test( t ) {
 	function createLesson( ns, next ) {
-		var o = {
+		const o = {
 			'title': 'My first lesson',
 			'namespace': ns
 		};
@@ -81,7 +81,7 @@ tape( 'successfully creates a lesson for a given namespace', function test( t ) 
 
 tape( 'creating a lesson fails if no title is given', function test( t ) {
 	function createLesson( ns, next ) {
-		var o = {
+		const o = {
 			'namespace': ns
 		};
 		Lesson.create( o, next );
@@ -105,7 +105,7 @@ tape( 'creating a lesson fails if no title is given', function test( t ) {
 });
 
 tape( 'creating a lesson fails if no namespace is given', function test( t ) {
-	var o = {
+	const o = {
 		'title': 'Lesson_without_Namespace'
 	};
 	Lesson.create( o, function onCreate( err ) {
@@ -121,7 +121,7 @@ tape( 'creating a lesson fails if no namespace is given', function test( t ) {
 
 tape( 'successfully creates a lesson for a given namespace (custom optional attributes)', function test( t ) {
 	function createLesson( ns, next ) {
-		var o = {
+		const o = {
 			'title': 'My first lesson',
 			'description': 'my description',
 			'namespace': ns,

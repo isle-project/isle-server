@@ -34,28 +34,24 @@ const User = require( './../lib/models/user.js' );
 const utils = require( './utils.js' );
 
 const WRITE_ACCESS_TOKEN = 'no_restrictions';
-const tokens = {
-	'writeAccess': WRITE_ACCESS_TOKEN,
-	'jwtKey': 'json_web_token_key',
-	'@noCallThru': true
-};
 const requires = {
 	'./../etc/config.json': {
 		'namespacesDirectory': './fixtures',
 		'server': 'http://localhost',
-		'@noCallThru': true
 	},
 	'./connect_mongoose.js': noop,
 	'./mailer': {
 		'send': function send( mail, clbk ) {
 			clbk( null, 'Mail sent' );
-		},
-		'@noCallThru': true
+		}
 	},
-	'./../credentials/tokens.json': tokens,
+	'./../credentials/tokens.json': {
+		'writeAccess': WRITE_ACCESS_TOKEN,
+		'jwtKey': 'json_web_token_key'
+	},
 	'./helpers/is_admin.js': () => ( req, res, next ) => next()
 };
-const app = proxyquire( './../lib/index.js', requires );
+const app = proxyquire.noCallThru()( './../lib/index.js', requires );
 
 
 // VARIABLES //
@@ -198,7 +194,7 @@ tape( 'GET /has_write_access (write access)', function test( t ) {
 			.expect( 200 )
 			.end( function onEnd( err, res ) {
 				t.error( err, 'does not return an error');
-				var obj = JSON.parse( res.text );
+				const obj = JSON.parse( res.text );
 				t.strictEqual( obj.message, 'The user has write access', 'returns expected message' );
 				t.strictEqual( obj.writeAccess, true, 'returns expected write access' );
 				t.end();
@@ -214,7 +210,7 @@ tape( 'GET /get_lesson_info', function test( t ) {
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		var obj = JSON.parse( res.text );
+		const obj = JSON.parse( res.text );
 		t.ok( isString( obj.lessonID ), 'returns ID of lesson' );
 		t.ok( isString( obj.namespaceID ), 'returns ID of namespace' );
 		t.end();
@@ -240,7 +236,7 @@ tape( 'GET /get_lesson', function test( t ) {
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		var obj = JSON.parse( res.text );
+		const obj = JSON.parse( res.text );
 		t.strictEqual( obj.message, 'ok', 'returns message' );
 		t.strictEqual( isObject( obj.lesson ), true, 'returns lesson object' );
 		t.strictEqual( obj.lesson.title, 'Why have you followed me?', 'returns correct title' );
@@ -255,7 +251,7 @@ tape( 'GET /get_lesson (unknown lesson)', function test( t ) {
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		var obj = JSON.parse( res.text );
+		const obj = JSON.parse( res.text );
 		t.strictEqual( obj.message, 'ok', 'returns message' );
 		t.strictEqual( isNull( obj.lesson ), true, 'lesson does not exist' );
 		t.end();
@@ -304,7 +300,7 @@ tape( 'GET /get_public_lessons', function test( t ) {
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		var body = res.body;
+		const body = res.body;
 		t.strictEqual( body.message, 'ok', 'returns expected message' );
 		t.ok( isArray( body.lessons ), 'returns array of public lessons' );
 		t.strictEqual( body.lessons.length, 4, 'array has expected length' );
@@ -331,7 +327,7 @@ tape( 'GET /get_lessons', function test( t ) {
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		var body = res.body;
+		const body = res.body;
 		t.strictEqual( body.message, 'ok', 'returns expected message' );
 		t.ok( isArray( body.lessons ), 'returns expected array' );
 		t.strictEqual( body.lessons.length, 3, 'array has expected length' );
@@ -373,7 +369,7 @@ tape( 'POST /update_user_password', function test( t ) {
 		.expect( 200 )
 		.end( function onEnd( err, res ) {
 			t.error( err, 'does not return an error' );
-			var body = res.body;
+			const body = res.body;
 			t.strictEqual( body.message, 'User password successfully updated.', 'returns expected message' );
 			t.end();
 		});
@@ -448,7 +444,7 @@ tape( 'POST /login (unknown email address)', function test( t ) {
 	.expect( 404 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		var body = res.body;
+		const body = res.body;
 		t.strictEqual( body.message, 'No user with the given email address found.', 'returns expected message' );
 		t.strictEqual( body.type, 'no_user', 'returns expected type' );
 		t.end();
@@ -465,7 +461,7 @@ tape( 'POST /login (wrong password)', function test( t ) {
 	.expect( 401 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		var body = res.body;
+		const body = res.body;
 		t.strictEqual( body.message, 'Password is not correct.', 'returns expected message' );
 		t.strictEqual( body.type, 'incorrect_password', 'returns expected type' );
 		t.end();
@@ -482,7 +478,7 @@ tape( 'POST /login', function test( t ) {
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		var body = res.body;
+		const body = res.body;
 		t.strictEqual( body.message, 'ok', 'returns expected message' );
 		t.ok( isString( body.token ), 'returns `token` string' );
 		USER_TOKEN = body.token;

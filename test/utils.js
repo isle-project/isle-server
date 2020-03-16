@@ -45,8 +45,7 @@ function clearDB( clbk ) {
 	var counter = 0;
 	var keys = objectKeys( mongoose.connection.collections );
 	var len = keys.length;
-	var i;
-	for ( i = 0; i < len; i++ ) {
+	for ( let i = 0; i < len; i++ ) {
 		collection = mongoose.connection.collections[ keys[ i ] ];
 		collection.deleteMany( onDone );
 	}

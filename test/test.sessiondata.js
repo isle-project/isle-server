@@ -50,7 +50,7 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'successfully creates a session data object for a given lesson and user', function test( t ) {
 	function createLesson( obj, next ) {
-		var o = {
+		const o = {
 			'title': 'My first lesson',
 			'namespace': obj.namespace
 		};
@@ -65,7 +65,7 @@ tape( 'successfully creates a session data object for a given lesson and user', 
 		});
 	}
 	function createSessionData( obj, next ) {
-		var data = {
+		const data = {
 			'name': '',
 			'email': 'lotti.anton.super@gmail.com',
 			'time': 25509,
@@ -109,7 +109,7 @@ tape( 'successfully creates a session data object for a given lesson and user', 
 
 tape( 'successfully creates a session data object for a given lesson and an anonymous user', function test( t ) {
 	function createLesson( obj, next ) {
-		var o = {
+		const o = {
 			'title': 'My first lesson',
 			'namespace': obj.namespace
 		};
@@ -121,7 +121,7 @@ tape( 'successfully creates a session data object for a given lesson and an anon
 		});
 	}
 	function createSessionData( lesson, next ) {
-		var data = {
+		const data = {
 			'name': 'anonymous',
 			'email': 'anonymous',
 			'time': 25509,
@@ -163,7 +163,7 @@ tape( 'successfully creates a session data object for a given lesson and an anon
 
 tape( 'fails creating a session for a given lesson and user when no data or type is given', function test( t ) {
 	function createLesson( obj, next ) {
-		var o = {
+		const o = {
 			'title': 'My first lesson',
 			'namespace': obj.namespace
 		};
@@ -202,7 +202,7 @@ tape( 'fails creating a session for a given lesson and user when no data or type
 });
 
 tape( 'fails creating a session data object when no lesson is given', function test( t ) {
-	var data = {
+	const data = {
 		'name': 'anonymous',
 		'email': 'anonymous',
 		'time': 25509,
@@ -215,7 +215,7 @@ tape( 'fails creating a session data object when no lesson is given', function t
 		'type': 'action',
 		'data': data
 	}, function onCreate( err ) {
-		var expected = 'SessionData validation failed: lesson: Path `lesson` is required.';
+		const expected = 'SessionData validation failed: lesson: Path `lesson` is required.';
 		if ( err ) {
 			t.pass( 'encountered an error' );
 			t.strictEqual( err.message, expected, 'returns expected error message' );

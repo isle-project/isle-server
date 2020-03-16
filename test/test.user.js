@@ -31,7 +31,7 @@ const User = require( './../lib/models/user.js' );
 tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'the model can create a new user', function test( t ) {
-	var o = {
+	const o = {
 		'name': 'Oliver Cromwell',
 		'organization': 'England',
 		'email': 'cromwell.oliver@isledocs.com',
@@ -52,7 +52,7 @@ tape( 'the model can create a new user', function test( t ) {
 });
 
 tape( 'the model saves a randomly generated email and name for each user', function test( t ) {
-	var o = {
+	const o = {
 		'name': 'Winston Churchill',
 		'organization': 'England',
 		'email': 'winston.churchill@isledocs.com',
@@ -67,7 +67,7 @@ tape( 'the model saves a randomly generated email and name for each user', funct
 });
 
 tape( 'creating a user fails when email is already taken', function test( t ) {
-	var o = {
+	const o = {
 		'email': 'cromwell.oliver@isledocs.com',
 		'password': 'charles'
 	};
@@ -83,7 +83,7 @@ tape( 'creating a user fails when email is already taken', function test( t ) {
 });
 
 tape( 'updating a user does not change the hashed password', function test( t ) {
-	var o = {
+	const o = {
 		'email': 'cromwell.oliver@isledocs.com'
 	};
 	User.findOneAndUpdate( o, { '$set': { 'organization': 'United Kingdom' }}, { 'new': true }, function onCreate( err, createdUser ) {
