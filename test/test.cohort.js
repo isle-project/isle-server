@@ -38,25 +38,24 @@ tape( 'connect to a clean mongoDB database', utils.before );
 tape( 'populate the database', utils.populateDatabase );
 
 tape( 'the model can create a new cohort', function test( t ) {
-	var o = {
+	const o = {
 		'title': 'beep'
 	};
 	Cohort.create( o, function onCreate( err, createdCohort ) {
-		var tdiff;
 		t.strictEqual( err instanceof Error, false, 'does not return an error' );
 		t.strictEqual( createdCohort.title, 'beep', 'has correct title' );
 		t.ok( isEmptyArray( createdCohort.members ), 'has no members' );
 		t.ok( isDateObject( createdCohort.startDate ), 'has a start date' );
-		tdiff = abs( createdCohort.startDate.getTime() - new Date().getTime() );
+		const tdiff = abs( createdCohort.startDate.getTime() - new Date().getTime() );
 		t.ok( tdiff < 60000, 'start date is smaller than latency' );
 		t.end();
 	});
 });
 
 tape( 'inserting a cohort fails if no title is supplied', function test( t ) {
-	var o = {};
+	const o = {};
 	Cohort.create( o, function onCreate( err, createdCohort ) {
-		var expected = 'Cohort validation failed: title: Path `title` is required.';
+		const expected = 'Cohort validation failed: title: Path `title` is required.';
 		t.strictEqual( err instanceof Error, true, 'returns an error' );
 		t.strictEqual( err.message, expected, 'has expected message' );
 		t.end();
@@ -64,9 +63,9 @@ tape( 'inserting a cohort fails if no title is supplied', function test( t ) {
 });
 
 tape( 'one can create a cohort with a given start and end date', function test( t ) {
-	var startDate = new Date();
-	var endDate = new Date( startDate.getFullYear() + 1 );
-	var o = {
+	const startDate = new Date();
+	const endDate = new Date( startDate.getFullYear() + 1 );
+	const o = {
 		'title': 'boop',
 		'startDate': startDate,
 		'endDate': endDate
@@ -83,7 +82,7 @@ tape( 'one can create a cohort with a given start and end date', function test( 
 
 tape( 'one can create a cohort with an array of members', function test( t ) {
 	function createCohort( members, next ) {
-		var o = {
+		const o = {
 			'title': 'members_only',
 			'members': members
 		};
@@ -118,12 +117,12 @@ tape( 'one can create a cohort with an array of members', function test( t ) {
 });
 
 tape( 'inserting a cohort fails if members is not an array of User objects', function test( t ) {
-	var o = {
+	const o = {
 		'title': 'beepboop',
 		'members': [ 1, 2, 3 ]
 	};
 	Cohort.create( o, function onCreate( err, createdCohort ) {
-		var expected = 'Cohort validation failed: members: Cast to Array failed for value "[ 1, 2, 3 ]" at path "members"';
+		const expected = 'Cohort validation failed: members: Cast to Array failed for value "[ 1, 2, 3 ]" at path "members"';
 		t.strictEqual( err instanceof Error, true, 'returns an error' );
 		t.strictEqual( err.message, expected, 'has expected message' );
 		t.end();
@@ -131,7 +130,7 @@ tape( 'inserting a cohort fails if members is not an array of User objects', fun
 });
 
 tape( 'one can specify the namespace of the cohort', function test( t ) {
-	var o;
+	const o;
 	Namespace.findOne( function onNamespace( err, ns ) {
 		o = {
 			'title': 'beepboop',
@@ -147,7 +146,7 @@ tape( 'one can specify the namespace of the cohort', function test( t ) {
 });
 
 tape( 'inserting a cohort fails if the title is already used for a certain namespace', function test( t ) {
-	var o;
+	const o;
 	Namespace.findOne( function onNamespace( err, ns ) {
 		o = {
 			'title': 'beepboop',

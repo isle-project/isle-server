@@ -34,7 +34,7 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'successfully creates a namespace with an owner and a title', function test( t ) {
 	function createNamespace( owners, next ) {
-		var o = {
+		const o = {
 			'title': 'First_Namespace',
 			'owners': owners,
 			'description': 'The first namespace'
@@ -67,12 +67,12 @@ tape( 'successfully creates a namespace with an owner and a title', function tes
 });
 
 tape( 'fails creating a namespace with an already used title', function test( t ) {
-	var o = {
+	const o = {
 		'title': 'Duplicate_Namespace',
 		'description': 'Namespace with already taken title'
 	};
 	function createUser( next ) {
-		var u = [
+		const u = [
 			{
 				'email': 'peter.flux.super@gmail.com',
 				'password': 'fluxus'
@@ -113,7 +113,7 @@ tape( 'fails creating a namespace with an already used title', function test( t 
 
 tape( 'fails creating a namespace without a title', function test( t ) {
 	function createUser( next ) {
-		var u = [
+		const u = [
 			{
 				'email': 'hans.anton.super@gmail.com',
 				'password': 'lotti'
@@ -128,12 +128,12 @@ tape( 'fails creating a namespace without a title', function test( t ) {
 	}
 
 	function createNamespace( owners, next ) {
-		var o = {
+		const o = {
 			'owners': owners,
 			'description': 'Namespace without title'
 		};
 		Namespace.create( o, function onCreate( err ) {
-			var expected = 'Namespace validation failed: title: Path `title` is required.';
+			const expected = 'Namespace validation failed: title: Path `title` is required.';
 			t.strictEqual( err instanceof Error, true, 'returns an error' );
 			t.strictEqual( err.message, expected, 'has expected message' );
 			next( err );
@@ -152,13 +152,13 @@ tape( 'fails creating a namespace without a title', function test( t ) {
 });
 
 tape( 'fails creating a namespace without owners', function test( t ) {
-	var o = {
+	const o = {
 		'title': 'ownerless namespace',
 		'description': 'Namespace without an owner',
 		'owners': null
 	};
 	Namespace.create( o, function onCreate( err ) {
-		var expected = 'Namespace validation failed: owners: Namespaces need at least one owner';
+		const expected = 'Namespace validation failed: owners: Namespaces need at least one owner';
 		t.strictEqual( err instanceof Error, true, 'returns an error' );
 		t.strictEqual( err.message, expected, 'has expected message' );
 		t.end();
@@ -166,13 +166,13 @@ tape( 'fails creating a namespace without owners', function test( t ) {
 });
 
 tape( 'fails creating a namespace with an empty owners array', function test( t ) {
-	var o = {
+	const o = {
 		'title': 'ownerless namespace',
 		'description': 'Namespace without an owner',
 		'owners': []
 	};
 	Namespace.create( o, function onCreate( err ) {
-		var expected = 'Namespace validation failed: owners: Namespaces need at least one owner';
+		const expected = 'Namespace validation failed: owners: Namespaces need at least one owner';
 		t.strictEqual( err instanceof Error, true, 'returns an error' );
 		t.strictEqual( err.message, expected, 'has expected message' );
 		t.end();

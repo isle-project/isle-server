@@ -148,14 +148,14 @@ tape( 'GET /forgot_password - success', function test( t ) {
 });
 
 tape( 'GET /forgot_password - failure sending email', function test( t ) {
-	var newRequires = copy( requires );
+	const newRequires = copy( requires );
 	newRequires[ './mailer' ] = {
 		'send': function send( mail, clbk ) {
 			clbk( new Error( 'Service unavailable' ) );
 		},
 		'@noCallThru': true
 	};
-	var app = proxyquire( './../lib/index.js', newRequires );
+	const app = proxyquire( './../lib/index.js', newRequires );
 	request( app )
 	.get( '/forgot_password' )
 	.query({ email: 'fridolin.supertester@gmail.com' })
@@ -174,7 +174,7 @@ tape( 'GET /has_write_access (no write access)', function test( t ) {
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error');
-		var obj = JSON.parse( res.text );
+		const obj = JSON.parse( res.text );
 		t.strictEqual( obj.message, 'The user has no write access', 'returns expected message' );
 		t.strictEqual( obj.writeAccess, false, 'returns expected write access' );
 		t.end();
@@ -182,7 +182,7 @@ tape( 'GET /has_write_access (no write access)', function test( t ) {
 });
 
 tape( 'GET /has_write_access (write access)', function test( t ) {
-	var email = 'fridolin.supertester@gmail.com';
+	const email = 'fridolin.supertester@gmail.com';
 	User.findOneAndUpdate({ email: email },
 		{
 			$set: { writeAccess: true }
