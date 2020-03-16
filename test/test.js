@@ -37,7 +37,7 @@ const WRITE_ACCESS_TOKEN = 'no_restrictions';
 const requires = {
 	'./../etc/config.json': {
 		'namespacesDirectory': './fixtures',
-		'server': 'http://localhost',
+		'server': 'http://localhost'
 	},
 	'./connect_mongoose.js': noop,
 	'./mailer': {

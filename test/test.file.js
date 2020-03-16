@@ -50,7 +50,7 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'successfully creates a file for a given lesson and user', function test( t ) {
 	function createLesson( obj, next ) {
-		var o = {
+		const o = {
 			'title': 'My first lesson',
 			'namespace': obj.namespace
 		};
@@ -104,7 +104,7 @@ tape( 'successfully creates a file for a given lesson and user', function test( 
 
 tape( 'fails creating a file for a given lesson and user when no path is given', function test( t ) {
 	function createLesson( obj, next ) {
-		var o = {
+		const o = {
 			'title': 'My first lesson',
 			'namespace': obj.namespace
 		};
@@ -148,7 +148,7 @@ tape( 'fails creating a file for a given lesson and user when no path is given',
 
 tape( 'fails creating a file for a given lesson and user when no title is given', function test( t ) {
 	function createLesson( obj, next ) {
-		var o = {
+		const o = {
 			'title': 'My first lesson',
 			'namespace': obj.namespace
 		};
@@ -196,7 +196,7 @@ tape( 'fails creating a file when no user or namespace is given', function test(
 		'path': 'File path',
 		'filename': 'File name'
 	}, function onCreate( err, file ) {
-		var expected = 'File validation failed: user: Path `user` is required., namespace: Path `namespace` is required.';
+		const expected = 'File validation failed: user: Path `user` is required., namespace: Path `namespace` is required.';
 		if ( err ) {
 			t.pass( 'encountered an error' );
 			t.strictEqual( err.message, expected, 'returns expected error message' );

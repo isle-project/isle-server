@@ -41,12 +41,11 @@ mongoose.Promise = global.Promise;
 const ns = {};
 
 function clearDB( clbk ) {
-	var collection;
-	var counter = 0;
-	var keys = objectKeys( mongoose.connection.collections );
-	var len = keys.length;
+	let counter = 0;
+	const keys = objectKeys( mongoose.connection.collections );
+	const len = keys.length;
 	for ( let i = 0; i < len; i++ ) {
-		collection = mongoose.connection.collections[ keys[ i ] ];
+		const collection = mongoose.connection.collections[ keys[ i ] ];
 		collection.deleteMany( onDone );
 	}
 	function onDone() {
@@ -80,7 +79,7 @@ setReadOnly( ns, 'before', function before( t ) {
 
 setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 	function createUsers( next ) {
-		var pop = [
+		const pop = [
 			{
 				'email': 'zorro707@gmail.com',
 				'name': 'Zorro',
@@ -116,7 +115,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 	}
 
 	function createNamespaces( users, next ) {
-		var namespaces = [
+		const namespaces = [
 			{
 				'title': 'Frankenstein meets the Wolf Man',
 				'description': 'Open the grave of Larry Talbot',
@@ -137,7 +136,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 	}
 
 	function createLessons( namespaces, next ) {
-		var lessons = [
+		const lessons = [
 			{
 				namespace: namespaces[ 2 ]._id,
 				title: 'Unearth the monster!',

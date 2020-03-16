@@ -51,7 +51,7 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'successfully creates a session for a given lesson and user', function test( t ) {
 	function createLesson( obj, next ) {
-		var o = {
+		const o = {
 			'title': 'My first lesson',
 			'namespace': obj.namespace
 		};
@@ -66,8 +66,8 @@ tape( 'successfully creates a session for a given lesson and user', function tes
 		});
 	}
 	function createSession( obj, next ) {
-		var startTime = new Date().getTime();
-		var endTime = startTime + 10000;
+		const startTime = new Date().getTime();
+		const endTime = startTime + 10000;
 		Session.create({
 			'startTime': startTime,
 			'endTime': endTime,
@@ -107,7 +107,7 @@ tape( 'successfully creates a session for a given lesson and user', function tes
 
 tape( 'fails creating a session for a given lesson and user when no start time is given', function test( t ) {
 	function createLesson( obj, next ) {
-		var o = {
+		const o = {
 			'title': 'My first lesson',
 			'namespace': obj.namespace
 		};
@@ -149,7 +149,7 @@ tape( 'fails creating a session when no user or lesson is given', function test(
 	Session.create({
 		'startTime': new Date().getTime()
 	}, function onCreate( err ) {
-		var expected = 'Session validation failed: lesson: Path `lesson` is required.';
+		const expected = 'Session validation failed: lesson: Path `lesson` is required.';
 		if ( err ) {
 			t.pass( 'encountered an error' );
 			t.strictEqual( err.message, expected, 'returns expected error message' );
