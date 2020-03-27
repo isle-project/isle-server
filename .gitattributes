@@ -1,3 +1,4 @@
 * text=auto
 credentials/mailgun.json filter=crypt diff=crypt
 credentials/tokens.json filter=crypt diff=crypt
+credentials/jitsi.json filter=crypt diff=crypt
