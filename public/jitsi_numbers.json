@@ -1,7 +1,8 @@
 {
     "message": "Phone numbers available.",
     "numbers": {
-        "US": ["+1.201.701.8157"]
+        "USA NJ": ["+1.201.701.8157"],
+	"USA WA": ["+1.206.237.1298"]
     },
     "numbersEnabled":true
 }
