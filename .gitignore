@@ -9,6 +9,7 @@ reports/
 build/
 public/*
 !public/tutorials
+!public/jitsi_numbers.json
 media/
 logs/
 
