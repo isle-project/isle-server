@@ -512,7 +512,7 @@ tape( 'POST /set_write_access (wrong token)', function test( t ) {
 	request( app )
 	.post( '/set_write_access' )
 	.set( 'Authorization', 'JWT '+USER_TOKEN )
-	.query({
+	.send({
 		token: 'wrong_token'
 	})
 	.expect( 401 )
