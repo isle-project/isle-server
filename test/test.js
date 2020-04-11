@@ -508,9 +508,9 @@ tape( 'POST /credentials', function test( t ) {
 	});
 });
 
-tape( 'GET /set_write_access (wrong token)', function test( t ) {
+tape( 'POST /set_write_access (wrong token)', function test( t ) {
 	request( app )
-	.get( '/set_write_access' )
+	.post( '/set_write_access' )
 	.set( 'Authorization', 'JWT '+USER_TOKEN )
 	.query({
 		token: 'wrong_token'
@@ -523,11 +523,11 @@ tape( 'GET /set_write_access (wrong token)', function test( t ) {
 	});
 });
 
-tape( 'GET /set_write_access', function test( t ) {
+tape( 'POST /set_write_access', function test( t ) {
 	request( app )
 	.get( '/set_write_access' )
 	.set( 'Authorization', 'JWT '+USER_TOKEN )
-	.query({
+	.send({
 		token: WRITE_ACCESS_TOKEN
 	})
 	.expect( 200 )
