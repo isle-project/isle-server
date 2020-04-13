@@ -525,7 +525,7 @@ tape( 'POST /set_write_access (wrong token)', function test( t ) {
 
 tape( 'POST /set_write_access', function test( t ) {
 	request( app )
-	.get( '/set_write_access' )
+	.post( '/set_write_access' )
 	.set( 'Authorization', 'JWT '+USER_TOKEN )
 	.send({
 		token: WRITE_ACCESS_TOKEN
