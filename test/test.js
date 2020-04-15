@@ -445,9 +445,7 @@ tape( 'POST /login (unknown email address)', function test( t ) {
 	.expect( 404 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		const body = res.body;
-		t.strictEqual( body.message, 'No user with the given email address found.', 'returns expected message' );
-		t.strictEqual( body.type, 'no_user', 'returns expected type' );
+		t.strictEqual( res.text, 'No user with the given email address found.', 'returns expected message' );
 		t.end();
 	});
 });
@@ -462,9 +460,7 @@ tape( 'POST /login (wrong password)', function test( t ) {
 	.expect( 401 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		const body = res.body;
-		t.strictEqual( body.message, 'Password is not correct.', 'returns expected message' );
-		t.strictEqual( body.type, 'incorrect_password', 'returns expected type' );
+		t.strictEqual( res.text, 'Password is not correct.', 'returns expected message' );
 		t.end();
 	});
 });
