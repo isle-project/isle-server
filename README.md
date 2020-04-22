@@ -59,21 +59,16 @@ Files in the `credentials` folder have been [transcrypted][transcrypt].
 
 To start the server,
 
-```bash
+``` bash
 npm start 
 ```
 
-To make sure the server restarts in case of a crash, it is advised to use it via [forever][forever]: 
+To make sure the server restarts in case of a crash, it is advised to use it via [pm2][pm2]: 
 
-```bash
-forever start -c "npm start" --append --uid="isle-server" /path/to/app/dir/
+``` bash
+pm2 start lib/index.js --name isle-server
 ```
 
-To stop the server, one can then simply do
-
-```bash
-forever stop isle-server
-```
 ### Tests
 
 #### Unit
@@ -88,7 +83,7 @@ $ npm test
 
 This repository uses [Istanbul][istanbul] as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
 
-``` bash
+```bash
 $ npm run test-cov
 ```
 
@@ -130,7 +125,7 @@ See [LICENSE][license].
 [isle-dashboard]: https://github.com/isle-project/isle-dashboard
 [isle-editor]: https://github.com/isle-project/isle-editor
 
-[forever]: https://github.com/foreverjs/forever
+[pm2]: https://github.com/Unitech/pm2
 
 [tape]: https://github.com/substack/tape
 [istanbul]: https://github.com/gotwarlost/istanbul
