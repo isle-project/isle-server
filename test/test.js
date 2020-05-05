@@ -37,6 +37,8 @@ const WRITE_ACCESS_TOKEN = 'no_restrictions';
 const requires = {
 	'./../etc/config.json': {
 		'namespacesDirectory': './fixtures',
+		'mediaDirectory': './fixtures',
+		'logsDirectory': './fixtures',
 		'server': 'http://localhost'
 	},
 	'./connect_mongoose.js': noop,
