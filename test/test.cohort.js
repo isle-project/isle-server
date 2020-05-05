@@ -122,7 +122,7 @@ tape( 'inserting a cohort fails if members is not an array of User objects', fun
 		'members': [ 1, 2, 3 ]
 	};
 	Cohort.create( o, function onCreate( err, createdCohort ) {
-		const expected = 'Cohort validation failed: members: Cast to Array failed for value "[ 1, 2, 3 ]" at path "members"';
+		const expected = 'Cohort validation failed: members.0: Cast to ObjectId failed for value "1" at path "members", members: Cast to Array failed for value "[ 1, 2, 3 ]" at path "members"';
 		t.strictEqual( err instanceof Error, true, 'returns an error' );
 		t.strictEqual( err.message, expected, 'has expected message' );
 		t.end();
