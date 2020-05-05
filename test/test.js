@@ -39,7 +39,9 @@ const requires = {
 		'namespacesDirectory': './fixtures',
 		'mediaDirectory': './fixtures',
 		'logsDirectory': './fixtures',
-		'server': 'http://localhost'
+		'server': 'http://localhost',
+		'certificate': './fixtures/keys/ourcustomisleserver.com.cert',
+		'key': './fixtures/keys/ourcustomisleserver.com.key'
 	},
 	'./connect_mongoose.js': noop,
 	'./mailer': {
