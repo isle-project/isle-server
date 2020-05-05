@@ -66,7 +66,6 @@ const requires = {
 const app = proxyquire.noCallThru()( './../lib/index.js', requires );
 
 
-
 // TESTS //
 
 tape( 'connect to a clean mongoDB database', utils.before );
