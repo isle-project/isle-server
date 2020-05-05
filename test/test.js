@@ -34,6 +34,7 @@ const copy = require( '@stdlib/utils/copy' );
 const User = require( './../lib/models/user.js' );
 const utils = require( './utils.js' );
 
+
 // VARIABLES //
 
 const FIXTURES_DIRECTORY = path.join( __dirname, 'fixtures' );
