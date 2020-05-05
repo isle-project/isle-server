@@ -21,6 +21,7 @@
 
 const tape = require( 'tape' );
 const request = require( 'supertest' );
+const path = require( 'path' );
 const proxyquire = require( 'proxyquire' );
 const isValidObjectId = require( 'mongoose' ).Types.ObjectId.isValid;
 const isObject = require( '@stdlib/assert/is-object' );
@@ -33,15 +34,20 @@ const copy = require( '@stdlib/utils/copy' );
 const User = require( './../lib/models/user.js' );
 const utils = require( './utils.js' );
 
+// VARIABLES //
+
+const FIXTURES_DIRECTORY = path.join( __dirname, 'fixtures' );
+let USER_TOKEN;
+let USER_ID;
 const WRITE_ACCESS_TOKEN = 'no_restrictions';
 const requires = {
 	'./../etc/config.json': {
-		'namespacesDirectory': './fixtures',
-		'mediaDirectory': './fixtures',
-		'logsDirectory': './fixtures',
+		'namespacesDirectory': FIXTURES_DIRECTORY,
+		'mediaDirectory': FIXTURES_DIRECTORY,
+		'logsDirectory': FIXTURES_DIRECTORY,
 		'server': 'http://localhost',
-		'certificate': './fixtures/keys/ourcustomisleserver.com.cert',
-		'key': './fixtures/keys/ourcustomisleserver.com.key'
+		'certificate': path.join( FIXTURES_DIRECTORY, 'keys', 'ourcustomisleserver.com.cert' ),
+		'key': path.join( FIXTURES_DIRECTORY, 'keys', 'ourcustomisleserver.com.key' )
 	},
 	'./connect_mongoose.js': noop,
 	'./mailer': {
@@ -58,11 +64,6 @@ const requires = {
 };
 const app = proxyquire.noCallThru()( './../lib/index.js', requires );
 
-
-// VARIABLES //
-
-let USER_TOKEN;
-let USER_ID;
 
 
 // TESTS //
