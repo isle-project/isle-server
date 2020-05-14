@@ -54,7 +54,7 @@
     "prosemirror-schema-list": "^1.1.2",
     "prosemirror-tables": "^1.1.0",
     "prosemirror-transform": "^1.2.5",
-    "rotating-file-stream": "^2.1.0",
+    "rotating-file-stream": "^2.1.1",
     "socket.io": "^2.3.0",
     "swot-simple": "^1.0.0"
   },
