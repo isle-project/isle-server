@@ -35,7 +35,7 @@
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "capture-website": "^1.0.0",
-    "codecov": "^3.6.5",
+    "codecov": "^3.7.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
     "debug": "^4.1.1",
