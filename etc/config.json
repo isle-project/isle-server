@@ -4,6 +4,7 @@
 	"key": "/srv/ssl/isle.heinz.cmu.edu.key",
 	"mongodb": "mongodb://localhost/isle-db",
 	"namespacesDirectory": "./../public",
+	"localesDirectory": "./../locales",
 	"mediaDirectory": "./../media",
 	"logsDirectory": "./../logs"
 }
