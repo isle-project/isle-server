@@ -38,6 +38,7 @@ const utils = require( './utils.js' );
 // VARIABLES //
 
 const FIXTURES_DIRECTORY = path.join( __dirname, 'fixtures' );
+const LOCALES_DIRECTORY = path.join( __dirname, '..', 'locales' );
 let USER_TOKEN;
 let USER_ID;
 const WRITE_ACCESS_TOKEN = 'no_restrictions';
@@ -46,6 +47,7 @@ const requires = {
 		'namespacesDirectory': FIXTURES_DIRECTORY,
 		'mediaDirectory': FIXTURES_DIRECTORY,
 		'logsDirectory': FIXTURES_DIRECTORY,
+		'localesDirectory': LOCALES_DIRECTORY,
 		'server': 'http://localhost',
 		'certificate': path.join( FIXTURES_DIRECTORY, 'keys', 'ourcustomisleserver.com.cert' ),
 		'key': path.join( FIXTURES_DIRECTORY, 'keys', 'ourcustomisleserver.com.key' )
