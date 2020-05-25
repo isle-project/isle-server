@@ -536,7 +536,7 @@ tape( 'POST /set_write_access', function test( t ) {
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.body.message, 'User successfully updated.', 'returns expected message.' );
+		t.strictEqual( res.body.message, 'User successfully updated!', 'returns expected message.' );
 		t.end();
 	});
 });
