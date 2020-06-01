@@ -44,7 +44,7 @@
     "fs-extra": "^9.0.0",
     "i18next": "^19.4.5",
     "i18next-fs-backend": "^1.0.3",
-    "i18next-http-middleware": "^2.0.0",
+    "i18next-http-middleware": "^2.1.0",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.9.16",
     "mongoose-unique-validator": "^2.0.2",
