@@ -2,11 +2,18 @@
 	"announcement-added": "Ankündigung erfolgreich hinzugefügt.",
 	"announcement-deleted": "Ankündigung erfolgreich gelöscht.",
 	"announcement-updated": "Ankündigung erfolgreich aktualisiert.",
+	"cohort-created": "Die Kohorte wurde erfolgreich erstellt.",
+	"cohort-deleted": "Kohorte erfolgreich gelöscht.",
+	"cohort-updated": "Kohorte erfolgreich aktualisiert.",
 	"lesson-activated": "Die Lektion wurde erfolgreich aktiviert.",
 	"lesson-copied": "Die Lektion wurde erfolgreich kopiert.",
 	"lesson-deactivated": "Die Lektion wurde erfolgreich deaktiviert.",
 	"lesson-deleted": "Die Lektion wurde erfolgreich gelöscht.",
 	"lesson-updated": "Die Lektion wurde erfolgreich aktualisiert.",
 	"lesson-uploaded": "Die Lektion wurde erfolgreich hochgeladen.",
+	"namespace-created": "Der Kurs wurde erfolgreich eingerichtet!",
+	"namespace-deleted": "Kurs erfolgreich gelöscht.",
+	"namespace-updated": "Kurs erfolgreich aktualisiert.",
+	"user-saved": "Benutzerdaten erfolgreich gespeichert.",
 	"user-updated": "Benutzer erfolgreich aktualisiert!"
 }

@@ -2,11 +2,18 @@
 	"announcement-added": "El anuncio se ha añadido con éxito.",
 	"announcement-deleted": "El anuncio se ha borrado con éxito.",
 	"announcement-updated": "Anuncio actualizado con éxito.",
+	"cohort-created": "La cohorte fue creada con éxito.",
+	"cohort-deleted": "Cohorte borrado con éxito.",
+	"cohort-updated": "Cohorte actualizado con éxito.",
 	"lesson-activated": "La lección ha sido activada con éxito.",
 	"lesson-copied": "La lección ha sido copiada con éxito.",
 	"lesson-deactivated": "La lección ha sido desactivada con éxito.",
 	"lesson-deleted": "La lección ha sido borrada con éxito.",
 	"lesson-updated": "La lección ha sido actualizada con éxito.",
 	"lesson-uploaded": "La lección ha sido cargada con éxito.",
+	"namespace-created": "¡El curso fue creado con éxito!",
+	"namespace-deleted": "Curso eliminado con éxito.",
+	"namespace-updated": "Curso actualizado con éxito.",
+	"user-saved": "Los datos del usuario se han guardado con éxito.",
 	"user-updated": "¡El usuario se actualizó con éxito!"
 }
