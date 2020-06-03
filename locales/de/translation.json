@@ -1,4 +1,12 @@
 {
+	"announcement-added": "Ankündigung erfolgreich hinzugefügt.",
+	"announcement-deleted": "Ankündigung erfolgreich gelöscht.",
+	"announcement-updated": "Ankündigung erfolgreich aktualisiert.",
+	"lesson-activated": "Die Lektion wurde erfolgreich aktiviert.",
+	"lesson-copied": "Die Lektion wurde erfolgreich kopiert.",
+	"lesson-deactivated": "Die Lektion wurde erfolgreich deaktiviert.",
+	"lesson-deleted": "Die Lektion wurde erfolgreich gelöscht.",
 	"lesson-updated": "Die Lektion wurde erfolgreich aktualisiert.",
+	"lesson-uploaded": "Die Lektion wurde erfolgreich hochgeladen.",
 	"user-updated": "Benutzer erfolgreich aktualisiert!"
 }

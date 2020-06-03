@@ -1,4 +1,12 @@
 {
+	"announcement-added": "Announcement successfully added.",
+	"announcement-deleted": "Announcement successfully deleted.",
+	"announcement-updated": "Announcement successfully updated.",
+	"lesson-activated": "The lesson has been successfully activated.",
+	"lesson-copied": "The lesson has been successfully copied.",
+	"lesson-deactivated": "The lesson has been successfully deactivated.",
+	"lesson-deleted": "The lesson has been successfully deleted.",
 	"lesson-updated": "The lesson has been successfully updated.",
+	"lesson-uploaded": "The lesson has been successfully uploaded.",
 	"user-updated": "User successfully updated!"
 }
