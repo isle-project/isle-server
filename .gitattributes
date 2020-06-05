@@ -2,3 +2,4 @@
 credentials/tokens.json  filter=crypt diff=crypt
 credentials/jitsi.json  filter=crypt diff=crypt
 credentials/mailgun.json  filter=crypt diff=crypt
+credentials/deepl.json  filter=crypt diff=crypt
