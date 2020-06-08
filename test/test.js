@@ -63,6 +63,7 @@ const requires = {
 		'jwtKey': 'json_web_token_key'
 	},
 	'./../credentials/jitsi.json': {},
+	'./../credentials/deepl.json': {},
 	'./helpers/is_admin.js': () => ( req, res, next ) => next()
 };
 const app = proxyquire.noCallThru()( './../lib/index.js', requires );
