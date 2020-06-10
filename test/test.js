@@ -139,7 +139,7 @@ tape( 'GET /forgot_password - unknown user', function test( t ) {
 	.expect( 404 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, 'User with the supplied email address not found.' );
+		t.strictEqual( res.text, 'No user with the given email address found.' );
 		t.end();
 	});
 });
@@ -286,7 +286,7 @@ tape( 'GET /get_lesson (invalid `lessonName`)', function test( t ) {
 	.expect( 400 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, '`lessonName` has to be a string', 'returns message' );
+		t.strictEqual( res.text, '`lessonName` has to be a string.', 'returns message' );
 		t.end();
 	});
 });
@@ -298,7 +298,7 @@ tape( 'GET /get_lesson (invalid `namespaceName`)', function test( t ) {
 	.expect( 400 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, '`namespaceName` has to be a string', 'returns message' );
+		t.strictEqual( res.text, '`namespaceName` has to be a string.', 'returns message' );
 		t.end();
 	});
 });
@@ -351,7 +351,7 @@ tape( 'POST /update_user_password (invalid ID)', function test( t ) {
 	.expect( 400 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, '`id` has to be a valid ObjectID', 'returns expected message' );
+		t.strictEqual( res.text, '`id` has to be a valid ObjectID.', 'returns expected message' );
 		t.end();
 	});
 });
@@ -364,7 +364,7 @@ tape( 'POST /update_user_password (invalid `newPassword`)', function test( t ) {
 		.expect( 400 )
 		.end( function onEnd( err, res ) {
 			t.error( err, 'does not return an error' );
-			t.strictEqual( res.text, 'New password has to be a string', 'returns expected message' );
+			t.strictEqual( res.text, '`newPassword` has to be a string.', 'returns expected message' );
 			t.end();
 		});
 	});
@@ -537,7 +537,7 @@ tape( 'POST /set_write_access', function test( t ) {
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.body.message, 'User successfully updated!', 'returns expected message.' );
+		t.strictEqual( res.body.message, 'User Count Dracula successfully updated!', 'returns expected message.' );
 		t.end();
 	});
 });
