@@ -274,7 +274,7 @@ tape( 'GET /get_lesson (unknown namespace)', function test( t ) {
 	.expect( 404 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, 'Namespace does not exist.', 'returns message' );
+		t.strictEqual( res.text, 'Course does not exist.', 'returns message' );
 		t.end();
 	});
 });
@@ -423,7 +423,7 @@ tape( 'POST /login (invalid email)', function test( t ) {
 	.expect( 400 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, '`email` has to be a string', 'returns expected message' );
+		t.strictEqual( res.text, '`email` has to be a string.', 'returns expected message' );
 		t.end();
 	});
 });
@@ -438,7 +438,7 @@ tape( 'POST /login (invalid password)', function test( t ) {
 	.expect( 400 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, '`password` has to be a string', 'returns expected message' );
+		t.strictEqual( res.text, '`password` has to be a string.', 'returns expected message' );
 		t.end();
 	});
 });
