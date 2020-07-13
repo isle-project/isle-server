@@ -43,7 +43,7 @@
     "express": "^4.16.4",
     "faker": "^4.1.0",
     "fs-extra": "^9.0.1",
-    "i18next": "^19.5.6",
+    "i18next": "^19.6.0",
     "i18next-fs-backend": "^1.0.7",
     "i18next-http-middleware": "^3.0.2",
     "jsonwebtoken": "^8.4.0",
