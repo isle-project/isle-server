@@ -9,6 +9,7 @@
 	"cohort-deleted": "Cohort successfully deleted.",
 	"cohort-nonexistent": "Cohort does not exist.",
 	"cohort-updated": "Cohort successfully updated.",
+	"email-already-verified": "Email has already been verified.",
 	"field-expect-string": "`{{field}}` has to be a string.",
 	"file-deleted": "File successfully deleted.",
 	"file-nonexistent": "File does not exist.",
