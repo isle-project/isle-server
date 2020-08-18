@@ -10,6 +10,7 @@
 	"cohort-nonexistent": "Die Kohorte existiert nicht.",
 	"cohort-updated": "Kohorte erfolgreich aktualisiert.",
 	"email-already-verified": "E-Mail wurde bereits verifiziert.",
+	"email-confirmation-success": "Deine E-Mail-Adresse wurde erfolgreich validiert.",
 	"field-expect-string": "`{{field}}` muss eine Zeichenkette sein.",
 	"file-deleted": "Datei erfolgreich gelöscht.",
 	"file-nonexistent": "Datei existiert nicht.",
