@@ -47,6 +47,7 @@
 	"session-data-removal-failed": "Sitzungsdaten konnten nicht entfernt werden.",
 	"session-data-removed": "Sitzungsdaten erfolgreich gelöscht.",
 	"session-data-save-failed": "Sitzungsdaten konnten nicht gespeichert werden.",
+	"token-expired": "Token ist abgelaufen",
 	"user-action-saved": "Benutzeraktion erfolgreich gespeichert.",
 	"user-added-to-cohort": "Benutzer zur Kohorte hinzugefügt.",
 	"user-created": "Der Benutzer wurde erfolgreich registriert!",

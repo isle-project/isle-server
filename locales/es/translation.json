@@ -47,6 +47,7 @@
 	"session-data-removal-failed": "Los datos de la sesión no pudieron ser eliminados.",
 	"session-data-removed": "Los datos de la sesión se han eliminado con éxito.",
 	"session-data-save-failed": "Los datos de la sesión no pudieron ser guardados.",
+	"token-expired": "La ficha ha caducado.",
 	"user-action-saved": "Acción del usuario salvada con éxito.",
 	"user-added-to-cohort": "Usuario añadido a la cohorte.",
 	"user-created": "¡El usuario fue creado con éxito!",
