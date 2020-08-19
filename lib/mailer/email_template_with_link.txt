@@ -84,7 +84,7 @@
 		</header>
 
 		<div class="main">
-			As we move into the fall semester and welcome our incoming and returning students, we would like to offer our students more intentional ways of engaging with our alumni community.  These opportunities range from things like networking events, to hosting a talk for alumni, to connecting with students on an individual basis to provide mentorship and advice.  Giving students the advantage of leveraging your expertise and advice is invaluable, and something you may have also benefitted from as a student at Heinz College.  We hope you will be interested in giving back with your time and talents.
+			{{text}}
 
 			<a class="button" target="_new" href="{{link}}" >
 				Open
