@@ -36,6 +36,7 @@
 
 			.main {
 				font-family: 'Open Sans', sans-serif;
+				font-size: 16px;
 				background-color: #D7EAFB;
 				color: rgb(24,24,24);
 				padding: 24px;
@@ -61,6 +62,7 @@
 
 			.footer {
 				font-family: 'Open Sans', sans-serif;
+				font-size: 14px;
 				background-color: #292d76;
 				color: white;
 				padding: 12px;
