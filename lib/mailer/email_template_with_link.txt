@@ -10,9 +10,18 @@
 
 		<style type="text/css">
 			body {
-				max-width: 525px;
+				width: 525px;
 				margin: 0 auto;
 				padding: 10px;
+			}
+
+			a {
+				color: inherit;
+				text-decoration: none;
+				font-size: inherit;
+				font-family: inherit;
+				font-weight: inherit;
+				line-height: inherit;
 			}
 
 			header {
