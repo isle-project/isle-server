@@ -92,7 +92,7 @@
 		</div>
 
 		<footer>
-			{{server}}
+			<a href="{{server}}">{{server}}</a>
 		</footer>
 
 		<div class="isle-logo-container" >
