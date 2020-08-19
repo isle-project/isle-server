@@ -24,7 +24,7 @@
 				line-height: inherit;
 			}
 
-			header {
+			.header {
 				background-color: #292d76;
 				color: white;
 				text-align: center;
@@ -58,7 +58,7 @@
 				border-bottom: 3px solid #145257;
 			}
 
-			footer {
+			.footer {
 				font-family: 'Open Sans', sans-serif;
 				background-color: #292d76;
 				color: white;
@@ -79,21 +79,21 @@
 	</head>
 	<body>
 
-		<header>
+		<div class="header" >
 			ISLE Messenger
-		</header>
+		</div>
 
 		<div class="main">
 			{{text}}
 
-			<a class="button" target="_new" href="{{link}}" >
+			<a class="button" target="_new" href="{{link}}" style="color: rgb(240,240,240);" >
 				Open
 			</a>
 		</div>
 
-		<footer>
-			<a href="{{server}}">{{server}}</a>
-		</footer>
+		<div class="footer" >
+			<a href="{{server}}" style="color: rgb(240,240,240);" >{{server}}</a>
+		</div>
 
 		<div class="isle-logo-container" >
 			<img
