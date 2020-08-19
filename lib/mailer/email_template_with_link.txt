@@ -9,8 +9,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 
 		<style type="text/css">
-			body {
-				width: 525px;
+			.outer-container {
+				width: 600px;
 				margin: 0 auto;
 				padding: 10px;
 			}
@@ -37,6 +37,7 @@
 			.main {
 				font-family: 'Open Sans', sans-serif;
 				background-color: #D7EAFB;
+				color: rgb(24,24,24);
 				padding: 24px;
 				text-align: justify;
 			}
@@ -78,29 +79,30 @@
 		</style>
 	</head>
 	<body>
+		<div class="outer-container">
+			<div class="header" >
+				ISLE Messenger
+			</div>
 
-		<div class="header" >
-			ISLE Messenger
-		</div>
+			<div class="main">
+				{{text}}
 
-		<div class="main">
-			{{text}}
+				<a class="button" target="_new" href="{{link}}" style="color: rgb(240,240,240);" >
+					Open
+				</a>
+			</div>
 
-			<a class="button" target="_new" href="{{link}}" style="color: rgb(240,240,240);" >
-				Open
-			</a>
-		</div>
+			<div class="footer" >
+				<a href="{{server}}" style="color: rgb(240,240,240);" >{{server}}</a>
+			</div>
 
-		<div class="footer" >
-			<a href="{{server}}" style="color: rgb(240,240,240);" >{{server}}</a>
-		</div>
-
-		<div class="isle-logo-container" >
-			<img
-				class="isle-logo"
-				alt="ISLE Icon"
-				src="http://stat.cmu.edu/isle/images/isle_icon_transparent.png"
-			/>
+			<div class="isle-logo-container" >
+				<img
+					class="isle-logo"
+					alt="ISLE Icon"
+					src="http://stat.cmu.edu/isle/images/isle_icon_transparent.png"
+				/>
+			</div>
 		</div>
 	</body>
 </html>
