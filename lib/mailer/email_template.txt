@@ -73,7 +73,7 @@
 
 			.isle-logo {
 				width: 80px;
-				height: auto;
+				height: 80px;
 			}
 		</style>
 	</head>
@@ -95,6 +95,7 @@
 			<img
 				class="isle-logo"
 				alt="ISLE Icon"
+				width="80" height="80"
 				src="http://stat.cmu.edu/isle/images/isle_icon_transparent.png"
 			/>
 		</div>
