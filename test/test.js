@@ -62,8 +62,12 @@ const requires = {
 		'writeAccess': WRITE_ACCESS_TOKEN,
 		'jwtKey': 'json_web_token_key'
 	},
-	'./../credentials/jitsi.json': {},
+	'./../credentials/apixu.json': {},
 	'./../credentials/deepl.json': {},
+	'./../credentials/jitsi.json': {},
+	'./../credentials/mailgun.json': {},
+	'./../credentials/mapbox.json': {},
+	'./../credentials/opencpu.json': {},
 	'./helpers/is_admin.js': () => ( req, res, next ) => next()
 };
 const app = proxyquire.noCallThru()( './../lib/index.js', requires );
