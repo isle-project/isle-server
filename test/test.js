@@ -58,6 +58,13 @@ const requires = {
 			clbk( null, 'Mail sent' );
 		}
 	},
+	'./scheduler': {
+		'./mailer': {
+			'send': function send( mail, clbk ) {
+				clbk( null, 'Mail sent' );
+			}
+		}
+	},
 	'./../credentials/tokens.json': {
 		'writeAccess': WRITE_ACCESS_TOKEN,
 		'jwtKey': 'json_web_token_key'
