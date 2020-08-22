@@ -9,8 +9,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 
 		<style type="text/css">
-			body {
-				width: 525px;
+			.outer-container {
+				width: 600px;
 				margin: 0 auto;
 				padding: 10px;
 			}
@@ -24,7 +24,7 @@
 				line-height: inherit;
 			}
 
-			header {
+			.header {
 				background-color: #292d76;
 				color: white;
 				text-align: center;
@@ -36,30 +36,16 @@
 
 			.main {
 				font-family: 'Open Sans', sans-serif;
+				font-size: 16px;
 				background-color: #D7EAFB;
+				color: rgb(24,24,24);
 				padding: 24px;
 				text-align: justify;
 			}
 
-			.button {
-				display: block;
-				font-size: 18px;
-				color: #ffffff;
-				width: 80px;
-				margin: 18px auto 0px auto;
-				text-align: center;
-				text-decoration: none;
-				background-color: #208089;
-				padding-top: 12px;
-				padding-bottom: 12px;
-				padding-left: 25px;
-				padding-right: 25px;
-				border-radius: 3px;
-				border-bottom: 3px solid #145257;
-			}
-
-			footer {
+			.footer {
 				font-family: 'Open Sans', sans-serif;
+				font-size: 14px;
 				background-color: #292d76;
 				color: white;
 				padding: 12px;
@@ -78,26 +64,27 @@
 		</style>
 	</head>
 	<body>
+		<div class="outer-container">
+			<div class="header" >
+				ISLE Messenger
+			</div>
 
-		<header>
-			ISLE Messenger
-		</header>
+			<div class="main">
+				{{text}}
+			</div>
 
-		<div class="main">
-			{{text}}
-		</div>
+			<div class="footer" >
+				<a href="{{server}}">{{server}}</a>
+			</div>
 
-		<footer>
-			<a href="{{server}}">{{server}}</a>
-		</footer>
-
-		<div class="isle-logo-container" >
-			<img
-				class="isle-logo"
-				alt="ISLE Icon"
-				width="80" height="80"
-				src="http://stat.cmu.edu/isle/images/isle_icon_transparent.png"
-			/>
+			<div class="isle-logo-container" >
+				<img
+					class="isle-logo"
+					alt="ISLE Icon"
+					width="80" height="80"
+					src="http://stat.cmu.edu/isle/images/isle_icon_transparent.png"
+				/>
+			</div>
 		</div>
 	</body>
 </html>
