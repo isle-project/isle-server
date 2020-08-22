@@ -1,6 +1,7 @@
 {
 	"access-denied": "Zugang verweigert.",
 	"access-denied-no-owner": "Zugang wegen fehlender Eigentümerangaben verboten.",
+	"all-events-only-admin": "Nur Administratoren haben Zugriff auf die Anzeige aller Ereignisse.",
 	"all-users-only-admin": "Nur Administratoren haben Zugriff auf die vollständige Benutzerdatenbank.",
 	"announcement-added": "Ankündigung erfolgreich hinzugefügt.",
 	"announcement-deleted": "Ankündigung erfolgreich gelöscht.",

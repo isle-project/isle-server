@@ -1,6 +1,7 @@
 {
 	"access-denied": "Access denied.",
 	"access-denied-no-owner": "Access forbidden due to missing owner credentials.",
+	"all-events-only-admin": "Only administrators have access to the display of all events.",
 	"all-users-only-admin": "Only administrators have access to the full user database.",
 	"announcement-added": "Announcement successfully added.",
 	"announcement-deleted": "Announcement successfully deleted.",
