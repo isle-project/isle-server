@@ -1,8 +1,9 @@
 {
 	"access-denied": "Acceso denegado.",
 	"access-denied-no-owner": "El acceso está prohibido debido a la falta de credenciales del propietario.",
+	"all-cohorts-only-admin": "Sólo los administradores tienen acceso a todas las cohortes.",
 	"all-events-only-admin": "Sólo los administradores tienen acceso a la visualización de todos los eventos.",
-	"all-namespaces-only-admin": "Sólo los administradores tienen acceso a la visualización de todos los cursos",
+	"all-namespaces-only-admin": "Sólo los administradores tienen acceso a la visualización de todos los cursos.",
 	"all-users-only-admin": "Sólo los administradores tienen acceso a la base de datos de usuarios completa.",
 	"announcement-added": "El anuncio se ha añadido con éxito.",
 	"announcement-deleted": "El anuncio se ha borrado con éxito.",

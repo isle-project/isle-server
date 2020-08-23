@@ -1,8 +1,9 @@
 {
 	"access-denied": "Access denied.",
 	"access-denied-no-owner": "Access forbidden due to missing owner credentials.",
+	"all-cohorts-only-admin": "Only administrators have access to all cohorts.",
 	"all-events-only-admin": "Only administrators have access to the display of all events.",
-	"all-namespaces-only-admin": "Only administrators have access to the display of all courses",
+	"all-namespaces-only-admin": "Only administrators have access to the display of all courses.",
 	"all-users-only-admin": "Only administrators have access to the full user database.",
 	"announcement-added": "Announcement successfully added.",
 	"announcement-deleted": "Announcement successfully deleted.",
