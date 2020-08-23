@@ -3,6 +3,7 @@
 	"access-denied-no-owner": "Zugang wegen fehlender Eigentümerangaben verboten.",
 	"all-cohorts-only-admin": "Nur Administratoren haben Zugriff auf alle Kohorten.",
 	"all-events-only-admin": "Nur Administratoren haben Zugriff auf die Anzeige aller Ereignisse.",
+	"all-lessons-only-admin": "Nur Administratoren haben Zugriff auf die Anzeige aller Lektionen.",
 	"all-namespaces-only-admin": "Nur Administratoren haben Zugriff auf die Anzeige aller Kurse.",
 	"all-users-only-admin": "Nur Administratoren haben Zugriff auf die vollständige Benutzerdatenbank.",
 	"announcement-added": "Ankündigung erfolgreich hinzugefügt.",
