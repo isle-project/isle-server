@@ -9,103 +9,104 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 
 		<style type="text/css">
-			.outer-container {
-				width: 600px;
-				margin: 0 auto;
-				padding: 10px;
+			html,
+			body {
+				margin: 0 auto !important;
+				padding: 0 !important;
+				height: 100% !important;
+				width: 100% !important;
+			}
+
+			* {
+				-ms-text-size-adjust: 100%;
+			}
+
+			table,
+			td {
+				mso-table-lspace: 0pt !important;
+				mso-table-rspace: 0pt !important;
+			}
+
+			img {
+				-ms-interpolation-mode:bicubic;
 			}
 
 			a {
-				color: inherit;
 				text-decoration: none;
-				font-size: inherit;
-				font-family: inherit;
-				font-weight: inherit;
-				line-height: inherit;
-			}
-
-			.header {
-				background-color: #292d76;
-				color: white;
-				text-align: center;
-				font-family: 'Open Sans Condensed', sans-serif;
-				font-size: 18px;
-				font-weight: 700;
-				padding: 12px;
-			}
-
-			.main {
-				font-family: 'Open Sans', sans-serif;
-				font-size: 16px;
-				background-color: #D7EAFB;
-				color: rgb(24,24,24);
-				padding: 24px;
-				text-align: justify;
-			}
-
-			.button {
-				display: block;
-				font-size: 18px;
-				color: #ffffff;
-				width: 80px;
-				margin: 18px auto 0px auto;
-				text-align: center;
-				text-decoration: none;
-				background-color: #208089;
-				padding-top: 12px;
-				padding-bottom: 12px;
-				padding-left: 25px;
-				padding-right: 25px;
-				border-radius: 3px;
-				border-bottom: 3px solid #145257;
-			}
-
-			.footer {
-				font-family: 'Open Sans', sans-serif;
-				font-size: 14px;
-				background-color: #292d76;
-				color: white;
-				padding: 12px;
-				text-align: center;
-			}
-
-			.isle-logo-container {
-				padding-top: 12px;
-				text-align: center;
-			}
-
-			.isle-logo {
-				width: 80px;
-				height: 80px;
 			}
 		</style>
 	</head>
-	<body>
-		<div class="outer-container">
-			<div class="header" >
-				ISLE Messenger
-			</div>
-
-			<div class="main">
-				{{text}}
-
-				<a class="button" target="_new" href="{{link}}" style="color: rgb(240,240,240);" >
-					Open
-				</a>
-			</div>
-
-			<div class="footer" >
-				<a href="{{server}}" style="color: rgb(240,240,240);" >{{server}}</a>
-			</div>
-
-			<div class="isle-logo-container" >
-				<img
-					class="isle-logo"
-					alt="ISLE Icon"
-					width="80" height="80"
-					src="http://stat.cmu.edu/isle/images/isle_icon_transparent.png"
-				/>
-			</div>
-		</div>
+	<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly;" >
+		<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" >
+			<tr>
+				<td align="center" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="600" id="emailContainer" >
+						<tr>
+							<td align="center" valign="top">
+								<table cellspacing="0" cellpadding="12" border="0" role="presentation" width="100%" >
+									<tr style="background-color: #292d76; color: white; text-align: center; font-family: 'Open Sans Condensed', sans-serif; font-size: 22px; font-weight: 700;" >
+										<th>ISLE Messenger</th>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="top">
+								<table cellspacing="0" cellpadding="12" border="0" role="presentation" width="100%" >
+									<tr style="font-family: 'Open Sans', sans-serif; font-size: 16px; background-color: #D7EAFB; color: rgb(24,24,24); text-align: justify;">
+										<td>{{text}}</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="top">
+								<table cellspacing="0" cellpadding="0" border="0" role="presentation" width="100%" >
+									<tr style="background-color: #D7EAFB;" >
+										<td style="width: 40%" ></td>
+										<td style="background-color: #208089; border-radius: 3px; text-align: center; height: 40px;" >
+											<a target="_new" href="{{link}}" style="color: rgb(240,240,240); padding: 13px;" >
+												Open
+											</a>
+										</td>
+										<td style="width: 40%" ></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="top">
+								<table cellspacing="0" cellpadding="0" border="0" role="presentation" width="100%" >
+									<tr style="height: 12px; background-color: #D7EAFB;" >
+										<td></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="top">
+								<table cellspacing="0" cellpadding="0" border="0" role="presentation" width="100%">
+									<tr style="font-family: 'Open Sans', sans-serif; font-size: 14px; background-color: #292d76;" >
+										<td align="center" style="padding: 8px;" >
+											<a href="{{server}}" style="color: rgb(240,240,240);" >{{server}}</a>
+										</td>
+									</tr>
+									<tr class="isle-logo-container" >
+										<td align="center" >
+											<img
+												class="isle-logo"
+												alt="ISLE Icon"
+												width="80" height="80"
+												src="http://stat.cmu.edu/isle/images/isle_icon_transparent.png"
+											/>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
 	</body>
 </html>
