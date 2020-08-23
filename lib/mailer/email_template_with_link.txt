@@ -44,7 +44,7 @@
 						<tr>
 							<td align="center" valign="top">
 								<table cellspacing="0" cellpadding="12" border="0" role="presentation" width="100%" >
-									<tr style="background-color: #292d76; color: white; text-align: center; font-family: 'Open Sans Condensed', sans-serif; font-size: 22px; font-weight: 700;" >
+									<tr style="background-color: #292d76; color: white; text-align: center; font-family: 'Open Sans Condensed', arial, sans-serif; font-size: 22px; font-weight: 700;" >
 										<th>ISLE Messenger</th>
 									</tr>
 								</table>
@@ -53,7 +53,7 @@
 						<tr>
 							<td align="center" valign="top">
 								<table cellspacing="0" cellpadding="12" border="0" role="presentation" width="100%" >
-									<tr style="font-family: 'Open Sans', sans-serif; font-size: 16px; background-color: #D7EAFB; color: rgb(24,24,24); text-align: justify;">
+									<tr style="font-family: 'Open Sans', arial, sans-serif; font-size: 16px; background-color: #D7EAFB; color: rgb(24,24,24); text-align: justify;">
 										<td>{{text}}</td>
 									</tr>
 								</table>
@@ -86,7 +86,7 @@
 						<tr>
 							<td align="center" valign="top">
 								<table cellspacing="0" cellpadding="0" border="0" role="presentation" width="100%">
-									<tr style="font-family: 'Open Sans', sans-serif; font-size: 14px; background-color: #292d76;" >
+									<tr style="font-family: 'Open Sans', arial, sans-serif; font-size: 14px; background-color: #292d76;" >
 										<td align="center" style="padding: 8px;" >
 											<a href="{{server}}" style="color: rgb(240,240,240);" >{{server}}</a>
 										</td>
