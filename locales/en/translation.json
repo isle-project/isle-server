@@ -48,6 +48,7 @@
 	"password-update-failed": "Password could not be updated.",
 	"password-updated": "User password successfully updated.",
 	"profile-picture-saved": "Profile picture successfully saved.",
+	"registration-already-completed": "Your ISLE account has already been completely set up.",
 	"registration-completed": "The setup of your ISLE account is now complete.",
 	"returned-files": "Return {{nFiles}} files to the caller.",
 	"session-data-nonexistent": "Session data not found.",
