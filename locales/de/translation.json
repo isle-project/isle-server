@@ -48,6 +48,7 @@
 	"password-update-failed": "Das Passwort konnte nicht aktualisiert werden.",
 	"password-updated": "Benutzerkennwort erfolgreich aktualisiert.",
 	"profile-picture-saved": "Profilbild erfolgreich gespeichert.",
+	"registration-completed": "Die Einrichtung Deines ISLE-Kontos ist nun abgeschlossen.",
 	"returned-files": "Rückgabe von {{nFiles}} Dateien an den Anrufer.",
 	"session-data-nonexistent": "Sitzungsdaten nicht gefunden.",
 	"session-data-removal-failed": "Sitzungsdaten konnten nicht entfernt werden.",
