@@ -67,6 +67,7 @@
 	"user-deleted": "User deleted.",
 	"user-delete-only-admin": "Only administrators can delete users.",
 	"user-email-not-found": "No user with the given email address found.",
+	"user-not-activated": "The registration process for the user with the supplied email address has not been completed. Please check your inbox for an email to set your name and password.",
 	"user-nonexistent": "User does not exist.",
 	"user-progress-updated": "User progress successfully updated.",
 	"user-sanitized": "User successfully sanitized.",
