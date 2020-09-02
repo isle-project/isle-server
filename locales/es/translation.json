@@ -71,5 +71,6 @@
 	"user-nonexistent": "El usuario no existe.",
 	"user-progress-updated": "El progreso del usuario se actualizó con éxito.",
 	"user-sanitized": "El usuario se desinfectó con éxito.",
+	"user-already-sanitized": "Los datos de los usuarios ya están limpios.",
 	"user-updated": "¡El usuario {{name}} se actualizó con éxito!"
 }

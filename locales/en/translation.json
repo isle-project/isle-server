@@ -71,5 +71,6 @@
 	"user-nonexistent": "User does not exist.",
 	"user-progress-updated": "User progress successfully updated.",
 	"user-sanitized": "User successfully sanitized.",
+	"user-already-sanitized": "User already sanitized.",
 	"user-updated": "User {{name}} successfully updated!"
 }
