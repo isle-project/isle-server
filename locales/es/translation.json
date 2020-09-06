@@ -33,6 +33,7 @@
 	"lesson-hidden-gallery": "La lección está ahora escondida de la galería pública.",
 	"lesson-not-found": "No se encontró la lección",
 	"lesson-save-failed": "La lección no pudo ser guardada en la base de datos.",
+	"lesson-title-already-chosen": "Una lección del curso ya tiene este título. Por favor, elija un título diferente.",
 	"lesson-updated": "La lección ha sido actualizada con éxito.",
 	"lesson-uploaded": "La lección ha sido cargada con éxito.",
 	"lesson-visible-gallery": "La lección es ahora visible dentro de la galería pública.",

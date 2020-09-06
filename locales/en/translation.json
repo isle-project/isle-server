@@ -33,6 +33,7 @@
 	"lesson-hidden-gallery": "The lesson is now hidden from the public gallery.",
 	"lesson-not-found": "Lesson was not found.",
 	"lesson-save-failed": "Lesson could not be saved to database.",
+	"lesson-title-already-chosen": "A lesson in the course already has this title. Please choose a different title.",
 	"lesson-updated": "The lesson has been successfully updated.",
 	"lesson-uploaded": "The lesson has been successfully uploaded.",
 	"lesson-visible-gallery": "The lesson is now visible inside the public gallery.",
