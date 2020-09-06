@@ -13,6 +13,7 @@
 	"cohort-deleted": "Cohort successfully deleted.",
 	"cohort-nonexistent": "Cohort does not exist.",
 	"cohort-updated": "Cohort successfully updated.",
+	"delete-lessons-first": "Your course still contains lessons.You can only delete it after you have removed them.",
 	"email-already-verified": "Email has already been verified.",
 	"email-confirmation-success": "Your email address was successfully validated.",
 	"even-delete-only-admin": "Only administrators can delete events.",
