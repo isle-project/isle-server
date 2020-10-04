@@ -6,3 +6,4 @@ credentials/deepl.json  filter=crypt diff=crypt
 credentials/apixu.json  filter=crypt diff=crypt
 credentials/mapbox.json  filter=crypt diff=crypt
 credentials/opencpu.json  filter=crypt diff=crypt
+credentials/github.json  filter=crypt diff=crypt
