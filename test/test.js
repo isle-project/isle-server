@@ -72,6 +72,7 @@ const requires = {
 	'./../credentials/apixu.json': {},
 	'./../credentials/deepl.json': {},
 	'./../credentials/jitsi.json': {},
+	'./../credentials/github.json': {},
 	'./../credentials/mailgun.json': {},
 	'./../credentials/mapbox.json': {},
 	'./../credentials/opencpu.json': {},
