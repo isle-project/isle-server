@@ -17,7 +17,7 @@
 	"delete-lessons-first": "Your course still contains lessons.You can only delete it after you have removed them.",
 	"email-already-verified": "Email has already been verified.",
 	"email-confirmation-success": "Your email address was successfully validated.",
-	"even-delete-only-admin": "Only administrators can delete events.",
+	"event-delete-only-admin": "Only administrators can delete events.",
 	"event-deleted": "Event deleted.",
 	"field-expect-object": "`{{field}}` must be an object.",
 	"field-expect-string": "`{{field}}` has to be a string.",

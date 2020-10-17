@@ -17,7 +17,7 @@
 	"delete-lessons-first": "Dein Kurs enthält noch Lektionen. Du kannst ihn erst löschen, wenn Du diese entfernt hast.",
 	"email-already-verified": "E-Mail wurde bereits verifiziert.",
 	"email-confirmation-success": "Deine E-Mail-Adresse wurde erfolgreich validiert.",
-	"even-delete-only-admin": "Nur Administratoren können Ereignisse löschen.",
+	"event-delete-only-admin": "Nur Administratoren können Ereignisse löschen.",
 	"event-deleted": "Ereignis gelöscht.",
 	"field-expect-object": "`{{field}}` muss ein Objekt sein.",
 	"field-expect-string": "`{{field}}` muss eine Zeichenkette sein.",
