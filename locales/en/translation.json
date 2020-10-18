@@ -61,6 +61,8 @@
 	"session-data-removal-failed": "Session data could not be removed.",
 	"session-data-removed": "Session data successfully deleted.",
 	"session-data-save-failed": "Session data could not be saved.",
+	"ticket-closed": "Ticket closed",
+	"ticket-opened": "Ticket opened",
 	"token-expired": "Token has expired",
 	"user-action-saved": "User action successfully saved.",
 	"user-added-to-cohort": "User added to cohort.",
