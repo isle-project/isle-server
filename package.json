@@ -32,7 +32,7 @@
   "dependencies": {
     "@stdlib/stdlib": "0.0.92",
     "adm-zip": "^0.4.16",
-    "axios": "^0.20.0",
+    "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "capture-website": "^1.2.4",
@@ -48,7 +48,7 @@
     "i18next-http-middleware": "^3.0.6",
     "jsonwebtoken": "^8.4.0",
     "lodash.template": "^4.5.0",
-    "mongoose": "^5.10.9",
+    "mongoose": "^5.10.10",
     "mongoose-unique-validator": "^2.0.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
