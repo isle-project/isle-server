@@ -19,6 +19,7 @@
 	"email-confirmation-success": "Your email address was successfully validated.",
 	"event-delete-only-admin": "Only administrators can delete events.",
 	"event-deleted": "Event deleted.",
+	"field-expect-categories": "`{{field}}` must be one of: `{{values}}`.",
 	"field-expect-object": "`{{field}}` must be an object.",
 	"field-expect-string": "`{{field}}` has to be a string.",
 	"file-deleted": "File successfully deleted.",
