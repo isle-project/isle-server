@@ -76,7 +76,8 @@ const requires = {
 	'./../credentials/mailgun.json': {},
 	'./../credentials/mapbox.json': {},
 	'./../credentials/opencpu.json': {},
-	'./helpers/is_admin.js': () => ( req, res, next ) => next()
+	'./helpers/is_admin.js': () => ( req, res, next ) => next(),
+	'./helpers/file_owner_check.js': () => ( req, res, next ) => next()
 };
 const app = proxyquire.noCallThru()( './../lib/index.js', requires );
 
