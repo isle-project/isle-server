@@ -62,7 +62,7 @@
     "qs": "^6.9.4",
     "response-time": "^2.3.2",
     "rotating-file-stream": "^2.1.3",
-    "socket.io": "2.3.0",
+    "socket.io": "3.0.1",
     "swot-simple": "^1.0.0"
   },
   "devDependencies": {
