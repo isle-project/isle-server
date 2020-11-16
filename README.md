@@ -1,4 +1,4 @@
-# ISLE Server [![License][license-image]][license-url] [![DOI](https://zenodo.org/badge/63765629.svg)][doi]
+# ISLE Server [![License][license-image]][license-url] [![DOI][doi-image][doi-url]
 
 <div class="image" align="center">
     <img width="250" height="auto" src="https://raw.githubusercontent.com/isle-project/www/master/images/isle_icon_transparent.png" alt="ISLE logo">
@@ -14,8 +14,8 @@
 
 #### Build
 
-[![Actions Status](https://github.com/isle-project/isle-server/workflows/NodeCI/badge.svg)](https://github.com/isle-project/isle-server/actions)
-[![Coverage](https://img.shields.io/codecov/c/github/isle-project/isle-server/master.svg)](https://codecov.io/gh/isle-project/isle-server)
+[![Actions Status][actions-image]][actions-url]
+[![Coverage][coverage-image]][coverage-url]
 
 ## Introduction
 
@@ -106,10 +106,11 @@ See [LICENSE][license-url].
 - profile by icongeek from the Noun Project
 
 [git]: http://git-scm.com/
-[license-url]: https://raw.githubusercontent.com/isle-project/isle-server/master/LICENSE
-[license-image]: https://img.shields.io/badge/license-APGL-blue.svg
 [node-js]: https://nodejs.org/en/
 [mongodb]: https://mongodb.com
+
+[license-url]: https://raw.githubusercontent.com/isle-project/isle-server/master/LICENSE
+[license-image]: https://img.shields.io/badge/license-APGL-blue.svg
 
 [dependencies-image]: https://img.shields.io/david/isle-project/isle-server.svg
 [dependencies-url]: https://david-dm.org/isle-project/isle-server/master
@@ -117,7 +118,14 @@ See [LICENSE][license-url].
 [dev-dependencies-image]: https://img.shields.io/david/dev/isle-project/isle-server.svg
 [dev-dependencies-url]: https://david-dm.org/isle-project/isle-server/master?type=dev
 
-[doi]: https://zenodo.org/badge/latestdoi/63765629
+[doi-image]: https://zenodo.org/badge/63765629.svg
+[doi-url]: https://zenodo.org/badge/latestdoi/63765629
+
+[coverage-image]: https://img.shields.io/codecov/c/github/isle-project/isle-server/master.svg
+[coverage-url]: https://codecov.io/gh/isle-project/isle-server
+
+[actions-image]: https://github.com/isle-project/isle-server/workflows/NodeCI/badge.svg
+[actions-url]: https://github.com/isle-project/isle-server/actions
 
 [transcrypt]: https://github.com/elasticdog/transcrypt
 
