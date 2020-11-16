@@ -1,4 +1,4 @@
-# ISLE Server
+# ISLE Server [![License][license-image]][license-url] [![DOI](https://zenodo.org/badge/63765629.svg)][doi]
 
 <div class="image" align="center">
     <img width="250" height="auto" src="https://raw.githubusercontent.com/isle-project/www/master/images/isle_icon_transparent.png" alt="ISLE logo">
@@ -11,7 +11,6 @@
 
 [![Dependencies][dependencies-image]][dependencies-url]
 [![DevDependencies][dev-dependencies-image]][dev-dependencies-url]
-[![DOI](https://zenodo.org/badge/63765629.svg)][doi]
 
 #### Build
 
@@ -91,7 +90,7 @@ Istanbul creates a `./reports/coverage` directory with an HTML version of the re
 
 ## License
 
-See [LICENSE][license].
+See [LICENSE][license-url].
 
 #### Icon Credits
 
@@ -107,7 +106,8 @@ See [LICENSE][license].
 - profile by icongeek from the Noun Project
 
 [git]: http://git-scm.com/
-[license]: https://raw.githubusercontent.com/isle-project/isle-server/master/LICENSE
+[license-url]: https://raw.githubusercontent.com/isle-project/isle-server/master/LICENSE
+[license-image]: https://img.shields.io/badge/license-APGL-blue.svg
 [node-js]: https://nodejs.org/en/
 [mongodb]: https://mongodb.com
 
