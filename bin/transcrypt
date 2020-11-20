@@ -378,8 +378,8 @@ display_configuration() {
 	printf '  GIT_ATTRIBUTES: %s\n\n' "$GIT_ATTRIBUTES"
 	printf '  CIPHER:   %s\n' "$current_cipher"
 	printf '  PASSWORD: %s\n\n' "$current_password"
-	printf 'Copy and paste the following command to initialize a cloned repository:\n\n'
-	printf "  transcrypt -c %s -p '%s'\n" "$current_cipher" "$escaped_password"
+	printf 'Copy and paste the following command to initialize the cloned isle-server repository:\n\n'
+	printf "  ./bin/transcrypt -c %s -p '%s'\n" "$current_cipher" "$escaped_password"
 }
 
 # remove transcrypt-related settings from the repository's git config
