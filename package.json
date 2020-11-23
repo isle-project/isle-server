@@ -35,7 +35,7 @@
     "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
-    "capture-website": "^1.2.4",
+    "capture-website": "^1.2.5",
     "codecov": "^3.8.1",
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
