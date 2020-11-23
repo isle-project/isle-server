@@ -9,6 +9,7 @@
 
 #### Dependencies
 
+[![Dependabot][dependabot-image]][dependabot-url]
 [![Dependencies][dependencies-image]][dependencies-url]
 [![DevDependencies][dev-dependencies-image]][dev-dependencies-url]
 
@@ -111,6 +112,9 @@ See [LICENSE][license-url].
 
 [license-url]: https://raw.githubusercontent.com/isle-project/isle-server/master/LICENSE
 [license-image]: https://img.shields.io/badge/license-APGL-blue.svg
+
+[dependabot-image]: https://badgen.net/dependabot/isle-project/isle-server?icon=dependabot
+[dependabot-url]: https://dependabot.com/
 
 [dependencies-image]: https://img.shields.io/david/isle-project/isle-server.svg
 [dependencies-url]: https://david-dm.org/isle-project/isle-server/master
