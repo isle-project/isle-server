@@ -30,7 +30,7 @@
     "test-cov": "cross-env istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\""
   },
   "dependencies": {
-    "@stdlib/stdlib": "0.0.92",
+    "@stdlib/stdlib": "0.0.93",
     "adm-zip": "^0.5.1",
     "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
