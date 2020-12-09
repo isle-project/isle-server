@@ -3,6 +3,7 @@
 	"certificate": "/srv/ssl/isle_heinz_cmu_edu_cert.cer",
 	"key": "/srv/ssl/isle.heinz.cmu.edu.key",
 	"mongodb": "mongodb://localhost/isle-db",
+	"backupDirectory": "./../backups",
 	"namespacesDirectory": "./../public",
 	"localesDirectory": "./../locales",
 	"mediaDirectory": "./../media",
