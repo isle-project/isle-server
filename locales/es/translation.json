@@ -10,6 +10,7 @@
 	"announcement-added": "El anuncio se ha añadido con éxito.",
 	"announcement-deleted": "El anuncio se ha borrado con éxito.",
 	"announcement-updated": "Anuncio actualizado con éxito.",
+	"backup-initialized": "TEl proceso de copia de seguridad se ha iniciado. Recibirás un correo electrónico una vez que la copia de seguridad se pueda descargar. El proceso puede tardar unos minutos.",
 	"cohort-created": "La cohorte fue creada con éxito.",
 	"cohort-deleted": "Cohorte borrado con éxito.",
 	"cohort-nonexistent": "La cohorte no existe.",

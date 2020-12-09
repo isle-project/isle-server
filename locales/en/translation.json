@@ -10,6 +10,7 @@
 	"announcement-added": "Announcement successfully added.",
 	"announcement-deleted": "Announcement successfully deleted.",
 	"announcement-updated": "Announcement successfully updated.",
+	"backup-initialized": "The backup process has been started. You will receive an email once the backup is downloadable. The process may take a few minutes.",
 	"cohort-created": "The cohort was successfully created.",
 	"cohort-deleted": "Cohort successfully deleted.",
 	"cohort-nonexistent": "Cohort does not exist.",
