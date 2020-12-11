@@ -70,6 +70,7 @@
 	"session-data-removal-failed": "Session data could not be removed.",
 	"session-data-removed": "Session data successfully deleted.",
 	"session-data-save-failed": "Session data could not be saved.",
+	"tfa-already-enabled": "Two-factor authentication has already been successfully set up.",
 	"tfa-disabled": "The two-factor authentication has been successfully disabled.",
 	"ticket-closed": "Ticket closed",
 	"ticket-opened": "Ticket opened",

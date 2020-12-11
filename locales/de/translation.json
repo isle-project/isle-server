@@ -70,6 +70,7 @@
 	"session-data-removal-failed": "Sitzungsdaten konnten nicht entfernt werden.",
 	"session-data-removed": "Sitzungsdaten erfolgreich gelöscht.",
 	"session-data-save-failed": "Sitzungsdaten konnten nicht gespeichert werden.",
+	"tfa-already-enabled": "Die Zwei-Faktor-Authentifizierung wurde schon erfolgreich eingerichtet.",
 	"tfa-disabled": "Die Zwei-Faktor-Authentifizierung wurde erfolgreich abgeschaltet.",
 	"ticket-closed": "Ticket geschlossen",
 	"ticket-opened": "Ticket geöffnet",
