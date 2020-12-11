@@ -12,6 +12,7 @@
 	"announcement-updated": "Ankündigung erfolgreich aktualisiert.",
 	"backup-deleted": "Backup erfolgreich gelöscht.",
 	"backup-initialized": "Der Sicherungsprozess wurde gestartet. Sie erhalten eine E-Mail, sobald das Backup heruntergeladen werden kann. Der Vorgang kann einige Minuten dauern.",
+	"code-incorrect": "Der angegebene Bestätigungscode ist nicht korrekt.",
 	"cohort-created": "Die Kohorte wurde erfolgreich erstellt.",
 	"cohort-deleted": "Kohorte erfolgreich gelöscht.",
 	"cohort-nonexistent": "Die Kohorte existiert nicht.",
