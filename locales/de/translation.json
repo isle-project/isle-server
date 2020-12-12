@@ -59,7 +59,7 @@
 	"operation-successful": "Operation erfolgreich.",
 	"owner-data-saved": "Instruktordaten erfolgreich gespeichert.",
 	"password-and-email-required": "Passwort und E-Mail-Adresse sind erforderlich.",
-	"password-incorrect": "Das Passwort ist nicht korrekt.",
+	"password-incorrect": "Das Passwort ist nicht korrekt. Wenn Du Dein Passwort zurücksetzen musst, klick bitte auf den Link \"Passwort vergessen?\".",
 	"password-update-failed": "Das Passwort konnte nicht aktualisiert werden.",
 	"password-updated": "Benutzerkennwort erfolgreich aktualisiert.",
 	"profile-picture-saved": "Profilbild erfolgreich gespeichert.",

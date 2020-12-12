@@ -59,7 +59,7 @@
 	"operation-successful": "Operation successful.",
 	"owner-data-saved": "Owner data successfully saved.",
 	"password-and-email-required": "Password and email address are required",
-	"password-incorrect": "Password is not correct.",
+	"password-incorrect": "Password is not correct. If you need to reset your password, please click on the \"Forgot password?\" link.",
 	"password-update-failed": "Password could not be updated.",
 	"password-updated": "User password successfully updated.",
 	"profile-picture-saved": "Profile picture successfully saved.",

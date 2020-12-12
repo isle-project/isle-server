@@ -59,7 +59,7 @@
 	"operation-successful": "Operación exitosa.",
 	"owner-data-saved": "Los datos del propietario se han guardado con éxito.",
 	"password-and-email-required": "Se requiere una contraseña y una dirección de correo electrónico",
-	"password-incorrect": "La contraseña no es correcta.",
+	"password-incorrect": "La contraseña no es correcta. Si necesita restablecer su contraseña, por favor haga clic en el enlace \"¿Olvidó su contraseña?\".",
 	"password-update-failed": "La contraseña no pudo ser actualizada.",
 	"password-updated": "La contraseña del usuario se actualizó con éxito.",
 	"profile-picture-saved": "La foto del perfil se ha guardado con éxito.",
