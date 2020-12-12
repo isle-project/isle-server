@@ -24,7 +24,7 @@
   "main": "./lib",
   "scripts": {
     "clean": "rm -rf ./node_modules",
-    "lint": "eslint lib/**/*.js test/**/*.js",
+    "lint": "eslint lib/** test/**/*.js",
     "start": "cross-env node lib/index.js",
     "test": "cross-env tape \"./test/*.js\"",
     "test-cov": "cross-env istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\""
