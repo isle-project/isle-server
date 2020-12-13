@@ -10,6 +10,7 @@ build/
 public/*
 media/*
 backups/*
+locales/scripts/*
 !public/tutorials
 !public/jitsi_numbers.json
 logs/
