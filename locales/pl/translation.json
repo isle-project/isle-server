@@ -89,5 +89,6 @@
 	"user-progress-updated": "Postępy użytkowników są aktualizowane z powodzeniem.",
 	"user-sanitized": "Użytkownik z powodzeniem odkażony.",
 	"user-already-sanitized": "Użytkownik już oczyszczony.",
-	"user-updated": "Użytkownik {{{nazwa}} pomyślnie zaktualizowany!"
+	"user-updated": "Użytkownik {{name}} pomyślnie zaktualizowany!",
+	"field-expect-id": "`{{field}}` musi być ważnym identyfikatorem obiektu."
 }

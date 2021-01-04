@@ -89,5 +89,6 @@
 	"user-progress-updated": "Benutzerfortschritt erfolgreich aktualisiert.",
 	"user-sanitized": "Benutzer erfolgreich sanitisiert.",
 	"user-already-sanitized": "Benutzerdaten sind schon bereinigt.",
-	"user-updated": "Benutzer {{name}} erfolgreich aktualisiert!"
+	"user-updated": "Benutzer {{name}} erfolgreich aktualisiert!",
+	"field-expect-id": "`{{field}}` muss eine gültige ObjectID sein."
 }

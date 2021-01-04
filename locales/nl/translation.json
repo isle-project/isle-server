@@ -89,5 +89,6 @@
 	"user-progress-updated": "Voortgang van de gebruiker met succes geüpdatet.",
 	"user-sanitized": "Gebruiker succesvol gezuiverd.",
 	"user-already-sanitized": "De gebruiker is al gezuiverd.",
-	"user-updated": "Gebruiker {{naam}} succesvol bijgewerkt!"
+	"user-updated": "Gebruiker {{name}} succesvol bijgewerkt!",
+	"field-expect-id": "`{{field}}` moet een geldige ObjectID zijn."
 }

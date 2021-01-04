@@ -89,5 +89,6 @@
 	"user-progress-updated": "ユーザーの進捗状況が正常に更新されました。",
 	"user-sanitized": "ユーザーの消毒に成功しました。",
 	"user-already-sanitized": "ユーザーはすでにサニタイズされています。",
-	"user-updated": "ユーザー{{名前}}の更新に成功しました"
+	"user-updated": "ユーザー{{name}}の更新に成功しました",
+	"field-expect-id": "`{{field}}` は有効な ObjectID でなければなりません。"
 }
