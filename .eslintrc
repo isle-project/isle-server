@@ -210,7 +210,7 @@
 			"allowTernary": false
 		}],
 		"no-unused-labels": 2,
-		"no-unused-vars": [ 2, { "varsIgnorePattern": "React", "args": "none" } ],
+		"no-unused-vars": [ 2, { "varsIgnorePattern": "^_|React", "args": "none" } ],
 		"no-use-before-define": [ 2, {
 			"functions": false,
 			"classes": false
