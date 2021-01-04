@@ -26,7 +26,7 @@
 	"enable-tfa-failure": "確認コードが正しくありません。二要素認証を有効にするには、もう一度お試しください。",
 	"event-delete-only-admin": "イベントを削除できるのは管理者のみです。",
 	"event-deleted": "イベントが削除されました。",
-	"field-expect-categories": "`{{field}}` は次のうちのいずれかでなければなりません。`{{値}}`のうちの1つでなければなりません。",
+	"field-expect-categories": "`{{field}}` は次のうちのいずれかでなければなりません。`{{values}}`のうちの1つでなければなりません。",
 	"field-expect-object": "`{{field}}` はオブジェクトでなければなりません。",
 	"field-expect-string": "`{{field}}` は文字列でなければなりません。",
 	"file-deleted": "ファイルの削除に成功しました。",
