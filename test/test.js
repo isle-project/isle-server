@@ -42,6 +42,19 @@ const LOCALES_DIRECTORY = path.join( __dirname, '..', 'locales' );
 let USER_TOKEN;
 let USER_ID;
 const WRITE_ACCESS_TOKEN = 'no_restrictions';
+const credentials = {
+	'./../credentials/tokens.json': {
+		'writeAccess': WRITE_ACCESS_TOKEN,
+		'jwtKey': 'json_web_token_key'
+	},
+	'./../credentials/apixu.json': {},
+	'./../credentials/deepl.json': {},
+	'./../credentials/jitsi.json': {},
+	'./../credentials/github.json': {},
+	'./../credentials/mailgun.json': {},
+	'./../credentials/mapbox.json': {},
+	'./../credentials/opencpu.json': {}
+};
 const requires = {
 	'./../etc/config.json': {
 		'namespacesDirectory': FIXTURES_DIRECTORY,
@@ -65,19 +78,8 @@ const requires = {
 			}
 		}
 	},
-	'./credentials.js': {
-		'./../credentials/tokens.json': {
-			'writeAccess': WRITE_ACCESS_TOKEN,
-			'jwtKey': 'json_web_token_key'
-		},
-		'./../credentials/apixu.json': {},
-		'./../credentials/deepl.json': {},
-		'./../credentials/jitsi.json': {},
-		'./../credentials/github.json': {},
-		'./../credentials/mailgun.json': {},
-		'./../credentials/mapbox.json': {},
-		'./../credentials/opencpu.json': {}
-	},
+	'./credentials.js': credentials,
+	'./../credentials.js': credentials,
 	'./helpers/is_admin.js': () => ( req, res, next ) => next(),
 	'./helpers/file_owner_check.js': () => ( req, res, next ) => next()
 };
