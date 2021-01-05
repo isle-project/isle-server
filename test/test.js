@@ -43,17 +43,17 @@ let USER_TOKEN;
 let USER_ID;
 const WRITE_ACCESS_TOKEN = 'no_restrictions';
 const credentials = {
-	'./../credentials/tokens.json': {
+	'tokens': {
 		'writeAccess': WRITE_ACCESS_TOKEN,
 		'jwtKey': 'json_web_token_key'
 	},
-	'./../credentials/apixu.json': {},
-	'./../credentials/deepl.json': {},
-	'./../credentials/jitsi.json': {},
-	'./../credentials/github.json': {},
-	'./../credentials/mailgun.json': {},
-	'./../credentials/mapbox.json': {},
-	'./../credentials/opencpu.json': {}
+	'apixu': {},
+	'deepl': {},
+	'jitsi': {},
+	'github': {},
+	'mailgun': {},
+	'mapbox': {},
+	'opencpu': {}
 };
 const requires = {
 	'./../etc/config.json': {
@@ -79,6 +79,9 @@ const requires = {
 		}
 	},
 	'./credentials.js': credentials,
+	'./passport.js': proxyquire( './passport.js', {
+		'./credentials.js': credentials
+	}),
 	'./helpers/is_instructor.js': () => ( req, res, next ) => next(),
 	'./helpers/is_admin.js': () => ( req, res, next ) => next(),
 	'./helpers/file_owner_check.js': () => ( req, res, next ) => next()
