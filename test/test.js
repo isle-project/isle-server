@@ -83,24 +83,25 @@ tape( 'POST /create_user - success', function test( t ) {
 
 tape( 'POST /create_user - duplicate email address', function test( t ) {
 	request( app )
-	.post( '/create_user' )
-	.send({ name: 'Frido', email: 'fridolin.supertester@gmail.com', password: 'hokuspokus' })
-	.expect( 403 )
-	.end( function onEnd( err, res ) {
-		t.error( err, 'does not return an error' );
-		t.ok( contains( res.text, 'User validation failed' ), 'returns expected message' );
-		t.end();
-	});
+		.post( '/create_user' )
+		.send({ name: 'Frido', email: 'fridolin.supertester@gmail.com', password: 'hokuspokus' })
+		.expect( 403 )
+		.end( function onEnd( err, res ) {
+			console.log( err );
+			t.error( err, 'does not return an error' );
+			t.ok( contains( res.text, 'User validation failed' ), 'returns expected message' );
+			t.end();
+		});
 });
 
 tape( 'POST /create_user - missing field', function test( t ) {
 	request( app )
 	.post( '/create_user' )
 	.send({ name: 'Hannah', email: 'hannah.supertester@gmail.com' })
-	.expect( 403 )
+	.expect( 400 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, 'Password and email address are required' );
+		t.strictEqual( res.text, '`password` has to be a string.' );
 		t.end();
 	});
 });
@@ -131,7 +132,7 @@ tape( 'GET /forgot_password - success', function test( t ) {
 
 tape( 'GET /forgot_password - failure sending email', function test( t ) {
 	const newRequires = copy( requires );
-	newRequires[ './mailer' ] = {
+	newRequires.login[ './mailer' ] = {
 		'send': function send( mail, clbk ) {
 			clbk( new Error( 'Service unavailable' ) );
 		},
@@ -139,14 +140,14 @@ tape( 'GET /forgot_password - failure sending email', function test( t ) {
 	};
 	const app = proxyquire( './../lib/index.js', newRequires );
 	request( app )
-	.get( '/forgot_password' )
-	.query({ email: 'fridolin.supertester@gmail.com' })
-	.expect( 503 )
-	.end( function onEnd( err, res ) {
-		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, 'Email service currently not available', 'returns expected message' );
-		t.end();
-	});
+		.get( '/forgot_password' )
+		.query({ email: 'fridolin.supertester@gmail.com' })
+		.expect( 503 )
+		.end( function onEnd( err, res ) {
+			t.error( err, 'does not return an error' );
+			t.strictEqual( res.text, 'Email service currently not available', 'returns expected message' );
+			t.end();
+		});
 });
 
 tape( 'GET /has_write_access (no write access)', function test( t ) {
@@ -441,7 +442,7 @@ tape( 'POST /login (wrong password)', function test( t ) {
 	.expect( 401 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, 'Password is not correct.', 'returns expected message' );
+		t.strictEqual( res.text, 'Password is not correct. If you need to reset your password, please click on the "Forgot password?" link.', 'returns expected message' );
 		t.end();
 	});
 });
