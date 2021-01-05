@@ -79,7 +79,7 @@ const requires = {
 		}
 	},
 	'./credentials.js': credentials,
-	'./passport.js': proxyquire( './passport.js', {
+	'./passport.js': proxyquire( './../lib/passport.js', {
 		'./credentials.js': credentials
 	}),
 	'./helpers/is_instructor.js': () => ( req, res, next ) => next(),
