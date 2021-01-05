@@ -145,7 +145,7 @@ const requires = {
 	'./users.js': proxyquire.noCallThru()( './../lib/users.js', {
 		'./credentials.js': credentials,
 		'./passport.js': passport,
-		'./utils/send_verification_email.js': mailer.send
+		'./utils/send_verification_email.js': noop
 	}),
 	'./helpers/is_instructor.js': () => ( req, res, next ) => next(),
 	'./helpers/is_admin.js': isAdmin,

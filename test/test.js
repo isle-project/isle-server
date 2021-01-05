@@ -28,7 +28,6 @@ const isString = require( '@stdlib/assert/is-string' );
 const isArray = require( '@stdlib/assert/is-array' );
 const isNull= require( '@stdlib/assert/is-null' );
 const contains = require( '@stdlib/assert/contains' );
-const copy = require( '@stdlib/utils/copy' );
 const User = require( './../lib/models/user.js' );
 const requires = require( './requires.js' );
 const utils = require( './utils.js' );
@@ -127,26 +126,6 @@ tape( 'GET /forgot_password - success', function test( t ) {
 		t.strictEqual( res.text, '"Mail sent"', 'returns expected message' );
 		t.end();
 	});
-});
-
-tape( 'GET /forgot_password - failure sending email', function test( t ) {
-	const newRequires = copy( requires );
-	newRequires[ './login.js' ][ './mailer' ] = {
-		'send': function send( mail, clbk ) {
-			clbk( new Error( 'Service unavailable' ) );
-		},
-		'@noCallThru': true
-	};
-	const app = proxyquire( './../lib/index.js', newRequires );
-	request( app )
-		.get( '/forgot_password' )
-		.query({ email: 'fridolin.supertester@gmail.com' })
-		.expect( 503 )
-		.end( function onEnd( err, res ) {
-			t.error( err, 'does not return an error' );
-			t.strictEqual( res.text, 'Email service currently not available', 'returns expected message' );
-			t.end();
-		});
 });
 
 tape( 'GET /has_write_access (no write access)', function test( t ) {
