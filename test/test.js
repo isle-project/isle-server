@@ -21,7 +21,6 @@
 
 const tape = require( 'tape' );
 const request = require( 'supertest' );
-const path = require( 'path' );
 const proxyquire = require( 'proxyquire' );
 const isValidObjectId = require( 'mongoose' ).Types.ObjectId.isValid;
 const isObject = require( '@stdlib/assert/is-object' );
@@ -29,63 +28,17 @@ const isString = require( '@stdlib/assert/is-string' );
 const isArray = require( '@stdlib/assert/is-array' );
 const isNull= require( '@stdlib/assert/is-null' );
 const contains = require( '@stdlib/assert/contains' );
-const noop = require( '@stdlib/utils/noop' );
 const copy = require( '@stdlib/utils/copy' );
 const User = require( './../lib/models/user.js' );
+const requires = require( './requires.js' );
 const utils = require( './utils.js' );
 
 
 // VARIABLES //
 
-const FIXTURES_DIRECTORY = path.join( __dirname, 'fixtures' );
-const LOCALES_DIRECTORY = path.join( __dirname, '..', 'locales' );
 let USER_TOKEN;
 let USER_ID;
 const WRITE_ACCESS_TOKEN = 'no_restrictions';
-const credentials = {
-	'tokens': {
-		'writeAccess': WRITE_ACCESS_TOKEN,
-		'jwtKey': 'json_web_token_key'
-	},
-	'apixu': {},
-	'deepl': {},
-	'jitsi': {},
-	'github': {},
-	'mailgun': {},
-	'mapbox': {},
-	'opencpu': {}
-};
-const requires = {
-	'./../etc/config.json': {
-		'namespacesDirectory': FIXTURES_DIRECTORY,
-		'mediaDirectory': FIXTURES_DIRECTORY,
-		'logsDirectory': FIXTURES_DIRECTORY,
-		'localesDirectory': LOCALES_DIRECTORY,
-		'server': 'http://localhost',
-		'certificate': path.join( FIXTURES_DIRECTORY, 'keys', 'ourcustomisleserver.com.cert' ),
-		'key': path.join( FIXTURES_DIRECTORY, 'keys', 'ourcustomisleserver.com.key' )
-	},
-	'./connect_mongoose.js': noop,
-	'./mailer': {
-		'send': function send( mail, clbk ) {
-			clbk( null, 'Mail sent' );
-		}
-	},
-	'./scheduler': {
-		'./mailer': {
-			'send': function send( mail, clbk ) {
-				clbk( null, 'Mail sent' );
-			}
-		}
-	},
-	'./credentials.js': credentials,
-	'./passport.js': proxyquire.noCallThru()( './../lib/passport.js', {
-		'./credentials.js': credentials
-	}),
-	'./helpers/is_instructor.js': () => ( req, res, next ) => next(),
-	'./helpers/is_admin.js': () => ( req, res, next ) => next(),
-	'./helpers/file_owner_check.js': () => ( req, res, next ) => next()
-};
 const app = proxyquire.noCallThru()( './../lib/index.js', requires );
 
 
