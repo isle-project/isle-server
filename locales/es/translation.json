@@ -90,5 +90,7 @@
 	"user-sanitized": "El usuario se desinfectó con éxito.",
 	"user-already-sanitized": "Los datos de los usuarios ya están limpios.",
 	"user-updated": "¡El usuario {{name}} se actualizó con éxito!",
-	"field-expect-id": "`{{field}}` tiene que ser una identificación de objeto válida."
+	"field-expect-id": "`{{field}}` tiene que ser una identificación de objeto válida.",
+	"access-denied-no-admin": "Se deniega el acceso a los no administradores.",
+	"access-token-could-not-be-retrieved": "La ficha de acceso no pudo ser recuperada."
 }

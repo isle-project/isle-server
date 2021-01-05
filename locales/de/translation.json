@@ -90,5 +90,7 @@
 	"user-sanitized": "Benutzer erfolgreich sanitisiert.",
 	"user-already-sanitized": "Benutzerdaten sind schon bereinigt.",
 	"user-updated": "Benutzer {{name}} erfolgreich aktualisiert!",
-	"field-expect-id": "`{{field}}` muss eine gültige ObjectID sein."
+	"field-expect-id": "`{{field}}` muss eine gültige ObjectID sein.",
+	"access-denied-no-admin": "Zugriff für Nicht-Administratoren verweigert.",
+	"access-token-could-not-be-retrieved": "Zugriffstoken konnte nicht abgerufen werden."
 }

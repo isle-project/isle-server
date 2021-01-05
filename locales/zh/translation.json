@@ -90,5 +90,7 @@
 	"user-sanitized": "用户成功消毒。",
 	"user-already-sanitized": "用户已经消毒。",
 	"user-updated": "用户{{name}}成功更新!",
-	"field-expect-id": "`{{field}}`必须是有效的ObjectID。"
+	"field-expect-id": "`{{field}}`必须是有效的ObjectID。",
+	"access-denied-no-admin": "拒绝非管理员访问。",
+	"access-token-could-not-be-retrieved": "无法取回访问令牌。"
 }

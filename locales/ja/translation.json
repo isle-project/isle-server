@@ -90,5 +90,7 @@
 	"user-sanitized": "ユーザーの消毒に成功しました。",
 	"user-already-sanitized": "ユーザーはすでにサニタイズされています。",
 	"user-updated": "ユーザー{{name}}の更新に成功しました",
-	"field-expect-id": "`{{field}}` は有効な ObjectID でなければなりません。"
+	"field-expect-id": "`{{field}}` は有効な ObjectID でなければなりません。",
+	"access-denied-no-admin": "管理者以外の方はアクセスが拒否されました。",
+	"access-token-could-not-be-retrieved": "アクセストークンを取得できませんでした。"
 }

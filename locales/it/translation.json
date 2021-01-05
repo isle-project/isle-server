@@ -90,5 +90,7 @@
 	"user-sanitized": "L'utente è stato igienizzato con successo.",
 	"user-already-sanitized": "Utente già igienizzato.",
 	"user-updated": "Utente {{name}} aggiornato con successo!",
-	"field-expect-id": "`{{field}}` deve essere un valido ObjectID."
+	"field-expect-id": "`{{field}}` deve essere un valido ObjectID.",
+	"access-denied-no-admin": "Accesso negato ai non amministratori.",
+	"access-token-could-not-be-retrieved": "Il gettone di accesso non poteva essere recuperato."
 }

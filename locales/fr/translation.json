@@ -90,5 +90,7 @@
 	"user-sanitized": "L'utilisateur a été assaini avec succès.",
 	"user-already-sanitized": "Utilisateur déjà aseptisé.",
 	"user-updated": "Utilisateur {{name}} mis à jour avec succès!",
-	"field-expect-id": "`{{field}}` doit être un ObjectID valide."
+	"field-expect-id": "`{{field}}` doit être un ObjectID valide.",
+	"access-denied-no-admin": "Accès refusé aux non-administrateurs.",
+	"access-token-could-not-be-retrieved": "Le jeton d'accès n'a pas pu être récupéré."
 }

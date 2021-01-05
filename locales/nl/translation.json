@@ -90,5 +90,7 @@
 	"user-sanitized": "Gebruiker succesvol gezuiverd.",
 	"user-already-sanitized": "De gebruiker is al gezuiverd.",
 	"user-updated": "Gebruiker {{name}} succesvol bijgewerkt!",
-	"field-expect-id": "`{{field}}` moet een geldige ObjectID zijn."
+	"field-expect-id": "`{{field}}` moet een geldige ObjectID zijn.",
+	"access-denied-no-admin": "Toegang geweigerd voor niet-bestuurders.",
+	"access-token-could-not-be-retrieved": "Toegangspenning kon niet worden opgehaald."
 }
