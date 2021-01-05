@@ -79,9 +79,6 @@ const requires = {
 		}
 	},
 	'./credentials.js': credentials,
-	'./passport': {
-		'./../credentials.js': credentials
-	},
 	'./helpers/is_instructor.js': () => ( req, res, next ) => next(),
 	'./helpers/is_admin.js': () => ( req, res, next ) => next(),
 	'./helpers/file_owner_check.js': () => ( req, res, next ) => next()
