@@ -87,7 +87,6 @@ tape( 'POST /create_user - duplicate email address', function test( t ) {
 		.send({ name: 'Frido', email: 'fridolin.supertester@gmail.com', password: 'hokuspokus' })
 		.expect( 403 )
 		.end( function onEnd( err, res ) {
-			console.log( err );
 			t.error( err, 'does not return an error' );
 			t.ok( contains( res.text, 'User validation failed' ), 'returns expected message' );
 			t.end();
@@ -132,7 +131,7 @@ tape( 'GET /forgot_password - success', function test( t ) {
 
 tape( 'GET /forgot_password - failure sending email', function test( t ) {
 	const newRequires = copy( requires );
-	newRequires.login[ './mailer' ] = {
+	newRequires[ './login.js' ][ './mailer' ] = {
 		'send': function send( mail, clbk ) {
 			clbk( new Error( 'Service unavailable' ) );
 		},
