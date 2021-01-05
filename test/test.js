@@ -65,17 +65,19 @@ const requires = {
 			}
 		}
 	},
-	'./../credentials/tokens.json': {
-		'writeAccess': WRITE_ACCESS_TOKEN,
-		'jwtKey': 'json_web_token_key'
+	'./credentials.js': {
+		'./../credentials/tokens.json': {
+			'writeAccess': WRITE_ACCESS_TOKEN,
+			'jwtKey': 'json_web_token_key'
+		},
+		'./../credentials/apixu.json': {},
+		'./../credentials/deepl.json': {},
+		'./../credentials/jitsi.json': {},
+		'./../credentials/github.json': {},
+		'./../credentials/mailgun.json': {},
+		'./../credentials/mapbox.json': {},
+		'./../credentials/opencpu.json': {}
 	},
-	'./../credentials/apixu.json': {},
-	'./../credentials/deepl.json': {},
-	'./../credentials/jitsi.json': {},
-	'./../credentials/github.json': {},
-	'./../credentials/mailgun.json': {},
-	'./../credentials/mapbox.json': {},
-	'./../credentials/opencpu.json': {},
 	'./helpers/is_admin.js': () => ( req, res, next ) => next(),
 	'./helpers/file_owner_check.js': () => ( req, res, next ) => next()
 };
