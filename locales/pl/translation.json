@@ -71,6 +71,7 @@
 	"tfa-already-enabled": "Uwierzytelnianie dwuczynnikowe zostało już pomyślnie wprowadzone.",
 	"tfa-disabled": "Uwierzytelnienie dwuczynnikowe zostało pomyślnie wyłączone.",
 	"ticket-closed": "Bilet zamknięty",
+	"ticket-message-added": "Wiadomość biletowa została pomyślnie dodana.",
 	"ticket-opened": "Bilet otwarty",
 	"token-expired": "Token wygasł",
 	"user-action-saved": "Akcja użytkownika została pomyślnie zapisana.",

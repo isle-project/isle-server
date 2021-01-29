@@ -71,6 +71,7 @@
 	"tfa-already-enabled": "Die Zwei-Faktor-Authentifizierung wurde schon erfolgreich eingerichtet.",
 	"tfa-disabled": "Die Zwei-Faktor-Authentifizierung wurde erfolgreich abgeschaltet.",
 	"ticket-closed": "Ticket geschlossen",
+	"ticket-message-added": "Ticketnachricht erfolgreich hinzugefügt.",
 	"ticket-opened": "Ticket geöffnet",
 	"token-expired": "Token ist abgelaufen",
 	"user-action-saved": "Benutzeraktion erfolgreich gespeichert.",

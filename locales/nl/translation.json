@@ -71,6 +71,7 @@
 	"tfa-already-enabled": "De tweefactorige authenticatie is al met succes opgezet.",
 	"tfa-disabled": "De twee-factor authenticatie is met succes uitgeschakeld.",
 	"ticket-closed": "Ticket gesloten",
+	"ticket-message-added": "Ticket bericht succesvol toegevoegd.",
 	"ticket-opened": "Ticket geopend",
 	"token-expired": "Token is verlopen",
 	"user-action-saved": "Gebruikersactie succesvol opgeslagen.",

@@ -71,6 +71,7 @@
 	"tfa-already-enabled": "二要素認証はすでに正常に設定されています。",
 	"tfa-disabled": "二要素認証が正常に無効化されました。",
 	"ticket-closed": "チケットは終了しました。",
+	"ticket-message-added": "チケットメッセージの追加に成功しました。",
 	"ticket-opened": "チケットオープン",
 	"token-expired": "トークンの有効期限が切れました",
 	"user-action-saved": "ユーザーアクションの保存に成功しました。",
