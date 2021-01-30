@@ -36,6 +36,8 @@
 	"incorrect-token": "Onjuiste schrijfopdracht.",
 	"invalid-credentials": "Ongeldige referenties.",
 	"invalid-id": "Iid' moet een geldig ObjectID zijn.",
+	"invalid-lesson-name": "Lesnaam `{{field}}` mag alleen bestaan uit letters, cijfers, komma's, koppeltekens (-), en onderstrepingen (_).",
+	"invalid-namespace-name": "De cursustitel `{{field}}` mag alleen bestaan uit letters, cijfers, komma's, koppeltekens (-), en onderstrepingen (_).",
 	"jitsi-not-available": "Jitsi niet beschikbaar.",
 	"lesson-activated": "De les is met succes geactiveerd.",
 	"lesson-copied": "De les is met succes gekopieerd.",

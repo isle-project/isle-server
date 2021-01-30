@@ -36,6 +36,8 @@
 	"incorrect-token": "写入访问令牌不正确。",
 	"invalid-credentials": "无效凭证。",
 	"invalid-id": "`id`必须是一个有效的ObjectID。",
+	"invalid-lesson-name": "课程名称`{{field}}`只能由字母、数字、逗号、连字符（-）和下划线（_）组成。",
+	"invalid-namespace-name": "课程标题\"{{field}}\"只能由字母、数字、逗号、连字符（-）和下划线（_）组成。",
 	"jitsi-not-available": "Jitsi没有。",
 	"lesson-activated": "课程已经成功激活。",
 	"lesson-copied": "该课件已成功复制。",

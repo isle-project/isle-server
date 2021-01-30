@@ -36,6 +36,8 @@
 	"incorrect-token": "Nieprawidłowy token zapisu i dostępu.",
 	"invalid-credentials": "Nieważne referencje.",
 	"invalid-id": "`id` musi być ważnym ObjectID`em.",
+	"invalid-lesson-name": "Nazwa lekcji `{{field}}` powinna składać się tylko z liter, cyfr, przecinków, myślników (-) i podkreśleń (_).",
+	"invalid-namespace-name": "Nazwa kursu `{{field}}` powinna składać się tylko z liter, cyfr, przecinków, myślników (-) i podkreśleń (_).",
 	"jitsi-not-available": "Jitsi nie jest dostępny.",
 	"lesson-activated": "Lekcja została pomyślnie aktywowana.",
 	"lesson-copied": "Lekcja została pomyślnie skopiowana.",

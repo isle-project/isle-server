@@ -36,6 +36,8 @@
 	"incorrect-token": "Ficha de acesso de escrita incorreta.",
 	"invalid-credentials": "Credenciais inválidas.",
 	"invalid-id": "O `id` tem que ser um ObjectID válido.",
+	"invalid-lesson-name": "O nome da lição `{{field}}` deve consistir apenas de letras, dígitos, vírgulas, hífens (-), e sublinhados (_).",
+	"invalid-namespace-name": "O título do curso `{{field}}` deve consistir apenas de letras, dígitos, vírgulas, hífens (-), e sublinhados (_).",
 	"jitsi-not-available": "Jitsi não disponível.",
 	"lesson-activated": "A lição foi ativada com sucesso.",
 	"lesson-copied": "A lição foi copiada com sucesso.",

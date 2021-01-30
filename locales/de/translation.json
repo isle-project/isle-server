@@ -36,6 +36,8 @@
 	"incorrect-token": "Falsches Schreibzugriffstoken.",
 	"invalid-credentials": "Ungültige Anmeldedaten.",
 	"invalid-id": "`id` muss eine gültige ObjectID sein.",
+	"invalid-lesson-name": "Der Lektionsname `{{field}}` sollte nur aus Buchstaben, Ziffern, Kommas, Bindestrichen (-) und Unterstrichen (_) bestehen.",
+	"invalid-namespace-name": "Der Kurstitel `{{field}}` sollte nur aus Buchstaben, Ziffern, Kommas, Bindestrichen (-) und Unterstrichen (_) bestehen.",
 	"jitsi-not-available": "Jitsi nicht verfügbar.",
 	"lesson-activated": "Die Lektion wurde erfolgreich aktiviert.",
 	"lesson-copied": "Die Lektion wurde erfolgreich kopiert.",

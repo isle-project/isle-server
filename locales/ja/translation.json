@@ -36,6 +36,8 @@
 	"incorrect-token": "不正な書き込みアクセストークンです。",
 	"invalid-credentials": "無効な資格情報です。",
 	"invalid-id": "id` は有効な ObjectID でなければなりません。",
+	"invalid-lesson-name": "レッスン名 `{{field}}` は、文字、数字、カンマ、ハイフン(-)、アンダースコア(_)のみで構成されています。",
+	"invalid-namespace-name": "コースタイトル `{{field}}` は、文字、数字、カンマ、ハイフン(-)、アンダースコア(_)のみで構成されている必要があります。",
 	"jitsi-not-available": "ジッツィは利用できません。",
 	"lesson-activated": "レッスンの活性化に成功しました。",
 	"lesson-copied": "レッスンは無事にコピーできました。",

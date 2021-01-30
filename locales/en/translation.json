@@ -36,6 +36,8 @@
 	"incorrect-token": "Incorrect write-access token.",
 	"invalid-credentials": "Invalid credentials.",
 	"invalid-id": "`id` has to be a valid ObjectID.",
+	"invalid-lesson-name": "Lesson name `{{field}}` should only consist of letters, digits,  commas, hyphens (-), and underscores (_).",
+	"invalid-namespace-name": "Course title `{{field}}` should only consist of letters, digits, commas, hyphens (-), and underscores (_).",
 	"jitsi-not-available": "Jitsi not available.",
 	"lesson-activated": "The lesson has been successfully activated.",
 	"lesson-copied": "The lesson has been successfully copied.",
