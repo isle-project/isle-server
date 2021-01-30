@@ -167,7 +167,7 @@ tape( 'GET /has_write_access (write access)', function test( t ) {
 tape( 'GET /get_lesson_info', function test( t ) {
 	request( app )
 	.get( '/get_lesson_info' )
-	.query({ lessonName: 'Why have you followed me?', namespaceName: 'FrankensteinMeetsTheWolfMan' })
+	.query({ lessonName: 'Why have you followed me', namespaceName: 'FrankensteinMeetsTheWolfMan' })
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
@@ -193,14 +193,14 @@ tape( 'GET /get_lesson_info (unknown lesson)', function test( t ) {
 tape( 'GET /get_lesson', function test( t ) {
 	request( app )
 	.get( '/get_lesson' )
-	.query({ lessonName: 'Why have you followed me?', namespaceName: 'FrankensteinMeetsTheWolfMan' })
+	.query({ lessonName: 'Why have you followed me', namespaceName: 'FrankensteinMeetsTheWolfMan' })
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
 		const obj = JSON.parse( res.text );
 		t.strictEqual( obj.message, 'ok', 'returns message' );
 		t.strictEqual( isObject( obj.lesson ), true, 'returns lesson object' );
-		t.strictEqual( obj.lesson.title, 'Why have you followed me?', 'returns correct title' );
+		t.strictEqual( obj.lesson.title, 'Why have you followed me', 'returns correct title' );
 		t.end();
 	});
 });
@@ -208,7 +208,7 @@ tape( 'GET /get_lesson', function test( t ) {
 tape( 'GET /get_lesson (unknown lesson)', function test( t ) {
 	request( app )
 	.get( '/get_lesson' )
-	.query({ lessonName: 'Why have you forsaken me?', namespaceName: 'FrankensteinMeetsTheWolfMan' })
+	.query({ lessonName: 'Why have you forsaken me', namespaceName: 'FrankensteinMeetsTheWolfMan' })
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
@@ -222,7 +222,7 @@ tape( 'GET /get_lesson (unknown lesson)', function test( t ) {
 tape( 'GET /get_lesson (unknown namespace)', function test( t ) {
 	request( app )
 	.get( '/get_lesson' )
-	.query({ lessonName: 'Why have you followed me?', namespaceName: 'FrankensteinKillsTheWolfMan' })
+	.query({ lessonName: 'Why have you followed me', namespaceName: 'FrankensteinKillsTheWolfMan' })
 	.expect( 404 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
@@ -246,7 +246,7 @@ tape( 'GET /get_lesson (invalid `lessonName`)', function test( t ) {
 tape( 'GET /get_lesson (invalid `namespaceName`)', function test( t ) {
 	request( app )
 	.get( '/get_lesson' )
-	.query({ lessonName: 'Why have you followed me?', namespaceName: []})
+	.query({ lessonName: 'Why have you followed me', namespaceName: []})
 	.expect( 400 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
