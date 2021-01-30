@@ -117,17 +117,17 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 	function createNamespaces( users, next ) {
 		const namespaces = [
 			{
-				'title': 'Frankenstein meets the Wolf Man',
+				'title': 'FrankensteinMeetsTheWolfMan',
 				'description': 'Open the grave of Larry Talbot',
 				'owners': [ users[ 1 ]._id, users[ 5 ]._id ]
 			},
 			{
-				'title': 'Dracula vs. the Wolf Man',
+				'title': 'DraculaVsTheWolfMan',
 				'description': 'A great match',
 				'owners': [ users[ 1 ]._id, users[ 2 ]._id ]
 			},
 			{
-				'title': 'Dracula vs. Frankenstein',
+				'title': 'DraculaVsFrankenstein',
 				'description': 'Dracula unearthes Frankenstein',
 				'owners': [ users[ 2 ]._id, users[ 5 ]._id ]
 			}
@@ -139,32 +139,32 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 		const lessons = [
 			{
 				namespace: namespaces[ 2 ]._id,
-				title: 'Unearth the monster!',
+				title: 'Unearth the monster',
 				public: true
 			},
 			{
 				namespace: namespaces[ 2 ]._id,
-				title: 'Kill the cemetery keeper!',
+				title: 'Kill the cemetery keeper',
 				public: true
 			},
 			{
 				namespace: namespaces[ 2 ]._id,
-				title: 'Drink his blood!',
+				title: 'Drink his blood',
 				public: false
 			},
 			{
 				namespace: namespaces[ 0 ]._id,
-				title: 'Why have you followed me?',
+				title: 'Why have you followed me',
 				public: true
 			},
 			{
 				namespace: namespaces[ 0 ]._id,
-				title: 'Talbot, you are a murderer!',
+				title: 'Talbot, you are a murderer',
 				public: true
 			},
 			{
 				namespace: namespaces[ 0 ]._id,
-				title: 'Prove it!',
+				title: 'Prove it',
 				public: false
 			}
 		];

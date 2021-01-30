@@ -153,7 +153,7 @@ tape( 'fails creating a namespace without a title', function test( t ) {
 
 tape( 'fails creating a namespace without owners', function test( t ) {
 	const o = {
-		'title': 'ownerless namespace',
+		'title': 'ownerless_namespace',
 		'description': 'Namespace without an owner',
 		'owners': null
 	};
@@ -167,7 +167,7 @@ tape( 'fails creating a namespace without owners', function test( t ) {
 
 tape( 'fails creating a namespace with an empty owners array', function test( t ) {
 	const o = {
-		'title': 'ownerless namespace',
+		'title': 'ownerless_namespace',
 		'description': 'Namespace without an owner',
 		'owners': []
 	};
