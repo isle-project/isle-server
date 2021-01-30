@@ -27,6 +27,8 @@
 	"field-expect-id-array": "'{{field}}'должно быть массивом Идентификаторов Объектов.",
 	"field-expect-object": "`{{field}}` должно быть предметом\".",
 	"field-expect-string": "`{{field}}` должно быть строкой\".",
+	"field-no-periods": "{{field}} не должно содержать периодов (`.`).",
+	"field-no-slashes": "{{field}} не должно содержать символов `/` или `\\`.",
 	"file-deleted": "Файл успешно удален.",
 	"file-nonexistent": "Файла не существует.",
 	"file-saved": "Файл успешно сохранен.",

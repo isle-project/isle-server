@@ -27,6 +27,8 @@
 	"field-expect-id-array": "`{{field}}` musi być tablicą ObjectIDs.",
 	"field-expect-object": "`{{field}}` musi być obiektem.",
 	"field-expect-string": "`{{field}}` musi być ciągiem.",
+	"field-no-periods": "{{field}} nie może zawierać okresów (`.`).",
+	"field-no-slashes": "{{field}} nie może zawierać znaków `/` lub `\\`.",
 	"file-deleted": "Plik został pomyślnie usunięty.",
 	"file-nonexistent": "Plik nie istnieje.",
 	"file-saved": "Plik pomyślnie zapisany.",

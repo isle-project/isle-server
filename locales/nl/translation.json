@@ -27,6 +27,8 @@
 	"field-expect-id-array": "`{field}}` moet een array van ObjectIDs zijn.",
 	"field-expect-object": "`{{field}}` moet een object zijn.",
 	"field-expect-string": "`{{field}}` moet een tekenfilm zijn.",
+	"field-no-periods": "{{field}} mag geen punten (`.`) bevatten.",
+	"field-no-slashes": "{{field}} mag geen `/` of `\\` tekens bevatten.",
 	"file-deleted": "Bestand succesvol verwijderd.",
 	"file-nonexistent": "Dossier bestaat niet.",
 	"file-saved": "Bestand succesvol opgeslagen.",

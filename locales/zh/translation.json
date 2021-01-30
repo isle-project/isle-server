@@ -27,6 +27,8 @@
 	"field-expect-id-array": "`{{field}}`必须是一个ObjectIDs数组。",
 	"field-expect-object": "`{{field}}`必须是一个对象。",
 	"field-expect-string": "`{{field}}`必须是一个字符串。",
+	"field-no-periods": "{{field}}不得包含句号（`.`）。",
+	"field-no-slashes": "{{field}}不得包含`/`或`\\`字符。",
 	"file-deleted": "文件成功删除。",
 	"file-nonexistent": "文件不存在。",
 	"file-saved": "文件成功保存。",

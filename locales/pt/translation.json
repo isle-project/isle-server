@@ -27,6 +27,8 @@
 	"field-expect-id-array": "`{{field}}` tem que ser um conjunto de ObjectIDs.",
 	"field-expect-object": "`{{field}}` deve ser um objeto.",
 	"field-expect-string": "`{{field}}` tem que ser um fio.",
+	"field-no-periods": "{{field}} não deve conter períodos (`.`).",
+	"field-no-slashes": "{{field}} não deve conter `/` ou `\\` caracteres.",
 	"file-deleted": "Arquivo excluído com sucesso.",
 	"file-nonexistent": "O arquivo não existe.",
 	"file-saved": "Arquivo salvo com sucesso.",

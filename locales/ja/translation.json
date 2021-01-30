@@ -27,6 +27,8 @@
 	"field-expect-id-array": "`{{field}}` は ObjectID の配列でなければなりません。",
 	"field-expect-object": "`{{field}}` はオブジェクトでなければなりません。",
 	"field-expect-string": "`{{field}}` は文字列でなければなりません。",
+	"field-no-periods": "{{field}} はピリオド (`.`) を含んではいけません。",
+	"field-no-slashes": "{{field}}は `/` または `\\` を含んではいけません。",
 	"file-deleted": "ファイルの削除に成功しました。",
 	"file-nonexistent": "ファイルが存在しません。",
 	"file-saved": "ファイルの保存に成功しました。",
