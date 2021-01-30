@@ -238,7 +238,7 @@ tape( 'GET /get_lesson (invalid `lessonName`)', function test( t ) {
 	.expect( 400 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, '`lessonName` has to be a string.', 'returns message' );
+		t.strictEqual( res.text, 'Lesson name `lessonName` should only consist of letters, digits,  commas, hyphens (-), and underscores (_).', 'returns message' );
 		t.end();
 	});
 });
@@ -250,7 +250,7 @@ tape( 'GET /get_lesson (invalid `namespaceName`)', function test( t ) {
 	.expect( 400 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, '`namespaceName` has to be a string.', 'returns message' );
+		t.strictEqual( res.text, 'Course title `namespaceName` should only consist of letters, digits, commas, hyphens (-), and underscores (_).', 'returns message' );
 		t.end();
 	});
 });
@@ -276,7 +276,7 @@ tape( 'GET /get_lessons (invalid `namespaceName`)', function test( t ) {
 	.expect( 400 )
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
-		t.strictEqual( res.text, '`namespaceName` has to be a string.', 'returns message' );
+		t.strictEqual( res.text, 'Course title `namespaceName` should only consist of letters, digits, commas, hyphens (-), and underscores (_).', 'returns message' );
 		t.end();
 	});
 });
