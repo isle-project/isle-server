@@ -22,6 +22,7 @@
 	"enable-tfa-failure": "O código de confirmação não está correto. Favor tentar novamente ativar a autenticação de dois fatores.",
 	"enable-tfa-success": "O código de confirmação foi validado com sucesso. A autenticação de dois fatores está agora habilitada.",
 	"event-deleted": "Evento excluído.",
+	"event-successfully-triggered": "O evento foi acionado com sucesso",
 	"field-expect-categories": "`{{field}}` deve ser um dos: `{{values}}`.",
 	"field-expect-id": "`{{field}}` tem que ser um ObjectID válido.",
 	"field-expect-id-array": "`{{field}}` tem que ser um conjunto de ObjectIDs.",

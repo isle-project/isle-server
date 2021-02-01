@@ -22,6 +22,7 @@
 	"enable-tfa-failure": "Kod potwierdzenia jest nieprawidłowy. Proszę spróbować ponownie aktywować dwuczynnikowe uwierzytelnienie.",
 	"enable-tfa-success": "Kod potwierdzający został pomyślnie zatwierdzony. Uwierzytelnianie dwuczynnikowe jest teraz włączone.",
 	"event-deleted": "Zdarzenie usunięte.",
+	"event-successfully-triggered": "Zdarzenie zostało pomyślnie wywołane",
 	"field-expect-categories": "`{{field}}` musi być jednym z wartości: `{{values}}`.",
 	"field-expect-id": "`{{field}}` musi być ważnym identyfikatorem obiektu.",
 	"field-expect-id-array": "`{{field}}` musi być tablicą ObjectIDs.",

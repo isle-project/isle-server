@@ -22,6 +22,7 @@
 	"enable-tfa-failure": "確認コードが正しくありません。二要素認証を有効にするには、もう一度お試しください。",
 	"enable-tfa-success": "確認コードが正常に検証されました。二要素認証が有効になりました。",
 	"event-deleted": "イベントが削除されました。",
+	"event-successfully-triggered": "イベントは正常にトリガされました。",
 	"field-expect-categories": "`{{field}}` は次のうちのいずれかでなければなりません。`{{values}}`のうちの1つでなければなりません。",
 	"field-expect-id": "`{{field}}` は有効な ObjectID でなければなりません。",
 	"field-expect-id-array": "`{{field}}` は ObjectID の配列でなければなりません。",

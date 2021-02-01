@@ -22,6 +22,7 @@
 	"enable-tfa-failure": "确认码不正确。请再次尝试激活双因素认证。",
 	"enable-tfa-success": "确认码已成功验证。现在启用了双因素认证。",
 	"event-deleted": "事件被删除。",
+	"event-successfully-triggered": "该事件已成功触发",
 	"field-expect-categories": "`{{field}}`必须是下列之一：`{{values}}`。",
 	"field-expect-id": "`{{field}}`必须是有效的ObjectID。",
 	"field-expect-id-array": "`{{field}}`必须是一个ObjectIDs数组。",

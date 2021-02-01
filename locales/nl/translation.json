@@ -22,6 +22,7 @@
 	"enable-tfa-failure": "De bevestigingscode is niet correct. Probeer opnieuw om de twee-factor authenticatie te activeren.",
 	"enable-tfa-success": "De bevestigingscode is met succes gevalideerd. Twee-factor authenticatie is nu ingeschakeld.",
 	"event-deleted": "Gebeurtenis geschrapt.",
+	"event-successfully-triggered": "De gebeurtenis is met succes gestart",
 	"field-expect-categories": "`{{field}}` moet er een van zijn: `{{values}}`.",
 	"field-expect-id": "`{{field}}` moet een geldige ObjectID zijn.",
 	"field-expect-id-array": "`{field}}` moet een array van ObjectIDs zijn.",
