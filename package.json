@@ -43,7 +43,7 @@
     "debug": "^4.3.1",
     "express": "^4.16.4",
     "faker": "^5.2.0",
-    "i18next": "^19.8.5",
+    "i18next": "^19.8.6",
     "i18next-fs-backend": "^1.0.8",
     "i18next-http-middleware": "^3.1.0",
     "jsonwebtoken": "^8.4.0",
