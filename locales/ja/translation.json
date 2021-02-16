@@ -80,6 +80,7 @@
 	"ticket-opened": "チケットオープン",
 	"token-expired": "トークンの有効期限が切れました",
 	"too-many-backups-created": "このIPから作成されたバックアップが多すぎます。",
+	"too-many-courses-created": "このIPから作成されたコースが多すぎます。",
 	"too-many-requests": "このIPからのリクエストが多すぎます。",
 	"too-many-users-created": "このIPから作成されたユーザーが多すぎます。",
 	"user-action-saved": "ユーザーアクションの保存に成功しました。",

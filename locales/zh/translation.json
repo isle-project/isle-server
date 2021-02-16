@@ -80,6 +80,7 @@
 	"ticket-opened": "开票",
 	"token-expired": "代币已过期",
 	"too-many-backups-created": "从这个IP创建的备份太多，请在30分钟后再试。",
+	"too-many-courses-created": "这个IP创建的课程太多，请在一小时后再试。",
 	"too-many-requests": "该IP发出的请求太多，请稍后再试。",
 	"too-many-users-created": "这个IP创建的用户太多，请在一小时后再试。",
 	"user-action-saved": "用户操作成功保存。",

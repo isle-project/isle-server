@@ -80,6 +80,7 @@
 	"ticket-opened": "Ticket opened",
 	"token-expired": "Token has expired",
 	"too-many-backups-created": "Too many backups created from this IP, please try again after 30 minutes",
+	"too-many-courses-created": "Too many courses created from this IP, please try again after one hour",
 	"too-many-requests": "Too many requests made from this IP, please try again later.",
 	"too-many-users-created": "Too many users created from this IP, please try again after one hour",
 	"user-action-saved": "User action successfully saved.",

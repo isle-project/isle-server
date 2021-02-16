@@ -80,6 +80,7 @@
 	"ticket-opened": "Ticket abierto",
 	"token-expired": "La ficha ha caducado.",
 	"too-many-backups-created": "Se han creado demasiadas copias de seguridad desde esta IP, por favor inténtelo de nuevo después de 30 minutos",
+	"too-many-courses-created": "Demasiados cursos creados desde esta IP, por favor inténtelo de nuevo después de una hora",
 	"too-many-requests": "Se han realizado demasiadas solicitudes desde esta IP, por favor, inténtelo más tarde.",
 	"too-many-users-created": "Demasiados usuarios creados desde esta IP, por favor inténtelo de nuevo después de una hora",
 	"user-action-saved": "Acción del usuario salvada con éxito.",
