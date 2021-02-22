@@ -11,7 +11,7 @@
 	"client-data-outdated": "Os dados do cliente estão desatualizados",
 	"code-incorrect": "O código de confirmação fornecido está incorreto.",
 	"cohort-created": "A coorte foi criada com sucesso.",
-	"cohort-created-without-members-due-to-disabled-email": "A coorte foi criada com sucesso.",
+	"cohort-created-without-new-members-due-to-disabled-email": "A coorte foi criada, mas sem os seguintes usuários sem uma conta ISLE: {{emails}}. O serviço de e-mail tem que ser habilitado para que se possa convidá-los automaticamente para o ISLE e inscrevê-los no curso.",
 	"cohort-deleted": "A coorte foi eliminada com sucesso.",
 	"cohort-nonexistent": "A coorte não existe.",
 	"cohort-update-cannot-invite-new-users-without-email": "O coorte não pôde ser atualizado, pois você está tentando convidar novos usuários sem uma conta existente enquanto o serviço de e-mail não estiver habilitado. Por favor, remova os seguintes endereços de e-mail da lista de membros do coorte e tente novamente: {{{emails}}.",

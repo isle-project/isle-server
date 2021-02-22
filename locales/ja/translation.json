@@ -11,7 +11,7 @@
 	"client-data-outdated": "クライアントデータが古い",
 	"code-incorrect": "提供された確認コードが正しくありません。",
 	"cohort-created": "無事にコホートを作成することができました。",
-	"cohort-created-without-members-due-to-disabled-email": "無事にコホートを作成することができました。",
+	"cohort-created-without-new-members-due-to-disabled-email": "コホートを作成しましたが、ISLEアカウントを持たない以下のユーザーがいませんでした。{{emails}}です。ISLEに自動的に招待してコースに登録するには、メールサービスを有効にする必要があります。",
 	"cohort-deleted": "コホートの削除に成功しました。",
 	"cohort-nonexistent": "コホートは存在しない。",
 	"cohort-update-cannot-invite-new-users-without-email": "メールサービスが有効になっていない状態で、既存のアカウントを持たない新規ユーザーを招待しようとしているため、コホートを更新できませんでした。以下のメールアドレスをコホートメンバーのリストから削除して、再度お試しください。{{emails}}。",

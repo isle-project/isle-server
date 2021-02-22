@@ -11,7 +11,7 @@
 	"client-data-outdated": "Dane klienta są nieaktualne",
 	"code-incorrect": "Dostarczony kod potwierdzenia jest nieprawidłowy.",
 	"cohort-created": "Kohorta została pomyślnie utworzona.",
-	"cohort-created-without-members-due-to-disabled-email": "Kohorta została pomyślnie utworzona.",
+	"cohort-created-without-new-members-due-to-disabled-email": "Kohorta została utworzona, ale bez następujących użytkowników nieposiadających konta ISLE: {{emails}}. Usługa e-mail musi być włączona, aby można było automatycznie zaprosić ich do ISLE i zapisać na kurs.",
 	"cohort-deleted": "Kohorta została pomyślnie usunięta.",
 	"cohort-nonexistent": "Kohorta nie istnieje.",
 	"cohort-update-cannot-invite-new-users-without-email": "Kohorta nie mogła zostać zaktualizowana, ponieważ próbujesz zaprosić nowych użytkowników bez istniejącego konta, a usługa poczty elektronicznej nie jest włączona. Proszę usunąć następujące adresy e-mail z listy członków kohorty i spróbować ponownie: {{emails}}.",

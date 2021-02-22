@@ -11,7 +11,7 @@
 	"client-data-outdated": "Klantgegevens zijn verouderd",
 	"code-incorrect": "De meegeleverde bevestigingscode is onjuist.",
 	"cohort-created": "Het cohort is met succes opgericht.",
-	"cohort-created-without-members-due-to-disabled-email": "De cohort is succesvol aangemaakt.",
+	"cohort-created-without-new-members-due-to-disabled-email": "Het cohort werd aangemaakt, maar zonder de volgende gebruikers zonder ISLE account: {{emails}}. De e-maildienst moet ingeschakeld zijn om hen automatisch te kunnen uitnodigen voor ISLE en hen in te schrijven in de cursus.",
 	"cohort-deleted": "Cohort succesvol verwijderd.",
 	"cohort-nonexistent": "Cohort bestaat niet.",
 	"cohort-update-cannot-invite-new-users-without-email": "De cohort kon niet worden bijgewerkt omdat u probeert nieuwe gebruikers uit te nodigen zonder een bestaande account terwijl de e-maildienst niet is ingeschakeld. Verwijder alstublieft de volgende e-mailadressen uit de lijst van cohortleden en probeer het opnieuw: {{emails}}.",

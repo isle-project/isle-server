@@ -11,7 +11,7 @@
 	"client-data-outdated": "客户数据已过期",
 	"code-incorrect": "提供的确认码不正确。",
 	"cohort-created": "队伍成功创建。",
-	"cohort-created-without-members-due-to-disabled-email": "队伍成功创建。",
+	"cohort-created-without-new-members-due-to-disabled-email": "队伍已经建立，但没有以下没有ISLE账户的用户。{{emails}}。必须启用电子邮件服务，才能自动邀请他们参加ISLE，并将他们注册到课程中。",
 	"cohort-deleted": "队列成功删除。",
 	"cohort-nonexistent": "群体不存在。",
 	"cohort-update-cannot-invite-new-users-without-email": "由于您在没有启用电子邮件服务的情况下试图邀请没有现有账户的新用户，因此无法更新群组。请将以下电子邮件地址从群组成员列表中删除，然后再试。{{emails}}.",
