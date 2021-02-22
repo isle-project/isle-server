@@ -82,7 +82,8 @@ const requires = {
 		'./passport.js': passport
 	}),
 	'./cohorts.js': proxyquire.noCallThru()( './../lib/cohorts.js', {
-		'./passport.js': passport
+		'./passport.js': passport,
+		'./mailer': mailer
 	}),
 	'./custom_fields.js': proxyquire.noCallThru()( './../lib/custom_fields.js', {
 		'./passport.js': passport
