@@ -20,6 +20,7 @@
 	"email-already-verified": "El correo electrónico ya ha sido verificado.",
 	"email-confirmation-success": "Su dirección de correo electrónico fue validada con éxito",
 	"email-service-not-available": "El servicio de correo electrónico no está disponible actualmente.",
+	"email-service-not-configured-password-reset": "El servicio de correo electrónico no ha sido habilitado o está mal configurado. Por favor, ponte en contacto directamente con el administrador de tu servidor ISLE para restablecer tu contraseña.",
 	"enable-tfa-failure": "El código de confirmación no es correcto. Por favor, intente de nuevo activar la autenticación de dos factores.",
 	"enable-tfa-success": "El código de confirmación ha sido validado con éxito. La autenticación de dos factores está ahora habilitada.",
 	"event-deleted": "Evento eliminado.",

@@ -20,6 +20,7 @@
 	"email-already-verified": "E-mail is al geverifieerd.",
 	"email-confirmation-success": "Uw e-mailadres is met succes gevalideerd.",
 	"email-service-not-available": "E-mail service is momenteel niet beschikbaar.",
+	"email-service-not-configured-password-reset": "De e-mailservice is niet ingeschakeld of onjuist geconfigureerd. Neem direct contact op met uw ISLE server beheerder om uw wachtwoord opnieuw in te stellen.",
 	"enable-tfa-failure": "De bevestigingscode is niet correct. Probeer opnieuw om de twee-factor authenticatie te activeren.",
 	"enable-tfa-success": "De bevestigingscode is met succes gevalideerd. Twee-factor authenticatie is nu ingeschakeld.",
 	"event-deleted": "Gebeurtenis geschrapt.",

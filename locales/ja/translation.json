@@ -20,6 +20,7 @@
 	"email-already-verified": "メールは確認済みです。",
 	"email-confirmation-success": "あなたのメールアドレスは正常に認証されました。",
 	"email-service-not-available": "現在、メールサービスはご利用いただけません。",
+	"email-service-not-configured-password-reset": "メールサービスが有効になっていないか、不適切な設定になっています。パスワードをリセットするには、ISLEサーバーの管理者に直接連絡してください。",
 	"enable-tfa-failure": "確認コードが正しくありません。二要素認証を有効にするには、もう一度お試しください。",
 	"enable-tfa-success": "確認コードが正常に検証されました。二要素認証が有効になりました。",
 	"event-deleted": "イベントが削除されました。",
