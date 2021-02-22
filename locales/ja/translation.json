@@ -19,6 +19,7 @@
 	"delete-lessons-first": "あなたのコースにはまだレッスンが含まれています。",
 	"email-already-verified": "メールは確認済みです。",
 	"email-confirmation-success": "あなたのメールアドレスは正常に認証されました。",
+	"email-service-not-available": "現在、メールサービスはご利用いただけません。",
 	"enable-tfa-failure": "確認コードが正しくありません。二要素認証を有効にするには、もう一度お試しください。",
 	"enable-tfa-success": "確認コードが正常に検証されました。二要素認証が有効になりました。",
 	"event-deleted": "イベントが削除されました。",

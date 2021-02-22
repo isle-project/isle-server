@@ -19,6 +19,7 @@
 	"delete-lessons-first": "Il vostro corso contiene ancora delle lezioni, che potrete cancellare solo dopo averle eliminate.",
 	"email-already-verified": "L'e-mail è già stata verificata.",
 	"email-confirmation-success": "Il tuo indirizzo e-mail è stato convalidato con successo.",
+	"email-service-not-available": "Il servizio e-mail non è attualmente disponibile.",
 	"enable-tfa-failure": "Il codice di conferma non è corretto. Riprovare ad attivare l'autenticazione a due fattori.",
 	"enable-tfa-success": "Il codice di conferma è stato convalidato con successo. L'autenticazione a due fattori è ora abilitata.",
 	"event-deleted": "Evento cancellato.",

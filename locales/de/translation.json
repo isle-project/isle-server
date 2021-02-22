@@ -19,6 +19,7 @@
 	"delete-lessons-first": "Dein Kurs enthält noch Lektionen. Du kannst ihn erst löschen, wenn Du diese entfernt hast.",
 	"email-already-verified": "E-Mail wurde bereits verifiziert.",
 	"email-confirmation-success": "Deine E-Mail-Adresse wurde erfolgreich validiert.",
+	"email-service-not-available": "Der E-Mail-Service ist derzeit nicht verfügbar.",
 	"enable-tfa-failure": "Der Bestätigungscode ist nicht korrekt. Bitte versuche erneut, die Zwei-Faktor-Authentifizierung zu aktivieren.",
 	"enable-tfa-success": "Der Bestätigungscode wurde erfolgreich validiert. Die Zwei-Faktor-Authentifizierung ist jetzt aktiviert.",
 	"event-deleted": "Ereignis gelöscht.",

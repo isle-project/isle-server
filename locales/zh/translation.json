@@ -19,6 +19,7 @@
 	"delete-lessons-first": "您的课程仍然包含课程，您只能在删除课程后才能删除它。",
 	"email-already-verified": "电子邮件已经被验证。",
 	"email-confirmation-success": "您的电子邮件地址已成功验证。",
+	"email-service-not-available": "目前还没有提供电子邮件服务。",
 	"enable-tfa-failure": "确认码不正确。请再次尝试激活双因素认证。",
 	"enable-tfa-success": "确认码已成功验证。现在启用了双因素认证。",
 	"event-deleted": "事件被删除。",
