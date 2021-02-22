@@ -48,7 +48,8 @@ const passport = proxyquire.noCallThru()( './../lib/passport.js', {
 const mailer = {
 	'send': function send( mail, clbk ) {
 		clbk( null, 'Mail sent' );
-	}
+	},
+	'active': true
 };
 const fileOwnerCheck = () => ( req, res, next ) => next();
 const isAdmin = () => ( req, res, next ) => next();
