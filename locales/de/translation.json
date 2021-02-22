@@ -20,6 +20,8 @@
 	"email-already-verified": "E-Mail wurde bereits verifiziert.",
 	"email-confirmation-success": "Deine E-Mail-Adresse wurde erfolgreich validiert.",
 	"email-service-not-available": "Der E-Mail-Service ist derzeit nicht verfügbar.",
+	"email-service-not-configured": "Der E-Mail-Dienst wurde nicht aktiviert oder ist nicht richtig konfiguriert.",
+	"email-service-not-configured-cannot-add-owners": "Es ist derzeit nicht möglich, nicht existierende Benutzerkonten in die Liste der Kursbesitzer aufzunehmen, da der E-Mail-Dienst nicht aktiviert oder falsch konfiguriert ist.",
 	"email-service-not-configured-password-reset": "Der E-Mail-Dienst wurde nicht aktiviert oder ist falsch konfiguriert. Bitte setzen Sie sich direkt mit Ihrem ISLE-Server-Administrator in Verbindung, um Ihr Passwort zurückzusetzen.",
 	"enable-tfa-failure": "Der Bestätigungscode ist nicht korrekt. Bitte versuche erneut, die Zwei-Faktor-Authentifizierung zu aktivieren.",
 	"enable-tfa-success": "Der Bestätigungscode wurde erfolgreich validiert. Die Zwei-Faktor-Authentifizierung ist jetzt aktiviert.",

@@ -20,6 +20,8 @@
 	"email-already-verified": "O e-mail já foi verificado.",
 	"email-confirmation-success": "Seu endereço de e-mail foi validado com sucesso.",
 	"email-service-not-available": "O serviço de e-mail não está disponível no momento.",
+	"email-service-not-configured": "O serviço de e-mail não foi habilitado ou está configurado de forma inadequada.",
+	"email-service-not-configured-cannot-add-owners": "Atualmente não é possível adicionar contas de usuário não existentes à lista de proprietários do curso, uma vez que o serviço de e-mail não foi habilitado ou está configurado de forma inadequada.",
 	"email-service-not-configured-password-reset": "O serviço de e-mail não foi habilitado ou está configurado de forma inadequada. Entre em contato diretamente com seu administrador do servidor ISLE para redefinir sua senha.",
 	"enable-tfa-failure": "O código de confirmação não está correto. Favor tentar novamente ativar a autenticação de dois fatores.",
 	"enable-tfa-success": "O código de confirmação foi validado com sucesso. A autenticação de dois fatores está agora habilitada.",

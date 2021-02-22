@@ -20,6 +20,8 @@
 	"email-already-verified": "Le courrier électronique a déjà été vérifié.",
 	"email-confirmation-success": "Votre adresse électronique a été validée avec succès.",
 	"email-service-not-available": "Le service de courrier électronique n'est pas disponible actuellement.",
+	"email-service-not-configured": "Le service de courrier électronique n'a pas été activé ou est mal configuré.",
+	"email-service-not-configured-cannot-add-owners": "Il vous est actuellement impossible d'ajouter des comptes d'utilisateurs inexistants à la liste des propriétaires de cours car le service de courrier électronique n'a pas été activé ou est mal configuré.",
 	"email-service-not-configured-password-reset": "Le service de courrier électronique n'a pas été activé ou est mal configuré. Veuillez contacter directement l'administrateur de votre serveur ISLE pour réinitialiser votre mot de passe.",
 	"enable-tfa-failure": "Le code de confirmation n'est pas correct. Veuillez essayer à nouveau d'activer l'authentification à deux facteurs.",
 	"enable-tfa-success": "Le code de confirmation a été validé avec succès. L'authentification à deux facteurs est maintenant activée.",

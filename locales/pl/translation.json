@@ -20,6 +20,8 @@
 	"email-already-verified": "Email został już zweryfikowany.",
 	"email-confirmation-success": "Twój adres e-mail został pomyślnie zweryfikowany.",
 	"email-service-not-available": "Usługa e-mail nie jest obecnie dostępna.",
+	"email-service-not-configured": "Usługa poczty e-mail nie została włączona lub jest nieprawidłowo skonfigurowana.",
+	"email-service-not-configured-cannot-add-owners": "Obecnie nie jest możliwe dodanie nieistniejących kont użytkowników do listy właścicieli kursów, ponieważ usługa poczty elektronicznej nie została włączona lub jest źle skonfigurowana.",
 	"email-service-not-configured-password-reset": "Usługa poczty elektronicznej nie została włączona lub jest nieprawidłowo skonfigurowana. Prosimy o bezpośredni kontakt z administratorem serwera ISLE w celu zresetowania hasła.",
 	"enable-tfa-failure": "Kod potwierdzenia jest nieprawidłowy. Proszę spróbować ponownie aktywować dwuczynnikowe uwierzytelnienie.",
 	"enable-tfa-success": "Kod potwierdzający został pomyślnie zatwierdzony. Uwierzytelnianie dwuczynnikowe jest teraz włączone.",
