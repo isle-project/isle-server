@@ -21,7 +21,7 @@
 	"email-confirmation-success": "您的电子邮件地址已成功验证。",
 	"email-service-not-available": "目前还没有提供电子邮件服务。",
 	"email-service-not-configured": "电子邮件服务未被启用或配置不当。",
-	"email-service-not-configured-cannot-add-owners": "目前，您无法将不存在的用户账户添加到课程所有者列表中，因为电子邮件服务尚未启用或配置不当。",
+	"email-service-not-configured-add-owners": "目前，您无法将不存在的用户账户添加到课程所有者列表中，因为电子邮件服务尚未启用或配置不当。请从课程所有者列表中删除以下电子邮件地址，然后再试一次。{{emails}}.",
 	"email-service-not-configured-password-reset": "电子邮件服务没有被启用或配置不当，请直接与ISLE服务器管理员联系。请直接与您的ISLE服务器管理员联系，重新设置您的密码。",
 	"enable-tfa-failure": "确认码不正确。请再次尝试激活双因素认证。",
 	"enable-tfa-success": "确认码已成功验证。现在启用了双因素认证。",

@@ -21,7 +21,7 @@
 	"email-confirmation-success": "Il tuo indirizzo e-mail è stato convalidato con successo.",
 	"email-service-not-available": "Il servizio e-mail non è attualmente disponibile.",
 	"email-service-not-configured": "Il servizio di posta elettronica non è stato abilitato o è configurato in modo improprio.",
-	"email-service-not-configured-cannot-add-owners": "Attualmente non è possibile aggiungere account di utenti non esistenti alla lista dei proprietari dei corsi perché il servizio di posta elettronica non è stato abilitato o è configurato in modo improprio.",
+	"email-service-not-configured-add-owners": "Al momento non è possibile aggiungere account utente non esistenti alla lista dei proprietari dei corsi perché il servizio di posta elettronica non è stato abilitato o è configurato in modo improprio. Si prega di rimuovere i seguenti indirizzi email dalla lista dei proprietari dei corsi e riprovare: {{emails}}.",
 	"email-service-not-configured-password-reset": "Il servizio di posta elettronica non è stato abilitato o è configurato in modo improprio. Contatta direttamente l'amministratore del tuo server ISLE per reimpostare la tua password.",
 	"enable-tfa-failure": "Il codice di conferma non è corretto. Riprovare ad attivare l'autenticazione a due fattori.",
 	"enable-tfa-success": "Il codice di conferma è stato convalidato con successo. L'autenticazione a due fattori è ora abilitata.",
