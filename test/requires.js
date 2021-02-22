@@ -53,6 +53,9 @@ const mailer = {
 };
 const fileOwnerCheck = () => ( req, res, next ) => next();
 const isAdmin = () => ( req, res, next ) => next();
+const sendCohortInvitations = () => {
+	return { users: [], newEmails: [] };
+};
 
 
 // MAIN //
@@ -83,7 +86,8 @@ const requires = {
 	}),
 	'./cohorts.js': proxyquire.noCallThru()( './../lib/cohorts.js', {
 		'./passport.js': passport,
-		'./mailer': mailer
+		'./mailer': mailer,
+		'./utils/send_cohort_invitations.js': sendCohortInvitations
 	}),
 	'./custom_fields.js': proxyquire.noCallThru()( './../lib/custom_fields.js', {
 		'./passport.js': passport
