@@ -118,7 +118,7 @@
 	"user-email-not-found": "No user with the given email address found.",
 	"user-grades-updated": "Grades of the user have been successfully updated.",
 	"user-has-no-write-access": "User has no write access.",
-	"user-has-write access": "User has write access.",
+	"user-has-write-access": "User has write access.",
 	"user-nonexistent": "User does not exist.",
 	"user-not-activated": "The registration process for the user with the supplied email address has not been completed. Please check your inbox for an email to set your name and password.",
 	"user-progress-updated": "User progress successfully updated.",

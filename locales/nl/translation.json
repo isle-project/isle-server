@@ -118,7 +118,7 @@
 	"user-email-not-found": "Geen gebruiker met het opgegeven e-mailadres gevonden.",
 	"user-grades-updated": "De cijfers van de gebruiker zijn met succes bijgewerkt.",
 	"user-has-no-write-access": "Gebruiker heeft geen schrijftoegang.",
-	"user-has-write access": "Gebruiker heeft schrijftoegang.",
+	"user-has-write-access": "Gebruiker heeft schrijftoegang.",
 	"user-nonexistent": "De gebruiker bestaat niet.",
 	"user-not-activated": "Het registratieproces voor de gebruiker met het opgegeven e-mailadres is niet voltooid. Controleer uw inbox voor een e-mail om uw naam en wachtwoord in te stellen.",
 	"user-progress-updated": "Voortgang van de gebruiker met succes geüpdatet.",

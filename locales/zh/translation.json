@@ -118,7 +118,7 @@
 	"user-email-not-found": "没有发现有给定电子邮件地址的用户。",
 	"user-grades-updated": "用户的等级已经成功更新。",
 	"user-has-no-write-access": "用户没有写权限。",
-	"user-has-write access": "用户有写权限。",
+	"user-has-write-access": "用户有写权限。",
 	"user-nonexistent": "用户不存在。",
 	"user-not-activated": "使用所提供的电子邮件地址的用户的注册过程尚未完成。请检查您的收件箱，以获得设置您的姓名和密码的电子邮件。",
 	"user-progress-updated": "用户进度成功更新。",
