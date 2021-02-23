@@ -117,6 +117,8 @@
 	"user-deleted": "Utente cancellato.",
 	"user-email-not-found": "Nessun utente con il dato indirizzo e-mail trovato.",
 	"user-grades-updated": "I gradi dell'utente sono stati aggiornati con successo.",
+	"user-has-no-write-access": "L'utente non ha accesso in scrittura.",
+	"user-has-write access": "L'utente ha accesso in scrittura.",
 	"user-nonexistent": "L'utente non esiste.",
 	"user-not-activated": "Il processo di registrazione per l'utente con l'indirizzo e-mail fornito non è stato completato. Controlla la tua casella di posta elettronica per un'e-mail per impostare il tuo nome e la tua password.",
 	"user-progress-updated": "I progressi dell'utente sono stati aggiornati con successo.",

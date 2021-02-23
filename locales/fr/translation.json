@@ -117,6 +117,8 @@
 	"user-deleted": "Utilisateur supprimé.",
 	"user-email-not-found": "Aucun utilisateur ayant l'adresse électronique donnée n'a été trouvé.",
 	"user-grades-updated": "Les notes de l'utilisateur ont été mises à jour avec succès.",
+	"user-has-no-write-access": "L'utilisateur n'a pas d'accès en écriture.",
+	"user-has-write access": "L'utilisateur a un accès en écriture.",
 	"user-nonexistent": "L'utilisateur n'existe pas.",
 	"user-not-activated": "La procédure d'enregistrement de l'utilisateur avec l'adresse électronique fournie n'est pas terminée. Veuillez consulter votre boîte de réception pour trouver un courriel vous permettant de définir votre nom et votre mot de passe.",
 	"user-progress-updated": "Mise à jour réussie des progrès des utilisateurs.",
