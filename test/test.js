@@ -136,7 +136,7 @@ tape( 'GET /has_write_access (no write access)', function test( t ) {
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error');
 		const obj = JSON.parse( res.text );
-		t.strictEqual( obj.message, 'The user has no write access', 'returns expected message' );
+		t.strictEqual( obj.message, 'User has no write access.', 'returns expected message' );
 		t.strictEqual( obj.writeAccess, false, 'returns expected write access' );
 		t.end();
 	});
@@ -156,7 +156,7 @@ tape( 'GET /has_write_access (write access)', function test( t ) {
 			.end( function onEnd( err, res ) {
 				t.error( err, 'does not return an error');
 				const obj = JSON.parse( res.text );
-				t.strictEqual( obj.message, 'The user has write access', 'returns expected message' );
+				t.strictEqual( obj.message, 'User has write access.', 'returns expected message' );
 				t.strictEqual( obj.writeAccess, true, 'returns expected write access' );
 				t.end();
 			});
