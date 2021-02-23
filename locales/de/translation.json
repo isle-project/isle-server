@@ -68,7 +68,7 @@
 	"lesson-uploaded": "Die Lektion wurde erfolgreich hochgeladen.",
 	"lesson-visible-gallery": "Die Lektion ist jetzt in der öffentlichen Galerie sichtbar.",
 	"license-uploaded": "Die Lizenz wurde erfolgreich hochgeladen und authentifiziert.",
-	"missing-field": "Fehlende `{{field}`.",
+	"missing-field": "Fehlende `{{field}}`.",
 	"namespace-already-exists": "Der Kurs konnte nicht erstellt werden, da er bereits existiert.",
 	"namespace-create-missing-fields": "Es fehlen die erforderlichen Felder für `title`, `description` oder `owners`.",
 	"namespace-created": "Der Kurs wurde erfolgreich eingerichtet!",
