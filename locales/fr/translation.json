@@ -38,7 +38,7 @@
 	"email-service-not-configured-password-reset": "Le service de courrier électronique n'a pas été activé ou est mal configuré. Veuillez contacter directement l'administrateur de votre serveur ISLE pour réinitialiser votre mot de passe.",
 	"enable-tfa-failure": "Le code de confirmation n'est pas correct. Veuillez essayer à nouveau d'activer l'authentification à deux facteurs.",
 	"enable-tfa-success": "Le code de confirmation a été validé avec succès. L'authentification à deux facteurs est maintenant activée.",
-	"entered-reserved-username": "Vous avez choisi un nom d'utilisateur réservé. Veuillez en sélectionner un autre.",
+	"entered-reserved-username": "Vous avez choisi un nom d'utilisateur réservé. Veuillez en choisir un autre.",
 	"event-deleted": "Événement supprimé.",
 	"event-successfully-triggered": "L'événement a été déclenché avec succès",
 	"field-expect-categories": "`{{field}}` doit s'agir d'un de : `{{values}}`.",

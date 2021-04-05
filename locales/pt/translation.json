@@ -38,7 +38,7 @@
 	"email-service-not-configured-password-reset": "O serviço de e-mail não foi habilitado ou está configurado de forma inadequada. Entre em contato diretamente com seu administrador do servidor ISLE para redefinir sua senha.",
 	"enable-tfa-failure": "O código de confirmação não está correto. Favor tentar novamente ativar a autenticação de dois fatores.",
 	"enable-tfa-success": "O código de confirmação foi validado com sucesso. A autenticação de dois fatores está agora habilitada.",
-	"entered-reserved-username": "Você selecionou um nome de usuário reservado. Por favor, selecione outro.",
+	"entered-reserved-username": "Você escolheu um nome de usuário reservado. Por favor, selecione outro.",
 	"event-deleted": "Evento excluído.",
 	"event-successfully-triggered": "O evento foi acionado com sucesso",
 	"field-expect-categories": "`{{field}}` deve ser um dos: `{{values}}`.",

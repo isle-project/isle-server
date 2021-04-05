@@ -38,7 +38,7 @@
 	"email-service-not-configured-password-reset": "De e-mailservice is niet ingeschakeld of onjuist geconfigureerd. Neem direct contact op met uw ISLE server beheerder om uw wachtwoord opnieuw in te stellen.",
 	"enable-tfa-failure": "De bevestigingscode is niet correct. Probeer opnieuw om de twee-factor authenticatie te activeren.",
 	"enable-tfa-success": "De bevestigingscode is met succes gevalideerd. Twee-factor authenticatie is nu ingeschakeld.",
-	"entered-reserved-username": "U heeft een gereserveerde gebruikersnaam geselecteerd. Gelieve een andere te kiezen.",
+	"entered-reserved-username": "U heeft een gereserveerde gebruikersnaam gekozen. Gelieve een andere te kiezen.",
 	"event-deleted": "Gebeurtenis geschrapt.",
 	"event-successfully-triggered": "De gebeurtenis is met succes gestart",
 	"field-expect-categories": "`{{field}}` moet er een van zijn: `{{values}}`.",
