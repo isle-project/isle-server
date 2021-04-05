@@ -28,6 +28,8 @@
 	"custom-field-created": "Benutzerdefiniertes Feld wurde erfolgreich erzeugt.",
 	"custom-field-deleted": "Benutzerdefiniertes Feld wurde erfolgreich gelöscht.",
 	"delete-lessons-first": "Dein Kurs enthält noch Lektionen. Du kannst ihn erst löschen, wenn Du diese entfernt hast.",
+	"domain-disallowed-for-registration": "Es tut uns wirklich leid - aber E-Mails von diesem Anbieter sind blockiert. Bitte wählen Sie eine andere E-Mail-Adresse, um sich zu registrieren.",
+	"domain-not-permitted-for-registration": "Dies ist ein Server, der für Benutzer aus ausgewählten Domänen bestimmt ist. Wenn Sie Fragen haben, wenden Sie sich bitte an den Administrator.",
 	"email-already-verified": "E-Mail wurde bereits verifiziert.",
 	"email-confirmation-success": "Deine E-Mail-Adresse wurde erfolgreich validiert.",
 	"email-service-not-available": "Der E-Mail-Service ist derzeit nicht verfügbar.",

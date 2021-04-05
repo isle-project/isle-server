@@ -28,6 +28,8 @@
 	"custom-field-created": "Het aangepaste veld werd met succes gecreëerd.",
 	"custom-field-deleted": "Aangepast veld werd met succes verwijderd.",
 	"delete-lessons-first": "Uw cursus bevat nog steeds lessen. U kunt deze pas verwijderen nadat u ze hebt verwijderd.",
+	"domain-disallowed-for-registration": "Het spijt ons echt - maar e-mails van deze provider zijn geblokkeerd. Kies aub een ander e-mail adres om te registreren.",
+	"domain-not-permitted-for-registration": "Dit is een server speciaal voor gebruikers van geselecteerde domeinen. Als u vragen heeft, neem dan contact op met de beheerder.",
 	"email-already-verified": "E-mail is al geverifieerd.",
 	"email-confirmation-success": "Uw e-mailadres is met succes gevalideerd.",
 	"email-service-not-available": "E-mail service is momenteel niet beschikbaar.",

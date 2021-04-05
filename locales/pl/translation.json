@@ -28,6 +28,8 @@
 	"custom-field-created": "Pole niestandardowe zostało pomyślnie utworzone.",
 	"custom-field-deleted": "Pole niestandardowe zostało pomyślnie usunięte.",
 	"delete-lessons-first": "Twój kurs nadal zawiera lekcje, możesz je usunąć tylko po ich usunięciu.",
+	"domain-disallowed-for-registration": "Bardzo nam przykro - ale wiadomości e-mail od tego dostawcy są zablokowane. Proszę wybrać inny adres e-mail, aby się zarejestrować.",
+	"domain-not-permitted-for-registration": "Jest to serwer przeznaczony dla użytkowników z wybranych domen. W razie jakichkolwiek pytań prosimy o kontakt z administratorem.",
 	"email-already-verified": "Email został już zweryfikowany.",
 	"email-confirmation-success": "Twój adres e-mail został pomyślnie zweryfikowany.",
 	"email-service-not-available": "Usługa e-mail nie jest obecnie dostępna.",

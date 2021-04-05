@@ -28,6 +28,8 @@
 	"custom-field-created": "El campo personalizado fue creado con éxito.",
 	"custom-field-deleted": "El campo personalizado fue borrado con éxito.",
 	"delete-lessons-first": "Tu curso todavía contiene lecciones, sólo puedes borrarlas después de haberlas eliminado.",
+	"domain-disallowed-for-registration": "Lo sentimos mucho, pero los correos electrónicos de este proveedor están bloqueados. Por favor, elija otra dirección de correo electrónico para registrarse.",
+	"domain-not-permitted-for-registration": "Este es un servidor dedicado a los usuarios de los dominios seleccionados. Si tiene alguna duda, póngase en contacto con el administrador.",
 	"email-already-verified": "El correo electrónico ya ha sido verificado.",
 	"email-confirmation-success": "Su dirección de correo electrónico fue validada con éxito",
 	"email-service-not-available": "El servicio de correo electrónico no está disponible actualmente.",

@@ -28,6 +28,8 @@
 	"custom-field-created": "自定义字段成功创建。",
 	"custom-field-deleted": "自定义字段被成功删除。",
 	"delete-lessons-first": "您的课程仍然包含课程，您只能在删除课程后才能删除它。",
+	"domain-disallowed-for-registration": "我们真的很抱歉--但来自这个供应商的电子邮件被屏蔽了。请选择另一个电子邮件地址进行注册。",
+	"domain-not-permitted-for-registration": "这是一个专门为选定的域名的用户提供的服务器。如果您有任何问题，请联系管理员。",
 	"email-already-verified": "电子邮件已经被验证。",
 	"email-confirmation-success": "您的电子邮件地址已成功验证。",
 	"email-service-not-available": "目前还没有提供电子邮件服务。",

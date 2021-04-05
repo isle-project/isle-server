@@ -28,6 +28,8 @@
 	"custom-field-created": "カスタムフィールドの作成に成功しました。",
 	"custom-field-deleted": "カスタムフィールドが正常に削除されました。",
 	"delete-lessons-first": "あなたのコースにはまだレッスンが含まれています。",
+	"domain-disallowed-for-registration": "大変申し訳ありませんが、このプロバイダーからのメールはブロックされています。他のメールアドレスを選択して登録してください。",
+	"domain-not-permitted-for-registration": "これは、特定のドメインからのユーザー専用のサーバーです。ご不明な点がございましたら、管理者までお問い合わせください。",
 	"email-already-verified": "メールは確認済みです。",
 	"email-confirmation-success": "あなたのメールアドレスは正常に認証されました。",
 	"email-service-not-available": "現在、メールサービスはご利用いただけません。",
