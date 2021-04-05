@@ -38,6 +38,7 @@
 	"email-service-not-configured-password-reset": "Der E-Mail-Dienst wurde nicht aktiviert oder ist falsch konfiguriert. Bitte setzen Sie sich direkt mit Ihrem ISLE-Server-Administrator in Verbindung, um Ihr Passwort zurückzusetzen.",
 	"enable-tfa-failure": "Der Bestätigungscode ist nicht korrekt. Bitte versuche erneut, die Zwei-Faktor-Authentifizierung zu aktivieren.",
 	"enable-tfa-success": "Der Bestätigungscode wurde erfolgreich validiert. Die Zwei-Faktor-Authentifizierung ist jetzt aktiviert.",
+	"entered-reserved-username": "Sie haben einen reservierten Benutzernamen gewählt. Bitte wählen Sie einen anderen.",
 	"event-deleted": "Ereignis gelöscht.",
 	"event-successfully-triggered": "Das Ereignis wurde erfolgreich ausgelöst",
 	"field-expect-categories": "`{{field}}` muss eines der folgenden Werte sein: `{{values}}`.",

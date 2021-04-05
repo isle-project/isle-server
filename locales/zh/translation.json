@@ -38,6 +38,7 @@
 	"email-service-not-configured-password-reset": "电子邮件服务没有被启用或配置不当，请直接与ISLE服务器管理员联系。请直接与您的ISLE服务器管理员联系，重新设置您的密码。",
 	"enable-tfa-failure": "确认码不正确。请再次尝试激活双因素认证。",
 	"enable-tfa-success": "确认码已成功验证。现在启用了双因素认证。",
+	"entered-reserved-username": "您已经选择了一个保留的用户名。请选择另一个。",
 	"event-deleted": "事件被删除。",
 	"event-successfully-triggered": "该事件已成功触发",
 	"field-expect-categories": "`{{field}}`必须是下列之一：`{{values}}`。",

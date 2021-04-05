@@ -4,5 +4,18 @@
 	"defaultLanguage": "en",
 	"allowUserRegistrations": true,
 	"permittedEmailDomains": [],
-	"disallowedEmailDomains": []
+	"disallowedEmailDomains": [],
+	"reservedUserNames": [
+		"admin",
+		"administrator",
+		"sys",
+		"system",
+		"community",
+		"info",
+		"name",
+		"username",
+		"user",
+		"nickname",
+		"support"
+	]
 }

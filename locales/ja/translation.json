@@ -38,6 +38,7 @@
 	"email-service-not-configured-password-reset": "メールサービスが有効になっていないか、不適切な設定になっています。パスワードをリセットするには、ISLEサーバーの管理者に直接連絡してください。",
 	"enable-tfa-failure": "確認コードが正しくありません。二要素認証を有効にするには、もう一度お試しください。",
 	"enable-tfa-success": "確認コードが正常に検証されました。二要素認証が有効になりました。",
+	"entered-reserved-username": "予約済みのユーザー名を選択しています。別のユーザー名を選択してください。",
 	"event-deleted": "イベントが削除されました。",
 	"event-successfully-triggered": "イベントは正常にトリガされました。",
 	"field-expect-categories": "`{{field}}` は次のうちのいずれかでなければなりません。`{{values}}`のうちの1つでなければなりません。",

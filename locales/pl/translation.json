@@ -38,6 +38,7 @@
 	"email-service-not-configured-password-reset": "Usługa poczty elektronicznej nie została włączona lub jest nieprawidłowo skonfigurowana. Prosimy o bezpośredni kontakt z administratorem serwera ISLE w celu zresetowania hasła.",
 	"enable-tfa-failure": "Kod potwierdzenia jest nieprawidłowy. Proszę spróbować ponownie aktywować dwuczynnikowe uwierzytelnienie.",
 	"enable-tfa-success": "Kod potwierdzający został pomyślnie zatwierdzony. Uwierzytelnianie dwuczynnikowe jest teraz włączone.",
+	"entered-reserved-username": "Wybrałeś zarezerwowaną nazwę użytkownika. Proszę wybrać inną.",
 	"event-deleted": "Zdarzenie usunięte.",
 	"event-successfully-triggered": "Zdarzenie zostało pomyślnie wywołane",
 	"field-expect-categories": "`{{field}}` musi być jednym z wartości: `{{values}}`.",
