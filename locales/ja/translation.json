@@ -93,6 +93,7 @@
 	"session-data-removal-failed": "セッションデータを削除できませんでした。",
 	"session-data-removed": "セッションデータの削除に成功しました。",
 	"session-data-save-failed": "セッションデータを保存できませんでした。",
+	"successfully-updated-setting": "指定された設定の更新に成功しました。",
 	"tfa-already-enabled": "二要素認証はすでに正常に設定されています。",
 	"tfa-disabled": "二要素認証が正常に無効化されました。",
 	"ticket-closed": "チケットは終了しました。",

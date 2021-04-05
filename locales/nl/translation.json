@@ -93,6 +93,7 @@
 	"session-data-removal-failed": "Sessiegegevens konden niet worden verwijderd.",
 	"session-data-removed": "Sessiegegevens succesvol verwijderd.",
 	"session-data-save-failed": "Sessiegegevens konden niet worden opgeslagen.",
+	"successfully-updated-setting": "U hebt de opgegeven instelling met succes bijgewerkt.",
 	"tfa-already-enabled": "De tweefactorige authenticatie is al met succes opgezet.",
 	"tfa-disabled": "De twee-factor authenticatie is met succes uitgeschakeld.",
 	"ticket-closed": "Ticket gesloten",

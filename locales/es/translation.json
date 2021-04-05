@@ -93,6 +93,7 @@
 	"session-data-removal-failed": "Los datos de la sesión no pudieron ser eliminados.",
 	"session-data-removed": "Los datos de la sesión se han eliminado con éxito.",
 	"session-data-save-failed": "Los datos de la sesión no pudieron ser guardados.",
+	"successfully-updated-setting": "Ha actualizado correctamente la configuración especificada.",
 	"tfa-already-enabled": "La autenticación de dos factores ya se ha establecido con éxito.",
 	"tfa-disabled": "La autenticación de dos factores ha sido desactivada con éxito.",
 	"ticket-closed": "Ticket cerrado",
