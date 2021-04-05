@@ -17,5 +17,8 @@
 		"user",
 		"nickname",
 		"support"
-	]
+	],
+	"rateLimitUserCreation": 3,
+	"rateLimitNamespaceCreation": 3,
+	"rateLimitBackupCreation": 3
 }
