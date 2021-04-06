@@ -131,6 +131,9 @@ const requires = {
 	'./sessiondata.js': proxyquire.noCallThru()( './../lib/sessiondata.js', {
 		'./passport.js': passport
 	}),
+	'./settings.js': proxyquire.noCallThru()( './../lib/settings.js', {
+		'./passport.js': passport
+	}),
 	'./sketchpad.js': proxyquire.noCallThru()( './../lib/sketchpad.js', {
 		'./passport.js': passport
 	}),
