@@ -54,7 +54,10 @@ const mailer = {
 const fileOwnerCheck = () => ( req, res, next ) => next();
 const isAdmin = () => ( req, res, next ) => next();
 const sendCohortInvitations = () => {
-	return { users: [], newEmails: [] };
+	return {
+		users: [],
+		newEmails: []
+	};
 };
 
 
