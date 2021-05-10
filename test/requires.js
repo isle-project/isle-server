@@ -54,7 +54,10 @@ const mailer = {
 const fileOwnerCheck = () => ( req, res, next ) => next();
 const isAdmin = () => ( req, res, next ) => next();
 const sendCohortInvitations = () => {
-	return { users: [], newEmails: [] };
+	return {
+		users: [],
+		newEmails: []
+	};
 };
 
 
@@ -123,6 +126,9 @@ const requires = {
 	'./namespaces.js': proxyquire.noCallThru()( './../lib/namespaces.js', {
 		'./passport.js': passport,
 		'./mailer': mailer
+	}),
+	'./roles.js': proxyquire.noCallThru()( './../lib/roles.js', {
+		'./passport.js': passport
 	}),
 	'./services.js': proxyquire.noCallThru()( './../lib/services.js', {
 		'./credentials.js': credentials,
