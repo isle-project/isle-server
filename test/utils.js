@@ -173,7 +173,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 
 	function done( err, res ) {
 		if ( err ) {
-			t.fail( 'should not return an error' );
+			t.fail( 'encountered an error: '+err.message );
 		} else {
 			t.pass( 'executed without errors' );
 		}
