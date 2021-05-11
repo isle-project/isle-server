@@ -90,6 +90,7 @@
 	"registration-completed": "您的ISLE帐户的设置现在已经完成。",
 	"returned-files": "返回{{nFiles}}文件给调用者。",
 	"role-created": "角色已成功创建。",
+	"role-deleted": "所选角色已成功删除。",
 	"session-data-nonexistent": "没有找到会话数据。",
 	"session-data-removal-failed": "会话数据无法删除。",
 	"session-data-removed": "成功删除会话数据。",

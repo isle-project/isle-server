@@ -90,6 +90,7 @@
 	"registration-completed": "De inrichting van uw ISLE-account is nu voltooid.",
 	"returned-files": "Stuur {{nFiles}} bestanden terug naar de beller.",
 	"role-created": "Rol is succesvol aangemaakt.",
+	"role-deleted": "De geselecteerde rol werd met succes verwijderd.",
 	"session-data-nonexistent": "Sessiegegevens niet gevonden.",
 	"session-data-removal-failed": "Sessiegegevens konden niet worden verwijderd.",
 	"session-data-removed": "Sessiegegevens succesvol verwijderd.",

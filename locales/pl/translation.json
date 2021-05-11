@@ -90,6 +90,7 @@
 	"registration-completed": "Konfiguracja Twojego konta ISLE jest już zakończona.",
 	"returned-files": "Zwróć {{nFiles}} pliki do rozmówcy.",
 	"role-created": "Rola została pomyślnie utworzona.",
+	"role-deleted": "Wybrana rola została pomyślnie usunięta.",
 	"session-data-nonexistent": "Nie znaleziono danych sesji.",
 	"session-data-removal-failed": "Dane sesji nie mogły zostać usunięte.",
 	"session-data-removed": "Dane sesji zostały pomyślnie usunięte.",
