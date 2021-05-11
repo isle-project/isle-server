@@ -89,6 +89,7 @@
 	"registration-already-completed": "Ваш ISLE аккаунт уже полностью настроен.",
 	"registration-completed": "Настройка вашей учетной записи ISLE завершена.",
 	"returned-files": "Верните {{nFiles}} файлы вызывающему абоненту.",
+	"role-created": "Роль была успешно создана.",
 	"session-data-nonexistent": "Данные о сеансе не найдены.",
 	"session-data-removal-failed": "Данные сессии не могли быть удалены.",
 	"session-data-removed": "Данные сессии успешно удалены.",

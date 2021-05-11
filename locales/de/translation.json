@@ -89,6 +89,7 @@
 	"registration-already-completed": "Dein ISLE-Konto ist bereits vollständig eingerichtet.",
 	"registration-completed": "Die Einrichtung Deines ISLE-Kontos ist nun abgeschlossen.",
 	"returned-files": "Rückgabe von {{nFiles}} Dateien an den Anrufer.",
+	"role-created": "Rolle wurde erfolgreich erstellt.",
 	"session-data-nonexistent": "Sitzungsdaten nicht gefunden.",
 	"session-data-removal-failed": "Sitzungsdaten konnten nicht entfernt werden.",
 	"session-data-removed": "Sitzungsdaten erfolgreich gelöscht.",

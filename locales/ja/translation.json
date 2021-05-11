@@ -89,6 +89,7 @@
 	"registration-already-completed": "ISLEのアカウントは完全に設定済みです。",
 	"registration-completed": "これでISLEアカウントの設定は完了です。",
 	"returned-files": "呼び出し元に{{nFiles}}ファイルを返します。",
+	"role-created": "ロールの作成に成功しました。",
 	"session-data-nonexistent": "セッションデータが見つかりませんでした。",
 	"session-data-removal-failed": "セッションデータを削除できませんでした。",
 	"session-data-removed": "セッションデータの削除に成功しました。",
