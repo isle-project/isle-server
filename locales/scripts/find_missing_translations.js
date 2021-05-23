@@ -17,10 +17,23 @@
 
 'use strict';
 
+// MODULES //
+
 const { execSync } = require( 'child_process' );
+const { resolve } = require( 'path' );
 const translations = require( './../en/translation.json' );
 
-const identifiers = execSync( 'grep -hroP "req.t\\( \'\\K[^\']*(?=\' \\))" lib/* ' )
+
+// VARIABLES //
+
+const TOPLEVEL_DIR = resolve( __dirname, '..', '..' );
+
+
+// MAIN //
+
+const identifiers = execSync( 'grep -hroP "req.t\\( ?\'\\K[^\']*(?=\' ?\\))" lib/* ', {
+	cwd: TOPLEVEL_DIR
+})
 	.toString()
 	.split( '\n' );
 const unique = new Set( identifiers );

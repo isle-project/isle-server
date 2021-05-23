@@ -36,14 +36,18 @@ const deepl = {
 	'server': 'https://api.deepl.com/v2/translate',
 	'auth_key': ENV.DEEPL_KEY
 };
+const TOPLEVEL_DIR = path.resolve( __dirname, '..', '..' );
 
 
 // MAIN //
 
-const options = {};
-glob( '**/en/translation.json', options, function onFiles( err, files ) {
+const options = {
+	cwd: TOPLEVEL_DIR
+};
+glob( 'locales/en/translation.json', options, function onFiles( err, files ) {
 	for ( let i = 0; i < files.length; i++ ) {
-		const reference = readJSON.sync( files[ i ] );
+		const file = path.resolve( TOPLEVEL_DIR, files[ i ] );
+		const reference = readJSON.sync( file );
 		const refKeys = objectKeys( reference );
 		refKeys.sort( ( a, b ) => {
 			return a.localeCompare(b);
@@ -53,7 +57,7 @@ glob( '**/en/translation.json', options, function onFiles( err, files ) {
 			const key = refKeys[ i ];
 			sortedReference[ key ] = reference[ key ];
 		}
-		fs.writeFileSync( files[ i ], JSON.stringify( sortedReference, null, '\t' ).concat( '\n' ) );
+		fs.writeFileSync( file, JSON.stringify( sortedReference, null, '\t' ).concat( '\n' ) );
 
 		for ( let j = 0; j < LANGUAGE_TARGETS.length; j++ ) {
 			const lng = LANGUAGE_TARGETS[ j ];
