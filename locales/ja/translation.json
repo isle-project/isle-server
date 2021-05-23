@@ -70,6 +70,7 @@
 	"lesson-updated": "レッスンは無事に更新されました。",
 	"lesson-uploaded": "レッスンが無事にアップロードされました。",
 	"lesson-visible-gallery": "レッスンの様子はパブリックギャラリー内でご覧いただけるようになりました。",
+	"lessons-copied": "{{count}} コース {{course}} からのレッスンのインポートに成功しました。",
 	"license-uploaded": "ライセンスのアップロードと認証に成功しました。",
 	"missing-field": "フィールド}}`がありません。",
 	"namespace-already-exists": "すでに存在しているので、コースを作ることができませんでした。",

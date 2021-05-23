@@ -70,6 +70,7 @@
 	"lesson-updated": "A lição foi atualizada com sucesso.",
 	"lesson-uploaded": "A lição foi carregada com sucesso.",
 	"lesson-visible-gallery": "A lição é agora visível dentro da galeria do público.",
+	"lessons-copied": "{{count}} lições foram importadas com sucesso do curso {{course}}",
 	"license-uploaded": "A licença foi carregada e autenticada com sucesso.",
 	"missing-field": "Faltando `{{field}}`.",
 	"namespace-already-exists": "O curso não poderia ser criado como já existe.",

@@ -70,6 +70,7 @@
 	"lesson-updated": "La leçon a été mise à jour avec succès.",
 	"lesson-uploaded": "La leçon a été téléchargée avec succès.",
 	"lesson-visible-gallery": "La leçon est maintenant visible à l'intérieur de la galerie publique.",
+	"lessons-copied": "{{count}} leçons ont été importées avec succès du cours {{course}}.",
 	"license-uploaded": "La licence a été téléchargée et authentifiée avec succès.",
 	"missing-field": "Il manque un \"champ\".",
 	"namespace-already-exists": "Le cours n'a pas pu être créé tel qu'il existe déjà.",

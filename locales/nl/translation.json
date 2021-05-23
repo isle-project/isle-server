@@ -70,6 +70,7 @@
 	"lesson-updated": "De les is succesvol bijgewerkt.",
 	"lesson-uploaded": "De les is met succes geüpload.",
 	"lesson-visible-gallery": "De les is nu zichtbaar in de publieke tribune.",
+	"lessons-copied": "{{count}} lessen werden succesvol geïmporteerd uit cursus {{course}}",
 	"license-uploaded": "De licentie werd met succes geüpload en geauthenticeerd.",
 	"missing-field": "Ontbrekende `{{field}}`.",
 	"namespace-already-exists": "De cursus kon niet worden gecreëerd zoals hij al bestaat.",

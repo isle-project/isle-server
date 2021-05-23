@@ -70,6 +70,7 @@
 	"lesson-updated": "Lekcja została pomyślnie zaktualizowana.",
 	"lesson-uploaded": "Lekcja została pomyślnie przesłana.",
 	"lesson-visible-gallery": "Lekcja jest teraz widoczna wewnątrz publicznej galerii.",
+	"lessons-copied": "{{count}} lekcje zostały pomyślnie zaimportowane z kursu {{course}}.",
 	"license-uploaded": "Licencja została pomyślnie przesłana i uwierzytelniona.",
 	"missing-field": "Brakuje pola `{{field}}`.",
 	"namespace-already-exists": "Nie można było stworzyć kursu, który już istnieje.",

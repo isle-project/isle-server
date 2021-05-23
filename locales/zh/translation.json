@@ -70,6 +70,7 @@
 	"lesson-updated": "该课程已成功更新。",
 	"lesson-uploaded": "该课件已成功上传。",
 	"lesson-visible-gallery": "现在在公众号里面可以看到这节课。",
+	"lessons-copied": "课程已成功从{{course}}中导入。",
 	"license-uploaded": "许可证已成功上传并认证。",
 	"missing-field": "缺少`{{field}}`。",
 	"namespace-already-exists": "该课程无法创建，因为它已经存在。",
