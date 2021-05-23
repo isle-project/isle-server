@@ -45,6 +45,7 @@
 	"field-expect-id": "`{{field}}`必须是有效的ObjectID。",
 	"field-expect-id-array": "`{{field}}`必须是一个ObjectIDs数组。",
 	"field-expect-object": "`{{field}}`必须是一个对象。",
+	"field-expect-one-of": "`{{field}}必须是其中之一。{{enum}}。",
 	"field-expect-string": "`{{field}}`必须是一个字符串。",
 	"field-no-periods": "{{field}}不得包含句号（`.`）。",
 	"field-no-slashes": "{{field}}不得包含`/`或`\\`字符。",

@@ -45,6 +45,7 @@
 	"field-expect-id": "`{{field}}` moet een geldige ObjectID zijn.",
 	"field-expect-id-array": "`{{field}}` moet een array van ObjectIDs zijn.",
 	"field-expect-object": "`{{field}}` moet een object zijn.",
+	"field-expect-one-of": "`{{field}} moet een zijn van: {{enum}}.",
 	"field-expect-string": "`{{field}}` moet een tekenfilm zijn.",
 	"field-no-periods": "{{field}} mag geen punten (`.`) bevatten.",
 	"field-no-slashes": "{{field}} mag geen `/` of `\\` tekens bevatten.",

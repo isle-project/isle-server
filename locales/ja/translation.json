@@ -45,6 +45,7 @@
 	"field-expect-id": "`{{field}}` は有効な ObjectID でなければなりません。",
 	"field-expect-id-array": "`{{field}}` は ObjectID の配列でなければなりません。",
 	"field-expect-object": "`{{field}}` はオブジェクトでなければなりません。",
+	"field-expect-one-of": "`{{field}} は次のいずれかでなければなりません。{{enum}}のいずれかでなければなりません。",
 	"field-expect-string": "`{{field}}` は文字列でなければなりません。",
 	"field-no-periods": "{{field}} はピリオド (`.`) を含んではいけません。",
 	"field-no-slashes": "{{field}}は `/` または `\\` を含んではいけません。",
