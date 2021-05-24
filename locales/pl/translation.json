@@ -99,6 +99,7 @@
 	"session-data-removal-failed": "Dane sesji nie mogły zostać usunięte.",
 	"session-data-removed": "Dane sesji zostały pomyślnie usunięte.",
 	"session-data-save-failed": "Dane sesji nie mogły zostać zapisane.",
+	"successfully-added-translation": "Pomyślnie dodano własne tłumaczenie dla klucza `{{key}}`.",
 	"successfully-updated-setting": "Przeprowadzono pomyślną aktualizację określonego ustawienia.",
 	"tfa-already-enabled": "Uwierzytelnianie dwuczynnikowe zostało już pomyślnie wprowadzone.",
 	"tfa-disabled": "Uwierzytelnienie dwuczynnikowe zostało pomyślnie wyłączone.",

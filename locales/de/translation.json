@@ -99,6 +99,7 @@
 	"session-data-removal-failed": "Sitzungsdaten konnten nicht entfernt werden.",
 	"session-data-removed": "Sitzungsdaten erfolgreich gelöscht.",
 	"session-data-save-failed": "Sitzungsdaten konnten nicht gespeichert werden.",
+	"successfully-added-translation": "Erfolgreich benutzerdefinierte Übersetzung für Schlüssel `{{key}}` hinzugefügt.",
 	"successfully-updated-setting": "Sie haben die angegebene Einstellung erfolgreich aktualisiert.",
 	"tfa-already-enabled": "Die Zwei-Faktor-Authentifizierung wurde schon erfolgreich eingerichtet.",
 	"tfa-disabled": "Die Zwei-Faktor-Authentifizierung wurde erfolgreich abgeschaltet.",

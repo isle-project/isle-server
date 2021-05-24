@@ -99,6 +99,7 @@
 	"session-data-removal-failed": "Non è stato possibile rimuovere i dati della sessione.",
 	"session-data-removed": "I dati della sessione sono stati cancellati con successo.",
 	"session-data-save-failed": "Non è stato possibile salvare i dati della sessione.",
+	"successfully-added-translation": "Aggiunta con successo la traduzione personalizzata per la chiave `{{key}}`.",
 	"successfully-updated-setting": "Hai aggiornato con successo l'impostazione specificata.",
 	"tfa-already-enabled": "L'autenticazione a due fattori è già stata impostata con successo.",
 	"tfa-disabled": "L'autenticazione a due fattori è stata disabilitata con successo.",

@@ -99,6 +99,7 @@
 	"session-data-removal-failed": "会话数据无法删除。",
 	"session-data-removed": "成功删除会话数据。",
 	"session-data-save-failed": "无法保存会话数据。",
+	"successfully-added-translation": "成功为键值\"{{key}}\"添加自定义翻译。",
 	"successfully-updated-setting": "您已经成功更新了指定的设置。",
 	"tfa-already-enabled": "双因素认证已经设置成功。",
 	"tfa-disabled": "双因素认证已成功禁用。",
