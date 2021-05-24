@@ -103,7 +103,8 @@ const requires = {
 	}),
 	'./files.js': proxyquire.noCallThru()( './../lib/files.js', {
 		'./passport.js': passport,
-		'./helpers/file_owner_check.js': fileOwnerCheck
+		'./helpers/file_owner_check.js': fileOwnerCheck,
+		'./helpers/is_admin.js': isAdmin
 	}),
 	'./passport.js': passport,
 	'./lessons.js': proxyquire.noCallThru()( './../lib/lessons.js', {
