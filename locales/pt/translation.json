@@ -45,7 +45,7 @@
 	"field-expect-id": "`{{field}}` tem que ser um ObjectID válido.",
 	"field-expect-id-array": "`{{field}}` tem que ser um conjunto de ObjectIDs.",
 	"field-expect-object": "`{{field}}` deve ser um objeto.",
-	"field-expect-one-of": "deve ser um dos: {{{enum}}.",
+	"field-expect-one-of": "deve ser um dos: {{enum}}.",
 	"field-expect-string": "`{{field}}` tem que ser um fio.",
 	"field-no-periods": "{{field}} não deve conter períodos (`.`).",
 	"field-no-slashes": "{{field}} não deve conter `/` ou `\\` caracteres.",
