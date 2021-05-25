@@ -25,18 +25,21 @@ const fs = require( 'fs' );
 const path = require( 'path' );
 const qs = require( 'qs' );
 const readJSON = require( '@stdlib/fs/read-json' );
+const replace = require( '@stdlib/string/replace' );
 const objectKeys = require( '@stdlib/utils/keys' );
 const ENV = require( '@stdlib/process/env' );
 
 
 // CONSTANTS //
 
-const LANGUAGE_TARGETS = [ 'de', 'es', 'fr', 'it', 'ja', 'nl', 'pl', 'pt', 'ru', 'zh' ];
+const LANGUAGE_TARGETS = [ 'bg', 'cs', 'da', 'de', 'el', 'es', 'et', 'fi', 'fr', 'hu', 'it', 'ja', 'lt', 'lv', 'nl', 'pl', 'pt', 'ro', 'ru', 'sk', 'sl', 'sv', 'zh' ];
 const deepl = {
 	'server': 'https://api.deepl.com/v2/translate',
 	'auth_key': ENV.DEEPL_KEY
 };
 const TOPLEVEL_DIR = path.resolve( __dirname, '..', '..' );
+const RE_HANDLEBAR_EXPRESSION = /\{\{([^}]+)\}\}/g;
+const RE_XML_GROUPS = /<x>([^<]+)<\/x>/g;
 
 
 // MAIN //
@@ -71,12 +74,15 @@ glob( 'locales/en/translation.json', options, function onFiles( err, files ) {
 			for ( let k = 0; k < refKeys.length; k++ ) {
 				const key = refKeys[ k ];
 				if ( !targetJSON[ key ] ) {
-					const textToTranslate = reference[ key ];
+					let textToTranslate = reference[ key ];
+					textToTranslate = replace( textToTranslate, RE_HANDLEBAR_EXPRESSION, '<x>$1</x>' );
 					console.log( 'Translate `'+textToTranslate+'` to '+lng ); // eslint-disable-line no-console
 					promiseKeys.push( key );
 					promises.push( axios.post( deepl.server, qs.stringify({
 						auth_key: deepl.auth_key,
 						source_lang: 'EN',
+						tag_handling: 'xml',
+						ignore_tags: 'x',
 						text: textToTranslate,
 						target_lang: lng === 'pt' ? 'PT-BR' : lng.toUpperCase()
 					}) ) );
@@ -87,7 +93,8 @@ glob( 'locales/en/translation.json', options, function onFiles( err, files ) {
 					const translations = results.map( x => x.data.translations[ 0 ].text );
 					for ( let i = 0; i < promiseKeys.length; i++ ) {
 						const key = promiseKeys[ i ];
-						targetJSON[ key ] = translations[ i ];
+						const text = replace( translations[ i ], RE_XML_GROUPS, '{{$1}}' );
+						targetJSON[ key ] = text;
 					}
 					refKeys.sort( ( a, b ) => {
 						return a.localeCompare(b);
