@@ -47,7 +47,7 @@ const RE_XML_GROUPS = /<x>([^<]+)<\/x>/g;
 const options = {
 	cwd: TOPLEVEL_DIR
 };
-glob( 'locales/en/translation.json', options, function onFiles( err, files ) {
+glob( 'locales/en/server.json', options, function onFiles( err, files ) {
 	for ( let i = 0; i < files.length; i++ ) {
 		const file = path.resolve( TOPLEVEL_DIR, files[ i ] );
 		const reference = readJSON.sync( file );
@@ -64,7 +64,7 @@ glob( 'locales/en/translation.json', options, function onFiles( err, files ) {
 
 		for ( let j = 0; j < LANGUAGE_TARGETS.length; j++ ) {
 			const lng = LANGUAGE_TARGETS[ j ];
-			const filePath = path.join( __dirname, '..', lng, 'translation.json' );
+			const filePath = path.join( __dirname, '..', lng, 'server.json' );
 			if ( !fs.existsSync( filePath ) ) {
 				fs.writeFileSync( filePath, JSON.stringify({}) );
 			}

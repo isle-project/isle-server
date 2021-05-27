@@ -21,7 +21,7 @@
 
 const { execSync } = require( 'child_process' );
 const { resolve } = require( 'path' );
-const translations = require( './../en/translation.json' );
+const translations = require( './../en/server.json' );
 
 
 // VARIABLES //
@@ -43,3 +43,5 @@ unique.forEach( value => {
 		console.log( 'Missing translation: '+value ); // eslint-disable-line no-console
 	}
 });
+
+console.log( 'Finished.' ); // eslint-disable-line no-console
