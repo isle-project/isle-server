@@ -34,7 +34,7 @@
     "@stdlib/constants": "^0.0.8",
     "@stdlib/fs": "^0.0.8",
     "@stdlib/math": "^0.0.8",
-    "@stdlib/process": "^0.0.8",
+    "@stdlib/process": "^0.0.9",
     "@stdlib/stats": "^0.0.9",
     "@stdlib/string": "^0.0.9",
     "@stdlib/utils": "^0.0.9",
