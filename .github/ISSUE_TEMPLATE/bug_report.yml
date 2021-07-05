@@ -33,8 +33,6 @@ body:
     attributes:
       label: Version
       description: What version of our software are you running?
-    validations:
-      required: true
   - type: input
     id: lesson
     attributes:
