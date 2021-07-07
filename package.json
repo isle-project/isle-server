@@ -32,7 +32,7 @@
   "dependencies": {
     "@stdlib/assert": "^0.0.9",
     "@stdlib/constants": "^0.0.9",
-    "@stdlib/fs": "^0.0.9",
+    "@stdlib/fs": "^0.0.10",
     "@stdlib/math": "^0.0.8",
     "@stdlib/process": "^0.0.9",
     "@stdlib/stats": "^0.0.10",
