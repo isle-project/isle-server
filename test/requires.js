@@ -74,6 +74,7 @@ const requires = {
 		'key': path.join( FIXTURES_DIRECTORY, 'keys', 'ourcustomisleserver.com.key' )
 	},
 	'./connect_mongoose.js': noop,
+	'./credentials.js': credentials,
 	'./mailer': mailer,
 	'./create_events': noop,
 	'./scheduler.js': noop,
