@@ -8,7 +8,6 @@
 reports/
 build/
 public/*
-media/*
 backups/*
 !public/tutorials
 !public/jitsi_numbers.json
