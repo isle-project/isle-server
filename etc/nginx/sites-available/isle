@@ -72,11 +72,4 @@ server {
   location /dashboard/ {
     alias /home/pburckhardt/isle-dashboard/;
   }
-
-  location /files/ {
-    # Turn on auto-indexing of static file directory contents.
-    #
-    # See: http://nginx.org/en/docs/http/ngx_http_autoindex_module.html#autoindex
-    autoindex on;
-  }
 }
