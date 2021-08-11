@@ -45,7 +45,7 @@ server {
   # Specify the absolute path to the root directory for requests. Should be equal to the directory in which the the `isle-server` program resides.
   #
   # See: http://nginx.org/en/docs/http/ngx_http_core_module.html#root
-  root /home/pburckhardt/isle-server/;
+  root /var/www/isle-server/;
 
   # Set the virtual server names.
   #
@@ -70,6 +70,6 @@ server {
   }
 
   location /dashboard/ {
-    alias /home/pburckhardt/isle-dashboard/;
+    alias /var/www/isle-dashboard/;
   }
 }
