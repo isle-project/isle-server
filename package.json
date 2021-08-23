@@ -33,7 +33,7 @@
     "@stdlib/assert": "^0.0.11",
     "@stdlib/constants": "^0.0.10",
     "@stdlib/fs": "^0.0.11",
-    "@stdlib/math": "^0.0.10",
+    "@stdlib/math": "^0.0.11",
     "@stdlib/process": "^0.0.11",
     "@stdlib/stats": "^0.0.12",
     "@stdlib/string": "^0.0.12",
