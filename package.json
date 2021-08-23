@@ -30,7 +30,7 @@
     "test-cov": "cross-env istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\""
   },
   "dependencies": {
-    "@stdlib/assert": "^0.0.11",
+    "@stdlib/assert": "^0.0.12",
     "@stdlib/constants": "^0.0.10",
     "@stdlib/fs": "^0.0.11",
     "@stdlib/math": "^0.0.10",
