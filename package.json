@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@stdlib/assert": "^0.0.11",
-    "@stdlib/constants": "^0.0.10",
+    "@stdlib/constants": "^0.0.11",
     "@stdlib/fs": "^0.0.11",
     "@stdlib/math": "^0.0.10",
     "@stdlib/process": "^0.0.11",
