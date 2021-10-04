@@ -59,11 +59,7 @@ function clearDB( clbk ) {
 setReadOnly( ns, 'before', function before( t ) {
 	if ( mongoose.connection.readyState === 0 ) {
 		mongoose.connect( dbURI, {
-			'keepAlive': false,
-			'useCreateIndex': true,
-			'useUnifiedTopology': true,
-			'useNewUrlParser': true,
-			'useFindAndModify': false
+			'keepAlive': false
 		})
 		.then( () => {
 			t.pass( 'connected to database' );
