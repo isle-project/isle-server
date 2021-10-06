@@ -84,7 +84,7 @@ tape( 'POST /create_user - duplicate email address', function test( t ) {
 	request( app )
 		.post( '/create_user' )
 		.send({ name: 'Frido', email: 'fridolin.supertester@gmail.com', password: 'hokuspokus' })
-		.expect( 200 )
+		.expect( 403 )
 		.end( function onEnd( err, res ) {
 			t.error( err, 'does not return an error' );
 			t.ok( true, res.text );
