@@ -95,7 +95,7 @@ tape( 'fails creating a namespace with an already used title', function test( t 
 
 	function createSecondNamespace( next ) {
 		Namespace.create( o, function onCreate( err, res ) {
-			t.error( err, 'does not return an error' );
+			t.strictEqual( err instanceof Error, true, 'returns an error' );
 			next( err );
 		});
 	}
