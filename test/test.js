@@ -296,6 +296,25 @@ tape( 'GET /get_lessons', function test( t ) {
 	});
 });
 
+tape( 'POST /update_user_password', function test( t ) {
+	User.findOne( { email: 'zorro707@gmail.com' }, function onUser( err, user ) {
+		request( app )
+		.post( '/update_user_password' )
+		.send({ id: user._id, newPassword: 'zorro123' })
+		.expect( 200 )
+		.end( function onEnd( err, res ) {
+			t.error( err, 'does not return an error' );
+			if ( err ) {
+				t.ok( true, err.message );
+				t.ok( true, JSON.stringify( res.body ) );
+			}
+			const body = res.body;
+			t.strictEqual( body.message, 'User password successfully updated.', 'returns expected message' );
+			t.end();
+		});
+	});
+});
+
 tape( 'POST /update_user_password (invalid ID)', function test( t ) {
 	request( app )
 	.post( '/update_user_password' )
@@ -317,21 +336,6 @@ tape( 'POST /update_user_password (invalid `newPassword`)', function test( t ) {
 		.end( function onEnd( err, res ) {
 			t.error( err, 'does not return an error' );
 			t.strictEqual( res.text, '`newPassword` has to be a string.', 'returns expected message' );
-			t.end();
-		});
-	});
-});
-
-tape( 'POST /update_user_password', function test( t ) {
-	User.findOne( { email: 'zorro707@gmail.com' }, function onUser( err, user ) {
-		request( app )
-		.post( '/update_user_password' )
-		.send({ id: user._id, newPassword: 'zorro123' })
-		.expect( 200 )
-		.end( function onEnd( err, res ) {
-			t.error( err, 'does not return an error' );
-			const body = res.body;
-			t.strictEqual( body.message, 'User password successfully updated.', 'returns expected message' );
 			t.end();
 		});
 	});
@@ -464,6 +468,25 @@ tape( 'POST /credentials', function test( t ) {
 	});
 });
 
+tape( 'POST /set_write_access', function test( t ) {
+	request( app )
+	.post( '/set_write_access' )
+	.set( 'Authorization', 'JWT '+USER_TOKEN )
+	.send({
+		token: WRITE_ACCESS_TOKEN
+	})
+	.expect( 200 )
+	.end( function onEnd( err, res ) {
+		t.error( err, 'does not return an error' );
+		if ( err ) {
+			t.ok( true, err.message );
+			t.ok( true, JSON.stringify( res.body ) );
+		}
+		t.strictEqual( res.body.message, 'User Count Dracula successfully updated!', 'returns expected message.' );
+		t.end();
+	});
+});
+
 tape( 'POST /set_write_access (wrong token)', function test( t ) {
 	request( app )
 	.post( '/set_write_access' )
@@ -475,21 +498,6 @@ tape( 'POST /set_write_access (wrong token)', function test( t ) {
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
 		t.strictEqual( res.text, 'Incorrect write-access token.', 'returns expected message' );
-		t.end();
-	});
-});
-
-tape( 'POST /set_write_access', function test( t ) {
-	request( app )
-	.post( '/set_write_access' )
-	.set( 'Authorization', 'JWT '+USER_TOKEN )
-	.send({
-		token: WRITE_ACCESS_TOKEN
-	})
-	.expect( 200 )
-	.end( function onEnd( err, res ) {
-		t.error( err, 'does not return an error' );
-		t.strictEqual( res.body.message, 'User Count Dracula successfully updated!', 'returns expected message.' );
 		t.end();
 	});
 });
