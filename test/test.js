@@ -469,6 +469,7 @@ tape( 'POST /credentials', function test( t ) {
 });
 
 tape( 'POST /set_write_access', function test( t ) {
+	t.ok( true, 'Set write access for user with JWT '+USER_TOKEN+' via WRITE_ACCESS_TOKEN '+WRITE_ACCESS_TOKEN );
 	request( app )
 	.post( '/set_write_access' )
 	.set( 'Authorization', 'JWT '+USER_TOKEN )
