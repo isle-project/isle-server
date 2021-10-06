@@ -298,6 +298,7 @@ tape( 'GET /get_lessons', function test( t ) {
 
 tape( 'POST /update_user_password', function test( t ) {
 	User.findOne( { email: 'zorro707@gmail.com' }, function onUser( err, user ) {
+		t.ok( true, 'Updating user with email' + user.email + ' and id  ' + user._id + '...' );
 		request( app )
 		.post( '/update_user_password' )
 		.send({ id: user._id, newPassword: 'zorro123' })
