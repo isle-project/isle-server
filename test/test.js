@@ -329,6 +329,7 @@ tape( 'POST /update_user_password', function test( t ) {
 		.send({ id: user._id, newPassword: 'zorro123' })
 		.expect( 200 )
 		.end( function onEnd( err, res ) {
+			console.log( err );
 			t.error( err, 'does not return an error' );
 			const body = res.body;
 			t.strictEqual( body.message, 'User password successfully updated.', 'returns expected message' );
@@ -488,6 +489,7 @@ tape( 'POST /set_write_access', function test( t ) {
 	})
 	.expect( 200 )
 	.end( function onEnd( err, res ) {
+		console.log( err );
 		t.error( err, 'does not return an error' );
 		t.strictEqual( res.body.message, 'User Count Dracula successfully updated!', 'returns expected message.' );
 		t.end();
