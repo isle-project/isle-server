@@ -78,7 +78,6 @@
     "tldjs": "1.8.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.15.8",
     "chai": "^4.3.4",
     "eslint": "^8.0.1",
     "istanbul": "^1.1.0-alpha.1",
