@@ -27,7 +27,6 @@ const isObject = require( '@stdlib/assert/is-object' );
 const isString = require( '@stdlib/assert/is-string' );
 const isArray = require( '@stdlib/assert/is-array' );
 const isNull= require( '@stdlib/assert/is-null' );
-const contains = require( '@stdlib/assert/contains' );
 const User = require( './../lib/models/user.js' );
 const requires = require( './requires.js' );
 const utils = require( './utils.js' );
