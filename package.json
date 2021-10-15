@@ -72,7 +72,7 @@
     "qs": "^6.10.1",
     "response-time": "^2.3.2",
     "rotating-file-stream": "^2.1.6",
-    "socket.io": "4.2.0",
+    "socket.io": "4.3.0",
     "speakeasy": "^2.0.0",
     "swot-simple": "^1.0.0",
     "tldjs": "1.8.0"
