@@ -87,8 +87,7 @@ tape( 'POST /create_user - duplicate email address', function test( t ) {
 		.expect( 403 )
 		.end( function onEnd( err, res ) {
 			t.error( err, 'does not return an error' );
-			t.ok( true, res.text );
-			t.ok( contains( res.text, 'User validation failed' ), 'returns expected message' );
+			t.strictEqual( res.text, 'A user with this email address already exists.', 'returns expected message' );
 			t.end();
 		});
 });
