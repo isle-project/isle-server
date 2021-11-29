@@ -49,7 +49,7 @@
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
-    "debug": "^4.3.2",
+    "debug": "^4.3.3",
     "express": "^4.16.4",
     "express-rate-limit": "^5.5.1",
     "faker": "^5.5.3",
