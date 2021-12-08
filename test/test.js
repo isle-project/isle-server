@@ -27,7 +27,6 @@ const isObject = require( '@stdlib/assert/is-object' );
 const isString = require( '@stdlib/assert/is-string' );
 const isArray = require( '@stdlib/assert/is-array' );
 const isNull= require( '@stdlib/assert/is-null' );
-const contains = require( '@stdlib/assert/contains' );
 const User = require( './../lib/models/user.js' );
 const requires = require( './requires.js' );
 const utils = require( './utils.js' );
@@ -87,8 +86,7 @@ tape( 'POST /create_user - duplicate email address', function test( t ) {
 		.expect( 403 )
 		.end( function onEnd( err, res ) {
 			t.error( err, 'does not return an error' );
-			t.ok( true, res.text );
-			t.ok( contains( res.text, 'User validation failed' ), 'returns expected message' );
+			t.strictEqual( res.text, 'A user with this email address already exists.', 'returns expected message' );
 			t.end();
 		});
 });

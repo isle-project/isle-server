@@ -26,21 +26,20 @@ server {
 #
 # See: http://nginx.org/en/docs/http/ngx_http_core_module.html#server
 server {
-  # Set the port.
+  # Set the port and denote SSL.
   #
   # See: http://nginx.org/en/docs/http/ngx_http_core_module.html#listen
-  listen 443;
-  ssl on;
+  listen 443 ssl;
 
   # Specify the absolute file path of a certificate for the given virtual server.
   #
   # See: http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate
-  ssl_certificate /srv/ssl/isle_heinz_cmu_edu_concatenated.cer;
+  ssl_certificate /etc/letsencrypt/live/<domain>/fullchain.pem;
 
   # Specify the absolute file path of the secret key for the given virtual server.
   #
   # See: http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate_key
-  ssl_certificate_key /srv/ssl/isle.heinz.cmu.edu.key;
+  ssl_certificate_key /etc/letsencrypt/live/<domain>/privkey.pem;
 
   # Specify the absolute path to the root directory for requests. Should be equal to the directory in which the the `isle-server` program resides.
   #
