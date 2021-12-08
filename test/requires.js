@@ -132,6 +132,9 @@ const requires = {
 	'./roles.js': proxyquire.noCallThru()( './../lib/roles.js', {
 		'./passport.js': passport
 	}),
+	'./saml.js': proxyquire.noCallThru()( './../lib/saml.js', {
+		'./credentials.js': credentials
+	}),
 	'./services.js': proxyquire.noCallThru()( './../lib/services.js', {
 		'./credentials.js': credentials,
 		'./passport.js': passport
