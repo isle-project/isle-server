@@ -30,6 +30,7 @@
     "test-cov": "cross-env istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\""
   },
   "dependencies": {
+    "@isle-project/email-to-institution": "^1.0.0",
     "@stdlib/assert": "^0.0.12",
     "@stdlib/constants": "^0.0.11",
     "@stdlib/fs": "^0.0.12",
@@ -73,7 +74,6 @@
     "rotating-file-stream": "^3.0.2",
     "socket.io": "4.4.0",
     "speakeasy": "^2.0.0",
-    "swot-simple": "^1.0.0",
     "tldjs": "1.8.0"
   },
   "devDependencies": {
