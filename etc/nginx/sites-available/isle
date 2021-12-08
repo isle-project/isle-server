@@ -71,5 +71,13 @@ server {
 
   location /dashboard/ {
     alias /var/www/isle-dashboard/;
+
+    location ~ /dashboard/.+\..+$ {
+      try_files $uri = 404;
+    }
+
+    location ~ /dashboard/.+$ {
+      try_files $uri /dashboard/index.html;
+    }
   }
 }
