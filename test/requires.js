@@ -169,8 +169,10 @@ const requires = {
 		'./credentials.js': credentials,
 		'./passport.js': passport,
 		'./utils/send_verification_email.js': noop,
-		'express-rate-limit': () => ( req, res, next ) => {
-			next();
+		'express-rate-limit': {
+			default: () => ( req, res, next ) => {
+				next();
+			}
 		}
 	}),
 	'./helpers/is_instructor.js': () => ( req, res, next ) => next(),
