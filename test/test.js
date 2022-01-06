@@ -27,7 +27,6 @@ const isObject = require( '@stdlib/assert/is-object' );
 const isString = require( '@stdlib/assert/is-string' );
 const isArray = require( '@stdlib/assert/is-array' );
 const isNull= require( '@stdlib/assert/is-null' );
-const contains = require( '@stdlib/assert/contains' );
 const User = require( './../lib/models/user.js' );
 const requires = require( './requires.js' );
 const utils = require( './utils.js' );
@@ -87,7 +86,7 @@ tape( 'POST /create_user - duplicate email address', function test( t ) {
 		.expect( 403 )
 		.end( function onEnd( err, res ) {
 			t.error( err, 'does not return an error' );
-			t.ok( contains( res.text, 'User validation failed' ), 'returns expected message' );
+			t.strictEqual( res.text, 'A user with this email address already exists.', 'returns expected message' );
 			t.end();
 		});
 });
@@ -296,6 +295,25 @@ tape( 'GET /get_lessons', function test( t ) {
 	});
 });
 
+tape( 'POST /update_user_password', function test( t ) {
+	User.findOne( { email: 'zorro707@gmail.com' }, function onUser( err, user ) {
+		t.ok( true, 'Found user with email ' + user.email + ' and id  ' + user._id + '...' );
+		request( app )
+		.post( '/update_user_password' )
+		.send({ id: user._id, newPassword: 'zorro123' })
+		.expect( 200 )
+		.end( function onEnd( err, res ) {
+			t.error( err, 'does not return an error' );
+			if ( err ) {
+				t.ok( true, res.text );
+			}
+			const body = res.body;
+			t.strictEqual( body.message, 'User password successfully updated.', 'returns expected message' );
+			t.end();
+		});
+	});
+});
+
 tape( 'POST /update_user_password (invalid ID)', function test( t ) {
 	request( app )
 	.post( '/update_user_password' )
@@ -317,21 +335,6 @@ tape( 'POST /update_user_password (invalid `newPassword`)', function test( t ) {
 		.end( function onEnd( err, res ) {
 			t.error( err, 'does not return an error' );
 			t.strictEqual( res.text, '`newPassword` has to be a string.', 'returns expected message' );
-			t.end();
-		});
-	});
-});
-
-tape( 'POST /update_user_password', function test( t ) {
-	User.findOne( { email: 'zorro707@gmail.com' }, function onUser( err, user ) {
-		request( app )
-		.post( '/update_user_password' )
-		.send({ id: user._id, newPassword: 'zorro123' })
-		.expect( 200 )
-		.end( function onEnd( err, res ) {
-			t.error( err, 'does not return an error' );
-			const body = res.body;
-			t.strictEqual( body.message, 'User password successfully updated.', 'returns expected message' );
 			t.end();
 		});
 	});
@@ -464,6 +467,25 @@ tape( 'POST /credentials', function test( t ) {
 	});
 });
 
+tape( 'POST /set_write_access', function test( t ) {
+	t.ok( true, 'Set write access for user with JWT '+USER_TOKEN+' via WRITE_ACCESS_TOKEN '+WRITE_ACCESS_TOKEN );
+	request( app )
+	.post( '/set_write_access' )
+	.set( 'Authorization', 'JWT '+USER_TOKEN )
+	.send({
+		token: WRITE_ACCESS_TOKEN
+	})
+	.expect( 200 )
+	.end( function onEnd( err, res ) {
+		t.error( err, 'does not return an error' );
+		if ( err ) {
+			t.ok( true, res.text );
+		}
+		t.strictEqual( res.body.message, 'User Count Dracula successfully updated!', 'returns expected message.' );
+		t.end();
+	});
+});
+
 tape( 'POST /set_write_access (wrong token)', function test( t ) {
 	request( app )
 	.post( '/set_write_access' )
@@ -475,21 +497,6 @@ tape( 'POST /set_write_access (wrong token)', function test( t ) {
 	.end( function onEnd( err, res ) {
 		t.error( err, 'does not return an error' );
 		t.strictEqual( res.text, 'Incorrect write-access token.', 'returns expected message' );
-		t.end();
-	});
-});
-
-tape( 'POST /set_write_access', function test( t ) {
-	request( app )
-	.post( '/set_write_access' )
-	.set( 'Authorization', 'JWT '+USER_TOKEN )
-	.send({
-		token: WRITE_ACCESS_TOKEN
-	})
-	.expect( 200 )
-	.end( function onEnd( err, res ) {
-		t.error( err, 'does not return an error' );
-		t.strictEqual( res.body.message, 'User Count Dracula successfully updated!', 'returns expected message.' );
 		t.end();
 	});
 });

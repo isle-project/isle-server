@@ -20,7 +20,6 @@
 // MODULES //
 
 const tape = require( 'tape' );
-const contains = require( '@stdlib/assert/contains' );
 const isString = require( '@stdlib/assert/is-string' );
 const utils = require( './utils.js' );
 const User = require( './../lib/models/user.js' );
@@ -71,7 +70,7 @@ tape( 'creating a user fails when email is already taken', function test( t ) {
 	};
 	User.create( o, function onCreate( err ) {
 		if ( err ) {
-			t.ok( contains( err.message, 'User validation failed' ), 'returns expected error message' );
+			t.strictEqual( err.message, 'A user with this email address already exists.', 'returns expected message' );
 			t.pass( 'encountered an error' );
 		} else {
 			t.pass( 'expected an error' );

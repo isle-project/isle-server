@@ -132,6 +132,9 @@ const requires = {
 	'./roles.js': proxyquire.noCallThru()( './../lib/roles.js', {
 		'./passport.js': passport
 	}),
+	'./saml.js': proxyquire.noCallThru()( './../lib/saml.js', {
+		'./credentials.js': credentials
+	}),
 	'./services.js': proxyquire.noCallThru()( './../lib/services.js', {
 		'./credentials.js': credentials,
 		'./passport.js': passport
@@ -165,7 +168,10 @@ const requires = {
 	'./users.js': proxyquire.noCallThru()( './../lib/users.js', {
 		'./credentials.js': credentials,
 		'./passport.js': passport,
-		'./utils/send_verification_email.js': noop
+		'./utils/send_verification_email.js': noop,
+		'express-rate-limit': () => ( req, res, next ) => {
+			next();
+		}
 	}),
 	'./helpers/is_instructor.js': () => ( req, res, next ) => next(),
 	'./helpers/is_admin.js': isAdmin,

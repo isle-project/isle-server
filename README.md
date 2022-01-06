@@ -1,4 +1,4 @@
-# ISLE Server [![License][license-image]][license-url] [![DOI][doi-image]][doi-url]
+# ISLE Server [![License][license-image]][license-url]
 
 <div class="image" align="center">
     <img width="250" height="auto" src="https://raw.githubusercontent.com/isle-project/www/master/images/isle_icon_transparent.png" alt="ISLE logo">
@@ -6,11 +6,6 @@
 </div>
 
 ---
-
-#### Dependencies
-
-[![Dependencies][dependencies-image]][dependencies-url]
-[![DevDependencies][dev-dependencies-image]][dev-dependencies-url]
 
 #### Build
 
@@ -111,15 +106,6 @@ See [LICENSE][license-url].
 
 [license-url]: https://raw.githubusercontent.com/isle-project/isle-server/master/LICENSE
 [license-image]: https://img.shields.io/badge/license-APGL-blue.svg
-
-[dependencies-image]: https://img.shields.io/david/isle-project/isle-server.svg
-[dependencies-url]: https://david-dm.org/isle-project/isle-server/master
-
-[dev-dependencies-image]: https://img.shields.io/david/dev/isle-project/isle-server.svg
-[dev-dependencies-url]: https://david-dm.org/isle-project/isle-server/master?type=dev
-
-[doi-image]: https://zenodo.org/badge/63765629.svg
-[doi-url]: https://zenodo.org/badge/latestdoi/63765629
 
 [coverage-image]: https://img.shields.io/codecov/c/github/isle-project/isle-server/master.svg
 [coverage-url]: https://codecov.io/gh/isle-project/isle-server

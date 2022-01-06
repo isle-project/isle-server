@@ -1,6 +1,10 @@
 name: NodeCI
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
 
 jobs:
   build:
@@ -9,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 15.x]
+        node-version: [14.x, 15.x, 16.x]
 
     steps:
     - uses: actions/checkout@v1
