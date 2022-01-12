@@ -26,6 +26,7 @@
 	"course-invitation-email-sso-users": "亲爱的{{user}} ，你被邀请加入{{cohort}} 的课程 \"{{namespace}}\" ，由{{ownerNames}} 在{{organization}} 。<br />\n您可以使用您的机构凭证通过SSO登录，网址是 <a href=\"{{server}}\">{{server}}</a>.\n我们期待着您加入该课程!",
 	"course-owner-invitation-email": "亲爱的{{user}} ，您被添加为 \"{{namespace}}\" 课程的讲师，地址是{{organization}} 。<br />\n请点击下面的链接，登录到您的ISLE仪表板，查看和配置该课程的材料。",
 	"course-owner-invitation-email-new-users": "亲爱的{{user}}, 我们邀请您作为讲师加入 \"{{namespace}}\" 课程，{{organization}} 。<br />\n请点击下面的链接，选择一个您喜欢的密码，完成注册程序。<br />\n然后，您可以用您的电子邮件地址和密码登录到 <a href=\"{{server}}\">{{server}}</a>来查看和配置课程的材料。",
+	"course-owner-invitation-email-sso-users": "亲爱的{{user}} ，您被邀请加入 \"{{namespace}}\" 课程，在{{organization}} 作为教员。<br />\n您可以使用您的机构凭证通过SSO登录到 <a href=\"{{server}}\">{{server}}</a>来查看和配置该课程的材料。",
 	"custom-field-created": "自定义字段已成功创建。",
 	"custom-field-deleted": "自定义字段已成功删除。",
 	"delete-lessons-first": "你的课程仍然包含课程。你只有在删除了这些课程之后才能删除它。",

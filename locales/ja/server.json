@@ -26,6 +26,7 @@
 	"course-invitation-email-sso-users": "Dear{{user}}, you are invited to join{{cohort}} of course \"{{namespace}}\" by{{ownerNames}} at{{organization}}.<br />\nSSO経由で機関の認証情報を使用してサインインすることができます。 <a href=\"{{server}}\">{{server}}</a>.\n皆様のご参加を心よりお待ちしております。",
 	"course-owner-invitation-email": "親愛なる{{user}}様、あなたは{{organization}}のコース「{{namespace}}」にインストラクターとして追加されました。\n下のリンクをクリックしてISLEのダッシュボードにログインし、コースの教材を表示・設定してください。",
 	"course-owner-invitation-email-new-users": "<br /> 親愛なる{{user}}様、あなたは{{組織}}のコース{{名前空間}}にインストラクターとして参加することになりました。\n以下のリンクをクリックして、お好みのパスワードを選択して登録処理を完了させてください。\nその後、<a href=\"{{server}}\">{{server}}</a>でメールアドレスとパスワードを入力してログインし、講座の資料を閲覧・設定することができます。",
+	"course-owner-invitation-email-sso-users": "Dear{{user}}, you are invited to join course \"{{namespace}}\" at{{organization}} as an instructor.<br />\nSSO経由で所属機関の認証情報を使用してサインインすることができます。 <a href=\"{{server}}\">{{server}}</a>コースの教材を閲覧、設定することができます。",
 	"custom-field-created": "カスタムフィールドの作成に成功しました。",
 	"custom-field-deleted": "カスタムフィールドが正常に削除されました。",
 	"delete-lessons-first": "あなたのコースにはまだレッスンが含まれています。",
