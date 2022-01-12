@@ -71,10 +71,12 @@ server {
   location /dashboard/ {
     alias /var/www/isle-dashboard/;
 
+    # Serve static files (i.e., routes with a file extension):
     location ~ /dashboard/.+\..+$ {
       try_files $uri = 404;
     }
 
+    # Any route that doesn't have a file extension will be redirected to index.html:
     location ~ /dashboard/.+$ {
       try_files $uri /dashboard/index.html;
     }
