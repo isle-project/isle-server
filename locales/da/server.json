@@ -135,6 +135,7 @@
 	"user-grades-updated": "Brugerens karakterer er blevet opdateret med succes.",
 	"user-has-no-write-access": "Brugeren har ingen skriveadgang.",
 	"user-has-write-access": "Brugeren har skriveadgang.",
+	"user-login-without-password": "Kontoen er ikke indstillet til at logge ind via adgangskode. Log venligst ind via SSO",
 	"user-nonexistent": "Brugeren findes ikke.",
 	"user-not-activated": "Registreringsprocessen for brugeren med den angivne e-mailadresse er ikke blevet afsluttet. Tjek venligst din indbakke for en e-mail til at indstille dit navn og din adgangskode.",
 	"user-progress-updated": "Brugerens fremskridt er blevet opdateret.",

@@ -135,6 +135,7 @@
 	"user-grades-updated": "A felhasználó osztályzatai sikeresen frissültek.",
 	"user-has-no-write-access": "A felhasználónak nincs írási jogosultsága.",
 	"user-has-write-access": "A felhasználónak írási jogosultsága van.",
+	"user-login-without-password": "A fiók nincs beállítva jelszóval történő bejelentkezésre. Kérjük, jelentkezzen be SSO-n keresztül",
 	"user-nonexistent": "A felhasználó nem létezik.",
 	"user-not-activated": "A megadott e-mail címmel rendelkező felhasználó regisztrációs folyamata nem fejeződött be. Kérjük, ellenőrizze postaládáját, hogy kap-e e-mailt a név és jelszó beállításához.",
 	"user-progress-updated": "A felhasználó előrehaladása sikeresen frissült.",

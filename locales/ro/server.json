@@ -135,6 +135,7 @@
 	"user-grades-updated": "Notele utilizatorului au fost actualizate cu succes.",
 	"user-has-no-write-access": "Utilizatorul nu are acces de scriere.",
 	"user-has-write-access": "Utilizatorul are acces de scriere.",
+	"user-login-without-password": "Contul nu este setat să se conecteze prin parolă. Vă rugăm să vă conectați prin SSO",
 	"user-nonexistent": "Utilizatorul nu există.",
 	"user-not-activated": "Procesul de înregistrare pentru utilizatorul cu adresa de e-mail furnizată nu a fost finalizat. Vă rugăm să verificați căsuța dvs. de primire pentru a primi un e-mail pentru a vă seta numele și parola.",
 	"user-progress-updated": "Progresul utilizatorului a fost actualizat cu succes.",

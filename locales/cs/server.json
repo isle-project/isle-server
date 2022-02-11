@@ -135,6 +135,7 @@
 	"user-grades-updated": "Známky uživatele byly úspěšně aktualizovány.",
 	"user-has-no-write-access": "Uživatel nemá právo zápisu.",
 	"user-has-write-access": "Uživatel má právo zápisu.",
+	"user-login-without-password": "Účet není nastaven na přihlášení pomocí hesla. Přihlaste se prosím prostřednictvím SSO",
 	"user-nonexistent": "Uživatel neexistuje.",
 	"user-not-activated": "Proces registrace uživatele s uvedenou e-mailovou adresou nebyl dokončen. Zkontrolujte prosím, zda vám do schránky nepřišel e-mail s nastavením jména a hesla.",
 	"user-progress-updated": "Postup uživatele byl úspěšně aktualizován.",

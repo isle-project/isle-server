@@ -135,6 +135,7 @@
 	"user-grades-updated": "Lietotāja pakāpes ir veiksmīgi atjauninātas.",
 	"user-has-no-write-access": "Lietotājam nav rakstīšanas piekļuves.",
 	"user-has-write-access": "Lietotājam ir rakstīšanas piekļuve.",
+	"user-login-without-password": "Konts nav iestatīts, lai pieteiktos, izmantojot paroli. Lūdzu, piesakieties, izmantojot SSO",
 	"user-nonexistent": "Lietotājs neeksistē.",
 	"user-not-activated": "Lietotāja ar norādīto e-pasta adresi reģistrācijas process nav pabeigts. Lūdzu, pārbaudiet savu iesūtni, lai saņemtu e-pasta vēstuli, lai iestatītu savu vārdu un paroli.",
 	"user-progress-updated": "Lietotāja progress veiksmīgi atjaunināts.",

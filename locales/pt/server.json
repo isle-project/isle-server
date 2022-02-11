@@ -135,6 +135,7 @@
 	"user-grades-updated": "As notas do usuário foram atualizadas com sucesso.",
 	"user-has-no-write-access": "O usuário não tem acesso por escrito.",
 	"user-has-write-access": "O usuário tem acesso por escrito.",
+	"user-login-without-password": "A conta não está definida para login via senha. Por favor, faça o login via SSO",
 	"user-nonexistent": "O usuário não existe.",
 	"user-not-activated": "O processo de registro para o usuário com o endereço de e-mail fornecido não foi concluído. Por favor, verifique sua caixa de entrada para um e-mail para definir seu nome e senha.",
 	"user-progress-updated": "Progresso do usuário atualizado com sucesso.",
