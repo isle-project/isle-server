@@ -135,6 +135,7 @@
 	"user-grades-updated": "Die Noten des Benutzers wurden erfolgreich aktualisiert.",
 	"user-has-no-write-access": "Benutzer hat keinen Schreibzugriff.",
 	"user-has-write-access": "Benutzer hat Schreibzugriff.",
+	"user-login-without-password": "Das Konto ist nicht für die Anmeldung über ein Passwort eingerichtet. Bitte melden Sie sich über SSO an",
 	"user-nonexistent": "Benutzer existiert nicht.",
 	"user-not-activated": "Der Registrierungsprozess für den Benutzer mit der angegebenen E-Mail-Adresse ist noch nicht abgeschlossen. Bitte überprüfe Deinen Posteingang auf eine E-Mail, um Deinen Namen und Dein Passwort festzulegen.",
 	"user-progress-updated": "Benutzerfortschritt erfolgreich aktualisiert.",

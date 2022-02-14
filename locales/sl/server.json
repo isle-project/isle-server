@@ -135,6 +135,7 @@
 	"user-grades-updated": "Uporabnikove ocene so bile uspešno posodobljene.",
 	"user-has-no-write-access": "Uporabnik nima dostopa za pisanje.",
 	"user-has-write-access": "Uporabnik ima dostop za pisanje.",
+	"user-login-without-password": "Račun ni nastavljen za prijavo z geslom. Prosimo, da se prijavite prek SSO",
 	"user-nonexistent": "Uporabnik ne obstaja.",
 	"user-not-activated": "Postopek registracije za uporabnika z navedenim e-poštnim naslovom ni bil dokončan. Preverite svoj e-poštni predal, ali boste prejeli e-poštno sporočilo za nastavitev imena in gesla.",
 	"user-progress-updated": "Napredek uporabnika je bil uspešno posodobljen.",

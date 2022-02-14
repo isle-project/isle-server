@@ -135,6 +135,7 @@
 	"user-grades-updated": "Käyttäjän arvosanat on päivitetty onnistuneesti.",
 	"user-has-no-write-access": "Käyttäjällä ei ole kirjoitusoikeutta.",
 	"user-has-write-access": "Käyttäjällä on kirjoitusoikeus.",
+	"user-login-without-password": "Tiliä ei ole asetettu kirjautumaan salasanalla. Kirjaudu sisään SSO:n kautta",
 	"user-nonexistent": "Käyttäjää ei ole olemassa.",
 	"user-not-activated": "Rekisteröitymisprosessia ei ole saatettu loppuun käyttäjän osalta, jonka sähköpostiosoite on annettu. Tarkista sähköpostiosoitteesi saadaksesi sähköpostiviestin nimesi ja salasanasi asettamista varten.",
 	"user-progress-updated": "Käyttäjän edistyminen päivitetty onnistuneesti.",

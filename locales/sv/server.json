@@ -135,6 +135,7 @@
 	"user-grades-updated": "Användarens betyg har uppdaterats.",
 	"user-has-no-write-access": "Användaren har ingen skrivbehörighet.",
 	"user-has-write-access": "Användaren har skrivbehörighet.",
+	"user-login-without-password": "Kontot är inte inställt för inloggning via lösenord. Vänligen logga in via SSO",
 	"user-nonexistent": "Användaren finns inte.",
 	"user-not-activated": "Registreringsprocessen för användaren med den angivna e-postadressen har inte slutförts. Kontrollera din inkorg för att få ett e-postmeddelande om hur du anger ditt namn och lösenord.",
 	"user-progress-updated": "Användarens framsteg har uppdaterats.",

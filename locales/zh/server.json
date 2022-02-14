@@ -135,6 +135,7 @@
 	"user-grades-updated": "用户的成绩已经成功更新。",
 	"user-has-no-write-access": "用户没有写入权限。",
 	"user-has-write-access": "用户有写入权限。",
+	"user-login-without-password": "帐户没有设置为通过密码登录。请通过SSO登录",
 	"user-nonexistent": "用户不存在。",
 	"user-not-activated": "提供电子邮件地址的用户的注册过程尚未完成。请检查您的收件箱，以便收到设置姓名和密码的电子邮件。",
 	"user-progress-updated": "用户进度成功更新。",

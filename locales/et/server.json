@@ -135,6 +135,7 @@
 	"user-grades-updated": "Kasutaja hinded on edukalt uuendatud.",
 	"user-has-no-write-access": "Kasutajal ei ole kirjutamisõigust.",
 	"user-has-write-access": "Kasutajal on kirjutamisõigus.",
+	"user-login-without-password": "Konto ei ole seadistatud sisselogimiseks parooliga. Palun logige sisse SSO kaudu",
 	"user-nonexistent": "Kasutajat ei ole olemas.",
 	"user-not-activated": "Esitatud e-posti aadressiga kasutaja registreerimisprotsess ei ole lõpule viidud. Palun kontrollige oma postkasti, et saada e-kiri oma nime ja salasõna määramiseks.",
 	"user-progress-updated": "Kasutaja edusammud on edukalt uuendatud.",

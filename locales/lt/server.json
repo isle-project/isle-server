@@ -135,6 +135,7 @@
 	"user-grades-updated": "Naudotojo įvertinimai sėkmingai atnaujinti.",
 	"user-has-no-write-access": "Vartotojas neturi rašymo prieigos.",
 	"user-has-write-access": "Naudotojas turi rašymo prieigą.",
+	"user-login-without-password": "Paskyra nenustatyta prisijungti naudojant slaptažodį. Prašome prisijungti per SSO",
 	"user-nonexistent": "Vartotojas neegzistuoja.",
 	"user-not-activated": "Naudotojo su pateiktu el. pašto adresu registracijos procesas nebaigtas. Patikrinkite savo pašto dėžutę, ar gausite el. laišką, kuriame bus nustatytas jūsų vardas ir slaptažodis.",
 	"user-progress-updated": "Naudotojo pažanga sėkmingai atnaujinta.",

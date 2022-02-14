@@ -135,6 +135,7 @@
 	"user-grades-updated": "De cijfers van de gebruiker zijn met succes bijgewerkt.",
 	"user-has-no-write-access": "Gebruiker heeft geen schrijftoegang.",
 	"user-has-write-access": "Gebruiker heeft schrijftoegang.",
+	"user-login-without-password": "Account is niet ingesteld om in te loggen via wachtwoord. Gelieve in te loggen via SSO",
 	"user-nonexistent": "De gebruiker bestaat niet.",
 	"user-not-activated": "Het registratieproces voor de gebruiker met het opgegeven e-mailadres is niet voltooid. Controleer uw inbox voor een e-mail om uw naam en wachtwoord in te stellen.",
 	"user-progress-updated": "Voortgang van de gebruiker met succes geüpdatet.",

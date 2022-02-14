@@ -135,6 +135,7 @@
 	"user-grades-updated": "ユーザーの成績が正常に更新されました。",
 	"user-has-no-write-access": "ユーザーには書き込みアクセス権がありません。",
 	"user-has-write-access": "ユーザーは書き込みアクセス権を持っています。",
+	"user-login-without-password": "パスワードでログインするようにアカウントが設定されていません。SSOでログインしてください。",
 	"user-nonexistent": "ユーザーは存在しません。",
 	"user-not-activated": "提供されたメールアドレスでのユーザー登録手続きが完了していません。お名前とパスワードを設定するためのメールが届いていますので、受信箱をご確認ください。",
 	"user-progress-updated": "ユーザーの進捗状況が正常に更新されました。",
