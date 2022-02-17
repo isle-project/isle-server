@@ -50,7 +50,7 @@
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "debug": "^4.3.3",
-    "express": "^4.17.2",
+    "express": "^4.17.3",
     "express-rate-limit": "^6.2.1",
     "faker": "^5.5.3",
     "i18next": "^21.6.11",
