@@ -73,6 +73,7 @@ const requires = {
 		'certificate': path.join( FIXTURES_DIRECTORY, 'keys', 'ourcustomisleserver.com.cert' ),
 		'key': path.join( FIXTURES_DIRECTORY, 'keys', 'ourcustomisleserver.com.key' )
 	},
+	'./../package.json': {},
 	'./connect_mongoose.js': noop,
 	'./credentials.js': credentials,
 	'./mailer': mailer,
