@@ -26,8 +26,17 @@ const isObjectArray = require( '@stdlib/assert/is-object-array' );
 const objectValues = require( '@stdlib/utils/object-values' );
 const hasOwnProp = require( '@stdlib/assert/has-own-property' );
 const { getLeafData } = require( './../lib/helpers/completions.js' );
-const Lesson = require( './../models/lesson' );
-const User = require( './../models/user' );
+const Lesson = require( './../../lib/models/lesson.js' );
+const User = require( './../../lib/models/user.js' );
+const utils = require( './../utils.js' );
+
+
+// FIXTURES //
+
+const nodes = [
+	'free-text-question-1',
+	'free-text-question-2'
+];
 
 
 // TESTS //
@@ -37,26 +46,35 @@ tape( 'main export is a function', ( t ) => {
 	t.end();
 });
 
-const nodes = [
-	'free-text-question-1',
-	'free-text-question-2'
-];
-User.find( {} ).then( ( users ) => {
-	Lesson.findOne()
-		.then( ( lesson ) => {
-			Object.defineProperty( nodes, '_lessonId', {
-				value: lesson._id,
-				writable: false,
-				enumerable: false
-			});
+tape( 'connect to a clean mongoDB database', utils.before );
 
-			tape( 'should return an array of objects', ( t ) => {
+tape( 'populate the database', utils.populateDatabase );
+
+tape( 'should return an array of objects', ( t ) => {
+	User.find( {} ).then( ( users ) => {
+		Lesson.findOne()
+			.then( ( lesson ) => {
+				Object.defineProperty( nodes, '_lessonId', {
+					value: lesson._id,
+					writable: false,
+					enumerable: false
+				});
 				const arr = getLeafData( 'completed', nodes, null, users );
 				t.ok( isObjectArray( arr ), 'returns an array of objects' );
 				t.end();
 			});
+	});
+});
 
-			tape( 'should return an object array with each object having a userId key', ( t ) => {
+tape( 'should return an object array with each object having a userId key', ( t ) => {
+	User.find( {} ).then( ( users ) => {
+		Lesson.findOne()
+			.then( ( lesson ) => {
+				Object.defineProperty( nodes, '_lessonId', {
+					value: lesson._id,
+					writable: false,
+					enumerable: false
+				});
 				const arr = getLeafData( 'completed', nodes, null, users );
 				const userIds = new Set( users.map( v => v._id ) );
 				t.ok( arr.every( a => {
@@ -65,8 +83,18 @@ User.find( {} ).then( ( users ) => {
 				}), 'has user ID keys' );
 				t.end();
 			});
+	});
+});
 
-			tape( 'should return an object array with each object having values with keys `value`, `time`, and `tag`', ( t ) => {
+tape( 'should return an object array with each object having values with keys `value`, `time`, and `tag`', ( t ) => {
+	User.find( {} ).then( ( users ) => {
+		Lesson.findOne()
+			.then( ( lesson ) => {
+				Object.defineProperty( nodes, '_lessonId', {
+					value: lesson._id,
+					writable: false,
+					enumerable: false
+				});
 				const arr = getLeafData( 'completed', nodes, null, users );
 				t.ok( arr.every( a => {
 					const values = objectValues( a );
@@ -78,5 +106,5 @@ User.find( {} ).then( ( users ) => {
 				}), 'has keys `value`, `time`, and `tag`' );
 				t.end();
 			});
-		});
+	});
 });

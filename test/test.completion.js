@@ -31,29 +31,29 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'populate the database', utils.populateDatabase );
 
-User.findOne().then( user => {
-	Lesson.findOne().then( lesson => {
-		tape( 'the model can create a new completion', function test( t ) {
-			const completion = {
-				lesson: lesson._id,
-				user: user._id,
-				component: 'free-text-question-1',
-				completion: 'completed',
-				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
-				value: 80,
-				tag: 'practice'
-			};
-			Completion.create( completion, onCreate );
+tape( 'the model can create a new completion', function test( t ) {
+	User.findOne().then( user => {
+		Lesson.findOne().then( lesson => {
+				const completion = {
+					lesson: lesson._id,
+					user: user._id,
+					component: 'free-text-question-1',
+					completion: 'completed',
+					time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
+					value: 80,
+					tag: 'practice'
+				};
+				Completion.create( completion, onCreate );
 
-			function onCreate( err, createdCompletion ) {
-				t.strictEqual( err instanceof Error, false, 'does not return an error' );
-				t.strictEqual( createdCompletion.component, 'free-text-question-1', 'has correct component' );
-				t.strictEqual( createdCompletion.completion, 'completed', 'has correct completion' );
-				t.strictEqual( createdCompletion.time, new Date( '2017-01-01T00:00:00.000Z' ).getTime(), 'has correct time' );
-				t.strictEqual( createdCompletion.value, 80, 'has correct value' );
-				t.strictEqual( createdCompletion.tag, 'practice', 'has correct tag' );
-				t.end();
-			}
+				function onCreate( err, createdCompletion ) {
+					t.strictEqual( err instanceof Error, false, 'does not return an error' );
+					t.strictEqual( createdCompletion.component, 'free-text-question-1', 'has correct component' );
+					t.strictEqual( createdCompletion.completion, 'completed', 'has correct completion' );
+					t.strictEqual( createdCompletion.time, new Date( '2017-01-01T00:00:00.000Z' ).getTime(), 'has correct time' );
+					t.strictEqual( createdCompletion.value, 80, 'has correct value' );
+					t.strictEqual( createdCompletion.tag, 'practice', 'has correct tag' );
+					t.end();
+				}
+			});
 		});
-	});
 });
