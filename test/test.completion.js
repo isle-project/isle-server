@@ -21,9 +21,10 @@
 
 const tape = require( 'tape' );
 const utils = require( './utils.js' );
-const Completion = require( './../lib/models/user.js' );
+const Completion = require( './../lib/models/completion.js' );
 const User = require( './../lib/models/user.js' );
 const Lesson = require( './../lib/models/lesson.js' );
+
 
 // TESTS //
 
