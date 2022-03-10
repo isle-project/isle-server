@@ -114,7 +114,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 	}
 
 	function createNamespaces({ users }, next ) {
-		const namespaces = [
+		const rawNamespaces = [
 			{
 				'title': 'FrankensteinMeetsTheWolfMan',
 				'description': 'Open the grave of Larry Talbot',
@@ -131,13 +131,13 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				'owners': [ users[ 2 ]._id, users[ 5 ]._id ]
 			}
 		];
-		Namespace.create( namespaces, ( err ) => {
+		Namespace.create( rawNamespaces, ( err, namespaces ) => {
 			next( err, { users, namespaces });
 		});
 	}
 
 	function createLessons({ users, namespaces }, next ) {
-		const lessons = [
+		const rawLessons = [
 			{
 				namespace: namespaces[ 2 ]._id,
 				title: 'Unearth the monster',
@@ -169,7 +169,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				public: false
 			}
 		];
-		Lesson.create( lessons, ( err ) => {
+		Lesson.create( rawLessons, ( err, lessons ) => {
 			next( err, { lessons, namespaces, users });
 		});
 	}

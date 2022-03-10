@@ -15,11 +15,14 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+/* eslint-disable max-nested-callbacks */
+
 'use strict';
 
 // MODULES //
 
 const tape = require( 'tape' );
+const isObjectArray = require( '@stdlib/assert/is-object-array' );
 const { getLeafData } = require( './../lib/helpers/completions.js' );
 const Lesson = require( './../models/lesson' );
 const User = require( './../models/user' );
@@ -45,8 +48,19 @@ User.find( {} ).then( ( users ) => {
 				enumerable: false
 			});
 
-			tape( 'should run without errors', ( t ) => {
-				getLeafData( 'completed', nodes, null, users );
+			tape( 'should return an array of objects', ( t ) => {
+				const arr = getLeafData( 'completed', nodes, null, users );
+				t.ok( isObjectArray( arr ), 'returns an array of objects' );
+				t.end();
+			});
+
+			tape( 'should return an object array with each objects having a userId key and a value with keys `value`, `time`, and `tag`', ( t ) => {
+				const arr = getLeafData( 'completed', nodes, null, users );
+				const userIds = new Set( users.map( v => v._id ) );
+				t.ok( arr.every( a => {
+					const keys = Object.keys( a );
+					return keys.every( k => userIds.has( k ) );
+				}), 'has user ID keys' );
 				t.end();
 			});
 		});
