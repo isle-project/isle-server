@@ -23,7 +23,7 @@
 
 const tape = require( 'tape' );
 const isObjectArray = require( '@stdlib/assert/is-object-array' );
-const objectValues = require( '@stdlib/utils/object-values' );
+const objectValues = require( '@stdlib/utils/values' );
 const hasOwnProp = require( '@stdlib/assert/has-own-property' );
 const { getLeafData } = require( './../../lib/helpers/completions.js' );
 const Lesson = require( './../../lib/models/lesson.js' );
