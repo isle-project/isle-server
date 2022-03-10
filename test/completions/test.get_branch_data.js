@@ -22,7 +22,7 @@
 // MODULES //
 
 const tape = require( 'tape' );
-const { getBranchData } = require( './../lib/helpers/completions.js' );
+const { getBranchData } = require( './../../lib/helpers/completions.js' );
 
 
 // TESTS //

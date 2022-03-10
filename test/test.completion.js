@@ -46,6 +46,7 @@ tape( 'the model can create a new completion', function test( t ) {
 				Completion.create( completion, onCreate );
 
 				function onCreate( err, createdCompletion ) {
+					t.strictEqual( err.message, '', 'should return expected error message' );
 					t.strictEqual( err instanceof Error, false, 'does not return an error' );
 					t.strictEqual( createdCompletion.component, 'free-text-question-1', 'has correct component' );
 					t.strictEqual( createdCompletion.completion, 'completed', 'has correct completion' );
