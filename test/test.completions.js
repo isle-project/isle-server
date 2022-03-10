@@ -20,7 +20,7 @@
 // MODULES //
 
 const tape = require( 'tape' );
-const { gatherCompletions, levelMapping } = require( './../lib/helpers/completions.js' );
+const { gatherCompletions, getLeafData } = require( './../lib/helpers/completions.js' );
 
 
 const leafData = {

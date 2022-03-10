@@ -20,7 +20,7 @@
 // MODULES //
 
 const tape = require( 'tape' );
-const { groupAndFilterCompletions, DEFAULT_TAG } = require( './../lib/helpers/completions.js' );
+const { groupAndFilterCompletions, DEFAULT_TAG } = require( './../../lib/helpers/completions.js' );
 
 
 // FIXTURES //
