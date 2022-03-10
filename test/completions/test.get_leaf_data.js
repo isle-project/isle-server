@@ -56,7 +56,7 @@ tape( 'should return an array of objects', ( t ) => {
 			.then( ( lesson ) => {
 				Object.defineProperty( nodes, '_lessonId', {
 					value: lesson._id,
-					writable: false,
+					writable: true,
 					enumerable: false
 				});
 				const arr = getLeafData( 'completed', nodes, null, users );
@@ -72,7 +72,7 @@ tape( 'should return an object array with each object having a userId key', ( t 
 			.then( ( lesson ) => {
 				Object.defineProperty( nodes, '_lessonId', {
 					value: lesson._id,
-					writable: false,
+					writable: true,
 					enumerable: false
 				});
 				const arr = getLeafData( 'completed', nodes, null, users );
@@ -92,7 +92,7 @@ tape( 'should return an object array with each object having values with keys `v
 			.then( ( lesson ) => {
 				Object.defineProperty( nodes, '_lessonId', {
 					value: lesson._id,
-					writable: false,
+					writable: true,
 					enumerable: false
 				});
 				const arr = getLeafData( 'completed', nodes, null, users );
