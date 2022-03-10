@@ -118,17 +118,44 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 			{
 				'title': 'FrankensteinMeetsTheWolfMan',
 				'description': 'Open the grave of Larry Talbot',
-				'owners': [ users[ 1 ]._id, users[ 5 ]._id ]
+				'owners': [ users[ 1 ]._id, users[ 5 ]._id ],
+				'completion': [
+					{
+						'name': 'average-score',
+						'level': 'namespace',
+						'coverage': [ 'all' ],
+						'rule': [ 'avg' ],
+						'ref': 'lesson-score'
+					}
+				]
 			},
 			{
 				'title': 'DraculaVsTheWolfMan',
 				'description': 'A great match',
-				'owners': [ users[ 1 ]._id, users[ 2 ]._id ]
+				'owners': [ users[ 1 ]._id, users[ 2 ]._id ],
+				'completion': [
+					{
+						'name': 'average-score',
+						'level': 'namespace',
+						'coverage': [ 'all' ],
+						'rule': [ 'avg' ],
+						'ref': 'lesson-score'
+					}
+				]
 			},
 			{
 				'title': 'DraculaVsFrankenstein',
 				'description': 'Dracula unearthes Frankenstein',
-				'owners': [ users[ 2 ]._id, users[ 5 ]._id ]
+				'owners': [ users[ 2 ]._id, users[ 5 ]._id ],
+				'completion': [
+					{
+						'name': 'average-score',
+						'level': 'namespace',
+						'coverage': [ 'all' ],
+						'rule': [ 'avg' ],
+						'ref': 'lesson-score'
+					}
+				]
 			}
 		];
 		Namespace.create( rawNamespaces, ( err, namespaces ) => {
@@ -141,32 +168,86 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 			{
 				namespace: namespaces[ 2 ]._id,
 				title: 'Unearth the monster',
-				public: true
+				public: true,
+				completion: [
+					{
+						'name': 'lesson-score',
+						'level': 'lesson',
+						'coverage': [ 'all' ],
+						'rule': [ 'avg' ],
+						'ref': 'completed'
+					}
+				]
 			},
 			{
 				namespace: namespaces[ 2 ]._id,
 				title: 'Kill the cemetery keeper',
-				public: true
+				public: true,
+				completion: [
+					{
+						'name': 'lesson-score',
+						'level': 'lesson',
+						'coverage': [ 'all' ],
+						'rule': [ 'avg' ],
+						'ref': 'completed'
+					}
+				]
 			},
 			{
 				namespace: namespaces[ 2 ]._id,
 				title: 'Drink his blood',
-				public: false
+				public: false,
+				completion: [
+					{
+						'name': 'lesson-score',
+						'level': 'lesson',
+						'coverage': [ 'all' ],
+						'rule': [ 'avg' ],
+						'ref': 'completed'
+					}
+				]
 			},
 			{
 				namespace: namespaces[ 0 ]._id,
 				title: 'Why have you followed me',
-				public: true
+				public: true,
+				completion: [
+					{
+						'name': 'lesson-score',
+						'level': 'lesson',
+						'coverage': [ 'all' ],
+						'rule': [ 'avg' ],
+						'ref': 'completed'
+					}
+				]
 			},
 			{
 				namespace: namespaces[ 0 ]._id,
 				title: 'Talbot, you are a murderer',
-				public: true
+				public: true,
+				completion: [
+					{
+						'name': 'lesson-score',
+						'level': 'lesson',
+						'coverage': [ 'all' ],
+						'rule': [ 'avg' ],
+						'ref': 'completed'
+					}
+				]
 			},
 			{
 				namespace: namespaces[ 0 ]._id,
 				title: 'Prove it',
-				public: false
+				public: false,
+				completion: [
+					{
+						'name': 'lesson-score',
+						'level': 'lesson',
+						'coverage': [ 'all' ],
+						'rule': [ 'avg' ],
+						'ref': 'completed'
+					}
+				]
 			}
 		];
 		Lesson.create( rawLessons, ( err, lessons ) => {
