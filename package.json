@@ -26,8 +26,8 @@
     "clean": "rm -rf ./node_modules",
     "lint": "eslint lib/** test/**/*.js",
     "start": "cross-env node lib/index.js",
-    "test": "cross-env tape \"./test/*.js\"",
-    "test-cov": "cross-env istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\""
+    "test": "cross-env tape \"./test/**/*.js\"",
+    "test-cov": "cross-env istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/**/*.js\""
   },
   "dependencies": {
     "@isle-project/email-to-institution": "^1.0.0",
