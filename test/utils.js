@@ -26,6 +26,7 @@ const objectKeys = require( '@stdlib/utils/keys' );
 const Namespace = require( './../lib/models/namespace.js' );
 const Lesson = require( './../lib/models/lesson.js' );
 const User = require( './../lib/models/user.js' );
+const Completion = require( './../lib/models/completion.js' );
 
 
 // VARIABLES //
@@ -107,10 +108,12 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				'password': 'Mary Shelly'
 			}
 		];
-		User.create( pop, next );
+		User.create( pop, ( err, users ) => {
+			next( err, { users });
+		});
 	}
 
-	function createNamespaces( users, next ) {
+	function createNamespaces({ users }, next ) {
 		const namespaces = [
 			{
 				'title': 'FrankensteinMeetsTheWolfMan',
@@ -128,10 +131,12 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				'owners': [ users[ 2 ]._id, users[ 5 ]._id ]
 			}
 		];
-		Namespace.create( namespaces, next );
+		Namespace.create( namespaces, ( err ) => {
+			next( err, { users, namespaces });
+		});
 	}
 
-	function createLessons( namespaces, next ) {
+	function createLessons({ users, namespaces }, next ) {
 		const lessons = [
 			{
 				namespace: namespaces[ 2 ]._id,
@@ -164,7 +169,47 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				public: false
 			}
 		];
-		Lesson.create( lessons, next );
+		Lesson.create( lessons, ( err ) => {
+			next( err, { lessons, namespaces, users });
+		});
+	}
+
+	function createCompletions({ lessons, users }, next ) {
+		const completions = [
+			{
+				lesson: lessons[ 0 ]._id,
+				user: users[ 0 ]._id,
+				component: 'free-text-question-1',
+				completion: 'completed',
+				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
+				value: 80
+			},
+			{
+				lesson: lessons[ 0 ]._id,
+				user: users[ 0 ]._id,
+				component: 'free-text-question-2',
+				completion: 'completed',
+				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
+				value: 100
+			},
+			{
+				lesson: lessons[ 0 ]._id,
+				user: users[ 1 ]._id,
+				component: 'free-text-question-1',
+				completion: 'completed',
+				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
+				value: 50
+			},
+			{
+				lesson: lessons[ 0 ]._id,
+				user: users[ 1 ]._id,
+				component: 'free-text-question-2',
+				completion: 'completed',
+				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
+				value: 20
+			}
+		];
+		Completion.create( completions, next );
 	}
 
 	function done( err, res ) {
@@ -175,7 +220,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 		}
 		t.end();
 	}
-	waterfall([ createUsers, createNamespaces, createLessons ], done );
+	waterfall([ createUsers, createNamespaces, createLessons, createCompletions ], done );
 });
 
 setReadOnly( ns, 'after', function after( t ) {
