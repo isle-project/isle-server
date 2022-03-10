@@ -23,6 +23,8 @@
 
 const tape = require( 'tape' );
 const isObjectArray = require( '@stdlib/assert/is-object-array' );
+const objectValues = require( '@stdlib/utils/object-values' );
+const hasOwnProp = require( '@stdlib/assert/has-own-property' );
 const { getLeafData } = require( './../lib/helpers/completions.js' );
 const Lesson = require( './../models/lesson' );
 const User = require( './../models/user' );
@@ -54,13 +56,26 @@ User.find( {} ).then( ( users ) => {
 				t.end();
 			});
 
-			tape( 'should return an object array with each objects having a userId key and a value with keys `value`, `time`, and `tag`', ( t ) => {
+			tape( 'should return an object array with each object having a userId key', ( t ) => {
 				const arr = getLeafData( 'completed', nodes, null, users );
 				const userIds = new Set( users.map( v => v._id ) );
 				t.ok( arr.every( a => {
 					const keys = Object.keys( a );
 					return keys.every( k => userIds.has( k ) );
 				}), 'has user ID keys' );
+				t.end();
+			});
+
+			tape( 'should return an object array with each object having values with keys `value`, `time`, and `tag`', ( t ) => {
+				const arr = getLeafData( 'completed', nodes, null, users );
+				t.ok( arr.every( a => {
+					const values = objectValues( a );
+					return values.every( v =>
+						hasOwnProp( v, 'value' ) &&
+						hasOwnProp( v, 'time' ) &&
+						hasOwnProp( v, 'tag' )
+					);
+				}), 'has keys `value`, `time`, and `tag`' );
 				t.end();
 			});
 		});

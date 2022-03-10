@@ -22,7 +22,8 @@
 const tape = require( 'tape' );
 const utils = require( './utils.js' );
 const Completion = require( './../lib/models/user.js' );
-
+const User = require( './../lib/models/user.js' );
+const Lesson = require( './../lib/models/lesson.js' );
 
 // TESTS //
 
@@ -30,23 +31,29 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'populate the database', utils.populateDatabase );
 
-tape( 'the model can create a new completion', function test( t ) {
-	const completion = {
-		lesson: '5a7e9f8f8f8f8f8f8f8f8f8',
-		user: '9a7e9f8f8f8f8f8f8f8f8f8',
-		component: 'free-text-question-1',
-		completion: 'completed',
-		time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
-		value: 80,
-		tag: 'practice'
-	};
-	Completion.create( completion, function onCreate( err, createdCompletion ) {
-		t.strictEqual( err instanceof Error, false, 'does not return an error' );
-		t.strictEqual( createdCompletion.component, 'free-text-question-1', 'has correct component' );
-		t.strictEqual( createdCompletion.completion, 'completed', 'has correct completion' );
-		t.strictEqual( createdCompletion.time, new Date( '2017-01-01T00:00:00.000Z' ).getTime(), 'has correct time' );
-		t.strictEqual( createdCompletion.value, 80, 'has correct value' );
-		t.strictEqual( createdCompletion.tag, 'practice', 'has correct tag' );
-		t.end();
+User.findOne().then( user => {
+	Lesson.findOne().then( lesson => {
+		tape( 'the model can create a new completion', function test( t ) {
+			const completion = {
+				lesson: lesson._id,
+				user: user._id,
+				component: 'free-text-question-1',
+				completion: 'completed',
+				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
+				value: 80,
+				tag: 'practice'
+			};
+			Completion.create( completion, onCreate );
+
+			function onCreate( err, createdCompletion ) {
+				t.strictEqual( err instanceof Error, false, 'does not return an error' );
+				t.strictEqual( createdCompletion.component, 'free-text-question-1', 'has correct component' );
+				t.strictEqual( createdCompletion.completion, 'completed', 'has correct completion' );
+				t.strictEqual( createdCompletion.time, new Date( '2017-01-01T00:00:00.000Z' ).getTime(), 'has correct time' );
+				t.strictEqual( createdCompletion.value, 80, 'has correct value' );
+				t.strictEqual( createdCompletion.tag, 'practice', 'has correct tag' );
+				t.end();
+			}
+		});
 	});
 });
