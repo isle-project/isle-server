@@ -87,7 +87,7 @@ tape( 'should return an object array with each object having a userId key', ( t 
 				console.log( users );
 				getLeafData( 'completed', nodes, null, users )
 					.then( ( arr ) => {
-						const userIds = new Set( users );
+						const userIds = new Set( users.map( String ) );
 						console.log( 'LEAF DATA ARRAY:' );
 						console.log( arr );
 						t.ok( arr.every( a => {
