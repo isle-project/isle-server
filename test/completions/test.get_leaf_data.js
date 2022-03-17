@@ -83,9 +83,13 @@ tape( 'should return an object array with each object having a userId key', ( t 
 					enumerable: false
 				});
 				users = users.map( user => user._id );
+				console.log( 'USER IDS' );
+				console.log( users );
 				getLeafData( 'completed', nodes, null, users )
 					.then( ( arr ) => {
 						const userIds = new Set( users );
+						console.log( 'LEAF DATA ARRAY:' );
+						console.log( arr );
 						t.ok( arr.every( a => {
 							const keys = Object.keys( a );
 							return keys.every( k => userIds.has( k ) );
