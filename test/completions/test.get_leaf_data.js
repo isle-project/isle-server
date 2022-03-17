@@ -59,6 +59,7 @@ tape( 'should return an array of objects', ( t ) => {
 					writable: true,
 					enumerable: false
 				});
+				users = users.map( user => user._id );
 				getLeafData( 'completed', nodes, null, users )
 					.then( ( arr ) => {
 						t.ok( isObjectArray( arr ), 'returns an array of objects' );
@@ -81,9 +82,10 @@ tape( 'should return an object array with each object having a userId key', ( t 
 					writable: true,
 					enumerable: false
 				});
+				users = users.map( user => user._id );
 				getLeafData( 'completed', nodes, null, users )
 					.then( ( arr ) => {
-						const userIds = new Set( users.map( v => v._id ) );
+						const userIds = new Set( users );
 						t.ok( arr.every( a => {
 							const keys = Object.keys( a );
 							return keys.every( k => userIds.has( k ) );
@@ -107,6 +109,7 @@ tape( 'should return an object array with each object having values with keys `v
 					writable: true,
 					enumerable: false
 				});
+				users = users.map( user => user._id );
 				getLeafData( 'completed', nodes, null, users )
 					.then( ( arr ) => {
 						t.ok( arr.every( a => {
