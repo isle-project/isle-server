@@ -25,7 +25,14 @@ const tape = require( 'tape' );
 const isStringArray = require( '@stdlib/assert/is-string-array' );
 const { relevantNodes } = require( './../../lib/helpers/completions.js' );
 const Lesson = require( './../../lib/models/lesson.js' );
+const mongoose = require( 'mongoose' );
+const Namespace = require( './../../lib/models/namespace.js' );
 const utils = require( './../utils.js' );
+
+
+// VARIABLES //
+
+const isValidObjectId = mongoose.Types.ObjectId.isValid;
 
 
 // TESTS //
@@ -50,6 +57,21 @@ tape( 'the function should return an array of node IDs that match the completion
 					t.strictEqual( arr.length, 2, 'returns an array of length 2' );
 					t.ok( arr.includes( 'free-text-question-1' ), 'contains the expected node ID' );
 					t.ok( arr.includes( 'free-text-question-2' ), 'contains the expected node ID' );
+					t.end();
+				});
+		});
+});
+
+tape( 'the function should return an array of node IDs that match the completion criteria and the level (namespace level)', ( t ) => {
+	Namespace.findOne({
+		title: 'DraculaVsFrankenstein'
+	})
+		.then( ( namespace ) => {
+			relevantNodes( namespace._id, 'namespace', [ 'all' ], null )
+				.then( ( arr ) => {
+					t.ok( isStringArray( arr ), 'returns an array of strings' );
+					t.strictEqual( arr.length, 1, 'returns an array of length 1' );
+					t.ok( isValidObjectId( arr[ 0 ] ), 'returns an array of valid ObjectIds' );
 					t.end();
 				});
 		});
