@@ -32,6 +32,7 @@ const Completion = require( './../lib/models/completion.js' );
 // VARIABLES //
 
 const dbURI = 'mongodb://localhost/isle-test-clearing-db';
+const ObjectID = mongoose.Types.ObjectId;
 
 
 // MAIN //
@@ -127,6 +128,11 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 						'rule': [ 'avg' ],
 						'ref': 'lesson-score'
 					}
+				],
+				'lessons': [
+					new ObjectID(),
+					new ObjectID(),
+					new ObjectID()
 				]
 			},
 			{
@@ -155,6 +161,11 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 						'rule': [ 'avg' ],
 						'ref': 'lesson-score'
 					}
+				],
+				lessons: [
+					new ObjectID(),
+					new ObjectID(),
+					new ObjectID()
 				]
 			}
 		];
@@ -166,6 +177,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 	function createLessons({ users, namespaces }, next ) {
 		const rawLessons = [
 			{
+				_id: namespaces[ 2 ].lessons[ 0 ],
 				namespace: namespaces[ 2 ]._id,
 				title: 'Unearth the monster',
 				public: true,
@@ -180,6 +192,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				]
 			},
 			{
+				_id: namespaces[ 2 ].lessons[ 1 ],
 				namespace: namespaces[ 2 ]._id,
 				title: 'Kill the cemetery keeper',
 				public: true,
@@ -194,6 +207,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				]
 			},
 			{
+				_id: namespaces[ 2 ].lessons[ 2 ],
 				namespace: namespaces[ 2 ]._id,
 				title: 'Drink his blood',
 				public: false,
@@ -208,6 +222,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				]
 			},
 			{
+				_id: namespaces[ 0 ].lessons[ 0 ],
 				namespace: namespaces[ 0 ]._id,
 				title: 'Why have you followed me',
 				public: true,
@@ -222,6 +237,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				]
 			},
 			{
+				_id: namespaces[ 0 ].lessons[ 1 ],
 				namespace: namespaces[ 0 ]._id,
 				title: 'Talbot, you are a murderer',
 				public: true,
@@ -236,6 +252,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				]
 			},
 			{
+				_id: namespaces[ 0 ].lessons[ 2 ],
 				namespace: namespaces[ 0 ]._id,
 				title: 'Prove it',
 				public: false,
