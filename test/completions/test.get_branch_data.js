@@ -33,6 +33,7 @@ const utils = require( './../utils.js' );
 // TESTS //
 
 tape( 'main export is a function', ( t ) => {
+	t.ok( true, __filename );
 	t.ok( typeof getBranchData === 'function', 'main export is a function' );
 	t.end();
 });

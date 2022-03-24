@@ -198,6 +198,7 @@ const metricWithTagWeights = {
 // TESTS //
 
 tape( 'main export is a function', t => {
+	t.ok( true, __filename );
 	t.ok( typeof groupAndFilterCompletions === 'function', 'main export is a function' );
 	t.end();
 });

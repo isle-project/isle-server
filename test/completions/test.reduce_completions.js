@@ -111,6 +111,7 @@ const metricWithoutTagWeights = {
 // TESTS //
 
 tape( 'main export is a function', t => {
+	t.ok( true, __filename );
 	t.ok( typeof reduceCompletions === 'function', 'main export is a function' );
 	t.end();
 });
