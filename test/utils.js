@@ -117,6 +117,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 	function createNamespaces({ users }, next ) {
 		const rawNamespaces = [
 			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f27'),
 				'title': 'FrankensteinMeetsTheWolfMan',
 				'description': 'Open the grave of Larry Talbot',
 				'owners': [ users[ 1 ]._id, users[ 5 ]._id ],
@@ -130,12 +131,13 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 					}
 				],
 				'lessons': [
-					new ObjectID(),
-					new ObjectID(),
-					new ObjectID()
+					new ObjectID('623ce01a33522d1d834b8f2a'),
+					new ObjectID('623ce01a33522d1d834b8f2b'),
+					new ObjectID('623ce01a33522d1d834b8f2c')
 				]
 			},
 			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f28'),
 				'title': 'DraculaVsTheWolfMan',
 				'description': 'A great match',
 				'owners': [ users[ 1 ]._id, users[ 2 ]._id ],
@@ -150,6 +152,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				]
 			},
 			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f29'),
 				'title': 'DraculaVsFrankenstein',
 				'description': 'Dracula unearthes Frankenstein',
 				'owners': [ users[ 2 ]._id, users[ 5 ]._id ],
@@ -163,9 +166,9 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 					}
 				],
 				lessons: [
-					new ObjectID(),
-					new ObjectID(),
-					new ObjectID()
+					new ObjectID('623ce01a33522d1d834b8f2d'),
+					new ObjectID('623ce01a33522d1d834b8f2e'),
+					new ObjectID('623ce01a33522d1d834b8f2f')
 				]
 			}
 		];
