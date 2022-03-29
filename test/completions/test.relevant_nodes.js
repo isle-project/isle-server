@@ -23,6 +23,7 @@
 
 const tape = require( 'tape' );
 const isStringArray = require( '@stdlib/assert/is-string-array' );
+const isEmptyArray = require( '@stdlib/assert/is-empty-array' );
 const { relevantNodes } = require( './../../lib/helpers/completions.js' );
 const Lesson = require( './../../lib/models/lesson.js' );
 const mongoose = require( 'mongoose' );
@@ -73,6 +74,20 @@ tape( 'the function should return an array of node IDs that match the completion
 					t.ok( isStringArray( arr ), 'returns an array of strings' );
 					t.strictEqual( arr.length, 3, 'returns an array of length 3' );
 					t.ok( isValidObjectId( arr[ 0 ] ), 'returns an array of valid ObjectIds' );
+					t.end();
+				});
+		});
+});
+
+tape( 'the function should return an empty array if there are no node IDs matching the completion criteria and the level (namespace level)', ( t ) => {
+	Namespace.findOne({
+		title: 'DraculaVsTheWolfMan'
+	})
+		.then( ( namespace ) => {
+			relevantNodes( namespace._id, 'namespace', [ 'all' ], null )
+				.then( ( arr ) => {
+					t.ok( isEmptyArray( arr ), 'returns an empty array' );
+					t.strictEqual( arr.length, 0, 'returns an array of length 0' );
 					t.end();
 				});
 		});
