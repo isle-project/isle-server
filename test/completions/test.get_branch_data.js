@@ -90,6 +90,7 @@ tape( 'should return an empty array when there are no completions for the users 
 				users = users.map( user => user._id );
 				getBranchData( 'average-score', [ namespace._id ], 'namespace', users )
 					.then( ( arr ) => {
+						console.log( 'empty arr:', arr );
 						t.ok( isEmptyArray( arr ), 'returns an empty array' );
 						t.end();
 					})
