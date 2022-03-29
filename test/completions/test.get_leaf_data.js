@@ -51,7 +51,7 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'populate the database', utils.populateDatabase );
 
-tape( 'should return an array of objects', ( t ) => {
+tape( 'should return an array of objects', { skip: true }, ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne()
 			.then( ( lesson ) => {
@@ -74,7 +74,7 @@ tape( 'should return an array of objects', ( t ) => {
 	});
 });
 
-tape( 'should return an object array with each object having a userId key', ( t ) => {
+tape( 'should return an object array with each object having a userId key', { skip: true }, ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne()
 			.then( ( lesson ) => {
@@ -105,7 +105,7 @@ tape( 'should return an object array with each object having a userId key', ( t 
 	});
 });
 
-tape( 'should return an object array with each object having values with keys `value`, `time`, and `tag`', ( t ) => {
+tape( 'should return an object array with each object having values with keys `value`, `time`, and `tag`', { skip: true }, ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne()
 			.then( ( lesson ) => {

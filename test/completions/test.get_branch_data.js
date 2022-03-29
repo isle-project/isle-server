@@ -60,7 +60,7 @@ tape( 'should return an array of objects (lesson level)', ( t ) => {
 	});
 });
 
-tape( 'should return an array of objects (namespace level)', ( t ) => {
+tape( 'should return an array of objects (namespace level)', { skip: true }, ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Namespace.findOne({
 			title: 'DraculaVsFrankenstein'
