@@ -23,6 +23,7 @@
 
 const tape = require( 'tape' );
 const isObjectArray = require( '@stdlib/assert/is-object-array' );
+const isEmptyArray = require( '@stdlib/assert/is-empty-array' );
 const { getBranchData } = require( './../../lib/helpers/completions.js' );
 const Namespace = require( './../../lib/models/namespace.js' );
 const Lesson = require( './../../lib/models/lesson.js' );
@@ -80,3 +81,22 @@ tape( 'should return an array of objects (namespace level)', ( t ) => {
 	});
 });
 
+tape( 'should return an empty array when there are no completions for the users (namespace level)', ( t ) => {
+	User.find( {} ).then( ( users ) => {
+		Namespace.findOne({
+			title: 'DraculaVsTheWolfMan'
+		})
+			.then( ( namespace ) => {
+				users = users.map( user => user._id );
+				getBranchData( 'average-score', [ namespace._id ], 'namespace', users )
+					.then( ( arr ) => {
+						t.ok( isEmptyArray( arr ), 'returns an empty array' );
+						t.end();
+					})
+					.catch( err => {
+						t.error( err );
+						t.end();
+					});
+			});
+	});
+});
