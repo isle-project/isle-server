@@ -71,7 +71,7 @@ tape( 'the function should return an array of node IDs that match the completion
 			relevantNodes( namespace._id, 'namespace', [ 'all' ], null )
 				.then( ( arr ) => {
 					t.ok( isStringArray( arr ), 'returns an array of strings' );
-					t.strictEqual( arr.length, 1, 'returns an array of length 1' );
+					t.strictEqual( arr.length, 3, 'returns an array of length 3' );
 					t.ok( isValidObjectId( arr[ 0 ] ), 'returns an array of valid ObjectIds' );
 					t.end();
 				});

@@ -42,7 +42,7 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'populate the database', utils.populateDatabase );
 
-tape( 'should return an array of objects (lesson level)', ( t ) => {
+tape( 'should return an array of objects (lesson level)', { skip: true }, ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.find({})
 			.then( ( lessons ) => {
