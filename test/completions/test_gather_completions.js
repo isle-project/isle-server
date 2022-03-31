@@ -77,6 +77,8 @@ tape( 'should return an object mapping user IDs to the correct completion scores
 		})
 			.then( ( lesson ) => {
 				users = users.map( user => user._id );
+
+				console.log( 'Lesson info:', lesson._id, lesson.completion[ 0 ] );
 				gatherCompletions( lesson._id, lesson.completion[ 0 ], users )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
