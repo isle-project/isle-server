@@ -79,35 +79,76 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 	function createUsers( next ) {
 		const pop = [
 			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f10'),
 				'email': 'zorro707@gmail.com',
 				'name': 'Zorro',
 				'password': 'zorro_is_the_best'
 			},
 			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f11'),
 				'email': 'wolfman666@gmail.com',
 				'name': 'The Wolfman',
 				'password': 'Lon Chaney Jr.'
 			},
 			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f12'),
 				'email': 'dracula@gmail.com',
 				'name': 'Count Dracula',
 				'password': 'Bela Lugosi'
 			},
 			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f13'),
 				'email': 'ed_wood@gmail.com',
 				'name': 'Ed Wood',
 				'password': 'Plan 9 from Outer Space'
 			},
 			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f14'),
 				'email': 'mummy@gmail.com',
 				'name': 'The Mummy',
 				'password': 'Egypt'
 			},
 			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f15'),
 				'email': 'frankenstein@gmail.com',
 				'name': 'Boris Karloff',
 				'password': 'Mary Shelly'
 			}
+			/*
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f16')
+			},
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f17')
+			},
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f18')
+			},
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f19')
+			},
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f1a')
+			},
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f1b')
+			},
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f1c')
+			},
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f1d')
+			},
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f1e')
+			},
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f1f')
+			},
+			{
+				'_id': new ObjectID('623ce01a33522d1d834b8f20')
+			}
+			*/
 		];
 		User.create( pop, ( err, users ) => {
 			next( err, { users });

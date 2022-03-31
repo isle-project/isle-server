@@ -46,10 +46,12 @@ tape( 'populate the database', utils.populateDatabase );
 
 tape( 'should return an object mapping user IDs to numbers between 0 and 100 (lesson level)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
-		Lesson.find({})
-			.then( ( lessons ) => {
+		Lesson.findOne({
+			title: 'Unearth the monster'
+		})
+			.then( ( lesson ) => {
 				users = users.map( user => user._id );
-				gatherCompletions( 'lesson-score', lessons.map( x => x._id ), 'lesson', users )
+				gatherCompletions( lesson._id, lesson.completion[ 0 ], users )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
 						const userKeys = objectKeys( obj );
@@ -58,6 +60,30 @@ tape( 'should return an object mapping user IDs to numbers between 0 and 100 (le
 							const user = String( users[ i ] );
 							t.ok( isNumber( obj[ user ] ) && obj[ user ] >= 0 && obj[ user ] <= 100, 'each user score is between 0 and 100' );
 						}
+						t.end();
+					})
+					.catch( err => {
+						t.error( err );
+						t.end();
+					});
+			});
+	});
+});
+
+tape( 'should return an object mapping user IDs to the correct completion scores (lesson level)', ( t ) => {
+	User.find( {} ).then( ( users ) => {
+		Lesson.findOne({
+			title: 'Unearth the monster'
+		})
+			.then( ( lesson ) => {
+				users = users.map( user => user._id );
+				gatherCompletions( lesson._id, lesson.completion[ 0 ], users )
+					.then( ( obj ) => {
+						t.ok( isObject( obj ), 'returns an array of objects' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 90, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 90' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 35, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 35' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 0' );
 						t.end();
 					})
 					.catch( err => {
