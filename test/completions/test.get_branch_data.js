@@ -47,7 +47,8 @@ tape( 'should return an array of objects (lesson level)', ( t ) => {
 		Lesson.find({})
 			.then( ( lessons ) => {
 				users = users.map( user => user._id );
-				getBranchData( 'lesson-score', lessons.map( x => x._id ), 'lesson', users )
+				const metric = { ref: 'lesson-score' };
+				getBranchData( metric, lessons.map( x => x._id ), 'lesson', users )
 					.then( ( arr ) => {
 						t.ok( isObjectArray( arr ), 'returns an array of objects' );
 						t.end();
@@ -67,7 +68,8 @@ tape( 'should return an array of objects (namespace level)', ( t ) => {
 		})
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
-				getBranchData( 'average-score', [ namespace._id ], 'namespace', users )
+				const metric = { ref: 'average-score' };
+				getBranchData( metric, [ namespace._id ], 'namespace', users )
 					.then( ( arr ) => {
 						t.ok( isObjectArray( arr ), 'returns an array of objects' );
 						t.end();
@@ -87,7 +89,8 @@ tape( 'should return an array of objects mapping user IDs to the value zero when
 		})
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
-				getBranchData( 'average-score', [ namespace._id ], 'namespace', users )
+				const metric = { ref: 'average-score' };
+				getBranchData( metric, [ namespace._id ], 'namespace', users )
 					.then( ( arr ) => {
 						t.ok( isObjectArray( arr ), 'returns an array of objects' );
 						for ( let i = 0; i < arr.length; i++ ) {
