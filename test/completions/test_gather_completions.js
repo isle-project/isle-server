@@ -73,7 +73,7 @@ tape( 'should return an object mapping user IDs to numbers between 0 and 100 (le
 tape( 'should again return an object mapping user IDs to the correct completion scores (lesson level)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne({
-			title: 'Kill the cemetery keeper'
+			title: 'Drink his blood'
 		})
 			.then( ( lesson ) => {
 				users = users.map( user => user._id );
@@ -83,9 +83,9 @@ tape( 'should again return an object mapping user IDs to the correct completion 
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
 						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 75, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 75' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 80, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 80' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 50, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 50' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 65, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 60' );
 						t.end();
 					})
 					.catch( err => {
@@ -99,7 +99,7 @@ tape( 'should again return an object mapping user IDs to the correct completion 
 tape( 'should yet again return an object mapping user IDs to the correct completion scores (lesson level)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne({
-			title: 'Drink his blood'
+			title: 'Talbot, you are a murderer'
 		})
 			.then( ( lesson ) => {
 				users = users.map( user => user._id );
@@ -110,9 +110,9 @@ tape( 'should yet again return an object mapping user IDs to the correct complet
 						t.ok( isObject( obj ), 'returns an array of objects' );
 						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 0' );
 						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 50, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 50' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 60, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 60' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 80, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 80' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 95, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 95' );
 						t.end();
 					})
 					.catch( err => {
