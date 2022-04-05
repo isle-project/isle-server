@@ -83,9 +83,11 @@ tape( 'should again return an object mapping user IDs to the correct completion 
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
 						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 50, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 50' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 65, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 60' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 50, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 50' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 30, 'user with ID `623ce01a33522d1d834b8f14` has a completion score of 30' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 0, 'user with ID `623ce01a33522d1d834b8f15` has a completion score of 0' );
 						t.end();
 					})
 					.catch( err => {
@@ -111,8 +113,9 @@ tape( 'should yet again return an object mapping user IDs to the correct complet
 						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 0' );
 						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 0' );
 						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 80, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 80' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 95, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 95' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 40, 'user with ID `623ce01a33522d1d834b8f14` has a completion score of 40' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 95, 'user with ID `623ce01a33522d1d834b8f15` has a completion score of 95' );
 						t.end();
 					})
 					.catch( err => {
