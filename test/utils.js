@@ -329,26 +329,10 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 			{
 				lesson: lessons[ 0 ]._id,
 				user: users[ 0 ]._id,
-				component: 'free-text-question-1',
-				completion: 'completed',
-				time: new Date( '2017-01-03T00:00:00.000Z' ).getTime(),
-				value: 65
-			},
-			{
-				lesson: lessons[ 0 ]._id,
-				user: users[ 0 ]._id,
 				component: 'free-text-question-2',
 				completion: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 				value: 100
-			},
-			{
-				lesson: lessons[ 0 ]._id,
-				user: users[ 0 ]._id,
-				component: 'free-text-question-2',
-				completion: 'completed',
-				time: new Date( '2017-01-03T00:00:00.000Z' ).getTime(),
-				value: 80
 			},
 			{
 				lesson: lessons[ 0 ]._id,
@@ -380,7 +364,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				component: 'free-text-question-4',
 				completion: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
-				value: 80
+				value: 90
 			},
 			{
 				lesson: lessons[ 1 ]._id,
@@ -388,7 +372,15 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				component: 'free-text-question-3',
 				completion: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
-				value: 75
+				value: 80
+			},
+			{
+				lesson: lessons[ 2 ]._id,
+				user: users[ 2 ]._id,
+				component: 'free-text-question-6',
+				completion: 'completed',
+				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
+				value: 40
 			},
 			{
 				lesson: lessons[ 2 ]._id,
@@ -396,7 +388,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				component: 'free-text-question-7',
 				completion: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
-				value: 40
+				value: 60
 			},
 			{
 				lesson: lessons[ 2 ]._id,

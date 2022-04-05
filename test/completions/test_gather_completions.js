@@ -146,3 +146,29 @@ tape( 'should return an object mapping user IDs to zero if no completion data is
 			});
 	});
 });
+
+tape( 'should return an object mapping user IDs to the correct completion scores (namespace level)', ( t ) => {
+	User.find( {} ).then( ( users ) => {
+		Namespace.findOne({
+			title: 'DraculaVsFrankenstein'
+		})
+			.then( ( namespace ) => {
+				users = users.map( user => user._id );
+				gatherCompletions( namespace._id, namespace.completion[ 0 ], users )
+					.then( ( obj ) => {
+						t.ok( isObject( obj ), 'returns an array of objects' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 90, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 90' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 55, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 35' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 65, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 65' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 80, 'user with ID `623ce01a33522d1d834b8f14` has a completion score of 80' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 95, 'user with ID `623ce01a33522d1d834b8f15` has a completion score of 95' );
+						t.end();
+					})
+					.catch( err => {
+						t.error( err );
+						t.end();
+					});
+			});
+	});
+});
