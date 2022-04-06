@@ -38,7 +38,7 @@ const { DEFAULT_TAG,
 
 // FIXTURES //
 
-const basicPolicy = makeCompletionPolicy();
+const basicPolicy = makeCompletionPolicy( {} );
 
 
 // TESTS //

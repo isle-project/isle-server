@@ -44,7 +44,7 @@ const nodes = [
 	'free-text-question-2'
 ];
 
-const basicPolicy = makeCompletionPolicy();
+const basicPolicy = makeCompletionPolicy( {} );
 const filteringPolicy = makeCompletionPolicy({
     timeFilter: [1483228800000, 1483315200000]
 });

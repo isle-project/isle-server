@@ -36,7 +36,7 @@ const { getBranchData,
 
 // FIXTURES //
 
-const basicPolicy = makeCompletionPolicy();
+const basicPolicy = makeCompletionPolicy( {} );
 
 
 // TESTS //
