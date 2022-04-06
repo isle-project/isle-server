@@ -21,13 +21,23 @@
 
 // MODULES //
 
-const tape = require( 'tape' );
+const isEmptyArray = require( '@stdlib/assert/is-empty-array' );
 const isObjectArray = require( '@stdlib/assert/is-object-array' );
-const { getBranchData } = require( './../../lib/helpers/completions.js' );
+const objectValues = require( '@stdlib/utils/values' );
+const tape = require( 'tape' );
+
 const Namespace = require( './../../lib/models/namespace.js' );
 const Lesson = require( './../../lib/models/lesson.js' );
 const User = require( './../../lib/models/user.js' );
 const utils = require( './../utils.js' );
+
+const { DEFAULT_TAG,
+        getBranchData,
+        makeCompletionPolicy } = require( './../../lib/helpers/completions.js' );
+
+// FIXTURES //
+
+const basicPolicy = makeCompletionPolicy();
 
 
 // TESTS //
@@ -48,7 +58,7 @@ tape( 'should return an array of objects (lesson level)', ( t ) => {
 			.then( ( lessons ) => {
 				users = users.map( user => user._id );
 				const metric = { ref: 'lesson-score' };
-				getBranchData( metric, lessons.map( x => x._id ), 'lesson', users )
+				getBranchData( metric, lessons.map( x => x._id ), 'lesson', users, basicPolicy )
 					.then( ( arr ) => {
 						t.ok( isObjectArray( arr ), 'returns an array of objects' );
 						t.end();
@@ -69,7 +79,7 @@ tape( 'should return an array of objects (namespace level)', ( t ) => {
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
 				const metric = { ref: 'average-score' };
-				getBranchData( metric, [ namespace._id ], 'namespace', users )
+				getBranchData( metric, [ namespace._id ], 'namespace', users, basicPolicy )
 					.then( ( arr ) => {
 						t.ok( isObjectArray( arr ), 'returns an array of objects' );
 						t.end();
@@ -82,7 +92,7 @@ tape( 'should return an array of objects (namespace level)', ( t ) => {
 	});
 });
 
-tape( 'should return an array of objects mapping user IDs to the value zero when there are no completions for the users (namespace level)', ( t ) => {
+tape( 'should return an array of objects mapping user IDs to empty array for each tag when there are no completions for the users (namespace level)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Namespace.findOne({
 			title: 'DraculaVsTheWolfMan'
@@ -90,13 +100,13 @@ tape( 'should return an array of objects mapping user IDs to the value zero when
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
 				const metric = { ref: 'average-score' };
-				getBranchData( metric, [ namespace._id ], 'namespace', users )
+				getBranchData( metric, [ namespace._id ], 'namespace', users, basicPolicy )
 					.then( ( arr ) => {
 						t.ok( isObjectArray( arr ), 'returns an array of objects' );
 						for ( let i = 0; i < arr.length; i++ ) {
 							const byUsers = arr[ i ];
 							for ( let j = 0; j < users.length; j++ ) {
-								t.equal( byUsers[ users[ j ] ], 0, 'returns zero' );
+								t.ok( objectValues(byUsers[ users[ j ] ]).every(isEmptyArray), 'gives empty array for each user-tag pair' );
 							}
 						}
 						t.end();

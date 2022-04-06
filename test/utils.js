@@ -323,7 +323,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				user: users[ 0 ]._id,
 				component: 'free-text-question-1',
 				completion: 'completed',
-				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
+				time: new Date( '2017-01-03T00:00:00.000Z' ).getTime(),
 				value: 80
 			},
 			{

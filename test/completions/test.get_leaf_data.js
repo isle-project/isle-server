@@ -21,14 +21,21 @@
 
 // MODULES //
 
-const tape = require( 'tape' );
-const isObjectArray = require( '@stdlib/assert/is-object-array' );
-const objectValues = require( '@stdlib/utils/values' );
 const hasOwnProp = require( '@stdlib/assert/has-own-property' );
-const { getLeafData } = require( './../../lib/helpers/completions.js' );
+const isArray = require( '@stdlib/assert/is-array' );
+const isObject = require( '@stdlib/assert/is-object' );
+const isObjectArray = require( '@stdlib/assert/is-object-array' );
+const objectKeys = require( '@stdlib/utils/keys' );
+const objectValues = require( '@stdlib/utils/values' );
+const tape = require( 'tape' );
+
 const Lesson = require( './../../lib/models/lesson.js' );
 const User = require( './../../lib/models/user.js' );
 const utils = require( './../utils.js' );
+
+const { DEFAULT_TAG,
+        getLeafData,
+        makeCompletionPolicy } = require( './../../lib/helpers/completions.js' );
 
 
 // FIXTURES //
@@ -37,6 +44,11 @@ const nodes = [
 	'free-text-question-1',
 	'free-text-question-2'
 ];
+
+const basicPolicy = makeCompletionPolicy();
+const filteringPolicy = makeCompletionPolicy({
+    timeFilter: [1483228800000, 1483315200000]
+});
 
 
 // TESTS //
@@ -61,7 +73,7 @@ tape( 'should return an array of objects', ( t ) => {
 					enumerable: false
 				});
 				users = users.map( user => user._id );
-				getLeafData( 'completed', nodes, null, users )
+				getLeafData( 'completed', nodes, null, users, basicPolicy )
 					.then( ( arr ) => {
 						t.ok( isObjectArray( arr ), 'returns an array of objects' );
 						t.end();
@@ -74,9 +86,9 @@ tape( 'should return an array of objects', ( t ) => {
 	});
 });
 
-tape( 'should return an object array with each object having a userId key', ( t ) => {
+tape( 'getLeafData should return an object array with each object having a userId key that in turn maps to an object whose values are arrays of pairs', ( t ) => {
 	User.find( {} ).then( ( users ) => {
-		Lesson.findOne()
+		Lesson.findOne({ title: 'Unearth the monster' })
 			.then( ( lesson ) => {
 				Object.defineProperty( nodes, '_lessonId', {
 					value: lesson._id,
@@ -84,13 +96,25 @@ tape( 'should return an object array with each object having a userId key', ( t 
 					enumerable: false
 				});
 				users = users.map( user => user._id );
-				getLeafData( 'completed', nodes, null, users )
+				getLeafData( 'completed', nodes, null, users, basicPolicy )
 					.then( ( arr ) => {
 						const userIds = new Set( users.map( String ) );
 						t.ok( arr.every( a => {
-							const keys = Object.keys( a );
+							const keys = objectKeys( a );
 							return keys.every( k => userIds.has( k ) );
 						}), 'has user ID keys' );
+						t.ok( arr.every( a => {
+							const keys = objectKeys( a );
+							return keys.every( k => isObject(a[k]) );
+						}), 'gives an object for each user ID' );
+						t.ok( arr.every( a => {
+							const keys = objectKeys( a );
+							return keys.every( k => objectValues(a[k]).every(isArray) );
+						}), 'gives an object with array values for each user ID' );
+						t.ok( arr.every( a => {
+							const keys = objectKeys( a );
+							return keys.every( k => objectValues(a[k]).every(data => data.every(elt => isArray(elt) && elt.length === 2 )) );
+						}), 'gives an object whose values are arrays of pairs for each user ID' );
 						t.end();
 					})
 					.catch( err => {
@@ -101,9 +125,9 @@ tape( 'should return an object array with each object having a userId key', ( t 
 	});
 });
 
-tape( 'should return an object array with each object having values with keys `value`, `time`, and `tag`', ( t ) => {
+tape( 'getLeafData should return appropriate values for a given lesson', ( t ) => {
 	User.find( {} ).then( ( users ) => {
-		Lesson.findOne()
+		Lesson.findOne({ title: 'Unearth the monster' })
 			.then( ( lesson ) => {
 				Object.defineProperty( nodes, '_lessonId', {
 					value: lesson._id,
@@ -111,16 +135,41 @@ tape( 'should return an object array with each object having values with keys `v
 					enumerable: false
 				});
 				users = users.map( user => user._id );
-				getLeafData( 'completed', nodes, null, users )
+				getLeafData( 'completed', nodes, null, users, basicPolicy )
 					.then( ( arr ) => {
-						t.ok( arr.every( a => {
-							const values = objectValues( a );
-							return values.every( v =>
-								hasOwnProp( v, 'value' ) &&
-								hasOwnProp( v, 'time' ) &&
-								hasOwnProp( v, 'tag' )
-							);
-						}), 'has keys `value`, `time`, and `tag`' );
+                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10']).map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0] ).sort();
+                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11']).map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0] ).sort();
+                                                const user2vals = arr.filter(x => x['623ce01a33522d1d834b8f12']);
+                                                // ATTN:MORE ...
+
+						t.ok( user0vals[0] === 80 && user0vals[1] === 100, 'gives user 0 correct values' );
+						t.ok( user1vals[0] === 20 && user0vals[1] === 50,  'gives user 1 correct values' );
+                                                t.ok( user2vals.length === 0, 'has no values for user 2' );
+						t.end();
+					})
+					.catch( err => {
+						t.error( err );
+						t.end();
+					});
+			});
+	});
+});
+
+tape( 'getLeafData should return appropriate values for a given lesson with a time filter', ( t ) => {
+	User.find( {} ).then( ( users ) => {
+		Lesson.findOne({ title: 'Unearth the monster' })
+			.then( ( lesson ) => {
+				Object.defineProperty( nodes, '_lessonId', {
+					value: lesson._id,
+					writable: true,
+					enumerable: false
+				});
+				users = users.map( user => user._id );
+				getLeafData( 'completed', nodes, null, users, filteringPolicy )
+					.then( ( arr ) => {
+                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10']).map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0] ).sort();
+
+						t.ok( user0vals.length === 1 && user0vals[0] === 100, 'gives user 0 correct values' );
 						t.end();
 					})
 					.catch( err => {

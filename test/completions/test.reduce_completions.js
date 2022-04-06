@@ -20,10 +20,17 @@
 // MODULES //
 
 const tape = require( 'tape' );
-const { reduceCompletions, DEFAULT_TAG } = require( './../../lib/helpers/completions.js' );
+const { DEFAULT_TAG,
+        makeCompletionPolicy,
+        reduceCompletions } = require( './../../lib/helpers/completions.js' );
 
 
 // FIXTURES //
+
+const metric = {
+    // We only need the rule for these tests.
+    rule: [ 'average' ],
+};
 
 const byUsers = {
 	'u1': {
@@ -95,18 +102,6 @@ const byUsersWithSomeTags = {
 	}
 };
 
-const metric = {
-	rule: [ 'average' ],
-	tagWeights: {
-		'homework': 1,
-		'exams': 3
-	}
-};
-
-const metricWithoutTagWeights = {
-	rule: [ 'average' ]
-};
-
 
 // TESTS //
 
@@ -118,8 +113,8 @@ tape( 'main export is a function', t => {
 
 tape( 'the function returns an object with user id keys and a completion value for each of them', t => {
 	const expected = {
-		'u1': 82.5,
-		'u2': 73.75
+		'u1': { homework: 90, exams: 80 },
+		'u2': { homework: 70, exams: 75 },
 	};
 	const actual = reduceCompletions( byUsers, metric );
 	t.deepEqual( actual, expected, 'returns expected value' );
@@ -128,18 +123,8 @@ tape( 'the function returns an object with user id keys and a completion value f
 
 tape( 'the function returns an object with user id keys and a completion value for each of them (only with default tag)', t => {
 	const expected = {
-		'u1': 85,
-		'u2': 72 // TODO: verify
-	};
-	const actual = reduceCompletions( byUsersWithoutTags, metricWithoutTagWeights );
-	t.deepEqual( actual, expected, 'returns expected value' );
-	t.end();
-});
-
-tape( 'the function returns an object with user id keys and a completion value of zero if tag weights are supplied but no custom tags for any of the users', t => {
-	const expected = {
-		'u1': 0,
-		'u2': 0
+		'u1': { [DEFAULT_TAG]: 85 },
+		'u2': { [DEFAULT_TAG]: 72 }
 	};
 	const actual = reduceCompletions( byUsersWithoutTags, metric );
 	t.deepEqual( actual, expected, 'returns expected value' );
@@ -148,20 +133,10 @@ tape( 'the function returns an object with user id keys and a completion value o
 
 tape( 'the function returns an object with user id keys and a completion value if tags weights are supplied but some completions have the default tag', t => {
 	const expected = {
-		'u1': 25,
-		'u2': 25
+		'u1': { homework: 100, exams: 0, [DEFAULT_TAG]: 80 },
+		'u2': { homework: 100, exams: 0, [DEFAULT_TAG]: 75 },
 	};
 	const actual = reduceCompletions( byUsersWithSomeTags, metric );
-	t.deepEqual( actual, expected, 'returns expected value' );
-	t.end();
-});
-
-tape( 'the function returns an object with user id keys and a completion value for each of them when the metric does not have tag weights', t => {
-	const expected = {
-		'u1': 85.0,
-		'u2': 72.5
-	};
-	const actual = reduceCompletions( byUsers, metricWithoutTagWeights );
 	t.deepEqual( actual, expected, 'returns expected value' );
 	t.end();
 });
