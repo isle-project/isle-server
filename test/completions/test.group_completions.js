@@ -123,6 +123,7 @@ tape( 'the function returns an object with user id keys mapping to an object of 
                 }
         };
         const actual = groupCompletions( nodeCompletions, basicPolicy );
+        console.log( '>> groupCompletions actual: ', JSON.stringify(actual, null, 2) );  // ATTN: DEBUG
         t.deepEqual( actual, expected, 'returns expected value' );
         t.end();
 });

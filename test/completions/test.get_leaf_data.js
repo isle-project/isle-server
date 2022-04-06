@@ -97,6 +97,7 @@ tape( 'getLeafData should return an object array with each object having a userI
 				users = users.map( user => user._id );
 				getLeafData( 'completed', nodes, null, users, basicPolicy )
 					.then( ( arr ) => {
+                                                console.log( '>> getLeafData on Unearth the monster: ', JSON.stringify(arr, null, 2) );  // ATTN: DEBUG
 						const userIds = new Set( users.map( String ) );
 						t.ok( arr.every( a => {
 							const keys = objectKeys( a );
@@ -166,6 +167,7 @@ tape( 'getLeafData should return appropriate values for a given lesson with a ti
 				users = users.map( user => user._id );
 				getLeafData( 'completed', nodes, null, users, filteringPolicy )
 					.then( ( arr ) => {
+                                                console.log( '>> getLeafData on FILTERED Unearth the monster: ', JSON.stringify(arr, null, 2) );  // ATTN: DEBUG
                                                 const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10']).map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0] ).sort();
 
 						t.ok( user0vals.length === 1 && user0vals[0] === 100, 'gives user 0 correct values' );

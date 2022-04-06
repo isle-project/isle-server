@@ -65,6 +65,7 @@ tape( 'should return an object mapping with all user IDs as keys map to an objec
 				users = users.map( user => user._id );
 				gatherCompletions( lesson._id, lesson.completion[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
+                                                console.log( '>> gatherCompletions on Unearth the monster: ', JSON.stringify(obj, null, 2) );  // ATTN: DEBUG
 						t.ok( isObject( obj ), 'returns an object' );
 						const userKeys = objectKeys( obj );
 						t.equal( userKeys.length, users.length, 'each user is represented in the returned object' );

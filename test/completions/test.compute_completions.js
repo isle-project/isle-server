@@ -85,6 +85,8 @@ tape( 'computeCompletions should return an object mapping user IDs to numbers be
 				users = users.map( user => user._id );
 				computeCompletions( lesson._id, lesson.completion[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
+                                                console.log( '>> computeCompletions on Unearth the monster: ', JSON.stringify(obj, null, 2) );  // ATTN: DEBUG
+
 						t.ok( isObject( obj ), 'returns an array of objects' );
 						const userKeys = objectKeys( obj );
 						t.equal( userKeys.length, users.length, 'each user is represented in the returned object' );

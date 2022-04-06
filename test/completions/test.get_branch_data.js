@@ -59,6 +59,7 @@ tape( 'should return an array of objects (lesson level)', ( t ) => {
 				const metric = { ref: 'lesson-score' };
 				getBranchData( metric, lessons.map( x => x._id ), 'lesson', users, basicPolicy )
 					.then( ( arr ) => {
+                                                console.log( '>> getBranchData on lesson level: ', JSON.stringify(arr, null, 2) );  // ATTN: DEBUG
 						t.ok( isObjectArray( arr ), 'returns an array of objects' );
 						t.end();
 					})
@@ -80,6 +81,7 @@ tape( 'should return an array of objects (namespace level)', ( t ) => {
 				const metric = { ref: 'average-score' };
 				getBranchData( metric, [ namespace._id ], 'namespace', users, basicPolicy )
 					.then( ( arr ) => {
+                                                console.log( '>> getBranchData on namespace DraculaVsFrankenstein: ', JSON.stringify(arr, null, 2) );  // ATTN: DEBUG
 						t.ok( isObjectArray( arr ), 'returns an array of objects' );
 						t.end();
 					})
