@@ -137,10 +137,10 @@ tape( 'getLeafData should return appropriate values for a given lesson', ( t ) =
 				users = users.map( user => user._id );
 				getLeafData( 'completed', nodes, null, users, basicPolicy )
 					.then( ( arr ) => {
-                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10'] && x['623ce01a33522d1d834b8f10'].length > 0)
+                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10'] && x['623ce01a33522d1d834b8f10'][DEFAULT_TAG].length > 0)
                                                       .map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0][0] )
                                                       .sort((a, b) => a - b);
-                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11'] && x['623ce01a33522d1d834b8f11'].length > 0)
+                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11'] && x['623ce01a33522d1d834b8f11'][DEFAULT_TAG].length > 0)
                                                       .map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] )
                                                       .sort((a, b) => a - b);
                                                 const user2vals = arr.filter(x => x['623ce01a33522d1d834b8f12']);
@@ -174,10 +174,10 @@ tape( 'getLeafData should return appropriate values for a given lesson with a ti
 				getLeafData( 'completed', nodes, null, users, filteringPolicy )
 					.then( ( arr ) => {
                                                 console.log( '>> getLeafData on FILTERED Unearth the monster: ', JSON.stringify(arr, null, 2) );  // ATTN: DEBUG
-                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10'] && x['623ce01a33522d1d834b8f10'].length > 0)
+                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10'] && x['623ce01a33522d1d834b8f10'][DEFAULT_TAG].length > 0)
                                                       .map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0][0] )
                                                       .sort((a, b) => a - b);
-                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11'] && x['623ce01a33522d1d834b8f11'].length > 0)
+                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11'] && x['623ce01a33522d1d834b8f11'][DEFAULT_TAG].length > 0)
                                                       .map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] )
                                                       .sort((a, b) => a - b);
 
