@@ -1,19 +1,19 @@
 /**
-* Copyright (C) 2016-present The ISLE Authors
-*
-* The isle-server program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Affero General Public License as
-* published by the Free Software Foundation, either version 3 of the
-* License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Affero General Public License for more details.
-*
-* You should have received a copy of the GNU Affero General Public License
-* along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ * Copyright (C) 2016-present The ISLE Authors
+ *
+ * The isle-server program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 /* eslint-disable max-nested-callbacks, no-multi-spaces */
 
@@ -137,8 +137,8 @@ tape( 'getLeafData should return appropriate values for a given lesson', ( t ) =
 				users = users.map( user => user._id );
 				getLeafData( 'completed', nodes, null, users, basicPolicy )
 					.then( ( arr ) => {
-                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10']).map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0] ).sort();
-                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11']).map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0] ).sort();
+                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10']).map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0][0] ).sort();
+                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11']).map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] ).sort();
                                                 const user2vals = arr.filter(x => x['623ce01a33522d1d834b8f12']);
                                                 // ATTN:MORE ...
 
@@ -170,11 +170,11 @@ tape( 'getLeafData should return appropriate values for a given lesson with a ti
 				getLeafData( 'completed', nodes, null, users, filteringPolicy )
 					.then( ( arr ) => {
                                                 console.log( '>> getLeafData on FILTERED Unearth the monster: ', JSON.stringify(arr, null, 2) );  // ATTN: DEBUG
-                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10']).map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0] ).sort();
-                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11']).map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0] ).sort();
+                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10']).map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0][0] ).sort();
+                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11']).map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] ).sort();
 
-						t.strictEqual( user0vals.length, 1, 'gives user 0 correct number oof values' );
-						t.strictEqual( user0vals[0] === 100, 'gives user 0 correct value' );
+						t.strictEqual( user0vals.length, 1, 'gives user 0 correct number of values' );
+						t.strictEqual( user0vals[0], 100, 'gives user 0 correct value' );
 						t.strictEqual( user1vals[0], 20,  'gives user 1 correct smallest value' );
 						t.strictEqual( user1vals[1], 50,  'gives user 1 correct largest value' );
 						t.end();
