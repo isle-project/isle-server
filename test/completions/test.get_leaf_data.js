@@ -144,7 +144,7 @@ tape( 'getLeafData should return appropriate values for a given lesson', ( t ) =
                                                       .map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] )
                                                       .sort((a, b) => a - b);
                                                 const user2vals = arr.filter(x => x['623ce01a33522d1d834b8f12'] && x['623ce01a33522d1d834b8f12'][DEFAULT_TAG].length > 0)
-                                                      .map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] )
+                                                      .map( x => x['623ce01a33522d1d834b8f12'][DEFAULT_TAG][0][0] )
                                                       .sort((a, b) => a - b);
                                                 // ATTN:MORE ...
 
