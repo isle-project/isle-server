@@ -15,7 +15,7 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-/* eslint-disable max-nested-callbacks */
+/* eslint-disable max-nested-callbacks, no-multi-spaces */
 
 'use strict';
 
@@ -31,8 +31,7 @@ const Lesson = require( './../../lib/models/lesson.js' );
 const User = require( './../../lib/models/user.js' );
 const utils = require( './../utils.js' );
 
-const { DEFAULT_TAG,
-        getBranchData,
+const { getBranchData,
         makeCompletionPolicy } = require( './../../lib/helpers/completions.js' );
 
 // FIXTURES //

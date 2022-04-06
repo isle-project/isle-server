@@ -15,7 +15,7 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-/* eslint-disable max-nested-callbacks */
+/* eslint-disable max-nested-callbacks, no-multi-spaces */
 
 'use strict';
 
@@ -23,7 +23,6 @@
 
 const isArray      = require( '@stdlib/assert/is-array' );
 const isEmptyArray = require( '@stdlib/assert/is-empty-array' );
-const isNumber     = require( '@stdlib/assert/is-number' ).isPrimitive;
 const isObject     = require( '@stdlib/assert/is-plain-object' );
 const objectKeys   = require( '@stdlib/utils/keys' );
 const tape         = require( 'tape' );
@@ -119,7 +118,6 @@ tape( 'should return an object mapping user IDs to DEFAULT_TAG to empty array if
 				gatherCompletions( namespace._id, namespace.completion[ 0 ], users )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an object' );
-						const userKeys = objectKeys( obj );
 						for ( let i = 0; i < users.length; ++i ) {
 							const user = String( users[ i ] );
 							t.ok( obj[ user ][ DEFAULT_TAG ], 'each user and DEFAULT_TAG exists' );

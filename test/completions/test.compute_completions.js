@@ -15,7 +15,7 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-/* eslint-disable max-nested-callbacks */
+/* eslint-disable max-nested-callbacks, no-multi-spaces, no-unused-vars */
 
 'use strict';
 
@@ -40,11 +40,11 @@ const { DEFAULT_TAG,
 const almostEquals = (a, b) => {  // ATTN:CHECK THIS - basically ok but epsilon might be tweaked
     if ( a === b ) {
         return true;
-    } else if ( a === 0 || b === 0 || (Math.abs(a/2) + Math.abs(b/2)) < Number.EPSILON ) {
-        return Math.abs(a - b) < Number.EPSILON;
-    } else {
-        return Math.abs(a - b) < Number.EPSILON * (Math.abs(a/2) + Math.abs(b/2));
     }
+    if ( a === 0 || b === 0 || (Math.abs(a/2) + Math.abs(b/2)) < Number.EPSILON ) {
+        return Math.abs(a - b) < Number.EPSILON;
+    }
+    return Math.abs(a - b) < Number.EPSILON * (Math.abs(a/2) + Math.abs(b/2));
 };
 
 // FIXTURES //

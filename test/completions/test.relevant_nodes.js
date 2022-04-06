@@ -15,7 +15,7 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-/* eslint-disable max-nested-callbacks */
+/* eslint-disable max-nested-callbacks, no-multi-spaces */
 
 'use strict';
 

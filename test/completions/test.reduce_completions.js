@@ -15,13 +15,14 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+/* eslint-disable max-nested-callbacks, no-multi-spaces */
+
 'use strict';
 
 // MODULES //
 
 const tape = require( 'tape' );
 const { DEFAULT_TAG,
-        makeCompletionPolicy,
         reduceCompletions } = require( './../../lib/helpers/completions.js' );
 
 
@@ -29,7 +30,7 @@ const { DEFAULT_TAG,
 
 const metric = {
     // We only need the rule for these tests.
-    rule: [ 'average' ],
+    rule: [ 'average' ]
 };
 
 const byUsers = {
@@ -114,7 +115,7 @@ tape( 'main export is a function', t => {
 tape( 'the function returns an object with user id keys and a completion value for each of them', t => {
 	const expected = {
 		'u1': { homework: 90, exams: 80 },
-		'u2': { homework: 70, exams: 75 },
+		'u2': { homework: 70, exams: 75 }
 	};
 	const actual = reduceCompletions( byUsers, metric );
 	t.deepEqual( actual, expected, 'returns expected value' );
@@ -134,7 +135,7 @@ tape( 'the function returns an object with user id keys and a completion value f
 tape( 'the function returns an object with user id keys and a completion value if tags weights are supplied but some completions have the default tag', t => {
 	const expected = {
 		'u1': { homework: 100, exams: 0, [DEFAULT_TAG]: 80 },
-		'u2': { homework: 100, exams: 0, [DEFAULT_TAG]: 75 },
+		'u2': { homework: 100, exams: 0, [DEFAULT_TAG]: 75 }
 	};
 	const actual = reduceCompletions( byUsersWithSomeTags, metric );
 	t.deepEqual( actual, expected, 'returns expected value' );

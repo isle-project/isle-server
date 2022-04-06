@@ -15,13 +15,12 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-/* eslint-disable max-nested-callbacks */
+/* eslint-disable max-nested-callbacks, no-multi-spaces */
 
 'use strict';
 
 // MODULES //
 
-const hasOwnProp = require( '@stdlib/assert/has-own-property' );
 const isArray = require( '@stdlib/assert/is-array' );
 const isObject = require( '@stdlib/assert/is-object' );
 const isObjectArray = require( '@stdlib/assert/is-object-array' );
