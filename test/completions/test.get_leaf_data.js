@@ -137,8 +137,12 @@ tape( 'getLeafData should return appropriate values for a given lesson', ( t ) =
 				users = users.map( user => user._id );
 				getLeafData( 'completed', nodes, null, users, basicPolicy )
 					.then( ( arr ) => {
-                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10']).map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0][0] ).sort();
-                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11']).map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] ).sort();
+                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10'] && x['623ce01a33522d1d834b8f10'].length > 0)
+                                                      .map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0][0] )
+                                                      .sort((a, b) => a - b);
+                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11'] && x['623ce01a33522d1d834b8f11'].length > 0)
+                                                      .map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] )
+                                                      .sort((a, b) => a - b);
                                                 const user2vals = arr.filter(x => x['623ce01a33522d1d834b8f12']);
                                                 // ATTN:MORE ...
 
@@ -146,7 +150,7 @@ tape( 'getLeafData should return appropriate values for a given lesson', ( t ) =
 						t.strictEqual( user0vals[1], 100, 'gives user 0 correct largest value' );
 						t.strictEqual( user1vals[0], 20,  'gives user 1 correct smallest value' );
 						t.strictEqual( user1vals[1], 50,  'gives user 1 correct largest value' );
-                                                t.strictEqual( user2vals.length === 0, 'has no values for user 2' );
+                                                t.strictEqual( user2vals.length, 0, 'has no values for user 2' );
 						t.end();
 					})
 					.catch( err => {
@@ -170,8 +174,12 @@ tape( 'getLeafData should return appropriate values for a given lesson with a ti
 				getLeafData( 'completed', nodes, null, users, filteringPolicy )
 					.then( ( arr ) => {
                                                 console.log( '>> getLeafData on FILTERED Unearth the monster: ', JSON.stringify(arr, null, 2) );  // ATTN: DEBUG
-                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10']).map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0][0] ).sort();
-                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11']).map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] ).sort();
+                                                const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10'] && x['623ce01a33522d1d834b8f10'].length > 0)
+                                                      .map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0][0] )
+                                                      .sort((a, b) => a - b);
+                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11'] && x['623ce01a33522d1d834b8f11'].length > 0)
+                                                      .map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] )
+                                                      .sort((a, b) => a - b);
 
 						t.strictEqual( user0vals.length, 1, 'gives user 0 correct number of values' );
 						t.strictEqual( user0vals[0], 100, 'gives user 0 correct value' );
