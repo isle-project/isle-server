@@ -143,14 +143,17 @@ tape( 'getLeafData should return appropriate values for a given lesson', ( t ) =
                                                 const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11'] && x['623ce01a33522d1d834b8f11'][DEFAULT_TAG].length > 0)
                                                       .map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] )
                                                       .sort((a, b) => a - b);
-                                                const user2vals = arr.filter(x => x['623ce01a33522d1d834b8f12']);
+                                                const user2vals = arr.filter(x => x['623ce01a33522d1d834b8f12'] && x['623ce01a33522d1d834b8f12'][DEFAULT_TAG].length > 0)
+                                                      .map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] )
+                                                      .sort((a, b) => a - b);
                                                 // ATTN:MORE ...
 
 						t.strictEqual( user0vals[0], 80,  'gives user 0 correct smallest value' );
 						t.strictEqual( user0vals[1], 100, 'gives user 0 correct largest value' );
 						t.strictEqual( user1vals[0], 20,  'gives user 1 correct smallest value' );
 						t.strictEqual( user1vals[1], 50,  'gives user 1 correct largest value' );
-                                                t.strictEqual( user2vals.length, 0, 'has no values for user 2' );
+                                                t.strictEqual( user2vals[0], 0, 'has a correct imputed 0 for user 2' );
+                                                t.strictEqual( user2vals[1], 0, 'has another correct imputed 0 for user 2' );
 						t.end();
 					})
 					.catch( err => {
@@ -181,8 +184,8 @@ tape( 'getLeafData should return appropriate values for a given lesson with a ti
                                                       .map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0][0] )
                                                       .sort((a, b) => a - b);
 
-						t.strictEqual( user0vals.length, 1, 'gives user 0 correct number of values' );
-						t.strictEqual( user0vals[0], 100, 'gives user 0 correct value' );
+						t.strictEqual( user0vals[0], 0, 'gives user 0 correct imputed smallest value' );
+						t.strictEqual( user0vals[1], 100, 'gives user 0 correct largest value' );
 						t.strictEqual( user1vals[0], 20,  'gives user 1 correct smallest value' );
 						t.strictEqual( user1vals[1], 50,  'gives user 1 correct largest value' );
 						t.end();
