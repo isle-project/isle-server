@@ -142,9 +142,11 @@ tape( 'getLeafData should return appropriate values for a given lesson', ( t ) =
                                                 const user2vals = arr.filter(x => x['623ce01a33522d1d834b8f12']);
                                                 // ATTN:MORE ...
 
-						t.ok( user0vals[0] === 80 && user0vals[1] === 100, 'gives user 0 correct values' );
-						t.ok( user1vals[0] === 20 && user0vals[1] === 50,  'gives user 1 correct values' );
-                                                t.ok( user2vals.length === 0, 'has no values for user 2' );
+						t.strictEqual( user0vals[0], 80,  'gives user 0 correct smallest value' );
+						t.strictEqual( user0vals[1], 100, 'gives user 0 correct largest value' );
+						t.strictEqual( user1vals[0], 20,  'gives user 1 correct smallest value' );
+						t.strictEqual( user1vals[1], 50,  'gives user 1 correct largest value' );
+                                                t.strictEqual( user2vals.length === 0, 'has no values for user 2' );
 						t.end();
 					})
 					.catch( err => {
@@ -169,8 +171,12 @@ tape( 'getLeafData should return appropriate values for a given lesson with a ti
 					.then( ( arr ) => {
                                                 console.log( '>> getLeafData on FILTERED Unearth the monster: ', JSON.stringify(arr, null, 2) );  // ATTN: DEBUG
                                                 const user0vals = arr.filter(x => x['623ce01a33522d1d834b8f10']).map( x => x['623ce01a33522d1d834b8f10'][DEFAULT_TAG][0] ).sort();
+                                                const user1vals = arr.filter(x => x['623ce01a33522d1d834b8f11']).map( x => x['623ce01a33522d1d834b8f11'][DEFAULT_TAG][0] ).sort();
 
-						t.ok( user0vals.length === 1 && user0vals[0] === 100, 'gives user 0 correct values' );
+						t.strictEqual( user0vals.length, 1, 'gives user 0 correct number oof values' );
+						t.strictEqual( user0vals[0] === 100, 'gives user 0 correct value' );
+						t.strictEqual( user1vals[0], 20,  'gives user 1 correct smallest value' );
+						t.strictEqual( user1vals[1], 50,  'gives user 1 correct largest value' );
 						t.end();
 					})
 					.catch( err => {

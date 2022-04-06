@@ -90,7 +90,7 @@ tape( 'should return an object mapping with all user IDs as keys map to an objec
 		})
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
-				gatherCompletions( namespace._id, namespace.completion[ 0 ], users )
+				gatherCompletions( namespace._id, namespace.completion[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an object' );
 						const userKeys = objectKeys( obj );
@@ -116,7 +116,7 @@ tape( 'should return an object mapping user IDs to DEFAULT_TAG to empty array if
 		})
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
-				gatherCompletions( namespace._id, namespace.completion[ 0 ], users )
+				gatherCompletions( namespace._id, namespace.completion[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an object' );
 						for ( let i = 0; i < users.length; ++i ) {
