@@ -54,7 +54,7 @@ const nodeCompletionsWithoutTags = [
             'u1': { [DEFAULT_TAG]: [ [80, 1646160630592 ] ] },
             'u2': { [DEFAULT_TAG]: [ [100, 1646160630592 ] ] },
             'u3': { [DEFAULT_TAG]: [ [60, 1646160630592 ] ] },
-            'u4': { [DEFAULT_TAG]: [ [100, 1646160630592 ] ] },
+            'u4': { [DEFAULT_TAG]: [ [100, 1646160630592 ] ] }
         },
         {
             'u1': { [DEFAULT_TAG]: [ [60, 1646160630592] ] },
