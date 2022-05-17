@@ -225,7 +225,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 2 ]._id,
 				title: 'Unearth the monster',
 				public: true,
-				completion: [
+				completions: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -240,7 +240,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 2 ]._id,
 				title: 'Kill the cemetery keeper',
 				public: true,
-				completion: [
+				completions: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -255,7 +255,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 2 ]._id,
 				title: 'Drink his blood',
 				public: false,
-				completion: [
+				completions: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -270,7 +270,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 0 ]._id,
 				title: 'Why have you followed me',
 				public: true,
-				completion: [
+				completions: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -285,7 +285,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 0 ]._id,
 				title: 'Talbot, you are a murderer',
 				public: true,
-				completion: [
+				completions: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -300,7 +300,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 0 ]._id,
 				title: 'Prove it',
 				public: false,
-				completion: [
+				completions: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
