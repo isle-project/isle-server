@@ -20,6 +20,8 @@
 	"cohort-updated": "Cohort successfully updated.",
 	"complete-registration": "Complete Registration",
 	"complete-registration-email": "Dear {{user}}, please click the link below to complete the registration processing by entering your name and choosing a password of your liking.<br />\nYou can then login with your email address and password at <a href=\"{{server}}\">{{server}}</a>.\nWelcome to ISLE!",
+        "computed-completions-course": "Computed scores of {{metricName}} for {{users}} users.",
+        "computed-completions-lessons": "Computed scores of {{metricName}} for {{users}} users in {{num}} lessons.",
 	"course-invitation": "Course Invitation",
 	"course-invitation-email": "Dear {{user}}, you were added to {{cohort}} of course \"{{namespace}}\" by {{ownerNames}} at {{organization}}.<br />\nPlease click the link below to login into your ISLE dashboard to review the materials of the course.",
 	"course-invitation-email-new-users": "Dear {{user}}, you are invited to join {{cohort}} of course \"{{namespace}}\" by {{ownerNames}} at {{organization}}.<br />\nPlease click the link below to complete the registration processing by choosing a password of your liking.<br />\nYou can then login with your email address and password at <a href=\"{{server}}\">{{server}}</a>.\nWe are looking forward for you to join the course!",
