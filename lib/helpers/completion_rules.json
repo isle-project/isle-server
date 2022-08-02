@@ -1,0 +1,41 @@
+{
+	"average": {
+		"name": "average",
+		"label": "Average",
+		"description": "Average value of the completions",
+		"parameters": [ {
+                    "name": "Missing",
+                    "type": "enum",
+                    "values": ["zero", "ignore"],
+                    "labels": ["Set to Zero", "Ignore"]
+                }],
+		"defaults": []
+	},
+	"dropLowest": {
+		"name": "dropLowest",
+		"label": "Drop Lowest",
+		"description": "Average value after dropping the lowest value of the completions",
+		"parameters": [{
+                    "name": "Missing",
+                    "type": "enum",
+                    "values": ["zero", "ignore"],
+                    "labels": ["Set to Zero", "Ignore"]
+                }],
+		"defaults": []
+	},
+	"dropNLowest": {
+		"name": "dropNLowest",
+		"label": "Drop N Lowest",
+		"description": "Average value after dropping the lowest N values of the completions",
+		"parameters": [ {
+			"name": "N",
+			"type": "number"
+		}, {
+                    "name": "Missing",
+                    "type": "enum",
+                    "values": ["zero", "ignore"],
+                    "labels": ["Set to Zero", "Ignore"]
+                }],
+		"defaults": [ 3 ]
+	}
+}
