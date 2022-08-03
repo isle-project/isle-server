@@ -1,41 +1,72 @@
 {
-	"average": {
-		"name": "average",
-		"label": "Average",
-		"description": "Average value of the completions",
-		"parameters": [ {
+        "average": {
+                "name": "average",
+                "label": "Average",
+                "description": "Average value of the completions",
+                "parameters": [ {
                     "name": "Missing",
                     "type": "enum",
                     "values": ["zero", "ignore"],
                     "labels": ["Set to Zero", "Ignore"]
                 }],
-		"defaults": []
-	},
-	"dropLowest": {
-		"name": "dropLowest",
-		"label": "Drop Lowest",
-		"description": "Average value after dropping the lowest value of the completions",
-		"parameters": [{
+                "defaults": ["zero"]
+        },
+        "dropLowest": {
+                "name": "dropLowest",
+                "label": "Drop Lowest",
+                "description": "Average value after dropping the lowest value of the completions",
+                "parameters": [{
                     "name": "Missing",
                     "type": "enum",
                     "values": ["zero", "ignore"],
                     "labels": ["Set to Zero", "Ignore"]
                 }],
-		"defaults": []
-	},
-	"dropNLowest": {
-		"name": "dropNLowest",
-		"label": "Drop N Lowest",
-		"description": "Average value after dropping the lowest N values of the completions",
-		"parameters": [ {
-			"name": "N",
-			"type": "number"
-		}, {
+                "defaults": ["zero"]
+        },
+        "dropNLowest": {
+                "name": "dropNLowest",
+                "label": "Drop N Lowest",
+                "description": "Average value after dropping the lowest N values of the completions",
+                "parameters": [ {
+                        "name": "N",
+                        "type": "number"
+                }, {
                     "name": "Missing",
                     "type": "enum",
                     "values": ["zero", "ignore"],
                     "labels": ["Set to Zero", "Ignore"]
                 }],
-		"defaults": [ 3 ]
-	}
+                "defaults": [ 3, "zero" ]
+        },
+        "binaryProportion": {
+                "name": "binaryProportion",
+                "label": "Binary Proportion",
+                "description": "Proportion of true values, where score >= 50 is true else false",
+                "parameters": [ {
+                    "name": "Missing",
+                    "type": "enum",
+                    "values": ["zero", "ignore"],
+                    "labels": ["Set to Zero", "Ignore"]
+                }],
+                "defaults": [ "zero" ]
+        },
+        "decayedAverage": {
+                "name": "decayedAverage",
+                "label": "Time-Decayed Average",
+                "description": "Average score, decaying those after a deadline as score * 2^(-min(late, cap)/halving) where late is the number of minutes after the deadline. Missing values are ignored.",
+                "parameters": [ {
+                    "name": "deadline",
+                    "type": "datetime",
+                    "description": "A time and date, recorded internally as a unix time."
+                }, {
+                    "name": "halving",
+                    "type": "number",
+                    "description": "The number of minutes late at which the score is halved."
+                }, {
+                    "name": "cap",
+                    "type": "number",
+                    "description": "Maximum number of minutes late at which score is decayed."
+                }],
+                "defaults": [ null, 1440, 1e33 ]
+        }
 }
