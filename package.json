@@ -74,7 +74,7 @@
     "rotating-file-stream": "^3.0.4",
     "socket.io": "4.5.1",
     "speakeasy": "^2.0.0",
-    "swagger-jsdoc": "^6.2.1",
+    "swagger-jsdoc": "^6.2.2",
     "tldjs": "1.8.0"
   },
   "devDependencies": {
