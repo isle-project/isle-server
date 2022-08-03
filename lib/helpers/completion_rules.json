@@ -61,10 +61,12 @@
                 }, {
                     "name": "halving",
                     "type": "number",
+                    "default": 1440,
                     "description": "The number of minutes late at which the score is halved."
                 }, {
                     "name": "cap",
                     "type": "number",
+                    "default": 1e33,
                     "description": "Maximum number of minutes late at which score is decayed."
                 }],
                 "defaults": [ null, 1440, 1e33 ]
