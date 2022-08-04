@@ -5,11 +5,11 @@
                 "description": "Average value of the completions",
                 "parameters": [ {
                     "name": "Missing",
+                    "description": "Determines how missing values are handled in the average; replace with zero or ignore.",
                     "type": "enum",
                     "values": ["zero", "ignore"],
-                    "labels": ["Set to Zero", "Ignore"]
-                }],
-                "defaults": ["zero"]
+                    "default": "zero"
+                }]
         },
         "dropLowest": {
                 "name": "dropLowest",
@@ -17,9 +17,10 @@
                 "description": "Average value after dropping the lowest value of the completions",
                 "parameters": [{
                     "name": "Missing",
+                    "description": "Determines how missing values are handled in the average; replace with zero or ignore.",
                     "type": "enum",
                     "values": ["zero", "ignore"],
-                    "labels": ["Set to Zero", "Ignore"]
+                    "default": "zero"
                 }],
                 "defaults": ["zero"]
         },
@@ -29,14 +30,16 @@
                 "description": "Average value after dropping the lowest N values of the completions",
                 "parameters": [ {
                         "name": "N",
-                        "type": "number"
+                        "description": "Number of the lowest scores to drop from the average",
+                        "type": "number",
+                        "default": 3
                 }, {
                     "name": "Missing",
+                    "description": "Determines how missing values are handled in the average; replace with zero or ignore.",
                     "type": "enum",
                     "values": ["zero", "ignore"],
-                    "labels": ["Set to Zero", "Ignore"]
-                }],
-                "defaults": [ 3, "zero" ]
+                    "default": "zero"
+                }]
         },
         "binaryProportion": {
                 "name": "binaryProportion",
@@ -44,9 +47,10 @@
                 "description": "Proportion of true values, where score >= 50 is true else false",
                 "parameters": [ {
                     "name": "Missing",
+                    "description": "Determines how missing values are handled in the average; replace with zero or ignore.",
                     "type": "enum",
                     "values": ["zero", "ignore"],
-                    "labels": ["Set to Zero", "Ignore"]
+                    "default": "zero"
                 }],
                 "defaults": [ "zero" ]
         },
@@ -62,13 +66,12 @@
                     "name": "halving",
                     "type": "number",
                     "default": 1440,
-                    "description": "The number of minutes late at which the score is halved."
+                    "description": "The number of minutes late at which the score is halved. Defaults to one day (1440 minutes)."
                 }, {
                     "name": "cap",
                     "type": "number",
                     "default": 1e33,
-                    "description": "Maximum number of minutes late at which score is decayed."
-                }],
-                "defaults": [ null, 1440, 1e33 ]
+                    "description": "Maximum number of minutes late at which score is decayed. Defaults to (effective) infinity."
+                }]
         }
 }
