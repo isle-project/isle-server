@@ -21,8 +21,7 @@
                     "type": "enum",
                     "values": ["zero", "ignore"],
                     "default": "zero"
-                }],
-                "defaults": ["zero"]
+                }]
         },
         "dropNLowest": {
                 "name": "dropNLowest",
@@ -51,8 +50,7 @@
                     "type": "enum",
                     "values": ["zero", "ignore"],
                     "default": "zero"
-                }],
-                "defaults": [ "zero" ]
+                }]
         },
         "decayedAverage": {
                 "name": "decayedAverage",
