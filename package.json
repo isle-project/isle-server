@@ -67,7 +67,7 @@
     "passport-jwt": "4.0.0",
     "prosemirror-schema-list": "^1.2.1",
     "prosemirror-tables": "^1.2.5",
-    "prosemirror-transform": "^1.6.0",
+    "prosemirror-transform": "^1.7.0",
     "qrcode": "^1.5.1",
     "qs": "^6.11.0",
     "response-time": "^2.3.2",
