@@ -26,7 +26,7 @@ const objectKeys = require( '@stdlib/utils/keys' );
 const Namespace = require( './../lib/models/namespace.js' );
 const Lesson = require( './../lib/models/lesson.js' );
 const User = require( './../lib/models/user.js' );
-const Completion = require( './../lib/models/completion.js' );
+const Assessment = require( './../lib/models/assessment.js' );
 
 
 // VARIABLES //
@@ -162,7 +162,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				'title': 'FrankensteinMeetsTheWolfMan',
 				'description': 'Open the grave of Larry Talbot',
 				'owners': [ users[ 1 ]._id, users[ 5 ]._id ],
-				'completion': [
+				'assessment': [
 					{
 						'name': 'average-score',
 						'level': 'namespace',
@@ -182,7 +182,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				'title': 'DraculaVsTheWolfMan',
 				'description': 'A great match',
 				'owners': [ users[ 1 ]._id, users[ 2 ]._id ],
-				'completion': [
+				'assessment': [
 					{
 						'name': 'average-score',
 						'level': 'namespace',
@@ -197,7 +197,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				'title': 'DraculaVsFrankenstein',
 				'description': 'Dracula unearthes Frankenstein',
 				'owners': [ users[ 2 ]._id, users[ 5 ]._id ],
-				'completion': [
+				'assessment': [
 					{
 						'name': 'average-score',
 						'level': 'namespace',
@@ -225,7 +225,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 2 ]._id,
 				title: 'Unearth the monster',
 				public: true,
-				completions: [
+				assessments: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -240,7 +240,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 2 ]._id,
 				title: 'Kill the cemetery keeper',
 				public: true,
-				completions: [
+				assessments: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -255,7 +255,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 2 ]._id,
 				title: 'Drink his blood',
 				public: false,
-				completions: [
+				assessments: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -270,7 +270,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 0 ]._id,
 				title: 'Why have you followed me',
 				public: true,
-				completions: [
+				assessments: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -285,7 +285,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 0 ]._id,
 				title: 'Talbot, you are a murderer',
 				public: true,
-				completions: [
+				assessments: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -300,7 +300,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				namespace: namespaces[ 0 ]._id,
 				title: 'Prove it',
 				public: false,
-				completions: [
+				assessments: [
 					{
 						'name': 'lesson-score',
 						'level': 'lesson',
@@ -316,13 +316,13 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 		});
 	}
 
-	function createCompletions({ lessons, users }, next ) {
-		const completions = [
+	function createAssessments({ lessons, users }, next ) {
+		const assessments = [
 			{
 				lesson: lessons[ 0 ]._id,
 				user: users[ 0 ]._id,
 				component: 'free-text-question-1',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-03T00:00:00.000Z' ).getTime(),
 				value: 80
 			},
@@ -330,7 +330,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 0 ]._id,
 				user: users[ 0 ]._id,
 				component: 'free-text-question-2',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 				value: 100
 			},
@@ -338,7 +338,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 0 ]._id,
 				user: users[ 1 ]._id,
 				component: 'free-text-question-1',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 				value: 50
 			},
@@ -346,7 +346,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 0 ]._id,
 				user: users[ 1 ]._id,
 				component: 'free-text-question-2',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 				value: 20
 			},
@@ -354,7 +354,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 1 ]._id,
 				user: users[ 1 ]._id,
 				component: 'free-text-question-3',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 				value: 60
 			},
@@ -362,7 +362,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 1 ]._id,
 				user: users[ 1 ]._id,
 				component: 'free-text-question-4',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 				value: 90
 			},
@@ -370,7 +370,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 1 ]._id,
 				user: users[ 2 ]._id,
 				component: 'free-text-question-3',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 				value: 80
 			},
@@ -378,7 +378,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 2 ]._id,
 				user: users[ 2 ]._id,
 				component: 'free-text-question-6',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 				value: 40
 			},
@@ -386,7 +386,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 2 ]._id,
 				user: users[ 2 ]._id,
 				component: 'free-text-question-7',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 				value: 60
 			},
@@ -394,7 +394,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 2 ]._id,
 				user: users[ 4 ]._id,
 				component: 'free-text-question-7',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 				value: 60
 			},
@@ -402,7 +402,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 4 ]._id,
 				user: users[ 5 ]._id,
 				component: 'number-question-1',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-03T00:00:00.000Z' ).getTime(),
 				value: 100
 			},
@@ -410,7 +410,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 4 ]._id,
 				user: users[ 5 ]._id,
 				component: 'number-question-2',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-03T00:00:00.000Z' ).getTime(),
 				value: 90
 			},
@@ -418,12 +418,12 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 				lesson: lessons[ 4 ]._id,
 				user: users[ 4 ]._id,
 				component: 'number-question-1',
-				completion: 'completed',
+				assessment: 'completed',
 				time: new Date( '2017-01-03T00:00:00.000Z' ).getTime(),
 				value: 80
 			}
 		];
-		Completion.create( completions, next );
+		Assessment.create( assessments, next );
 	}
 
 	function done( err, res ) {
@@ -434,7 +434,7 @@ setReadOnly( ns, 'populateDatabase', function populateDatabase( t ) {
 		}
 		t.end();
 	}
-	waterfall([ createUsers, createNamespaces, createLessons, createCompletions ], done );
+	waterfall([ createUsers, createNamespaces, createLessons, createAssessments ], done );
 });
 
 setReadOnly( ns, 'after', function after( t ) {

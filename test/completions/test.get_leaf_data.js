@@ -34,7 +34,7 @@ const utils = require( './../utils.js' );
 
 const { DEFAULT_TAG,
         getLeafData,
-        makeCompletionPolicy } = require( './../../lib/helpers/completions.js' );
+        makeAssessmentPolicy } = require( './../../lib/helpers/assessments.js' );
 
 
 // FIXTURES //
@@ -44,8 +44,8 @@ const nodes = [
 	'free-text-question-2'
 ];
 
-const basicPolicy = makeCompletionPolicy( {} );
-const filteringPolicy = makeCompletionPolicy({
+const basicPolicy = makeAssessmentPolicy( {} );
+const filteringPolicy = makeAssessmentPolicy({
     timeFilter: [1483228800000, 1483315200000]
 });
 

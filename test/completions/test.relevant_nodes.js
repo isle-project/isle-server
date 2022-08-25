@@ -24,7 +24,7 @@
 const tape = require( 'tape' );
 const isStringArray = require( '@stdlib/assert/is-string-array' );
 const isEmptyArray = require( '@stdlib/assert/is-empty-array' );
-const { relevantNodes } = require( './../../lib/helpers/completions.js' );
+const { relevantNodes } = require( './../../lib/helpers/assessments.js' );
 const Lesson = require( './../../lib/models/lesson.js' );
 const mongoose = require( 'mongoose' );
 const Namespace = require( './../../lib/models/namespace.js' );
@@ -48,7 +48,7 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'populate the database', utils.populateDatabase );
 
-tape( 'the function should return an array of node IDs that match the completion criteria and the level (lesson level)', ( t ) => {
+tape( 'the function should return an array of node IDs that match the assessment criteria and the level (lesson level)', ( t ) => {
 	Lesson.findOne({
 		title: 'Unearth the monster'
 	})
@@ -64,7 +64,7 @@ tape( 'the function should return an array of node IDs that match the completion
 		});
 });
 
-tape( 'the function should return an array of node IDs that match the completion criteria and the level (namespace level)', ( t ) => {
+tape( 'the function should return an array of node IDs that match the assessment criteria and the level (namespace level)', ( t ) => {
 	Namespace.findOne({
 		title: 'DraculaVsFrankenstein'
 	})
@@ -79,7 +79,7 @@ tape( 'the function should return an array of node IDs that match the completion
 		});
 });
 
-tape( 'the function should return an empty array if there are no node IDs matching the completion criteria and the level (namespace level)', ( t ) => {
+tape( 'the function should return an empty array if there are no node IDs matching the assessment criteria and the level (namespace level)', ( t ) => {
 	Namespace.findOne({
 		title: 'DraculaVsTheWolfMan'
 	})

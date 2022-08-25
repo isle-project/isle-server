@@ -32,8 +32,8 @@ const User      = require( './../../lib/models/user.js' );
 const utils     = require( './../utils.js' );
 
 const { DEFAULT_TAG,
-        computeCompletions,
-        makeCompletionPolicy } = require( './../../lib/helpers/completions.js' );
+        computeAssessments,
+        makeAssessmentPolicy } = require( './../../lib/helpers/assessments.js' );
 
 // HELPERS //
 
@@ -49,11 +49,11 @@ const almostEquals = (a, b) => {  // ATTN:CHECK THIS - basically ok but epsilon 
 
 // FIXTURES //
 
-const basicPolicy = makeCompletionPolicy( {} );
-const filteringPolicy = makeCompletionPolicy({
+const basicPolicy = makeAssessmentPolicy( {} );
+const filteringPolicy = makeAssessmentPolicy({
     timeFilter: [1483228800000, 1483315200000]
 });
-const weightedPolicy = makeCompletionPolicy({
+const weightedPolicy = makeAssessmentPolicy({
     tagWeights: {
         'homework': 1,
         'exams': 3
@@ -65,7 +65,7 @@ const weightedPolicy = makeCompletionPolicy({
 
 tape( 'main export is a function', ( t ) => {
 	t.ok( true, __filename );
-	t.ok( typeof computeCompletions === 'function', 'main export is a function' );
+	t.ok( typeof computeAssessments === 'function', 'main export is a function' );
 	t.end();
 });
 
@@ -76,16 +76,16 @@ tape( 'populate the database', utils.populateDatabase );
 
 // Basic Shape Tests
 
-tape( 'computeCompletions should return an object mapping user IDs to numbers between 0 and 100 (lesson level)', ( t ) => {
+tape( 'computeAssessments should return an object mapping user IDs to numbers between 0 and 100 (lesson level)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne({
 			title: 'Unearth the monster'
 		})
 			.then( ( lesson ) => {
 				users = users.map( user => user._id );
-				computeCompletions( lesson._id, lesson.completion[ 0 ], users, basicPolicy )
+				computeAssessments( lesson._id, lesson.assessment[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
-                                                console.log( '>> computeCompletions on Unearth the monster: ', JSON.stringify(obj, null, 2) );  // ATTN: DEBUG
+                                                console.log( '>> computeAssessments on Unearth the monster: ', JSON.stringify(obj, null, 2) );  // ATTN: DEBUG
 
 						t.ok( isObject( obj ), 'returns an array of objects' );
 						const userKeys = objectKeys( obj );
@@ -104,14 +104,14 @@ tape( 'computeCompletions should return an object mapping user IDs to numbers be
 	});
 });
 
-tape( 'computeCompletions should return an object mapping user IDs to numbers between 0 and 100 (namespace level)', ( t ) => {
+tape( 'computeAssessments should return an object mapping user IDs to numbers between 0 and 100 (namespace level)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Namespace.findOne({
 			title: 'DraculaVsFrankenstein'
 		})
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
-				computeCompletions( namespace._id, namespace.completion[ 0 ], users, basicPolicy )
+				computeAssessments( namespace._id, namespace.assessment[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
 						const userKeys = objectKeys( obj );
@@ -133,14 +133,14 @@ tape( 'computeCompletions should return an object mapping user IDs to numbers be
 
 // Edge-Case Tests
 
-tape( 'computeCompletions should return an object mapping user IDs to zero if no completion data is available (namespace level)', ( t ) => {
+tape( 'computeAssessments should return an object mapping user IDs to zero if no assessment data is available (namespace level)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Namespace.findOne({
 			title: 'DraculaVsTheWolfMan'
 		})
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
-				computeCompletions( namespace._id, namespace.completion[ 0 ], users, basicPolicy )
+				computeAssessments( namespace._id, namespace.assessment[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
 						const userKeys = objectKeys( obj );
@@ -162,7 +162,7 @@ tape( 'computeCompletions should return an object mapping user IDs to zero if no
 
 // Value Tests, no tag weights or time filter
 
-tape( 'computeCompletions should return an object mapping user IDs to the correct completion scores (lesson level, no weighting, no filtering)', ( t ) => {
+tape( 'computeAssessments should return an object mapping user IDs to the correct assessment scores (lesson level, no weighting, no filtering)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne({
 			title: 'Unearth the monster'
@@ -170,16 +170,16 @@ tape( 'computeCompletions should return an object mapping user IDs to the correc
 			.then( ( lesson ) => {
 				users = users.map( user => user._id );
 
-				console.log( 'Lesson info:', lesson._id, JSON.stringify(lesson.completion[ 0 ], null, 2) ); // ATTN:DEBUG
-				computeCompletions( lesson._id, lesson.completion[ 0 ], users, basicPolicy )
+				console.log( 'Lesson info:', lesson._id, JSON.stringify(lesson.assessment[ 0 ], null, 2) ); // ATTN:DEBUG
+				computeAssessments( lesson._id, lesson.assessment[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 90, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 90' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 35, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 35' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0,  'user with ID `623ce01a33522d1d834b8f12` has a completion score of  0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0,  'user with ID `623ce01a33522d1d834b8f13` has a completion score of  0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 0,  'user with ID `623ce01a33522d1d834b8f14` has a completion score of  0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 0,  'user with ID `623ce01a33522d1d834b8f15` has a completion score of  0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 90, 'user with ID `623ce01a33522d1d834b8f10` has a assessment score of 90' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 35, 'user with ID `623ce01a33522d1d834b8f11` has a assessment score of 35' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0,  'user with ID `623ce01a33522d1d834b8f12` has a assessment score of  0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0,  'user with ID `623ce01a33522d1d834b8f13` has a assessment score of  0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 0,  'user with ID `623ce01a33522d1d834b8f14` has a assessment score of  0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 0,  'user with ID `623ce01a33522d1d834b8f15` has a assessment score of  0' );
 						t.end();
 					})
 					.catch( err => {
@@ -190,7 +190,7 @@ tape( 'computeCompletions should return an object mapping user IDs to the correc
 	});
 });
 
-tape( 'computeCompletions should again return an object mapping user IDs to the correct completion scores (lesson level, no filtering, no weighting)', ( t ) => {
+tape( 'computeAssessments should again return an object mapping user IDs to the correct assessment scores (lesson level, no filtering, no weighting)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne({
 			title: 'Drink his blood'
@@ -198,16 +198,16 @@ tape( 'computeCompletions should again return an object mapping user IDs to the 
 			.then( ( lesson ) => {
 				users = users.map( user => user._id );
 
-				console.log( 'Lesson info:', lesson._id, JSON.stringify(lesson.completion[ 0 ], null, 2) ); // ATTN:DEBUG
-				computeCompletions( lesson._id, lesson.completion[ 0 ], users, basicPolicy )
+				console.log( 'Lesson info:', lesson._id, JSON.stringify(lesson.assessment[ 0 ], null, 2) ); // ATTN:DEBUG
+				computeAssessments( lesson._id, lesson.assessment[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 50, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 50' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 30, 'user with ID `623ce01a33522d1d834b8f14` has a completion score of 30' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 0, 'user with ID `623ce01a33522d1d834b8f15` has a completion score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 50, 'user with ID `623ce01a33522d1d834b8f12` has a assessment score of 50' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 30, 'user with ID `623ce01a33522d1d834b8f14` has a assessment score of 30' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 0, 'user with ID `623ce01a33522d1d834b8f15` has a assessment score of 0' );
 						t.end();
 					})
 					.catch( err => {
@@ -218,7 +218,7 @@ tape( 'computeCompletions should again return an object mapping user IDs to the 
 	});
 });
 
-tape( 'computeCompletions should yet again return an object mapping user IDs to the correct completion scores (lesson level, no weighting, no filtering)', ( t ) => {
+tape( 'computeAssessments should yet again return an object mapping user IDs to the correct assessment scores (lesson level, no weighting, no filtering)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne({
 			title: 'Talbot, you are a murderer'
@@ -226,16 +226,16 @@ tape( 'computeCompletions should yet again return an object mapping user IDs to 
 			.then( ( lesson ) => {
 				users = users.map( user => user._id );
 
-				console.log( 'Lesson info:', lesson._id, JSON.stringify(lesson.completion[ 0 ], null, 2) ); // ATTN:DEBUG
-				computeCompletions( lesson._id, lesson.completion[ 0 ], users, basicPolicy )
+				console.log( 'Lesson info:', lesson._id, JSON.stringify(lesson.assessment[ 0 ], null, 2) ); // ATTN:DEBUG
+				computeAssessments( lesson._id, lesson.assessment[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 40, 'user with ID `623ce01a33522d1d834b8f14` has a completion score of 40' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 95, 'user with ID `623ce01a33522d1d834b8f15` has a completion score of 95' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0, 'user with ID `623ce01a33522d1d834b8f12` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 40, 'user with ID `623ce01a33522d1d834b8f14` has a assessment score of 40' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 95, 'user with ID `623ce01a33522d1d834b8f15` has a assessment score of 95' );
 						t.end();
 					})
 					.catch( err => {
@@ -246,23 +246,23 @@ tape( 'computeCompletions should yet again return an object mapping user IDs to 
 	});
 });
 
-tape( 'computeCompletions should return an object mapping user IDs to the correct completion scores (namespace level, no weighting, no filtering)', ( t ) => {
+tape( 'computeAssessments should return an object mapping user IDs to the correct assessment scores (namespace level, no weighting, no filtering)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Namespace.findOne({
 			title: 'DraculaVsFrankenstein'
 		})
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
-				console.log( 'Namespace info:', namespace._id, JSON.stringify(namespace.completion[ 0 ], null, 2) ); // ATTN:DEBUG
-				computeCompletions( namespace._id, namespace.completion[ 0 ], users, basicPolicy )
+				console.log( 'Namespace info:', namespace._id, JSON.stringify(namespace.assessment[ 0 ], null, 2) ); // ATTN:DEBUG
+				computeAssessments( namespace._id, namespace.assessment[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an object' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], (90 +	 0 +  0)/3, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 90' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], (35 + 75 +  0)/3, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 35' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], ( 0 + 40 + 50)/3, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 65' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], ( 0 +	 0 +  0)/3, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of	0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], ( 0 +	 0 + 30)/3, 'user with ID `623ce01a33522d1d834b8f14` has a completion score of 80' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], ( 0 +	 0 +  0)/3, 'user with ID `623ce01a33522d1d834b8f15` has a completion score of 95' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], (90 +	 0 +  0)/3, 'user with ID `623ce01a33522d1d834b8f10` has a assessment score of 90' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], (35 + 75 +  0)/3, 'user with ID `623ce01a33522d1d834b8f11` has a assessment score of 35' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], ( 0 + 40 + 50)/3, 'user with ID `623ce01a33522d1d834b8f12` has a assessment score of 65' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], ( 0 +	 0 +  0)/3, 'user with ID `623ce01a33522d1d834b8f13` has a assessment score of	0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], ( 0 +	 0 + 30)/3, 'user with ID `623ce01a33522d1d834b8f14` has a assessment score of 80' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], ( 0 +	 0 +  0)/3, 'user with ID `623ce01a33522d1d834b8f15` has a assessment score of 95' );
 						t.end();
 					})
 					.catch( err => {
@@ -277,7 +277,7 @@ tape( 'computeCompletions should return an object mapping user IDs to the correc
 // Value Tests with tag weights, no time filter
 
 /*
-tape( 'should again return an object mapping user IDs to the correct completion scores (lesson level, tag weights, no filtering)', ( t ) => {
+tape( 'should again return an object mapping user IDs to the correct assessment scores (lesson level, tag weights, no filtering)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne({
 			title: 'Drink his blood'
@@ -285,16 +285,16 @@ tape( 'should again return an object mapping user IDs to the correct completion 
 			.then( ( lesson ) => {
 				users = users.map( user => user._id );
 
-				console.log( 'Lesson info:', lesson._id, lesson.completion[ 0 ] );
-				computeCompletions( lesson._id, lesson.completion[ 0 ], users, weightedPolicy )
+				console.log( 'Lesson info:', lesson._id, lesson.assessment[ 0 ] );
+				computeAssessments( lesson._id, lesson.assessment[ 0 ], users, weightedPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 50, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 50' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 30, 'user with ID `623ce01a33522d1d834b8f14` has a completion score of 30' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 0, 'user with ID `623ce01a33522d1d834b8f15` has a completion score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 50, 'user with ID `623ce01a33522d1d834b8f12` has a assessment score of 50' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 30, 'user with ID `623ce01a33522d1d834b8f14` has a assessment score of 30' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 0, 'user with ID `623ce01a33522d1d834b8f15` has a assessment score of 0' );
 						t.end();
 					})
 					.catch( err => {
@@ -310,7 +310,7 @@ tape( 'should again return an object mapping user IDs to the correct completion 
 // Value Tests with time filter, no tag weights
 
 /*
-tape( 'should yet again return an object mapping user IDs to the correct completion scores (lesson level, time filtering, no weighting)', ( t ) => {
+tape( 'should yet again return an object mapping user IDs to the correct assessment scores (lesson level, time filtering, no weighting)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Lesson.findOne({
 			title: 'Talbot, you are a murderer'
@@ -318,16 +318,16 @@ tape( 'should yet again return an object mapping user IDs to the correct complet
 			.then( ( lesson ) => {
 				users = users.map( user => user._id );
 
-				console.log( 'Lesson info:', lesson._id, lesson.completion[ 0 ] );
-				computeCompletions( lesson._id, lesson.completion[ 0 ], users, filteringPolicy )
+				console.log( 'Lesson info:', lesson._id, lesson.assessment[ 0 ] );
+				computeAssessments( lesson._id, lesson.assessment[ 0 ], users, filteringPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an array of objects' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0, 'user with ID `623ce01a33522d1d834b8f12` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a completion score of 0' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 40, 'user with ID `623ce01a33522d1d834b8f14` has a completion score of 40' );
-						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 95, 'user with ID `623ce01a33522d1d834b8f15` has a completion score of 95' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f10' ], 0, 'user with ID `623ce01a33522d1d834b8f10` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f11' ], 0, 'user with ID `623ce01a33522d1d834b8f11` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f12' ], 0, 'user with ID `623ce01a33522d1d834b8f12` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f13' ], 0, 'user with ID `623ce01a33522d1d834b8f13` has a assessment score of 0' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f14' ], 40, 'user with ID `623ce01a33522d1d834b8f14` has a assessment score of 40' );
+						t.strictEqual( obj[ '623ce01a33522d1d834b8f15' ], 95, 'user with ID `623ce01a33522d1d834b8f15` has a assessment score of 95' );
 						t.end();
 					})
 					.catch( err => {

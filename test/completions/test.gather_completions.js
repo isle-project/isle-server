@@ -33,19 +33,19 @@ const User      = require( './../../lib/models/user.js' );
 const utils     = require( './../utils.js' );
 
 const { DEFAULT_TAG,
-        gatherCompletions,
-        makeCompletionPolicy } = require( './../../lib/helpers/completions.js' );
+        gatherAssessments,
+        makeAssessmentPolicy } = require( './../../lib/helpers/assessments.js' );
 
 // FIXTURES //
 
-const basicPolicy = makeCompletionPolicy( {} );
+const basicPolicy = makeAssessmentPolicy( {} );
 
 
 // TESTS //
 
 tape( 'main export is a function', ( t ) => {
 	t.ok( true, __filename );
-	t.ok( typeof gatherCompletions === 'function', 'main export is a function' );
+	t.ok( typeof gatherAssessments === 'function', 'main export is a function' );
 	t.end();
 });
 
@@ -63,9 +63,9 @@ tape( 'should return an object mapping with all user IDs as keys map to an objec
 		})
 			.then( ( lesson ) => {
 				users = users.map( user => user._id );
-				gatherCompletions( lesson._id, lesson.completion[ 0 ], users, basicPolicy )
+				gatherAssessments( lesson._id, lesson.assessment[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
-                                                console.log( '>> gatherCompletions on Unearth the monster: ', JSON.stringify(obj, null, 2) );  // ATTN: DEBUG
+                                                console.log( '>> gatherAssessments on Unearth the monster: ', JSON.stringify(obj, null, 2) );  // ATTN: DEBUG
 						t.ok( isObject( obj ), 'returns an object' );
 						const userKeys = objectKeys( obj );
 						t.equal( userKeys.length, users.length, 'each user is represented in the returned object' );
@@ -90,7 +90,7 @@ tape( 'should return an object mapping with all user IDs as keys map to an objec
 		})
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
-				gatherCompletions( namespace._id, namespace.completion[ 0 ], users, basicPolicy )
+				gatherAssessments( namespace._id, namespace.assessment[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an object' );
 						const userKeys = objectKeys( obj );
@@ -109,14 +109,14 @@ tape( 'should return an object mapping with all user IDs as keys map to an objec
 	});
 });
 
-tape( 'should return an object mapping user IDs to DEFAULT_TAG to empty array if no completion data is available (namespace level)', ( t ) => {
+tape( 'should return an object mapping user IDs to DEFAULT_TAG to empty array if no assessment data is available (namespace level)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Namespace.findOne({
 			title: 'DraculaVsTheWolfMan'
 		})
 			.then( ( namespace ) => {
 				users = users.map( user => user._id );
-				gatherCompletions( namespace._id, namespace.completion[ 0 ], users, basicPolicy )
+				gatherAssessments( namespace._id, namespace.assessment[ 0 ], users, basicPolicy )
 					.then( ( obj ) => {
 						t.ok( isObject( obj ), 'returns an object' );
 						for ( let i = 0; i < users.length; ++i ) {

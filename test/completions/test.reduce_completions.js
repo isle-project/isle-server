@@ -23,7 +23,7 @@
 
 const tape = require( 'tape' );
 const { DEFAULT_TAG,
-        reduceCompletions } = require( './../../lib/helpers/completions.js' );
+        reduceAssessments } = require( './../../lib/helpers/assessments.js' );
 
 
 // FIXTURES //
@@ -108,36 +108,36 @@ const byUsersWithSomeTags = {
 
 tape( 'main export is a function', t => {
 	t.ok( true, __filename );
-	t.ok( typeof reduceCompletions === 'function', 'main export is a function' );
+	t.ok( typeof reduceAssessments === 'function', 'main export is a function' );
 	t.end();
 });
 
-tape( 'the function returns an object with user id keys and a completion value for each of them', t => {
+tape( 'the function returns an object with user id keys and a assessment value for each of them', t => {
 	const expected = {
 		'u1': { homework: 90, exams: 80 },
 		'u2': { homework: 70, exams: 75 }
 	};
-	const actual = reduceCompletions( byUsers, metric );
+	const actual = reduceAssessments( byUsers, metric );
 	t.deepEqual( actual, expected, 'returns expected value' );
 	t.end();
 });
 
-tape( 'the function returns an object with user id keys and a completion value for each of them (only with default tag)', t => {
+tape( 'the function returns an object with user id keys and a assessment value for each of them (only with default tag)', t => {
 	const expected = {
 		'u1': { [DEFAULT_TAG]: 85 },
 		'u2': { [DEFAULT_TAG]: 72 }
 	};
-	const actual = reduceCompletions( byUsersWithoutTags, metric );
+	const actual = reduceAssessments( byUsersWithoutTags, metric );
 	t.deepEqual( actual, expected, 'returns expected value' );
 	t.end();
 });
 
-tape( 'the function returns an object with user id keys and a completion value if tags weights are supplied but some completions have the default tag', t => {
+tape( 'the function returns an object with user id keys and a assessment value if tags weights are supplied but some assessments have the default tag', t => {
 	const expected = {
 		'u1': { homework: 100, exams: 0, [DEFAULT_TAG]: 80 },
 		'u2': { homework: 100, exams: 0, [DEFAULT_TAG]: 75 }
 	};
-	const actual = reduceCompletions( byUsersWithSomeTags, metric );
+	const actual = reduceAssessments( byUsersWithSomeTags, metric );
 	t.deepEqual( actual, expected, 'returns expected value' );
 	t.end();
 });

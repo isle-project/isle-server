@@ -32,11 +32,11 @@ const User = require( './../../lib/models/user.js' );
 const utils = require( './../utils.js' );
 
 const { getBranchData,
-        makeCompletionPolicy } = require( './../../lib/helpers/completions.js' );
+        makeAssessmentPolicy } = require( './../../lib/helpers/assessments.js' );
 
 // FIXTURES //
 
-const basicPolicy = makeCompletionPolicy( {} );
+const basicPolicy = makeAssessmentPolicy( {} );
 
 
 // TESTS //
@@ -93,7 +93,7 @@ tape( 'should return an array of objects (namespace level)', ( t ) => {
 	});
 });
 
-tape( 'should return an array of objects mapping user IDs to empty array for each tag when there are no completions for the users (namespace level)', ( t ) => {
+tape( 'should return an array of objects mapping user IDs to empty array for each tag when there are no assessments for the users (namespace level)', ( t ) => {
 	User.find( {} ).then( ( users ) => {
 		Namespace.findOne({
 			title: 'DraculaVsTheWolfMan'

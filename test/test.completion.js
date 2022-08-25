@@ -21,7 +21,7 @@
 
 const tape = require( 'tape' );
 const utils = require( './utils.js' );
-const Completion = require( './../lib/models/completion.js' );
+const Assessment = require( './../lib/models/assessment.js' );
 const User = require( './../lib/models/user.js' );
 const Lesson = require( './../lib/models/lesson.js' );
 
@@ -32,27 +32,27 @@ tape( 'connect to a clean mongoDB database', utils.before );
 
 tape( 'populate the database', utils.populateDatabase );
 
-tape( 'the model can create a new completion', function test( t ) {
+tape( 'the model can create a new assessment', function test( t ) {
 	User.findOne().then( user => {
 		Lesson.findOne().then( lesson => {
-				const completion = {
+				const assessment = {
 					lesson: lesson._id,
 					user: user._id,
 					component: 'free-text-question-1',
-					completion: 'completed',
+					assessment: 'completed',
 					time: new Date( '2017-01-01T00:00:00.000Z' ).getTime(),
 					value: 80,
 					tag: 'practice'
 				};
-				Completion.create( completion, onCreate );
+				Assessment.create( assessment, onCreate );
 
-				function onCreate( err, createdCompletion ) {
+				function onCreate( err, createdAssessment ) {
 					t.strictEqual( err instanceof Error, false, 'does not return an error' );
-					t.strictEqual( createdCompletion.component, 'free-text-question-1', 'has correct component' );
-					t.strictEqual( createdCompletion.completion, 'completed', 'has correct completion' );
-					t.strictEqual( createdCompletion.time, new Date( '2017-01-01T00:00:00.000Z' ).getTime(), 'has correct time' );
-					t.strictEqual( createdCompletion.value, 80, 'has correct value' );
-					t.strictEqual( createdCompletion.tag, 'practice', 'has correct tag' );
+					t.strictEqual( createdAssessment.component, 'free-text-question-1', 'has correct component' );
+					t.strictEqual( createdAssessment.assessment, 'completed', 'has correct assessment' );
+					t.strictEqual( createdAssessment.time, new Date( '2017-01-01T00:00:00.000Z' ).getTime(), 'has correct time' );
+					t.strictEqual( createdAssessment.value, 80, 'has correct value' );
+					t.strictEqual( createdAssessment.tag, 'practice', 'has correct tag' );
 					t.end();
 				}
 			});

@@ -23,15 +23,15 @@
 
 const tape = require( 'tape' );
 const { DEFAULT_TAG,
-        groupCompletions,
-        makeCompletionPolicy } = require( './../../lib/helpers/completions.js' );
+        groupAssessments,
+        makeAssessmentPolicy } = require( './../../lib/helpers/assessments.js' );
 
 
 // FIXTURES //
 
-const basicPolicy = makeCompletionPolicy( {} );
+const basicPolicy = makeAssessmentPolicy( {} );
 
-const nodeCompletions = [
+const nodeAssessments = [
         {
             'u1': { 'homework': [ [80, 1646160630592 ] ] },
             'u2': { 'homework': [ [100, 1646160630592 ] ] },
@@ -49,7 +49,7 @@ const nodeCompletions = [
         }
 ];
 
-const nodeCompletionsWithoutTags = [
+const nodeAssessmentsWithoutTags = [
         {
             'u1': { [DEFAULT_TAG]: [ [80, 1646160630592 ] ] },
             'u2': { [DEFAULT_TAG]: [ [100, 1646160630592 ] ] },
@@ -67,7 +67,7 @@ const nodeCompletionsWithoutTags = [
         }
 ];
 
-const nodeCompletionsWithSomeTagsMissing = [
+const nodeAssessmentsWithSomeTagsMissing = [
         {
             'u1': { [DEFAULT_TAG]: [ [80, 1646160630592] ] },
             'u2': { [DEFAULT_TAG]: [ [100, 1646160630592] ] },
@@ -90,11 +90,11 @@ const nodeCompletionsWithSomeTagsMissing = [
 
 tape( 'main export is a function', t => {
         t.ok( true, __filename );
-        t.ok( typeof groupCompletions === 'function', 'main export is a function' );
+        t.ok( typeof groupAssessments === 'function', 'main export is a function' );
         t.end();
 });
 
-tape( 'the function returns an object with user id keys mapping to an object of tag names to two-element arrays of completion values and times (all tags)', t => {
+tape( 'the function returns an object with user id keys mapping to an object of tag names to two-element arrays of assessment values and times (all tags)', t => {
         const expected = {
                 u1: {
                         homework: [ [ 80, 1646160630592 ] ],
@@ -122,13 +122,13 @@ tape( 'the function returns an object with user id keys mapping to an object of 
                         lab: []
                 }
         };
-        const actual = groupCompletions( nodeCompletions, basicPolicy );
-        console.log( '>> groupCompletions actual: ', JSON.stringify(actual, null, 2) );  // ATTN: DEBUG
+        const actual = groupAssessments( nodeAssessments, basicPolicy );
+        console.log( '>> groupAssessments actual: ', JSON.stringify(actual, null, 2) );  // ATTN: DEBUG
         t.deepEqual( actual, expected, 'returns expected value' );
         t.end();
 });
 
-tape( 'the function returns an object with user id keys mapping to an object with the default tag mapping to two-element arrays of completion values and times (no tags)', t => {
+tape( 'the function returns an object with user id keys mapping to an object with the default tag mapping to two-element arrays of assessment values and times (no tags)', t => {
         const expected = {
                 u1: {
                         [DEFAULT_TAG]: [ [ 80, 1646160630592 ], [ 60, 1646160630592 ], [ 50, 1646160630592 ] ]
@@ -146,12 +146,12 @@ tape( 'the function returns an object with user id keys mapping to an object wit
                         [DEFAULT_TAG]: [ [ 50, 1646160630592 ] ]
                 }
         };
-        const actual = groupCompletions( nodeCompletionsWithoutTags, basicPolicy );
+        const actual = groupAssessments( nodeAssessmentsWithoutTags, basicPolicy );
         t.deepEqual( actual, expected, 'returns expected value' );
         t.end();
 });
 
-tape( 'the function returns an object with user id keys mapping to an object with tag names mapping to two-element arrays of completion values and times (with some tags)', t => {
+tape( 'the function returns an object with user id keys mapping to an object with tag names mapping to two-element arrays of assessment values and times (with some tags)', t => {
         const expected = {
                 u1: {
                         [DEFAULT_TAG]: [ [ 80, 1646160630592 ] ],
@@ -179,7 +179,7 @@ tape( 'the function returns an object with user id keys mapping to an object wit
                         lab: []
                 }
         };
-        const actual = groupCompletions( nodeCompletionsWithSomeTagsMissing, basicPolicy );
+        const actual = groupAssessments( nodeAssessmentsWithSomeTagsMissing, basicPolicy );
         t.deepEqual( actual, expected, 'returns expected value' );
         t.end();
 });
