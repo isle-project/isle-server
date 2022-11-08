@@ -78,7 +78,7 @@
     "tldjs": "1.8.0"
   },
   "devDependencies": {
-    "chai": "^4.3.6",
+    "chai": "^4.3.7",
     "eslint": "^8.27.0",
     "istanbul": "^1.1.0-alpha.1",
     "proxyquire": "^2.1.3",
