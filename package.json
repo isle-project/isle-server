@@ -72,7 +72,7 @@
     "qs": "^6.11.0",
     "response-time": "^2.3.2",
     "rotating-file-stream": "^3.0.4",
-    "socket.io": "4.5.3",
+    "socket.io": "4.5.4",
     "speakeasy": "^2.0.0",
     "swagger-jsdoc": "^6.2.5",
     "tldjs": "1.8.0"
