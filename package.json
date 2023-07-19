@@ -58,7 +58,7 @@
     "i18next": "^23.2.11",
     "i18next-http-middleware": "^3.3.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.10.0",
+    "mongoose": "^7.4.0",
     "mongoose-lean-virtuals": "^0.9.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
