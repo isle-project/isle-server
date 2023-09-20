@@ -30,7 +30,7 @@
     "test-cov": "cross-env istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\""
   },
   "dependencies": {
-    "@faker-js/faker": "^8.0.2",
+    "@faker-js/faker": "^8.1.0",
     "@isle-project/email-to-institution": "^1.0.0",
     "@socket.io/admin-ui": "^0.5.1",
     "@stdlib/assert": "^0.0.12",
