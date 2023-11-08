@@ -33,7 +33,7 @@
     "@faker-js/faker": "^8.2.0",
     "@isle-project/email-to-institution": "^1.0.0",
     "@socket.io/admin-ui": "^0.5.1",
-    "@stdlib/assert": "^0.0.12",
+    "@stdlib/assert": "^0.1.1",
     "@stdlib/constants": "^0.0.11",
     "@stdlib/fs": "^0.0.12",
     "@stdlib/math": "^0.0.11",
