@@ -35,7 +35,7 @@
     "@socket.io/admin-ui": "^0.5.1",
     "@stdlib/assert": "^0.0.12",
     "@stdlib/constants": "^0.0.11",
-    "@stdlib/fs": "^0.0.12",
+    "@stdlib/fs": "^0.1.1",
     "@stdlib/math": "^0.0.11",
     "@stdlib/process": "^0.0.12",
     "@stdlib/stats": "^0.0.13",
